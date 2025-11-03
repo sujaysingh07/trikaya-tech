@@ -43,7 +43,7 @@ export default function Journey() {
                     <h2 className="font-bold text-4xl">
                         Your Complete <span className="text-primary-color">Learning Journey</span>
                     </h2>
-                    <p className="text-base text-gray-600 max-w-2xl">
+                    <p className="text-base  max-w-2xl">
                         From beginner to job-ready professional — we&apos;ve got everything you need.
                     </p>
                 </div>

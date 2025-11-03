@@ -9,6 +9,8 @@ import Offers from "../components/Offers";
 import FeaturedJob from "../components/Featured";
 import MasterInDemand from "../components/Master-in-demand";
 import Journey from "../components/Journey";
+import Opportunity from "../components/Oppottunity";
+import Unlock from "../components/Unlock";
 
 export default function Home() {
   const banners = [
@@ -76,6 +78,8 @@ export default function Home() {
       <FeaturedJob/>
       <MasterInDemand/>
       <Journey/>
+      <Opportunity/>
+      <Unlock/>
     </div>
   );
 }

@@ -38,7 +38,7 @@ export default function MasterInDemand() {
                     <h2 className="font-bold text-4xl">
                         Master in <span className="text-primary-color">Demand Tech Skills</span>
                     </h2>
-                    <p className="text-base text-gray-600 max-w-2xl ">
+                    <p className="text-base  max-w-2xl ">
                         Choose from four cutting-edge technology domains designed to prepare you for the future of work.
                     </p>
                 </div>

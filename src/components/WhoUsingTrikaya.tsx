@@ -6,7 +6,7 @@ import TrikayaPeople from "@/public/trikaya-people.jpg";
 import TrikayaCompanies from "@/public/trikaya-companies.jpg";
 import TrikayaCollege from "@/public/trikaya-college.jpg";
 
-export default function WhoTrikaya() {
+export default function     WhoTrikaya() {
     const cards = [
         {
             image: TrikayaPeople,

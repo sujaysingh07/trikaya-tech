@@ -11,19 +11,23 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     const lenisRef = useRef<Lenis | null>(null);
 
     useEffect(() => {
-        // Initialize Lenis
         const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // ease-out feel
+            duration: 1.1,
+            // smoother easing curve
+            easing: (t) => 1 - Math.pow(2, -10 * t),
             smoothWheel: true,
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-expect-error
-            smoothTouch: false,
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //@ts-expect-error
+            smoothTouch: true,
+            touchMultiplier: 1.2, // better for Mac trackpads & touch devices
+            wheelMultiplier: 0.8, // balance for Linux & Mac
+            normalizeWheel: true, // ensures consistent wheel delta across devices
+            gestureOrientation: "vertical",
+            infinite: false,
         });
 
         lenisRef.current = lenis;
 
-        // RAF loop
         function raf(time: number) {
             lenis.raf(time);
             requestAnimationFrame(raf);
@@ -36,5 +40,5 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
         };
     }, []);
 
-    return <div>{children}</div>;
+    return <div className="overflow-hidden">{children}</div>;
 }

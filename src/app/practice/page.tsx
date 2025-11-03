@@ -4,9 +4,9 @@ import PracticeSection from "@/src/components/common/PracticeSection";
 export default function Practice() {
     return (<>
         <Banner
-            title={"Learn "}
-            highlight={"at Your Own Pace"}
-            description="Industry-vetted courses designed by experts. From beginner fundamentals to advanced specializations."
+            title={"Practice Makes  "}
+            highlight={"Perfect"}
+            description="Sharpen your skills with hands-on challenges, projects, and real-world problems."
             image={practice}
             primaryButton={{
                 label: "Start Learning",

@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Partners() {
     const partners = [
-        { name: "MSME", logo: "/msme.png" },
-        { name: "DPIIT", logo: "/dpiit.png" },
-        { name: "Make in India", logo: "/makeinindia.png" },
-        { name: "GyaanSetu", logo: "/gyaansetu.png" },
+        { name: "MSME", logo: "/logo/msme.png" },
+        { name: "DPIIT", logo: "/logo/dpiit.png" },
+        { name: "Make in India", logo: "/logo/makeinindia.png" },
+        { name: "GyaanSetu", logo: "/logo/gyaansetu.png" },
     ];
 
     return (

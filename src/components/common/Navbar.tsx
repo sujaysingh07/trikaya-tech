@@ -72,7 +72,7 @@ const Navbar = () => {
                             <button
                                 key={item.id}
                                 onClick={() => handleNavigation(item.id, item.path)}
-                                className="text-sm md:text-[13px] lg:text-[15px] font-medium text-[#000000] hover:text-black transition"
+                                className="text-sm md:text-[13px] cursor-pointer lg:text-[15px] font-medium text-[#000000] hover:text-black transition"
                             >
                                 {item.label}
                             </button>
@@ -103,7 +103,7 @@ const Navbar = () => {
                         <button
                             key={item.id}
                             onClick={() => handleNavigation(item.id, item.path)}
-                            className="block w-full text-left text-sm md:text-[13px] lg:text-[15px] font-medium text-[#000000] hover:text-black transition"
+                            className="block w-full text-left text-sm cursor-pointer md:text-[13px] lg:text-[15px] font-medium text-[#000000] hover:text-black transition"
                         >
                             {item.label}
                         </button>

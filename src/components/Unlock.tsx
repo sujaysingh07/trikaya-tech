@@ -30,8 +30,8 @@ const journeyCards = [
 
 export default function Unlock() {
     return (
-        <section className="py-16 min-h-screen">
-            <Container>
+        <section className="pb-16 ">
+            <Container className="pb-28 md:pt-20 md:pb-36 lg:pt-24 lg:pb-[300px]">
                 {/* Heading */}
                 <div className="flex  gap-3">
                     <h2 className="font-bold text-4xl text-[#03061E]">

@@ -22,9 +22,9 @@ export default function Footer() {
 
                         {/* Badges */}
                         <div className="flex gap-3 mb-4">
-                            <Image src="/iso1.png" alt="ISO Badge" width={53} height={53} />
-                            <Image src="/iso2.svg" alt="ISO Badge" width={53} height={53} />
-                            <Image src="/iso3.svg" alt="ISO Badge" width={53} height={53} />
+                            <Image src="/Iso1.png" alt="ISO Badge" width={53} height={53} />
+                            <Image src="/Iso2.svg" alt="ISO Badge" width={53} height={53} />
+                            <Image src="/Iso3.svg" alt="ISO Badge" width={53} height={53} />
                         </div>
 
                         {/* Description */}

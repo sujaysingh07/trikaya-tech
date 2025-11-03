@@ -30,7 +30,7 @@ const journeyCards = [
 
 export default function Unlock() {
     return (
-        <section className="py-16">
+        <section className="py-16 min-h-screen">
             <Container>
                 {/* Heading */}
                 <div className="flex  gap-3">

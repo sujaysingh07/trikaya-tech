@@ -43,7 +43,7 @@ const skills = [
 
 export default function Opportunity() {
     return (
-        <section className="py-16">
+        <section className="py-16 ">
             <Container>
                 {/* Heading */}
                 <div className="flex flex-col gap-3 text-center sm:text-left">

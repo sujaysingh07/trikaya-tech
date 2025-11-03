@@ -70,7 +70,7 @@ const Banner: React.FC<BannerProps> = ({
                                 {secondaryButton && (
                                     <Link
                                         href={secondaryButton.href}
-                                        className="px-6 py-3 bg-[#0A58F5] text-white rounded-md text-lg font-semibold hover:bg-[#0A58F5]/90 transition"
+                                        className="px-6 py-3 bg-primary-color text-white rounded-md text-lg font-semibold hover:bg-primary-color/90 transition"
                                     >
                                         {secondaryButton.label}
                                     </Link>

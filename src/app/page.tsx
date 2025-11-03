@@ -9,8 +9,10 @@ import Offers from "../components/Offers";
 import FeaturedJob from "../components/Featured";
 import MasterInDemand from "../components/Master-in-demand";
 import Journey from "../components/Journey";
-import Opportunity from "../components/Oppottunity";
+import Opportunity from "../components/Opportunity";
 import Unlock from "../components/Unlock";
+import ReferralFaqSection from "../components/Faq";
+import Partners from "../components/Partner";
 
 export default function Home() {
   const banners = [
@@ -80,6 +82,8 @@ export default function Home() {
       <Journey/>
       <Opportunity/>
       <Unlock/>
+      <ReferralFaqSection/>
+      <Partners/>
     </div>
   );
 }

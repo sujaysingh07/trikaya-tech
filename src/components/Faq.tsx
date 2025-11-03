@@ -1,10 +1,22 @@
 import Link from "next/link";
 import InviteFaq from "./invite-faq";
 import Container from "./ui/Container";
-
+import Image from "next/image";
 export default function ReferralFaqSection() {
   return (
-    <section className="relative bg-primary-color pt-16 pb-[300px] text-white bg-[url('/rocket-bg.svg')] bg-no-repeat bg-cover bg-center">
+    <section className="relative bg-primary-color pt-16 pb-[300px] text-white">
+      {/* Rocket Background */}
+      {/* <div
+        className="absolute bottom-0 left-0 right-0 w-full h-[400px] bg-[url('/rocket-bg.svg')] bg-no-repeat bg-bottom pointer-events-none"
+        aria-hidden="true"
+      /> */}
+      <Image
+        src="/rocket-bg.svg"
+        alt="Rocket Background"
+        fill
+        priority
+        className="object-cover object-bottom pointer-events-none select-none"
+      />
       <Container>
         <InviteFaq />
         <div className="text-center mt-20">

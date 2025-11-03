@@ -51,8 +51,8 @@ export default function Home() {
       secondaryButton: { label: "Take a Skill Check", href: "#" },
     },
     {
-      title: "Trikaya-",
-      highlight: "Verified CV",
+      title: "Trikaya-Verified ",
+      highlight: "CV",
       description:
         "Showcase your achievements with a blockchain-verified digital CV powered by the Trkaya Protocol. Every course, project, and certification you complete is recorded and verifiable by employers.",
       image:

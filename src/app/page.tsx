@@ -13,6 +13,9 @@ import Opportunity from "../components/Opportunity";
 import Unlock from "../components/Unlock";
 import ReferralFaqSection from "../components/Faq";
 import Partners from "../components/Partner";
+import career from "@/public/career.png"
+import trikayaAi from "@/public/trikaya-ai.png"
+import trikayaStandard from "@/public/trikaya-standard.png"
 
 export default function Home() {
   const banners = [
@@ -20,7 +23,7 @@ export default function Home() {
       title: "Learn. Practice.",
       highlight: "Get Verified.",
       description:
-        "Master emerging technologies through guided learning paths and real-world lab experiences. Every project you complete is validated, building your blockchain-backed profile that employers trust..",
+        "Master emerging technologies through guided learning paths and real-world lab experiences. Every project you complete is validated, building your blockchain-backed profile that employers trust.",
       image:
         rightImage,
       primaryButton: { label: "Start Learning", href: "#" },
@@ -32,8 +35,8 @@ export default function Home() {
       title: "Build Your",
       highlight: "Career",
       description:
-        "Discover opportunities in AI, Blockchain, and Cybersecurity. Connect with top companies.",
-      image: rightImage,
+        "Discover opportunities in AI, Blockchain, CyberSecurity and Data Science. Connect with innovative companies at the forefront of technology.",
+      image: career,
       primaryButton: { label: "Explore Jobs", href: "#" },
       secondaryButton: { label: "Start Learning", href: "#" },
     },
@@ -41,11 +44,21 @@ export default function Home() {
       title: "Matched by",
       highlight: "Trikaya AI",
       description:
-        "Let Trikaya AI match your verified skills to real-time opportunities with personalized recommendations.",
+        "Let Trikaya’s AI engine map your verified skills to real-time opportunities. Receive personalized course recommendations and job matches that help you grow faster in your chosen career path.",
       image:
-        rightImage,
+        trikayaAi,
       primaryButton: { label: "Find Jobs", href: "#" },
       secondaryButton: { label: "Take a Skill Check", href: "#" },
+    },
+    {
+      title: "Trikaya-",
+      highlight: "Verified CV",
+      description:
+        "Showcase your achievements with a blockchain-verified digital CV powered by the Trkaya Protocol. Every course, project, and certification you complete is recorded and verifiable by employers.",
+      image:
+        trikayaStandard,
+      primaryButton: { label: "See Sample CV", href: "#" },
+      secondaryButton: { label: "How it Worksk", href: "#" },
     },
   ];
 

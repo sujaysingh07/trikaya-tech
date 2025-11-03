@@ -73,7 +73,7 @@ export default function FeaturedJob() {
   }, [api]);
 
   return (
-    <section className="py-12">
+    <section className="py-12" id='jobs'>
         <Container>
 
         <div className="flex flex-col gap-[3px]">

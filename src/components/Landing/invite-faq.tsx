@@ -4,8 +4,8 @@ import {
     AccordionItem,
     AccordionTrigger,
     AccordionContent,
-} from "./ui/accordion";
-import { Button } from "./ui/button";
+} from "../ui/accordion";
+import { Button } from "../ui/button";
 const faqItems = [
     {
         id: 1,

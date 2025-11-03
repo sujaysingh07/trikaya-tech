@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import Container from "./ui/Container";
+import Container from "../ui/Container";
 
 
 import TrikayaPeople from "@/public/trikaya-people.jpg";

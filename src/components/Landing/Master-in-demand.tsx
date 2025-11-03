@@ -1,4 +1,4 @@
-import Container from "./ui/Container";
+import Container from "../ui/Container";
 import machineLearning from "@/public/MachineLearning.svg"
 import Blockchain from "@/public/BlockchainTechnology.svg"
 import Database from "@/public/DataScience.svg"

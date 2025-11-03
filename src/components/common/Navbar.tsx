@@ -3,35 +3,40 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Container from "../ui/Container";
 import Link from "next/link";
-import Container from "./ui/Container";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const router = useRouter();
 
     const navItems = [
-        { id: "learn", label: "Learn" },
-        { id: "practice", label: "Practice" },
-        { id: "arena", label: "Arena" },
-        { id: "mentorship", label: "Mentorship" },
-        { id: "jobs", label: "Jobs & Internship" },
-        { id: "community", label: "Community" },
-        { id: "business", label: "Business" },
-        { id: "resources", label: "Resources" },
+        { id: "learn", label: "Learn", path: "/learn" },
+        { id: "practice", label: "Practice", path: "/practice" },
+        { id: "arena", label: "Arena", path: "/arena" },
+        { id: "mentorship", label: "Mentorship", path: "/mentorship" },
+        { id: "jobs", label: "Jobs & Internship", path: "/jobs" },
+        { id: "community", label: "Community", path: "/community" },
+        { id: "business", label: "Business", path: "/business" },
+        { id: "resources", label: "Resources", path: "/resources" },
     ];
 
-    // ✅ Scroll to section smoothly
-    const scrollToSection = (id: string) => {
+    // ✅ Scroll to section smoothly or navigate
+    const handleNavigation = (id: string, path: string) => {
         const section = document.getElementById(id);
+
         if (section) {
             section.scrollIntoView({ behavior: "smooth" });
-            // Update hash in the URL (optional)
             window.history.replaceState(null, "", `#${id}`);
+        } else {
+            router.push(path);
         }
-        setIsOpen(false); // close mobile menu after click
+
+        setIsOpen(false);
     };
 
-    // ✅ Optional: Auto-scroll when page loads with hash
+    // ✅ Auto-scroll when the page loads with hash in URL
     useEffect(() => {
         const hash = window.location.hash;
         if (hash) {
@@ -49,32 +54,35 @@ const Navbar = () => {
             <Container className="flex items-center justify-between py-3 md:py-4">
                 {/* Logo */}
                 <div className="flex items-center gap-2">
-                    <Image
-                        src="/logo-trikaya.svg"
-                        alt="Trikaya Logo"
-                        width={176}
-                        height={50}
-                        priority
-                    />
+                    <Link href="/">
+                        <Image
+                            src="/logo/logo-trikaya.svg"
+                            alt="Trikaya Logo"
+                            width={176}
+                            height={50}
+                            priority
+                        />
+                    </Link>
                 </div>
 
-                {/* Desktop Menu + Button */}
+                {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-6 lg:gap-8">
-                    {/* Nav Links */}
                     <div className="flex items-center gap-5 lg:gap-8">
                         {navItems.map((item) => (
                             <button
                                 key={item.id}
-                                onClick={() => scrollToSection(item.id)}
-                                className="text-sm md:text-[13px] cursor-pointer lg:text-[15px] font-medium text-[#000000] hover:text-black transition"
+                                onClick={() => handleNavigation(item.id, item.path)}
+                                className="text-sm md:text-[13px] lg:text-[15px] font-medium text-[#000000] hover:text-black transition"
                             >
                                 {item.label}
                             </button>
                         ))}
                     </div>
 
-                    {/* Launch App Button */}
-                    <button className="px-4 py-2 bg-black text-white rounded-md font-medium hover:bg-gray-800 transition">
+                    <button
+                        onClick={() => router.push("/app")}
+                        className="px-4 py-2 bg-black text-white rounded-md font-medium hover:bg-gray-800 transition"
+                    >
                         Launch App
                     </button>
                 </div>
@@ -94,13 +102,16 @@ const Navbar = () => {
                     {navItems.map((item) => (
                         <button
                             key={item.id}
-                            onClick={() => scrollToSection(item.id)}
-                            className="text-sm md:text-[13px] lg:text-[15px] font-medium text-[#000000] hover:text-black transition"
+                            onClick={() => handleNavigation(item.id, item.path)}
+                            className="block w-full text-left text-sm md:text-[13px] lg:text-[15px] font-medium text-[#000000] hover:text-black transition"
                         >
                             {item.label}
                         </button>
                     ))}
-                    <button className="w-full mt-3 px-4 py-2 bg-black text-white rounded-md font-medium hover:bg-gray-800 transition">
+                    <button
+                        onClick={() => router.push("/app")}
+                        className="w-full mt-3 px-4 py-2 bg-black text-white rounded-md font-medium hover:bg-gray-800 transition"
+                    >
                         Launch App
                     </button>
                 </div>

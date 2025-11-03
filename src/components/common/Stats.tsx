@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Container from "./ui/Container";
+import Container from "../ui/Container";
 
 // ─── Data ───────────────────────────────────────────────
 const statsData = [

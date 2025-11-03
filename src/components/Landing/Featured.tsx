@@ -9,13 +9,13 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "./ui/carousel";
+} from "../ui/carousel";
 
-import AmazonLogo from "@/public/amazon.png";
-import accenture from "@/public/accenture.png";
-import customer from "@/public/customerXps.png";
+import AmazonLogo from "@/public/logo/amazon.png";
+import accenture from "@/public/logo/accenture.png";
+import customer from "@/public/logo/customerXps.png";
 import { formatToIST } from "@/lib/formatToIST";
-import Container from "./ui/Container";
+import Container from "../ui/Container";
 
 export default function FeaturedJob() {
   const jobs = [

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Container from "./ui/Container";
+import Container from "../ui/Container";
 import hackathon from "@/public/hackathon.svg"
 import quests from "@/public/quests.svg"
 import internships from "@/public/internships.svg"

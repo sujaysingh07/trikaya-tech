@@ -9,11 +9,11 @@ import {
     CarouselNext,
     CarouselPrevious,
     type CarouselApi,
-} from "./ui/carousel";
+} from "../ui/carousel";
 
 import Bg1 from "@/public/offer1.svg";
 import Bg2 from "@/public/offer2.svg";
-import Container from "./ui/Container";
+import Container from "../ui/Container";
 
 
 export default function Offers() {

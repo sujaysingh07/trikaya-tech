@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Twitter, Github, Mail } from "lucide-react";
-import Container from "./ui/Container";
+import Container from "../ui/Container";
 
 export default function Footer() {
     return (
@@ -13,7 +13,7 @@ export default function Footer() {
                         {/* Logo */}
                         <div className="flex items-center gap-2 mb-4">
                             <Image
-                                src="/logo-trikaya-white.svg"
+                                src="/logo/logo-trikaya-white.svg"
                                 alt="Trikaya"
                                 width={158}
                                 height={49}

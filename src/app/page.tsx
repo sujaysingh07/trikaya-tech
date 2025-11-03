@@ -1,18 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Banner from "../components/Hero";
-import StatsSection from "../components/Stats";
+import Banner from "../components/Landing/Hero";
+import StatsSection from "../components/common/Stats";
 import rightImage from "@/public/right-image.png"
-import WhoTrikaya from "../components/WhoUsingTrikaya";
-import Offers from "../components/Offers";
-import FeaturedJob from "../components/Featured";
-import MasterInDemand from "../components/Master-in-demand";
-import Journey from "../components/Journey";
-import Opportunity from "../components/Opportunity";
-import Unlock from "../components/Unlock";
-import ReferralFaqSection from "../components/Faq";
-import Partners from "../components/Partner";
+import WhoTrikaya from "../components/Landing/WhoUsingTrikaya";
+import Offers from "../components/Landing/Offers";
+import FeaturedJob from "../components/Landing/Featured";
+import MasterInDemand from "../components/Landing/Master-in-demand";
+import Journey from "../components/Landing/Journey";
+import Opportunity from "../components/Landing/Opportunity";
+import Unlock from "../components/Landing/Unlock";
+import ReferralFaqSection from "../components/Landing/Faq";
+import Partners from "../components/Landing/Partner";
 import career from "@/public/career.png"
 import trikayaAi from "@/public/trikaya-ai.png"
 import trikayaStandard from "@/public/trikaya-standard.png"

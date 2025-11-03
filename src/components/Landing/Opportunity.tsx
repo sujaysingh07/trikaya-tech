@@ -1,4 +1,4 @@
-import Container from "./ui/Container";
+import Container from "../ui/Container";
 import learningPath from "@/public/learning-path.jpg";
 import production from "@/public/production-labs.png";
 import onChain from "@/public/onchain-verification.png";

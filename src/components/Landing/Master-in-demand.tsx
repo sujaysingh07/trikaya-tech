@@ -3,7 +3,7 @@ import machineLearning from "@/public/MachineLearning.svg"
 import Blockchain from "@/public/BlockchainTechnology.svg"
 import Database from "@/public/DataScience.svg"
 import CyberSecurity from "@/public/Cybersecurity.svg"
-import Image from "next/image";
+import SkillCard from "../Cards/SkillCard";
 
 
 const skills = [
@@ -44,18 +44,17 @@ export default function MasterInDemand() {
                 </div>
 
                 {/* Skill Cards */}
-                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {skills.map((skill, index) => (
-                        <div
-                            key={index}
-                            className="flex flex-col items-start p-6 border border-gray-200 rounded-[30px] shadow-sm hover:shadow-md transition-shadow duration-200 bg-white"
-                        >
-                            <Image src={skill.icon} alt='' className="mb-4 w-[68px] h-[68px]"/>
-
-                            <h3 className="font-semibold text-lg mb-2">{skill.title}</h3>
-                            <p className="text-gray-600 text-sm">{skill.description}</p>
-                        </div>
-                    ))}
+         
+                    <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {skills.map((skill, index) => (
+                            <SkillCard
+                                key={index}
+                                icon={skill.icon}
+                                title={skill.title}
+                                description={skill.description}
+                            />
+                        ))}
+             
                 </div>
             </Container>
         </section>

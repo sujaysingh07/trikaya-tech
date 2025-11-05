@@ -26,7 +26,7 @@ export default function JobCard({
   return (
     <div
       className={`flex flex-col sm:flex-row justify-between items-start sm:items-center border-2 rounded-[30px] p-5  transition-all duration-300  hover:border-blue-400 ${
-        isHighlighted ? "border-blue-500" : "border-[#CCCCCC]"
+        isHighlighted ? "border-primary-color" : "border-[#CCCCCC]"
       }`}
     >
       {/* Left Section */}

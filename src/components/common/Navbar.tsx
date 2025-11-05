@@ -17,7 +17,7 @@ const Navbar = () => {
     { id: "practice", label: "Practice", path: "/practice" },
     { id: "arena", label: "Arena", path: "/arena" },
     { id: "mentorship", label: "Mentorship", path: "/mentorship" },
-    { id: "jobs", label: "Jobs & Internship", path: "/jobs" },
+    { id: "jobs", label: "Jobs & Internship", path: "/jobs-internship" },
     { id: "community", label: "Community", path: "/community" },
     { id: "business", label: "Business", path: "/business" },
     { id: "resources", label: "Resources", path: "/resources" },

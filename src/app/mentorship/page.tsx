@@ -1,31 +1,31 @@
 import Banner from "@/src/components/common/CommonBanner";
 import mentorship from "@/public/images/mentorship.png";
 import Container from "@/src/components/ui/Container";
-import Blockchain from "@/public/BlockchainTechnology.svg";
-import Database from "@/public/DataScience.svg";
-import CyberSecurity from "@/public/Cybersecurity.svg";
-import machineLearning from "@/public/MachineLearning.svg";
+import directMessage from "@/public/icons/direct-message.svg";
+import calender from "@/public/icons/calendar.svg";
+import person from "@/public/icons/person.svg";
+import videoSession from "@/public/icons/video-session.svg";
 import SkillCard from "@/src/components/Cards/SkillCard";
 import Link from "next/link";
 export default function Mentorship() {
   const skills = [
     {
-      icon: machineLearning,
+      icon: videoSession,
       title: "1-on-1 Video Sessions",
       description: "Personal guidance from industry experts",
     },
     {
-      icon: Blockchain,
+      icon: directMessage,
       title: "Direct Messaging",
       description: "Ask questions anytime, get answers fast",
     },
     {
-      icon: Database,
+      icon: calender,
       title: "Flexible Scheduling",
       description: "Book sessions that fit your schedule",
     },
     {
-      icon: CyberSecurity,
+      icon: person,
       title: "Career Guidance",
       description: "Resume reviews and interview preparation",
     },
@@ -67,7 +67,7 @@ export default function Mentorship() {
           <div className="flex justify-center my-[50px]">
             <Link
               href="#"
-              className=" mx-auto px-[30px] text-center max-w-[226px] justify-center bg-primary-color text-white font-medium text-sm py-2.5 rounded-md hover:bg-[#0048d9] transition"
+              className="px-6 py-3 bg-primary-color text-white rounded-md text-lg font-semibold hover:bg-primary-color/90 transition"
             >
               Find Your Mentor
             </Link>

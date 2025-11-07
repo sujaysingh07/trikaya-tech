@@ -12,12 +12,14 @@ export default function Footer() {
                     <div className="md:w-2/5">
                         {/* Logo */}
                         <div className="flex items-center gap-2 mb-4">
+                            <Link href="/">
                             <Image
                                 src="/logo/logo-trikaya-white.svg"
                                 alt="Trikaya"
                                 width={158}
                                 height={49}
-                            />
+                                />
+                                </Link>
                         </div>
 
                         {/* Badges */}

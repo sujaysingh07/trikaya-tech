@@ -51,18 +51,17 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full border-b border-gray-200 bg-white sticky top-0 z-50">
-      <Container className="flex items-center justify-between py-3 md:py-4">
+    <nav className="w-full bg-[#000000] sticky top-0 z-50">
+      <Container className="flex items-center justify-between py-[14px]">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ">
           <Link href="/">
-            <Image
-              src="/logo/logo-trikaya.svg"
-              alt="Trikaya Logo"
-              width={176}
-              height={50}
-              priority
-            />
+          <Image
+          src="/logo/logo-trikaya-white.svg"
+          alt="Trikaya"
+          width={158}
+          height={49}
+          />
           </Link>
         </div>
 
@@ -78,8 +77,8 @@ const Navbar = () => {
                   className={`px-3 py-2 text-sm md:text-[13px] lg:text-[15px] font-semibold cursor-pointer  rounded-md transition-all duration-300 
             ${
               isActive
-                ? "bg-primary-color/10 text-primary-color"
-                : "text-[#000000] hover:text-primary-color hover:bg-primary/5"
+                    ? " text-[#9ABCFF]"
+                    : "text-white hover:text-[#9ABCFF] hover:bg-primary/5"
             }`}
                 >
                   {item.label}
@@ -91,7 +90,7 @@ const Navbar = () => {
           {/* Launch App Button */}
           <button
             onClick={() => router.push("/app")}
-            className="px-4 py-2 bg-black text-white rounded-md font-medium hover:bg-gray-800 transition"
+            className="px-[30px] w-full py-3 max-w-[155px] bg-black border-2 border-[#CCCCCC] text-white rounded-[10px] font-semibold font-base whitespace-nowrap hover:bg-gray-800 transition"
           >
             Launch App
           </button>

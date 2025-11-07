@@ -2,7 +2,7 @@
 import Image, { StaticImageData } from "next/image";
 import Container from "../ui/Container";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 interface BannerProps {
@@ -35,88 +35,81 @@ const Banner: React.FC<BannerProps> = ({
     highlightColor = "#0A58F5",
 }) => {
     return (
-        <section className="w-full bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2] overflow-hidden">
+        <section className="relative w-full  bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2] overflow-hidden">
+            {/* Background Image — only on right side */}
+            <motion.div
+                key={title}
+                initial={{ opacity: 0, x: 80 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -80 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="absolute right-0 top-0 h-full w-1/2 z-0 overflow-hidden"
+            >
+                <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    quality={100}
+                    className="object-right object-contain scale-150"
+                    priority
+                />
+                <div className="absolute left-0 top-0 h-full w-24 bg-linear-to-r from-[#F2F2F2] to-transparent pointer-events-none" />
+            </motion.div>
+
+            {/* Content Section */}
             <Container>
                 <div
                     className={cn(
-                        "flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20",
+                        "relative z-10 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20 py-20",
                         reverse && "md:flex-row-reverse"
                     )}
                 >
-                    {/* Left Text Section (Smooth Animated Entry) */}
+                    {/* Text Section */}
                     <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
-                        <div className="max-w-[550px] mx-auto md:mx-0">
-                            <motion.div
-                                key={title}
-                                initial={{ opacity: 0, y: 40 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -40 }}
-                                transition={{ duration: 0.8, ease: "easeInOut" }}
+                        <motion.div
+                            key={title}
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -40 }}
+                            transition={{ duration: 0.8, ease: "easeInOut" }}
+                        >
+                            <h2
+                                className="text-3xl sm:text-4xl lg:text-[70px] font-bold leading-[1.2]"
+                                style={{ color: titleColor }}
                             >
-                                <h2
-                                    className="text-3xl sm:text-4xl lg:text-[70px] font-bold leading-[1.2]"
-                                    style={{ color: titleColor }}
+                                {title}{" "}
+                                {highlight && (
+                                    <span style={{ color: highlightColor }}>{highlight}</span>
+                                )}
+                            </h2>
+
+                            <p className="mt-5  text-gray-600 text-base sm:text-lg lg:text-xl leading-relaxed">
+                                {description}
+                            </p>
+
+                            <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+                                <Link
+                                    href={primaryButton.href}
+                                    className="px-6 py-3 bg-black text-white rounded-md text-lg font-semibold hover:bg-gray-800 transition"
                                 >
-                                    {title}{" "}
-                                    {highlight && (
-                                        <span style={{ color: highlightColor }}>{highlight}</span>
-                                    )}
-                                </h2>
-
-                                <p className="mt-5 text-gray-600 text-base sm:text-lg lg:text-xl leading-relaxed">
-                                    {description}
-                                </p>
-
-                                <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+                                    {primaryButton.label}
+                                </Link>
+                                {secondaryButton && (
                                     <Link
-                                        href={primaryButton.href}
-                                        className="px-6 py-3 bg-black text-white rounded-md text-lg font-semibold hover:bg-gray-800 transition"
+                                        href={secondaryButton.href}
+                                        className="px-6 py-3 bg-primary-color text-white rounded-md text-lg font-semibold hover:bg-primary-color/90 transition"
                                     >
-                                        {primaryButton.label}
+                                        {secondaryButton.label}
                                     </Link>
-                                    {secondaryButton && (
-                                        <Link
-                                            href={secondaryButton.href}
-                                            className="px-6 py-3 bg-primary-color text-white rounded-md text-lg font-semibold hover:bg-primary-color/90 transition"
-                                        >
-                                            {secondaryButton.label}
-                                        </Link>
-                                    )}
-                                </div>
-                            </motion.div>
-                        </div>
+                                )}
+                            </div>
+                        </motion.div>
                     </div>
-
-
-                    {/* Right Image Section (Fixed Space, Smooth Animation) */}
-                    <div className="w-full md:w-1/2 flex justify-center md:justify-end min-h-[580px]">
-                        <div className="relative w-full overflow-hidden">
-                            <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={title}
-                                    initial={{ opacity: 0, y: 80 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -80 }}
-                                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                                    className="w-full h-full relative"
-                                >
-                                    <Image
-                                        src={image}
-                                        alt={title}
-                                        width={800}
-                                        height={500}
-                                        className="w-full h-full object-cover object-left"
-                                        priority
-                                    />
-                                    <div className="absolute left-0 top-0 h-full w-24 bg-linear-to-r from-[#F2F2F2] to-transparent pointer-events-none" />
-                                </motion.div>
-                            </AnimatePresence>
-                        </div>
-                    </div>
-
                 </div>
             </Container>
         </section>
+
+
     );
 };
 

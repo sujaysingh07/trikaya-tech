@@ -94,9 +94,9 @@ const Banner: React.FC<BannerProps> = ({
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={title}
-                                    initial={{ opacity: 0, y: 80 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -80 }}
+                                    initial={{ opacity: 0, x: 80 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -80 }}
                                     transition={{ duration: 0.8, ease: "easeInOut" }}
                                     className="w-full h-full"
                                 >

@@ -1,9 +1,10 @@
 import Container from "../ui/Container";
-import machineLearning from "@/public/MachineLearning.svg"
-import Blockchain from "@/public/BlockchainTechnology.svg"
-import Database from "@/public/DataScience.svg"
-import CyberSecurity from "@/public/Cybersecurity.svg"
+import machineLearning from "@/public/icons/MachineLearning.svg"
+import Blockchain from "@/public/icons/BlockchainTechnology.svg"
+import Database from "@/public/icons/DataScience.svg"
+import CyberSecurity from "@/public/icons/Cybersecurity.svg"
 import SkillCard from "../Cards/SkillCard";
+import SectionHeader from "../common/SectionHeader";
 
 
 const skills = [
@@ -34,18 +35,11 @@ export default function MasterInDemand() {
         <section className="py-12">
             <Container>
                 {/* Heading and subtext */}
-                <div className="flex flex-col gap-3 ">
-                    <h2 className="font-bold text-4xl">
-                        Master in <span className="text-primary-color">Demand Tech Skills</span>
-                    </h2>
-                    <p className="text-base  max-w-2xl ">
-                        Choose from four cutting-edge technology domains designed to prepare you for the future of work.
-                    </p>
-                </div>
+                <SectionHeader title={"Master in -Demand "} highlight="Tech Skills" description="Choose from four cutting-edge technology domains designed to prepare you for the future of work."/>
 
                 {/* Skill Cards */}
          
-                    <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {skills.map((skill, index) => (
                             <SkillCard
                                 key={index}

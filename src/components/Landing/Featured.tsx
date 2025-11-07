@@ -16,6 +16,7 @@ import accenture from "@/public/logo/accenture.png";
 import customer from "@/public/logo/customerXps.png";
 import { formatToIST } from "@/lib/formatToIST";
 import Container from "../ui/Container";
+import SectionHeader from "../common/SectionHeader";
 
 export default function FeaturedJob() {
   const jobs = [
@@ -76,10 +77,7 @@ export default function FeaturedJob() {
     <section className="py-12" id='jobs'>
         <Container>
 
-        <div className="flex flex-col gap-[3px]">
-              <h2 className="font-bold text-4xl">Featured <span className="text-primary-color">Jobs</span> </h2>
-              <span className="text-base font-normal">Explore opportunities from top companies hiring verified talent.</span>
-        </div>
+        <SectionHeader title={"Featured "} highlight="Jobs" description="Explore opportunities from top companies hiring verified talent."/>
       <div className="relative mx-auto">
         <Carousel
           opts={{

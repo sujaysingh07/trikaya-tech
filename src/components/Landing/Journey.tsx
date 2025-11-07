@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Container from "../ui/Container";
+import SectionHeader from "../common/SectionHeader";
 
 const journeyCards = [
     {
@@ -39,14 +40,7 @@ export default function Journey() {
         <section className="py-12">
             <Container>
                 {/* Heading + Subtext */}
-                <div className="flex flex-col gap-3 ">
-                    <h2 className="font-bold text-4xl">
-                        Your Complete <span className="text-primary-color">Learning Journey</span>
-                    </h2>
-                    <p className="text-base  max-w-2xl">
-                        From beginner to job-ready professional — we&apos;ve got everything you need.
-                    </p>
-                </div>
+                <SectionHeader title={"Your Complete "} highlight="Learning Journey" description="From beginner to job-ready professional - we've got everything you need."/>
 
                 {/* Cards Grid */}
                 <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[35px]">

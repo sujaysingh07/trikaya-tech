@@ -5,6 +5,7 @@ import onChain from "@/public/onchain-verification.png";
 import AICareer from "@/public/AI-career.png";
 import bglayer from "@/public/layer.png"
 import Image from "next/image";
+import SectionHeader from "../common/SectionHeader";
 
 const skills = [
     {
@@ -46,16 +47,9 @@ export default function Opportunity() {
         <section className="py-16 ">
             <Container>
                 {/* Heading */}
-                <div className="flex flex-col gap-3 text-center sm:text-left">
-                    <h2 className="font-bold text-4xl">
-                        Features & <span className="text-primary-color">Opportunities</span>
-                    </h2>
-                    <p className="text-base  max-w-2xl mx-auto sm:mx-0">
-                        Everything you need to learn, practice, and land your dream tech role.
-                    </p>
-                </div>
+                <SectionHeader title={"Features &  "} highlight="Opportunities" description="Everything you need to learn, practice, and land your dream tech role."/>
 
-                <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className=" grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {skills.map((skill, index) => (
                         <div
                             key={index}

@@ -3,8 +3,8 @@ import { Clock } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Container from "../ui/Container";
-import machineLearning from "@/public/MachineLearning.svg";
-import BlockChain from "@/public/BlockchainTechnology.svg";
+import machineLearning from "@/public/icons/MachineLearning.svg";
+import BlockChain from "@/public/icons/BlockchainTechnology.svg";
 
 const courses = [
   {

@@ -8,15 +8,65 @@ import machineLearning from "@/public/icons/MachineLearning.svg";
 import PracticeSection from "@/src/components/common/PracticeSection";
 import BlackFluidSection from "@/src/components/common/BlackFluidSection";
 import FeatureSplitCard from "@/src/components/common/ScaleGrid";
-import certifiedImage from "@/public/images/certification-completeion.png"
+import certifiedImage from "@/public/images/earn-certificate.png";
 import Container from "@/src/components/ui/Container";
+import CommunityCard from "@/src/components/Cards/Community-card";
+import SectionHeader from "@/src/components/common/SectionHeader";
+import Link from "next/link";
+import CallToAction from "@/src/components/common/CallToAction";
 export default function Learn() {
   const LearnCards = [
-    { icon: structuredLearning, title: "Structured Learning Path", description: "Step-by-step guidance designed by industry mentors." },
-    { icon: ideaBulb, title: "Real Projects & Labs", description: "Apply concepts instantly in integrated Blockchain & AI Labs." },
-    { icon: certificate, title: "Verified Certificates", description: "Analyze complex datasets, create visualizations, and drive data-driven decisions." },
-    { icon: machineLearning, title: "AI Career Guidance", description: "Get personalized course and job suggestions from Trikaya AI." },
+    {
+      icon: structuredLearning,
+      title: "Structured Learning Path",
+      description: "Step-by-step guidance designed by industry mentors.",
+    },
+    {
+      icon: ideaBulb,
+      title: "Real Projects & Labs",
+      description:
+        "Apply concepts instantly in integrated Blockchain & AI Labs.",
+    },
+    {
+      icon: certificate,
+      title: "Verified Certificates",
+      description:
+        "Analyze complex datasets, create visualizations, and drive data-driven decisions.",
+    },
+    {
+      icon: machineLearning,
+      title: "AI Career Guidance",
+      description:
+        "Get personalized course and job suggestions from Trikaya AI.",
+    },
   ];
+
+
+   const experts = [
+     {
+       name: "Dr. Sarah Chen",
+       title: "Blockchain Expert",
+       description: "Smart Contracts, DeFi",
+       image: "/images/sarah.jpg",
+     },
+     {
+       name: "Prof. Michael Ross",
+       title: "AI Research Lead",
+       description: "Machine Learning, Neural Networks",
+     },
+     {
+       name: "Emma Williams",
+       title: "Data Scientist",
+       description: "Analytics, Visualization",
+       image: "/images/emma.jpg",
+     },
+     {
+       name: "James Anderson",
+       title: "Security Architect",
+       description: "Ethical Hacking, Network Security",
+       image: "/images/james.jpg",
+     },
+   ];
   return (
     <>
       <Banner
@@ -41,7 +91,7 @@ export default function Learn() {
       />
       <PracticeSection />
       <BlackFluidSection />
-      <Container className="py-16">
+      <Container className="pt-16">
         <FeatureSplitCard
           title="Earn Blockchain-Verified Certificates"
           description="Every course completion earns you a certificate validated through Trikaya Protocol. Share it on LinkedIn, showcase it to employers, and add it to your Trikaya-Verified CV."
@@ -51,7 +101,54 @@ export default function Learn() {
           reverse={false} // image on left
           darkMode={false}
         />
+
+        <FeatureSplitCard
+          title="Learn. Practice. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perfect Your Skills."
+          description="Each learning path connects directly to Practice Labs — so you can code, test, and deploy what you learn instantly."
+          buttonLabel="Open a Lab"
+          buttonLink="#"
+          image={certifiedImage}
+          reverse={true} // image on right
+          darkMode={false}
+        />
+
+        <section className="pt-16 ">
+          <SectionHeader
+            title="Learn from Mentors. "
+            highlight="Grow with Community."
+            description="Interact with top mentors, join peer discussions, and get your doubts cleared in the Trikaya Community."
+            align="left"
+          />
+          <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[35px] justify-items-center">
+            {experts.map((expert, index) => (
+              <CommunityCard key={index} {...expert} />
+            ))}
+          </div>
+
+          <div className=" py-[90px] flex justify-center">
+            <Link
+              href=""
+              className="px-10 py-4 bg-black text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-all duration-200"
+            >
+              Join the Trikaya Community
+            </Link>
+          </div>
+        </section>
       </Container>
+      <CallToAction
+        title="Start Your Learning Journey Today"
+        subtitle={
+          <>
+            Join thousands of learners mastering Blockchain, AI, Data, and{" "}
+            <br />
+            Cybersecurity with Trikaya.
+          </>
+        }
+        buttons={[
+          { label: "Explore Labs", href: "#", variant: "secondary" },
+        ]}
+        showRocketBg={true}
+      />
     </>
   );
 }

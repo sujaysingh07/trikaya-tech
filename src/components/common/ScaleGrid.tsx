@@ -9,7 +9,7 @@ interface FeatureSplitCardProps {
   description: string;
   buttonLabel?: string;
   buttonLink?: string;
-  image: string | StaticImageData;
+  image?: string | StaticImageData;
   reverse?: boolean; // flip layout
   darkMode?: boolean; // for dark image side (white text)
 }
@@ -19,42 +19,36 @@ export default function FeatureSplitCard({
   description,
   buttonLabel = "Learn More",
   buttonLink = "#",
-  image,
+  image="/images/AI-bg.jpg",
   reverse = false,
   darkMode = false,
 }: FeatureSplitCardProps) {
   return (
     <section
       className={clsx(
-        "flex flex-col md:flex-row items-center justify-between  rounded-[30px] border-2 transition-all duration-300",
-        reverse ? "md:flex-row-reverse" : ""
+        "flex flex-col md:flex-row my-[100px] items-center justify-between rounded-[30px] border-2 transition-all duration-300 md:gap-[72px]",
+        reverse ? "md:flex-row-reverse " : ""
       )}
     >
       {/* Image Section */}
-      <div className="relative w-full md:w-1/2 h-[340px] md:h-[420px]  group">
+      <div className="relative w-full md:w-1/2 h-[340px] md:h-[420px] group  rounded-[30px] ">
         <Image
           src={image}
-          alt={title}
-          fill
-          className="object-contain transition-transform duration-700 scale-y-150 scale-x-150"
+          width={500}
+          height={500}
+          quality={100}
+          alt="AI Background"
+          className="  object-left w-full h-full rounded-[30px] scale-y-130"
         />
 
-        {/* Optional Overlay (for dark side) */}
-        {darkMode && (
-          <div className="absolute inset-0 bg-black/60 z-10 pointer-events-none" />
-        )}
       </div>
 
       {/* Content Section */}
-      <div
-        className={clsx(
-          "w-full md:w-1/2 p-8 md:p-14 flex flex-col justify-center gap-5 z-20",
-          reverse ? "md:text-right" : "md:text-left",
-          darkMode ? "text-white bg-black" : "text-black bg-white"
-        )}
-      >
-        <h3 className="font-bold text-3xl leading-snug">{title}</h3>
-        <p className="text-base opacity-80 max-w-[500px]">{description}</p>
+      <div className={clsx("relative w-full md:w-1/2 h-[340px] md:h-[420px] group py-[53px] ", reverse?" pl-10":"pl-0")}>
+        <h3 className="font-extrabold text-[37px] leading-snug">{title}</h3>
+        <p className="text-base font-normal max-w-[500px] mt-3.5 mb-[52px]">
+          {description}
+        </p>
 
         {buttonLabel && (
           <Link

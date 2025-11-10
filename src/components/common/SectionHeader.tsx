@@ -23,7 +23,7 @@ export default function SectionHeader({
   return (
     <div
       className={clsx(
-        "flex flex-col gap-3 pb-10",
+        "flex flex-col gap-3 ",
         align === "center" ? "text-center items-center" : "text-left",
         className
       )}

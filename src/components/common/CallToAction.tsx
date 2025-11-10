@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import clsx from "clsx";
 interface ButtonProps {
   label: string;
   href: string;
@@ -35,7 +36,12 @@ export default function CallToAction({
       : "text-center items-center";
 
   return (
-    <section className="bg-primary-color py-16 px-4 relative min-h-[579px] ">
+    <section
+      className={clsx(
+        "bg-primary-color py-16 px-4 relative  ",
+        showRocketBg && "min-h-[579px]"
+      )}
+    >
       {/* ✅ Optional rocket background */}
       {showRocketBg && (
         <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-1">

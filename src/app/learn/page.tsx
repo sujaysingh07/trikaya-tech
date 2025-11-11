@@ -14,6 +14,7 @@ import CommunityCard from "@/src/components/Cards/Community-card";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import Link from "next/link";
 import CallToAction from "@/src/components/common/CallToAction";
+import Code from "@/public/code.png"
 export default function Learn() {
   const LearnCards = [
     {
@@ -107,7 +108,7 @@ export default function Learn() {
           description="Each learning path connects directly to Practice Labs — so you can code, test, and deploy what you learn instantly."
           buttonLabel="Open a Lab"
           buttonLink="#"
-          image={certifiedImage}
+          image={Code}
           reverse={true} // image on right
           darkMode={false}
         />
@@ -119,7 +120,7 @@ export default function Learn() {
             description="Interact with top mentors, join peer discussions, and get your doubts cleared in the Trikaya Community."
             align="left"
           />
-          <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[35px] justify-items-center">
+          <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[35px] justify-items-center pt-10">
             {experts.map((expert, index) => (
               <CommunityCard key={index} {...expert} />
             ))}
@@ -144,9 +145,7 @@ export default function Learn() {
             Cybersecurity with Trikaya.
           </>
         }
-        buttons={[
-          { label: "Explore Labs", href: "#", variant: "secondary" },
-        ]}
+        buttons={[{ label: "Explore Labs", href: "#", variant: "secondary" }]}
         showRocketBg={true}
       />
     </>

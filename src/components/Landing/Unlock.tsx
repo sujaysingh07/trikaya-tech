@@ -17,7 +17,7 @@ export default function Unlock() {
             heading="Unlock More"
             highlight="Opportunities"
             cards={journeyCards}
-            containerClassName="pb-28 md:pt-20 md:pb-36 lg:pt-24 lg:pb-[300px]"
+            containerClassName="pb-28 md:pb-36 lg:pb-[300px]"
         />
     );
 }

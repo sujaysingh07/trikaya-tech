@@ -24,16 +24,16 @@ export default function CardGridSection({
     highlight,
     cards,
     containerClassName = "",
-    gridClassName = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12",
+    gridClassName = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6  my-10",
     headingAlign = "left",
     description,
 }: CardGridSectionProps) {
     return (
-        <section className="py-[88px]">
+        <section className="">
             <Container className={containerClassName}>
                 {/* Heading */}
                 <div
-                    className={`flex flex-col ${headingAlign === "center" ? "justify-center text-center" : "gap-3"
+                    className={`flex flex-col mt-10 ${headingAlign === "center" ? "justify-center text-center" : "gap-3"
                         }`}
                 >
                     <h2 className="font-bold text-4xl text-[#03061E]">

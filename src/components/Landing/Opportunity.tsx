@@ -44,12 +44,12 @@ const skills = [
 
 export default function Opportunity() {
     return (
-        <section className="py-16 ">
+        <section className="pb-16 ">
             <Container>
                 {/* Heading */}
                 <SectionHeader title={"Features &  "} highlight="Opportunities" description="Everything you need to learn, practice, and land your dream tech role."/>
 
-                <div className=" grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className=" grid grid-cols-1 sm:grid-cols-2 gap-6 pt-10">
                     {skills.map((skill, index) => (
                         <div
                             key={index}

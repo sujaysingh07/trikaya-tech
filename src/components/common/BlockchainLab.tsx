@@ -90,7 +90,7 @@ export default function BlockchainLab() {
         />
 
         {/* Grid */}
-        <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3 mt-10">
           {labData.map((lab, index) => (
             <LabCard key={index} {...lab} LinkLabel="Open Lab" />
           ))}

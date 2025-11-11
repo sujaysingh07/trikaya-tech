@@ -77,7 +77,7 @@ const labData: LabCardProps[] = [
           highlight="Lab"
           description="Dive into machine learning, neural networks, and data modeling through structured, hands-on labs."
         />
-        <div className="border-2 my-[20px] rounded-[14px] p-[17px] border-[#B5F6FF] flex gap-2.5  text-[#FFFFFF] text-base font-medium">
+        <div className="border-2 my-5 rounded-[14px] p-[17px] border-[#B5F6FF] flex gap-2.5  text-[#FFFFFF] text-base font-medium">
          <Icons variant="Lab"/>  All AI labs include live coding space and AI-powered evaluation.
         </div>
         <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">

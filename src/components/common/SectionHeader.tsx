@@ -50,8 +50,8 @@ export default function SectionHeader({
       {description && (
         <p
           className={clsx(
-            "max-w-2xl text-base transition-colors duration-300",
-            isDark ? "text-gray-300" : "text-gray-700"
+            " text-base transition-colors duration-300",
+            isDark ? "text-gray-300" : "text-black"
           )}
         >
           {description}

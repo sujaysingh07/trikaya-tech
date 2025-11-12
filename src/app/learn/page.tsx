@@ -15,6 +15,7 @@ import SectionHeader from "@/src/components/common/SectionHeader";
 import Link from "next/link";
 import CallToAction from "@/src/components/common/CallToAction";
 import Code from "@/public/code.png"
+import GenericProfileCard from "@/src/components/Cards/Community-card";
 export default function Learn() {
   const LearnCards = [
     {
@@ -122,7 +123,7 @@ export default function Learn() {
           />
           <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[35px] justify-items-center pt-10">
             {experts.map((expert, index) => (
-              <CommunityCard key={index} {...expert} />
+              <GenericProfileCard key={index} {...expert} />
             ))}
           </div>
 

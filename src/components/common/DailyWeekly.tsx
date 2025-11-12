@@ -67,7 +67,7 @@ export default function DailyWeeklyChallenges() {
           {challenges.map((challenge, index) => (
             <div
               key={index}
-              className=" bg-white border border-[#1E1E1E] rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
+              className="bg-white border border-[#1E1E1E] rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col"
             >
               {/* Image */}
               <div className="relative w-full h-[150px]">
@@ -80,9 +80,10 @@ export default function DailyWeeklyChallenges() {
               </div>
 
               {/* Content */}
-              <div className="p-5 flex flex-col justify-between h-auto">
-                {/* Duration */}
-                <div className="">
+              <div className="p-5 flex flex-col flex-1 justify-between">
+                {/* Top Section */}
+                <div>
+                  {/* Duration */}
                   <p className="text-[#666666] text-sm mb-2 flex items-center gap-2">
                     <Icons variant="Clock" color="#666666" />
                     {challenge.duration}
@@ -98,7 +99,7 @@ export default function DailyWeeklyChallenges() {
                     {challenge.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-xs bg-[#EBEAEA] text-[#475569] px-3 py-1 rounded-full "
+                        className="text-xs bg-[#EBEAEA] text-[#475569] px-3 py-1 rounded-full"
                       >
                         {tag}
                       </span>
@@ -107,7 +108,7 @@ export default function DailyWeeklyChallenges() {
                 </div>
 
                 {/* Footer */}
-                <div className="flex items-center justify-between ">
+                <div className="flex items-center justify-between mt-auto pt-2">
                   <Link
                     href={challenge.href}
                     className="bg-primary-color hover:bg-[#1556C8] text-white text-sm font-semibold px-4 py-2 rounded-md transition"

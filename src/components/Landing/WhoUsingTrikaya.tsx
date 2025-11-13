@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import Container from "../ui/Container";
 
-import TrikayaPeople from "@/public/trikaya-people.jpg";
+import TrikayaPeoples from "@/public/trikaya-people.jpg";
 import TrikayaCompanies from "@/public/trikaya-companies.jpg";
 import TrikayaCollege from "@/public/trikaya-college.jpg";
 import SectionHeader from "../common/SectionHeader";
@@ -9,7 +9,7 @@ import SectionHeader from "../common/SectionHeader";
 export default function WhoTrikaya() {
   const cards = [
     {
-      image: TrikayaPeople,
+      image: TrikayaPeoples,
       title: "Students and Professionals",
       description: (
         <>
@@ -53,7 +53,7 @@ export default function WhoTrikaya() {
           {cards.map((card, index) => (
             <TrikayaCard
               key={index}
-              image={card.image}
+              image={card?.image}
               title={card.title}
               description={card.description}
             />

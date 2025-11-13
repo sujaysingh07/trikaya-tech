@@ -1,4 +1,5 @@
 
+import Link from "next/link";
 import ProgramFeatureCard from "../Cards/ProgramFeatureCard";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
@@ -42,6 +43,14 @@ export default function Mentorshipprogram() {
         {programFeatures.map((item, idx) => (
           <ProgramFeatureCard key={idx} {...item} />
         ))}
+      </div>
+      <div className="flex justify-center items-center pb-10">
+        <Link
+          href={""}
+          className="block text-center bg-black  hover:bg-[#1556C8] text-white font-semibold text-base leading-[100%] px-4 py-4 rounded-md transition"
+        >
+          Join a Mentorship Program
+        </Link>
       </div>
     </Container>
   );

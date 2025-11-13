@@ -35,11 +35,11 @@ const AnimatedNumber = ({ target, duration = 2000 }:{target:number,duration?:num
 // ─── Single Stat Card ────────────────────────────────────
 const StatCard = ({ value, suffix, label }:{value:number,suffix:string,label:string}) => (
     <div className="flex flex-col items-center">
-        <h3 className="text-3xl sm:text-4xl font-extrabold text-black flex items-baseline">
+        <h3 className="text-3xl md:text-[55px] font-extrabold text-black flex items-baseline">
             <AnimatedNumber target={value} />
-            <span className="text-[55px] sm:text-3xl ml-1 font-light">{suffix}</span>
+            <span className=" md:text-[55px] text-3xl ml-1 font-light">{suffix}</span>
         </h3>
-        <p className="text-lg sm:text-sm font-bold text-[#000000] uppercase tracking-wide mt-1">
+        <p className="md:text-lg text-xs font-bold text-[#000000] uppercase tracking-wide mt-1">
             {label}
         </p>
     </div>
@@ -50,7 +50,7 @@ const StatsSection = () => {
     return (
         <section>
             <Container className="py-12">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 text-center">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-10 text-center">
                     {statsData.map((stat, index) => (
                         <StatCard key={index} {...stat} />
                     ))}

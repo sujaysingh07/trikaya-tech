@@ -53,7 +53,7 @@ export default function Opportunity() {
                     {skills.map((skill, index) => (
                         <div
                             key={index}
-                            className="relative flex flex-col sm:flex-row justify-between rounded-[30px] text-white overflow-hidden bg-black shadow-lg hover:shadow-xl transition-all duration-300 h-[310px]"
+                            className="relative flex flex-col sm:flex-row justify-between rounded-[30px] text-white overflow-hidden bg-black shadow-lg hover:shadow-xl transition-all duration-300 h-auto md:h-[310px]"
                         >
                             <Image
                                 src={bglayer}
@@ -86,7 +86,7 @@ export default function Opportunity() {
 
 
                             {/* RIGHT: Image */}
-                            <div className="relative sm:w-2/5 w-full h-[180px] sm:h-full">
+                            <div className="relative sm:w-2/5 w-full h-[180px] sm:h-full md:block hidden">
                                 <Image
                                     src={skill.icon}
                                     alt={skill.title}
@@ -95,8 +95,8 @@ export default function Opportunity() {
                                     className={`absolute inset-0 w-full h-full object-cover grayscale  ${index === 1 ? 'scale-x-[-1]' : ''}`}
                                     style={{ objectPosition: skill.objectPosition || "center" }}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-l from-[#0A58F5]/10 via-black/60 to-black/50 sm:rounded-r-2xl"></div>
-                                <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+                                <div className="absolute inset-0 bg-linear-to-l from-primary-color/10 via-black/60 to-black/50 sm:rounded-r-2xl"></div>
+                                <div className="absolute left-0 top-0 bottom-0 w-16 bg-linear-to-r from-black via-black/80 to-transparent"></div>
                             </div>
 
                         </div>

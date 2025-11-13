@@ -10,7 +10,9 @@ import WirelessNetwork from "@/public/icons/WirelessNetwork .svg";
 import HackathonSection from "@/src/components/common/Hackathon";
 import DailyWeeklyChallenges from "@/src/components/common/DailyWeekly";
 import SkillQuests from "@/src/components/common/SkillQuests";
-import Leaderboard, { LeaderBoardType } from "@/src/components/common/Leaderboard";
+import Leaderboard, {
+  LeaderBoardType,
+} from "@/src/components/common/Leaderboard";
 import PerformanceCard from "@/src/components/Cards/Performance-card";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import GenericProfileCard from "@/src/components/Cards/Community-card";
@@ -117,37 +119,37 @@ export default function Arena() {
     },
   ];
 
-     const experts = [
-       {
-         name: "Aarav Mehta",
-         title: "ML Engineer at TechCorp",
-         quote: 'Won AI Quest → Joined TechCorp as ML Intern',
-         description: "Smart Contracts, DeFi",
-         image: "/images/Arav.jpg",
-       },
-       {
-         name: "Diya Gupta",
-         title: "Blockchain Developer at CryptoStart",
-         description: "Machine Learning, Neural Networks",
-         image: "/images/Diya.jpg",
-         quote: 'Hackathon Winner → Secured Full-time Role',
-       },
-       {
-         name: "Rohan Verma",
-         title: "Data Scientist at DataLabs",
-         description: "Analytics, Visualization",
-         image: "/images/Rohan.jpg",
-         quote: 'Completed 3 Quests → Got Project Funding',
-       },
-       {
-         name: "Deepak Singh",
-         title: "ML Engineer at TechCorp",
-         description: "Ethical Hacking, Network Security",
-         image: "/images/Deepak.jpg",
-         quote: 'Won AI Quest → Joined TechCorp as ML Intern',
-       },
-     ];
-  
+  const experts = [
+    {
+      name: "Aarav Mehta",
+      title: "ML Engineer at TechCorp",
+      quote: "Won AI Quest → Joined TechCorp as ML Intern",
+      description: "Smart Contracts, DeFi",
+      image: "/images/Arav.jpg",
+    },
+    {
+      name: "Diya Gupta",
+      title: "Blockchain Developer at CryptoStart",
+      description: "Machine Learning, Neural Networks",
+      image: "/images/Diya.jpg",
+      quote: "Hackathon Winner → Secured Full-time Role",
+    },
+    {
+      name: "Rohan Verma",
+      title: "Data Scientist at DataLabs",
+      description: "Analytics, Visualization",
+      image: "/images/Rohan.jpg",
+      quote: "Completed 3 Quests → Got Project Funding",
+    },
+    {
+      name: "Deepak Singh",
+      title: "ML Engineer at TechCorp",
+      description: "Ethical Hacking, Network Security",
+      image: "/images/Deepak.jpg",
+      quote: "Won AI Quest → Joined TechCorp as ML Intern",
+    },
+  ];
+
   return (
     <>
       <Banner

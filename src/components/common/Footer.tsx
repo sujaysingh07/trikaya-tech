@@ -73,7 +73,7 @@ export default function Footer() {
                 >
                   <FaWhatsapp color="white" />
                 </Link>
-           
+
                 <Link
                   href="#"
                   aria-label="Discord"
@@ -123,14 +123,14 @@ export default function Footer() {
                       href="#"
                       className="hover:text-white transition-colors"
                     >
-                      Membership
+                      Mentorship
                     </Link>
                   </li>
                 </ul>
               </div>
 
               {/* Resources */}
-              <div>
+              <div className="">
                 <h3 className="text-white font-semibold mb-4">Resources</h3>
                 <ul className="space-y-2 text-sm">
                   <li>

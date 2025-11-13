@@ -60,7 +60,7 @@ export default function PerformanceCard({
               </div>
             </div>
 
-            {/* Right: XP + Growth */}
+            {/* Right: KP + Growth */}
             <div className="flex flex-col items-end">
               <p className="text-base md:text-[20px] font-semibold text-black">
                 {player.xp}

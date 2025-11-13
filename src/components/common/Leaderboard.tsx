@@ -15,7 +15,7 @@ const leaderboardData: LeaderBoardType[] = [
     rank: 1,
     name: "Alex Chen",
     badges: 12,
-    xp: "15,420 XP",
+    xp: "15,420 KP",
     growth: "+240",
     color: "bg-[#22C55E]",
   },
@@ -23,7 +23,7 @@ const leaderboardData: LeaderBoardType[] = [
     rank: 2,
     name: "Sarah Kumar",
     badges: 12,
-    xp: "15,420 XP",
+    xp: "15,420 KP",
     growth: "+240",
     color: "bg-[#FACC15]",
   },
@@ -31,7 +31,7 @@ const leaderboardData: LeaderBoardType[] = [
     rank: 3,
     name: "Michael Zhang",
     badges: 12,
-    xp: "15,420 XP",
+    xp: "15,420 KP",
     growth: "+240",
     color: "bg-[#EF4444]",
   },
@@ -39,7 +39,7 @@ const leaderboardData: LeaderBoardType[] = [
     rank: 4,
     name: "Emma Rodriguez",
     badges: 12,
-    xp: "15,420 XP",
+    xp: "15,420 KP",
     growth: "+240",
     color: "bg-[#94A3B8]",
   },
@@ -47,7 +47,7 @@ const leaderboardData: LeaderBoardType[] = [
     rank: 5,
     name: "James Wilson",
     badges: 12,
-    xp: "15,420 XP",
+    xp: "15,420 KP",
     growth: "+240",
     color: "bg-[#94A3B8]",
   },
@@ -64,20 +64,20 @@ export default function Leaderboard() {
         />
       </div>
       <div className="relative mx-auto rounded-[30px] flex flex-col md:flex-row items-center mt-10">
-        {/* Left Section */}
+        {/* LEFT SECTION */}
         <PerformanceCard
           leaderboardData={leaderboardData}
-          className="md:w-[65%]"
+          className="w-full md:w-[65%]"
           cardClassName="max-w-[600px]"
         />
 
-        {/* Right Image Overlap */}
-        <div className="absolute right-0 bottom-0 md:bottom-auto  z-10 w-[60%] md:w-[45%] h-[545px] rounded-[30px] overflow-hidden shadow-lg">
+        {/* RIGHT IMAGE (hidden on mobile) */}
+        <div className="hidden md:block absolute right-0 bottom-0 md:bottom-auto z-10 w-[45%] h-[545px] rounded-[30px] overflow-hidden shadow-lg">
           <Image
             src="/leaderboard.svg"
             alt="Leaderboard Background"
             fill
-            className="object-cover h-full "
+            className="object-cover h-full"
           />
         </div>
       </div>

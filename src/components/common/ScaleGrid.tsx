@@ -5,7 +5,7 @@ import Link from "next/link";
 import clsx from "clsx";
 
 interface FeatureSplitCardProps {
-  title: string;
+  title: string | React.ReactNode;
   description: string;
   buttonLabel?: string;
   buttonLink?: string;
@@ -26,7 +26,7 @@ export default function FeatureSplitCard({
   return (
     <section
       className={clsx(
-        "flex flex-col md:flex-row my-[100px] items-center justify-between rounded-[30px] border-2 transition-all duration-300 md:gap-[72px]",
+        "flex flex-col md:flex-row my-[50px] md:my-[100px] items-center justify-between rounded-[30px] border-2 transition-all duration-300 md:gap-[72px]",
         reverse ? "md:flex-row-reverse " : ""
       )}
     >
@@ -38,14 +38,14 @@ export default function FeatureSplitCard({
           height={500}
           quality={100}
           alt="AI Background"
-          className="  object-left w-full h-full rounded-[30px] scale-y-130"
+          className="  object-left w-full h-full rounded-[30px] md:scale-y-130"
         />
 
       </div>
 
       {/* Content Section */}
-      <div className={clsx("relative w-full md:w-1/2 h-[340px] md:h-[420px] group py-[53px] ", reverse?" pl-10":"pl-0")}>
-        <h3 className="font-extrabold text-[37px] leading-snug">{title}</h3>
+      <div className={clsx("relative w-full md:w-1/2 h-auto md:h-[420px] group py-[53px] ", reverse?" p-5":"p-5")}>
+        <h3 className="font-extrabold text-2xl md:text-[37px] leading-snug">{title}</h3>
         <p className="text-base font-normal max-w-[500px] mt-3.5 mb-[52px]">
           {description}
         </p>

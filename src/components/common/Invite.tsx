@@ -50,7 +50,7 @@ export default function InviteCard({
                 <div className="mt-6">
                   <Link
                     href={ctaHref}
-                    className="inline-block bg-primary-color hover:bg-[#1556c8] text-[20px]  text-white font-semibold px-10 py-3 rounded-lg shadow-sm transition"
+                    className="inline-block bg-primary-color whitespace-nowrap hover:bg-[#1556c8] text-[20px]  text-white font-semibold px-10 py-3 rounded-lg shadow-sm transition"
                     aria-label={ctaLabel}
                   >
                     {ctaLabel}

@@ -91,27 +91,36 @@ export default function AssignmentChallenges() {
           ))}
         </div>
 
-        <div className="bg-primary-color p-10  mt-16  rounded-[30px] flex justify-between items-center ">
-          <div className="flex gap-8">
-            <Icons variant="ProgressCheck" />
-            <div className="text-[#FFFFFF]">
-              <p className="text-[38px] font-bold">Track your progress</p>
-              <span className="font-medium text-base">
+        <div className="bg-primary-color p-6 sm:p-8 md:p-10 mt-16 rounded-[30px] flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
+          {/* LEFT SECTION */}
+          <div className="flex gap-4 sm:gap-6 md:gap-8 items-start">
+            <Icons variant="ProgressCheck" className="min-w-[40px]" />
+
+            <div className="text-white">
+              <p className="text-[26px] sm:text-[32px] md:text-[38px] font-bold leading-tight">
+                Track your progress
+              </p>
+              <span className="font-medium text-sm sm:text-base">
                 Complete assignments to level up your profile
               </span>
             </div>
           </div>
-          <div className=" flex gap-3.5 items-center">
+
+          {/* RIGHT SECTION */}
+          <div className="flex flex-col sm:flex-row gap-3.5 items-center w-full md:w-auto">
             <Link
               href={"#"}
-              className="mt-auto text-center bg-white px-[30px] text-[18px] text-black font-bold rounded-md py-5  transition"
+              className="w-full sm:w-auto text-center bg-white px-[30px] text-[16px] sm:text-[18px] text-black font-bold rounded-md py-4 sm:py-5 transition"
             >
-              Earn XP
+              Earn KP
             </Link>
-            <Icons variant="RightArrow" />
+            <div className="hidden md:block">
+              <Icons variant="RightArrow" className="" />
+            </div>
+
             <Link
               href={"#"}
-              className="mt-auto text-center bg-white px-[30px] text-[18px] text-black font-bold rounded-md py-5  transition"
+              className="w-full sm:w-auto text-center bg-white px-[30px] text-[16px] sm:text-[18px] text-black font-bold rounded-md py-4 sm:py-5 transition"
             >
               Unlock Trikaya Badges
             </Link>

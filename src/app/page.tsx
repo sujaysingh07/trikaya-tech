@@ -29,7 +29,10 @@ export default function Home() {
       description:
         "Master emerging technologies through guided learning paths and real-world lab experiences.",
       image: rightImage,
-      primaryButton: { label: "Start Learning", href: "#" },
+      primaryButton: {
+        label: "Start Learning",
+        href: " https://builder.trikaya.io/",
+      },
       secondaryButton: { label: "Explore Labs", href: "#" },
       titleColor: "#000000",
       highlightColor: "#0A58F5",

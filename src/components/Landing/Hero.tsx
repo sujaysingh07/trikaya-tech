@@ -70,6 +70,7 @@ const Banner: React.FC<BannerProps> = ({
                   <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
                     <Link
                       href={primaryButton.href}
+                      target="_blank"
                       className="px-6 py-3 bg-black text-white w-full md:w-auto rounded-md text-lg font-semibold hover:bg-gray-800 transition"
                     >
                       {primaryButton.label}

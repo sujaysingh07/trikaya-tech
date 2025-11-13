@@ -104,13 +104,30 @@ export default function Learn() {
           darkMode={false}
         />
 
+
         <FeatureSplitCard
-          title="Learn. Practice. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perfect Your Skills."
+          title={
+            <>
+              {/* Mobile title (no spaces) */}
+              <span className="block md:hidden">
+                Learn. Practice. Perfect Your Skills.
+              </span>
+
+              {/* Desktop title (with spacing) */}
+              <span
+                className="hidden md:block"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    "Learn. Practice.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perfect Your Skills.",
+                }}
+              />
+            </>
+          }
           description="Each learning path connects directly to Practice Labs — so you can code, test, and deploy what you learn instantly."
           buttonLabel="Open a Lab"
           buttonLink="#"
           image={Code}
-          reverse={true} // image on right
+          reverse={true}
           darkMode={false}
         />
 

@@ -27,12 +27,12 @@ const Navbar = () => {
   const handleNavigation = (id: string, path: string) => {
     const section = document.getElementById(id);
 
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      window.history.replaceState(null, "", `#${id}`);
-    } else {
+    // if (section) {
+    //   section.scrollIntoView({ behavior: "smooth" });
+    //   window.history.replaceState(null, "", `#${id}`);
+    // } else {
       router.push(path);
-    }
+    // }
 
     setIsOpen(false);
   };

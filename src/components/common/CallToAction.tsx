@@ -56,12 +56,12 @@ export default function CallToAction({
       )}
       <div className={`flex flex-col  ${alignmentClasses} ${className}`}>
         {/* Title */}
-        <h2 className="text-[42px] sm:text-[40px] font-bold mb-3 text-white">
+        <h2 className="md:text-[42px] text-[24px] font-bold mb-3 text-white">
           {title}
         </h2>
 
         {/* Subtitle */}
-        <p className="text-[#FFFFFF] font-normal text-[28px] sm:text-xl mb-8">
+        <p className="text-[#FFFFFF] font-normal md:text-[28px] text-base mb-8">
           {subtitle}
         </p>
 
@@ -71,7 +71,7 @@ export default function CallToAction({
             <Link
               key={idx}
               href={btn.href}
-              className={`px-6 py-3 rounded-md text-lg font-semibold transition
+              className={`px-6 py-3 rounded-md text-lg w-full md:w-auto font-semibold transition
               ${
                 btn.variant === "primary"
                   ? "bg-black text-white hover:bg-gray-800"

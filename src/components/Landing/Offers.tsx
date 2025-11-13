@@ -75,50 +75,55 @@ export default function Offers() {
     }, [api]);
 
     return (
-        <section className="py-12">
-            <Container>
+      <section className="py-12">
+        <Container>
+          <div className="relative mx-auto">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              setApi={setApi}
+              className="w-full"
+            >
+              <CarouselContent>
+                {offers.map((offer, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="basis-full md:basis-1/2 px-3 py-4"
+                  >
+                    <OfferCard {...offer} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
 
-            <div className="relative mx-auto">
-                <Carousel
-                    opts={{
-                        align: "start",
-                        loop: true,
-                    }}
-                    setApi={setApi}
-                    className="w-full"
-                >
-                    <CarouselContent>
-                        {offers.map((offer, index) => (
-                            <CarouselItem
-                                key={index}
-                                className="basis-full md:basis-1/2 px-3 py-4"
-                            >
-                                <OfferCard {...offer} />
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
+              <CarouselPrevious
+                className="left-2 md:-left-3 border-[3px] border-white  bg-black hover:bg-black"
+                arrowColor="white"
+              />
+              <CarouselNext
+                className="right-2 md:-right-3 border-[3px] border-white bg-black hover:bg-black"
+                arrowColor="white"
+              />
+            </Carousel>
 
-                    <CarouselPrevious className="left-2 md:-left-10" />
-                    <CarouselNext className="right-2 md:-right-10" />
-                </Carousel>
-
-                {/* ✅ Slide Dots */}
-                <div className="flex justify-center mt-4 space-x-2">
-                    {scrollSnaps.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => api?.scrollTo(index)}
-                            className={`w-3 h-1  rounded-full transition-all duration-300 ${index === selectedIndex
-                                ? "bg-black scale-110"
-                                : "bg-gray-300 hover:bg-gray-400"
-                                }`}
-                        />
-                    ))}
-                </div>
+            {/* ✅ Slide Dots */}
+            <div className="flex justify-center mt-4 space-x-2">
+              {scrollSnaps.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => api?.scrollTo(index)}
+                  className={`w-3 h-1  rounded-full transition-all duration-300 ${
+                    index === selectedIndex
+                      ? "bg-black scale-110"
+                      : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                />
+              ))}
             </div>
-            </Container>
-
-        </section>
+          </div>
+        </Container>
+      </section>
     );
 }
 
@@ -141,7 +146,7 @@ function OfferCard({
     return (
 
 
-        <div className="relative rounded-4xl overflow-hidden ml-1.5 text-white flex items-center h-[250px] w-full shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div className="relative rounded-4xl overflow-hidden ml-1.5 text-white flex items-center h-auto md:h-[250px] w-full shadow-md hover:shadow-lg transition-shadow duration-300">
 
        
 
@@ -155,7 +160,7 @@ function OfferCard({
             
 
 
-            <div className="relative z-10 flex flex-col justify-center px-6 py-4 md:px-8 w-full md:w-3/4">
+            <div className="relative z-10 flex flex-col justify-center px-6 py-4  md:px-8 w-full md:w-3/4">
                 <span
                     className="inline-block text-black font-semibold text-base px-4 py-1 rounded-full w-fit mb-3"
                     style={{ backgroundColor: badgeColor }}

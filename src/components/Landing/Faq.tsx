@@ -5,18 +5,13 @@ import Image from "next/image";
 import CallToAction from "../common/CallToAction";
 export default function ReferralFaqSection() {
   return (
-    <section className="relative bg-primary-color pt-16 pb-[300px] text-white">
-      {/* Rocket Background */}
-      {/* <div
-        className="absolute bottom-0 left-0 right-0 w-full h-[400px] bg-[url('/rocket-bg.svg')] bg-no-repeat bg-bottom pointer-events-none"
-        aria-hidden="true"
-      /> */}
+    <section className="relative bg-primary-color pt-16 md:pb-[300px] text-white">
       <Image
         src="/rocket-bg.svg"
         alt="Rocket Background"
         fill
         priority
-        className="object-cover object-bottom pointer-events-none select-none"
+        className="object-cover md:block hidden object-bottom pointer-events-none select-none"
       />
 
       <Container>

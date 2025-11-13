@@ -30,7 +30,7 @@ export default function SectionHeader({
     >
       <h2
         className={clsx(
-          "font-bold text-4xl transition-colors duration-300",
+          "font-bold text-2xl md:text-4xl transition-colors duration-300",
           isDark ? "text-white" : "text-black"
         )}
       >

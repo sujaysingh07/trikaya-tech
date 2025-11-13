@@ -16,23 +16,23 @@ const Navbar = () => {
     { id: "learn", label: "Learn", path: "/learn" },
     { id: "practice", label: "Practice", path: "/practice" },
     { id: "arena", label: "Arena", path: "/arena" },
-    { id: "mentorship", label: "Mentorship", path: "/mentorship" },
-    { id: "jobs", label: "Jobs & Internship", path: "/jobs-internship" },
-    { id: "community", label: "Community", path: "/community" },
-    { id: "business", label: "Business", path: "/business" },
-    { id: "resources", label: "Resources", path: "/resources" },
+    { id: "mentorship", label: "Mentorship", path: "/#" },
+    { id: "jobs", label: "Jobs & Internship", path: "/#" },
+    { id: "community", label: "Community", path: "/#" },
+    { id: "business", label: "Business", path: "/#" },
+    { id: "resources", label: "Resources", path: "/#" },
   ];
 
   // ✅ Scroll to section smoothly or navigate
   const handleNavigation = (id: string, path: string) => {
     const section = document.getElementById(id);
 
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      window.history.replaceState(null, "", `#${id}`);
-    } else {
+    // if (section) {
+    //   section.scrollIntoView({ behavior: "smooth" });
+    //   window.history.replaceState(null, "", `#${id}`);
+    // } else {
       router.push(path);
-    }
+    // }
 
     setIsOpen(false);
   };
@@ -56,12 +56,12 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-2 ">
           <Link href="/">
-          <Image
-          src="/logo/logo-trikaya-white.svg"
-          alt="Trikaya"
-          width={158}
-          height={49}
-          />
+            <Image
+              src="/logo/logo-trikaya-white.svg"
+              alt="Trikaya"
+              width={158}
+              height={49}
+            />
           </Link>
         </div>
 
@@ -77,8 +77,8 @@ const Navbar = () => {
                   className={`px-3 py-2 text-sm md:text-[13px] lg:text-[15px] font-semibold cursor-pointer  rounded-md transition-all duration-300 
             ${
               isActive
-                    ? " text-[#9ABCFF]"
-                    : "text-white hover:text-[#9ABCFF] hover:bg-primary/5"
+                ? " text-[#9ABCFF]"
+                : "text-white hover:text-[#9ABCFF] hover:bg-primary/5"
             }`}
                 >
                   {item.label}
@@ -88,12 +88,14 @@ const Navbar = () => {
           </div>
 
           {/* Launch App Button */}
-          <button
-            onClick={() => router.push("/app")}
-            className="px-[30px] w-full py-3 max-w-[155px] bg-black border-2 border-[#CCCCCC] text-white rounded-[10px] font-semibold font-base whitespace-nowrap hover:bg-gray-800 transition"
+          <Link
+            href="https://builder.trikaya.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-[30px] w-full py-3 max-w-[155px] bg-black border-2 border-[#CCCCCC] text-white rounded-[10px] font-semibold font-base whitespace-nowrap hover:bg-gray-800 transition inline-flex items-center justify-center"
           >
             Launch App
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -101,7 +103,11 @@ const Navbar = () => {
           className="md:hidden p-2 text-gray-800"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? (
+            <X size={24} color="white" />
+          ) : (
+            <Menu size={24} color="white" />
+          )}
         </button>
       </Container>
 
@@ -126,12 +132,14 @@ const Navbar = () => {
             );
           })}
 
-          <button
-            onClick={() => router.push("/app")}
-            className="w-full mt-3 px-4 py-2 bg-black text-white rounded-md font-medium hover:bg-gray-800 transition"
+          <Link
+            href="https://builder.trikaya.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-[30px] w-full py-3  bg-black border-2 border-[#CCCCCC] text-white rounded-[10px] font-semibold font-base whitespace-nowrap hover:bg-gray-800 transition inline-flex items-center justify-center"
           >
             Launch App
-          </button>
+          </Link>
         </div>
       )}
     </nav>

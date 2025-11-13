@@ -41,8 +41,22 @@ export default function Practice() {
     return (
       <>
         <Banner
-          title="Practice. Build. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-          //   title={" &nbsp;&nbsp;&nbsp;&nbsp; "}
+          title={
+            <>
+              {/* Mobile title → no spaces */}
+              <span className="block md:hidden">
+                Practice. Build.
+              </span>
+
+              {/* Desktop title → keep spaces */}
+              <span
+                className="hidden md:block"
+                dangerouslySetInnerHTML={{
+                  __html: "Practice. Build.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ",
+                }}
+              />
+            </>
+          }
           highlight={"Get Certified."}
           description="Trikaya's interactive labs and assignments let you apply what you learn in real-world simulations. Every completed task earns blockchain-verified proof of your skill mastery."
           image={practice}
@@ -55,6 +69,7 @@ export default function Practice() {
             href: "",
           }}
         />
+
         <CardGridSection
           heading={"Why Practice on"}
           highlight="Trikaya?"

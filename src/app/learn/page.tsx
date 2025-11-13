@@ -15,6 +15,7 @@ import SectionHeader from "@/src/components/common/SectionHeader";
 import Link from "next/link";
 import CallToAction from "@/src/components/common/CallToAction";
 import Code from "@/public/code.png"
+import GenericProfileCard from "@/src/components/Cards/Community-card";
 export default function Learn() {
   const LearnCards = [
     {
@@ -103,13 +104,30 @@ export default function Learn() {
           darkMode={false}
         />
 
+
         <FeatureSplitCard
-          title="Learn. Practice. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perfect Your Skills."
+          title={
+            <>
+              {/* Mobile title (no spaces) */}
+              <span className="block md:hidden">
+                Learn. Practice. Perfect Your Skills.
+              </span>
+
+              {/* Desktop title (with spacing) */}
+              <span
+                className="hidden md:block"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    "Learn. Practice.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perfect Your Skills.",
+                }}
+              />
+            </>
+          }
           description="Each learning path connects directly to Practice Labs — so you can code, test, and deploy what you learn instantly."
           buttonLabel="Open a Lab"
           buttonLink="#"
           image={Code}
-          reverse={true} // image on right
+          reverse={true}
           darkMode={false}
         />
 
@@ -122,7 +140,7 @@ export default function Learn() {
           />
           <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[35px] justify-items-center pt-10">
             {experts.map((expert, index) => (
-              <CommunityCard key={index} {...expert} />
+              <GenericProfileCard key={index} {...expert} />
             ))}
           </div>
 

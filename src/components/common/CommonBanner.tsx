@@ -74,7 +74,7 @@ const Banner: React.FC<BannerProps> = ({
                             transition={{ duration: 0.8, ease: "easeInOut" }}
                         >
                             <h2
-                                className="text-3xl sm:text-4xl lg:text-[70px] font-bold leading-[1.2]"
+                                className="text-3xl sm:text-4xl lg:text-[66px] font-bold leading-[1.2]"
                                 style={{ color: titleColor }}
                             >
                                 {title}{" "}

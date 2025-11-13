@@ -53,7 +53,7 @@ export default function Home() {
       secondaryButton: { label: "Take a Skill Check", href: "#" },
     },
     {
-      title: "Trikaya-Verified ",
+      title: "Trikaya-Verified",
       highlight: "CV",
       description:
         "Showcase your achievements with a blockchain-verified digital CV.",

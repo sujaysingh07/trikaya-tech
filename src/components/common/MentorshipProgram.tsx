@@ -18,7 +18,7 @@ export default function Mentorshipprogram() {
           "Present your work to a mentor and receive detailed improvement feedback.",
       },
       {
-        icon: "/icons/industryConnect.svg",
+        icon: "/icons/IndustryConnect.svg",
         title: "Industry Connect Track",
         description:
           "Network with professionals and learn real-world workflows.",

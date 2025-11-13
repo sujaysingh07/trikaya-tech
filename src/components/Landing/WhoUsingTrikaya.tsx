@@ -49,7 +49,7 @@ export default function WhoTrikaya() {
     <section className="py-12 ">
       <Container>
         <SectionHeader title={"Who’s using "} highlight="Trikaya?" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mt-10">
           {cards.map((card, index) => (
             <TrikayaCard
               key={index}

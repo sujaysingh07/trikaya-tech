@@ -74,51 +74,62 @@ export default function FeaturedJob() {
   }, [api]);
 
   return (
-    <section className="py-12" id='jobs'>
-        <Container>
+    <section className="py-12" id="jobs">
+      <Container>
+        <SectionHeader
+          title={"Featured "}
+          highlight="Jobs"
+          description="Explore opportunities from top companies hiring verified talent."
+        />
+        <div className="relative mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            setApi={setApi}
+            className="w-full"
+          >
+            <CarouselContent>
+              {jobs.map((job, index) => (
+                <CarouselItem
+                  key={index}
+                  className="basis-full sm:basis-1/2 lg:basis-1/3 px-3 py-4"
+                >
+                  <OfferCard {...job} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
-        <SectionHeader title={"Featured "} highlight="Jobs" description="Explore opportunities from top companies hiring verified talent."/>
-      <div className="relative mx-auto">
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          setApi={setApi}
-          className="w-full"
-        >
-          <CarouselContent>
-                      {jobs.map((job, index) => (
-              <CarouselItem
-                key={index}
-                className="basis-full sm:basis-1/2 lg:basis-1/3 px-3 py-4"
-              >
-                <OfferCard {...job} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-
-          <CarouselPrevious className="left-2 md:-left-10" />
-          <CarouselNext className="right-2 md:-right-10" />
-        </Carousel>
-
-        {/* ✅ Slide Dots */}
-        <div className="flex justify-center mt-6 space-x-2">
-          {scrollSnaps.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => api?.scrollTo(index)}
-              className={`w-3 h-1 rounded-full transition-all duration-300 ${
-                index === selectedIndex
-                  ? "bg-black scale-110"
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
+            {/* <CarouselPrevious className="left-2 md:-left-10" />
+          <CarouselNext className="right-2 md:-right-10" /> */}
+            <CarouselPrevious
+              className="left-2 md:-left-3.5 border-[3px] border-white bg-black hover:bg-black"
+              arrowColor="white"
             />
-          ))}
-        </div>
-      </div>
-          </Container>
 
+            <CarouselNext
+              className="right-2 md:-right-1 border-[3px] border-white bg-black hover:bg-black"
+              arrowColor="white"
+            />
+          </Carousel>
+
+          {/* ✅ Slide Dots */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {scrollSnaps.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`w-3 h-1 rounded-full transition-all duration-300 ${
+                  index === selectedIndex
+                    ? "bg-black scale-110"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </Container>
     </section>
   );
 }

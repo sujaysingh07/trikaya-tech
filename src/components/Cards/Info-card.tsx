@@ -27,7 +27,7 @@ export default function InfoCard({ icon, title, description, className }: InfoCa
                 />
             </div>
 
-            <h3 className="font-semibold text-lg text-[#03061E] group-hover:text-primary-color transition-colors">
+            <h3 className="font-semibold text-left text-lg text-[#03061E] group-hover:text-primary-color transition-colors">
                 {title}
             </h3>
 

@@ -1,6 +1,5 @@
 import Banner from "@/src/components/common/CommonBanner";
 import Engineer from "@/public/images/engineer-talk.png";
-import CompetetionCard from "@/src/components/Cards/Competetion-card";
 import Container from "@/src/components/ui/Container";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import rewards from "@/public/icons/Rewards.svg";
@@ -10,13 +9,11 @@ import WirelessNetwork from "@/public/icons/WirelessNetwork .svg";
 import HackathonSection from "@/src/components/common/Hackathon";
 import DailyWeeklyChallenges from "@/src/components/common/DailyWeekly";
 import SkillQuests from "@/src/components/common/SkillQuests";
-import Leaderboard, {
-  LeaderBoardType,
-} from "@/src/components/common/Leaderboard";
 import PerformanceCard from "@/src/components/Cards/Performance-card";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import GenericProfileCard from "@/src/components/Cards/Community-card";
 import CallToAction from "@/src/components/common/CallToAction";
+import { LeaderBoardType } from "@/src/components/common/Leaderboard";
 export type CompetitionType = {
   id: number;
   title: string;

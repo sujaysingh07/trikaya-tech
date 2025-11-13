@@ -1,61 +1,70 @@
 import Banner from "@/src/components/common/CommonBanner";
 import mentorship from "@/public/images/mentorship.png";
-import Container from "@/src/components/ui/Container";
-import directMessage from "@/public/icons/direct-message.svg";
-import calender from "@/public/icons/calendar.svg";
-import person from "@/public/icons/person.svg";
-import videoSession from "@/public/icons/video-session.svg";
-import SkillCard from "@/src/components/Cards/SkillCard";
-import Link from "next/link";
+import rewards from "@/public/icons/Rewards.svg";
+import problemSolving from "@/public/icons/ProblemSolving.svg";
+import NotVerified from "@/public/icons/NotVerified.svg";
+import WirelessNetwork from "@/public/icons/WirelessNetwork .svg";
+
+import CardGridSection from "@/src/components/common/CardGridSection";
+import TopRated from "@/src/components/common/TopRated";
+import Mentorshipprogram from "@/src/components/common/MentorshipProgram";
 export default function Mentorship() {
-  const skills = [
+  const mentorCards = [
     {
-      icon: videoSession,
-      title: "1-on-1 Video Sessions",
-      description: "Personal guidance from industry experts",
+      icon: rewards,
+      title: "Personalized Learning",
+      description: "Tailored guidance based on your current goals and skills.",
     },
     {
-      icon: directMessage,
-      title: "Direct Messaging",
-      description: "Ask questions anytime, get answers fast",
+      icon: problemSolving,
+      title: "1:1 or Group Sessions",
+      description:
+        "Book flexible sessions that suit your schedule and learning pace.",
     },
     {
-      icon: calender,
-      title: "Flexible Scheduling",
-      description: "Book sessions that fit your schedule",
+      icon: NotVerified,
+      title: "Career Support",
+      description: "Get resume reviews, interview prep, and portfolio advice.",
     },
     {
-      icon: person,
-      title: "Career Guidance",
-      description: "Resume reviews and interview preparation",
+      icon: WirelessNetwork,
+      title: "Verified Mentorship",
+      description:
+        "Your mentorship sessions are tracked and verifiable through Trikaya Protocol.",
     },
   ];
   return (
     <>
       <Banner
-        title={"Learn from the  "}
-        highlight={"Best"}
-        description="Get personalized guidance from 500+ expert mentors working at top tech companies."
+        title={"Learn from Mentors."}
+        highlight={"Grow with Guidance."}
+        description="Get personalized mentorship from industry professionals in Blockchain, AI, Data Science, and Cybersecurity. Build your skills faster, gain practical insights, and stay ahead of the curve with one-on-one sessions."
         image={mentorship}
         primaryButton={{
-          label: "Start Learning",
+          label: "Find a Mentor",
           href: "",
         }}
         secondaryButton={{
-          label: "Explore Labs",
+          label: "Become a Mentor",
           href: "",
         }}
       />
-      <section className="py-12">
+      <CardGridSection
+        heading={"Why Mentorship"}
+        highlight="Matters?"
+        description="Accelerate your growth with personalized learning experiences from experts who've been where you are."
+        cards={mentorCards}
+        headingAlign={"left"}
+      />
+      {/* <section className="py-12">
         <Container>
-          <div className="flex flex-col gap-3 ">
-            <h2 className="font-bold text-4xl">Get Personalized Guidance</h2>
-            <p className="text-base  max-w-2xl ">
-              Choose from four tech domains built for the future of work.
-            </p>
-          </div>
+          <SectionHeader
+            title="Why Mentorship "
+            highlight="Matters?"
+            description="Accelerate your growth with personalized learning experiences from experts who've been where you are."
+          />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
+            {mentorCards.map((skill, index) => (
               <SkillCard
                 key={index}
                 icon={skill.icon}
@@ -73,7 +82,10 @@ export default function Mentorship() {
             </Link>
           </div>
         </Container>
-      </section>
+      </section> */}
+
+      <TopRated/>
+      <Mentorshipprogram />
     </>
   );
 }

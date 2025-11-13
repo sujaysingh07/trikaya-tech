@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 interface BannerProps {
-    title: string;
+    title: string | React.ReactNode;
     highlight?: string;
     description: string;
     image: StaticImageData;
@@ -38,7 +38,7 @@ const Banner: React.FC<BannerProps> = ({
       <section className="relative w-full  bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2] overflow-hidden">
         {/* Background Image — only on right side */}
         <motion.div
-          key={title}
+          key={highlight}
           initial={{ opacity: 0, x: 80 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -80 }}
@@ -47,7 +47,7 @@ const Banner: React.FC<BannerProps> = ({
         >
           <Image
             src={image}
-            alt={title}
+            alt={highlight || "Banner Image"}
             fill
             quality={100}
             className="object-right object-contain scale-150"
@@ -67,7 +67,7 @@ const Banner: React.FC<BannerProps> = ({
             {/* Text Section */}
             <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
               <motion.div
-                key={title}
+                key={highlight}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -40 }}

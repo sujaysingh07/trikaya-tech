@@ -57,7 +57,7 @@ const opportunities = [
 
 export default function AssignmentChallenges() {
   return (
-    <section className="py-16 bg-[#F2F2F2]">
+    <section className="py-11 bg-[#F2F2F2]">
       <Container>
         <SectionHeader
           title="Assignments & "
@@ -91,7 +91,7 @@ export default function AssignmentChallenges() {
           ))}
         </div>
 
-        <div className="bg-primary-color p-6 sm:p-8 md:p-10 mt-16 rounded-[30px] flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
+        <div className="bg-primary-color p-6 sm:p-8 md:p-10 mt-11 rounded-[30px] flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
           {/* LEFT SECTION */}
           <div className="flex gap-4 sm:gap-6 md:gap-8 items-start">
             <Icons variant="ProgressCheck" className="min-w-[40px]" />

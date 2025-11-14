@@ -48,8 +48,8 @@ const StatCard = ({ value, suffix, label }:{value:number,suffix:string,label:str
 // ─── Stats Section ───────────────────────────────────────
 const StatsSection = () => {
     return (
-        <section>
-            <Container className="py-12">
+        <section className="mb-11">
+            <Container className="">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-10 text-center">
                     {statsData.map((stat, index) => (
                         <StatCard key={index} {...stat} />

@@ -74,14 +74,14 @@ export default function FeaturedJob() {
   }, [api]);
 
   return (
-    <section className="py-12" id="jobs">
+    <section className="mb-11" id="jobs">
       <Container>
         <SectionHeader
           title={"Featured "}
           highlight="Jobs"
           description="Explore opportunities from top companies hiring verified talent."
         />
-        <div className="relative mx-auto">
+        <div className="relative mx-auto mt-5">
           <Carousel
             opts={{
               align: "start",

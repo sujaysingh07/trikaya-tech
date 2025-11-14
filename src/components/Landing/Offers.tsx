@@ -75,7 +75,7 @@ export default function Offers() {
     }, [api]);
 
     return (
-      <section className="py-12">
+      <section className="mb-11">
         <Container>
           <div className="relative mx-auto">
             <Carousel

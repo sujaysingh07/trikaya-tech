@@ -44,9 +44,7 @@ export default function Practice() {
           title={
             <>
               {/* Mobile title → no spaces */}
-              <span className="block md:hidden">
-                Practice. Build.
-              </span>
+              <span className="block md:hidden">Practice. Build.</span>
 
               {/* Desktop title → keep spaces */}
               <span
@@ -73,6 +71,7 @@ export default function Practice() {
         <CardGridSection
           heading={"Why Practice on"}
           highlight="Trikaya?"
+          containerClassName="my-11"
           description="Build in real environments, track your progress, and earn verified credentials recognized by employers."
           cards={LearnCards}
         />
@@ -80,7 +79,7 @@ export default function Practice() {
         <AILab />
         <AssignmentChallenges />
         <Leaderboard />
-        <div className="py-12">
+        <div className="py-11">
           <InviteCard
             amount="₹500"
             amountSub="per successful referral"

@@ -55,7 +55,7 @@ const leaderboardData: LeaderBoardType[] = [
 
 export default function Leaderboard() {
   return (
-    <Container className="relative pt-16 overflow-hidden">
+    <Container className="relative pt-11 overflow-hidden">
       <div>
         <SectionHeader
           title="Leaderboard & "

@@ -56,7 +56,7 @@ const quests: Quest[] = [
 
 export default function SkillQuests() {
   return (
-    <Container className="py-12 ">
+    <Container className="py-11 ">
       {/* Heading */}
       <SectionHeader
         title="Skill "

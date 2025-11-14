@@ -52,7 +52,7 @@ const challenges: Challenge[] = [
 
 export default function DailyWeeklyChallenges() {
   return (
-    <section className="bg-black text-white py-12 px-4 sm:px-6 md:px-12">
+    <section className="bg-black text-white py-11">
       <Container>
         {/* Header */}
         <SectionHeader

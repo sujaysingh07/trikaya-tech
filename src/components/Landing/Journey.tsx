@@ -37,7 +37,7 @@ const journeyCards = [
 
 export default function Journey() {
     return (
-        <section className="py-12">
+        <section className="mb-11">
             <Container>
                 {/* Heading + Subtext */}
                 <SectionHeader title={"Your Complete "} highlight="Learning Journey" description="From beginner to job-ready professional - we've got everything you need."/>

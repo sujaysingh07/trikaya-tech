@@ -35,7 +35,7 @@ const Banner: React.FC<BannerProps> = ({
     highlightColor = "#0A58F5",
 }) => {
     return (
-      <section className="w-full bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2] overflow-hidden">
+      <section className="w-full bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2] overflow-hidden mb-11">
         <Container>
           <div
             className={cn(

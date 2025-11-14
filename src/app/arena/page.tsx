@@ -166,6 +166,8 @@ export default function Arena() {
       <CardGridSection
         heading={"Why Join the Trikaya "}
         highlight="Arena?"
+        containerClassName="my-11"
+        gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-11 "
         description="The ultimate space to test your skills, collaborate, and showcase verified achievements."
         cards={arenaCards}
         headingAlign={"left"}
@@ -182,7 +184,7 @@ export default function Arena() {
         <PerformanceCard
           leaderboardData={leaderboardData}
           buttonAlign="center"
-          className="my-10"
+          className="my-11"
           buttonText="View Full Leadership"
           description="Leaderboards reset every quarter."
           highlightText="Keep building!"
@@ -192,7 +194,7 @@ export default function Arena() {
           highlight="Champions"
           description="Meet Trikaya users who turned their Arena wins into job offers, internships, and projects."
         />
-        <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[35px] justify-items-center py-10">
+        <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[35px] justify-items-center py-11">
           {experts.map((expert, index) => (
             <GenericProfileCard
               key={index}

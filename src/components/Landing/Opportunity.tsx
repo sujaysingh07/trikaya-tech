@@ -44,7 +44,7 @@ const skills = [
 
 export default function Opportunity() {
     return (
-        <section className="pb-16 ">
+        <section className="mb-11 ">
             <Container>
                 {/* Heading */}
                 <SectionHeader title={"Features &  "} highlight="Opportunities" description="Everything you need to learn, practice, and land your dream tech role."/>

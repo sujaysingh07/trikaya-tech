@@ -4,7 +4,6 @@ import structuredLearning from "@/public/icons/structured-learning.svg";
 import ideaBulb from "@/public/icons/idea-bulb.svg";
 import Feedback from "@/public/icons/feedback.svg";
 import careerIntegration from "@/public/icons/career-integration.svg";
-import PracticeSection from "@/src/components/common/PracticeSection";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import BlockchainLab from "@/src/components/common/BlockchainLab";
 import AILab from "@/src/components/common/AI-lab";

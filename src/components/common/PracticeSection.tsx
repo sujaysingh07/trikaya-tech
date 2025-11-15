@@ -7,7 +7,7 @@ import SectionHeader from "./SectionHeader";
 const opportunities = [
   {
     id: 1,
-    bgImage: "/images/Blockchain.png",
+    bgImage: "/Blocks.png",
     title: "Blockchain",
     description: "Learn smart contracts, DeFi, NFTs, and dApp development.",
     learners: "1,200+",

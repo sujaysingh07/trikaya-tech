@@ -6,52 +6,53 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 interface BannerProps {
-    title: string;
-    highlight?: string;
-    description: string;
-    image: StaticImageData;
-    primaryButton: {
-        label: string;
-        href: string;
-    };
-    secondaryButton?: {
-        label: string;
-        href: string;
-    };
-    reverse?: boolean;
-    titleColor?: string;
-    highlightColor?: string;
+  title: string;
+  highlight?: string;
+  description: string;
+  image: StaticImageData;
+  primaryButton: {
+    label: string;
+    href: string;
+  };
+  secondaryButton?: {
+    label: string;
+    href: string;
+  };
+  reverse?: boolean;
+  titleColor?: string;
+  highlightColor?: string;
 }
 
 const Banner: React.FC<BannerProps> = ({
-    title,
-    highlight,
-    description,
-    image,
-    primaryButton,
-    secondaryButton,
-    reverse = false,
-    titleColor = "#000000",
-    highlightColor = "#0A58F5",
+  title,
+  highlight,
+  description,
+  image,
+  primaryButton,
+  secondaryButton,
+  reverse = false,
+  titleColor = "#000000",
+  highlightColor = "#0A58F5",
 }) => {
-    return (
-      <section className="w-full bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2] overflow-hidden mb-11">
-        <Container>
-          <div
-            className={cn(
-              "flex flex-col-reverse md:flex-row items-center justify-between py-16 gap-12 md:gap-20",
-              reverse && "md:flex-row-reverse"
-            )}
-          >
-            {/* Left Text Section (Smooth Animated Entry) */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
-              <div className="max-w-[550px] mx-auto md:mx-0">
+  return (
+    <section className="w-full bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2] overflow-hidden mb-11">
+      <Container>
+        <div
+          className={cn(
+            "flex flex-col-reverse md:flex-row items-center justify-between py-10 md:py-16 gap-12 md:gap-20",
+            reverse && "md:flex-row-reverse"
+          )}
+        >
+          {/* LEFT SECTION */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
+            <div className="max-w-[550px] mx-auto md:mx-0">
+              <AnimatePresence mode="wait">
                 <motion.div
-                  key={title}
+                  key={title + "-text"}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -40 }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  transition={{ duration: 0.7, ease: "easeInOut" }}
                 >
                   <h2
                     className="text-3xl sm:text-4xl lg:text-[70px] font-bold leading-[1.2]"
@@ -75,6 +76,7 @@ const Banner: React.FC<BannerProps> = ({
                     >
                       {primaryButton.label}
                     </Link>
+
                     {secondaryButton && (
                       <Link
                         href={secondaryButton.href}
@@ -85,37 +87,38 @@ const Banner: React.FC<BannerProps> = ({
                     )}
                   </div>
                 </motion.div>
-              </div>
-            </div>
-
-            {/* Right Image Section (Fixed Space, Smooth Animation) */}
-            <div className="w-full md:w-1/2 flex justify-center md:justify-end md:min-h-[450px]">
-              <div className="relative w-full sm:w-[400px] md:w-[480px] lg:w-[550px] overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={title}
-                    initial={{ opacity: 0, x: 80 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -80 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="w-full h-full"
-                  >
-                    <Image
-                      src={image}
-                      alt={title}
-                      width={800}
-                      height={500}
-                      className="w-full h-auto object-cover"
-                      priority
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+              </AnimatePresence>
             </div>
           </div>
-        </Container>
-      </section>
-    );
+
+          {/* RIGHT IMAGE SECTION */}
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end md:min-h-[450px]">
+            <div className="relative w-full sm:w-[400px] md:w-[480px] lg:w-[550px] min-h-[260px] overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={title + "-image"}
+                  initial={{ opacity: 0, x: 80 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -80 }}
+                  transition={{ duration: 0.7, ease: "easeInOut" }}
+                  className="w-full h-full"
+                >
+                  <Image
+                    src={image}
+                    alt={title}
+                    width={800}
+                    height={500}
+                    className="w-full h-auto object-contain"
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
 };
 
 export default Banner;

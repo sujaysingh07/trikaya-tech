@@ -8,7 +8,7 @@ import Link from "next/link";
 const opportunities = [
   {
     id: 1,
-    bgImage: "/Blockchain.png",
+    bgImage: "/images/Blockchain.png",
     title: "Blockchain Assignments",
     description: "Smart contract development and blockchain architecture",
     tasks: "24 Tasks",

@@ -39,7 +39,7 @@ const Banner: React.FC<BannerProps> = ({
         <Container>
           <div
             className={cn(
-              "flex flex-col-reverse md:flex-row items-center justify-between py-16 gap-12 md:gap-20",
+              "flex flex-col-reverse md:flex-row items-center justify-between py-10 md:py-16 gap-12 md:gap-20",
               reverse && "md:flex-row-reverse"
             )}
           >

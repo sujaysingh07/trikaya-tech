@@ -90,15 +90,15 @@ export default function Practice() {
           />
         </div>
         <CallToAction
-          title="Start Your Learning Journey Today"
+          title="Start Practicing. Get Blockchain-Verified."
           subtitle={
             <>
-              Join thousands of learners mastering Blockchain, AI, Data, and{" "}
-              <br />
-              Cybersecurity with Trikaya.
+              Join thousands of learners building real skills through
+              Trikaya&apos;s Blockchain <br />
+              and AI Labs.
             </>
           }
-          buttons={[{ label: "Explore Labs", href: "#", variant: "secondary" }]}
+          buttons={[{ label: "Join Now", href: "#", variant: "secondary" }]}
           showRocketBg={true}
         />
       </>

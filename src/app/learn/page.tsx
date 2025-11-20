@@ -10,7 +10,6 @@ import BlackFluidSection from "@/src/components/common/BlackFluidSection";
 import FeatureSplitCard from "@/src/components/common/ScaleGrid";
 import certifiedImage from "@/public/images/earn-certificate.png";
 import Container from "@/src/components/ui/Container";
-import CommunityCard from "@/src/components/Cards/Community-card";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import Link from "next/link";
 import CallToAction from "@/src/components/common/CallToAction";

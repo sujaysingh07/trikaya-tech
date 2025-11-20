@@ -1,71 +1,110 @@
 import Link from "next/link";
 import React from "react";
 
-export interface HackathonBannerProps {
+export interface GenericBannerProps {
   title?: React.ReactNode;
   subtitle?: React.ReactNode;
   ctaLabel?: string;
   ctaHref?: string;
+  bottomText?: React.ReactNode;
+  bottomHref?: string;
+  bottomIcon?: React.ReactNode;
   className?: string;
   bgColor?: string;
 }
 
-export default function HackathonBanner({
-  title = "Top 3 winners from each hackathon receive blockchain-verified certificates and exclusive job interviews.",
-  ctaLabel = "Explore All Hackathons",
+export default function GenericBanner({
+  title = "Matched by Trikaya AI",
+  subtitle = "Let Trikaya AI analyze your verified profile and recommend jobs and learning paths that fit your goals.",
+  ctaLabel = "Get My Matches",
   ctaHref = "#",
+  bottomText = "Update your skills and learning progress to improve your AI match score.",
+  bottomHref = "#",
+  bottomIcon,
   className = "",
   bgColor = "#1F62E6",
-}: HackathonBannerProps) {
+}: GenericBannerProps) {
   return (
     <section className={`w-full ${className}`}>
       <div
         className="
-          mx-auto 
-          rounded-[30px] 
-          py-6 sm:py-8 md:py-12 
-          px-4 sm:px-6 
+          mx-auto
+          rounded-[20px]
+          py-8
+          px-4 sm:px-6
           text-center
         "
         style={{
           background: bgColor,
-          borderRadius: 24,
         }}
       >
+        {/* MAIN CONTENT */}
         <div className="max-w-4xl mx-auto">
-          <h3
-            className="
-              text-white 
-              text-base sm:text-lg md:text-2xl 
-              font-semibold 
-              leading-snug
-            "
-          >
-            {title}
-          </h3>
+          {title && (
+            <h3 className="text-[#FFFFFF] text-xl sm:text-2xl font-semibold">
+              {title}
+            </h3>
+          )}
 
-          <div className="mt-6 sm:mt-8">
+          {subtitle && (
+            <p className="text-[#FFFFFF] text-[28px] mt-2 leading-9 font-light tracking-tighter">
+              {subtitle}
+            </p>
+          )}
+
+          {ctaLabel && (
+            <div className="mt-6 sm:mt-8">
+              <Link
+                href={ctaHref}
+                className="
+                  inline-block
+                  bg-white
+                  text-black
+                  font-semibold
+                  text-sm sm:text-base
+                  rounded-md
+                  px-5 sm:px-6
+                  py-3
+                  shadow-sm
+                  hover:shadow-md
+                  transition
+                "
+              >
+                {ctaLabel}
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* BOTTOM INFO LINE */}
+        {(bottomText || bottomHref) && (
+          <div className="mt-6 flex justify-center">
             <Link
-              href={ctaHref}
+              href={bottomHref || "#"}
               className="
-                inline-block 
-                bg-white 
-                text-black 
-                font-bold 
-                text-[16px] sm:text-[18px] 
-                rounded-md 
-                px-5 sm:px-6 
-                py-3 
-                shadow-sm 
-                hover:shadow-md 
+                flex items-center gap-1
+                bg-transparent
+                text-[#FFFFFF] sm:text-sm
+                px-4 py-2
+                font-light
+                text-base
+                leading-[25px]
+                tracking-[.5%]
+                rounded-md
+                border border-[#CCCCCC]
+                backdrop-blur-sm
+                hover:bg-white/20
                 transition
+                max-w-[1043px]
+                w-full
+                justify-center
               "
-              aria-label={ctaLabel}
             >
-              {ctaLabel}
+              {bottomIcon && <span>{bottomIcon}</span>}
+              {bottomText}
             </Link>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

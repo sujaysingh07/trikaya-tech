@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import clsx from "clsx";
+import { Icons } from "@/public/icons/icon";
 
 interface GenericProfileCardProps {
   name: string;
@@ -67,18 +68,7 @@ export default function GenericProfileCard({
         </div>
         {isFeatured && (
           <div className="bg-[#1D4ED8] bg-linear-to-r from-primary-color to-[#06348F] -mt-5 text-white text-base font-semibold px-3 py-1 rounded-full mb-2 flex items-center gap-1">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 27 26"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.3149 0L17.7751 7.86118L26.6297 9.67376L20.5316 16.3448L21.5439 25.3262L13.3149 21.588L5.08595 25.3262L6.09832 16.3448L0.000149727 9.67376L8.85483 7.86118L13.3149 0Z"
-                fill="#F5A70A"
-              />
-            </svg>
+            <Icons variant="Stars" />
             Featured
           </div>
         )}
@@ -110,20 +100,11 @@ export default function GenericProfileCard({
         {showRating && rating && (
           <div className="flex items-center gap-1 mt-3 text-sm font-medium">
             <span style={{ color: ratingColor }}>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 27 26"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.3149 0L17.7751 7.86118L26.6297 9.67376L20.5316 16.3448L21.5439 25.3262L13.3149 21.588L5.08595 25.3262L6.09832 16.3448L0.000149727 9.67376L8.85483 7.86118L13.3149 0Z"
-                  fill="#F5A70A"
-                />
-              </svg>
+              <Icons variant="Stars" />
             </span>
-            <span className="text-[#111827] font-bold text-base">{rating}/5</span>
+            <span className="text-[#111827] font-bold text-base">
+              {rating}/5
+            </span>
           </div>
         )}
       </div>

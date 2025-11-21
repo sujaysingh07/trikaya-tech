@@ -12,7 +12,6 @@ const Navbar = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-
   const router = useRouter();
   const pathname = usePathname();
 
@@ -35,6 +34,7 @@ const Navbar = () => {
 
     { id: "community", label: "Community", path: "/community" },
     { id: "business", label: "Business", path: "/business" },
+    { id: "ambassdor", label: "Ambassdor", path: "/ambassdor" },
     { id: "resources", label: "Resources", path: "/resources" },
   ];
 

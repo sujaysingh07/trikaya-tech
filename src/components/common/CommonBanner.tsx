@@ -9,7 +9,7 @@ interface BannerProps {
     title: string | React.ReactNode;
     highlight?: string;
     description: string;
-    image: StaticImageData;
+    image: string | StaticImageData;
     primaryButton: {
         label: string;
         href: string;

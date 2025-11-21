@@ -253,7 +253,7 @@ export default function Community() {
         title={"Learn Together. Build Together."}
         highlight={"Grow Together."}
         description="Join the Trikaya Community — where innovators, learners, and mentors collaborate on emerging technologies, share knowledge, and celebrate verified achievements."
-        image={mentorship}
+        image="/community.png"
         primaryButton={{
           label: "Join the Community",
           href: "",

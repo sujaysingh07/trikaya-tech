@@ -25,7 +25,6 @@ const Navbar = () => {
     {
       id: "jobs",
       label: "Jobs & Internship",
-      path: "/",
       children: [
         { id: "jobs-page", label: "Jobs", path: "/jobs" },
         { id: "internships-page", label: "Internships", path: "/internships" },
@@ -84,7 +83,10 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <div className="flex items-center gap-2">
             {navItems.map((item) => {
-              const isActive = pathname === item.path;
+              const isActive =
+                item.children?.some((child) => child.path === pathname) ||
+                pathname === item.path;
+
 
               // If it has children → DROPDOWN
               if (item.children) {
@@ -165,7 +167,10 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden px-4 pb-4 space-y-3 bg-white border-t border-gray-100">
           {navItems.map((item) => {
-            const isActive = pathname === item.path;
+const isActive =
+  item.children?.some((child) => child.path === pathname) ||
+  pathname === item.path;
+
 
             // If has children → COLLAPSIBLE SUBMENU
             if (item.children) {

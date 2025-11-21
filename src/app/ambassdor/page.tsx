@@ -211,7 +211,7 @@ export default function Ambassdor() {
         title={"Lead Innovation on "}
         highlight={"Your Campus."}
         description="Join the Trikaya Student Ambassador Program — become the face of emerging technology in your college, connect with mentors, host events, and grow your career with verified leadership credentials."
-        image={mentorship}
+        image="/ambassdor.png"
         primaryButton={{
           label: "Apply Now",
           href: "",

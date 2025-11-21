@@ -3,6 +3,7 @@ import Container from "../ui/Container";
 import InfoCard from "../Cards/Info-card";
 import CompanyLogoCard from "../Cards/CompanyLogo-card";
 import { StaticImageData } from "next/image";
+import AmbassadorCard from "../Cards/Ambassdor-level-card";
 
 interface CardItem {
   icon?: string | StaticImageData;
@@ -10,6 +11,7 @@ interface CardItem {
   description?: string;
   subtitle?: string;
   button?:string
+  level?: number;
 }
 
 interface CardGridSectionProps {
@@ -20,7 +22,7 @@ interface CardGridSectionProps {
   gridClassName?: string;
   headingAlign?: "left" | "center";
   description?: string;
-  cardType?: "info" | "company";
+  cardType?: "info" | "company" | "ambassador";
   button?:string
 }
 
@@ -60,30 +62,39 @@ export default function CardGridSection({
         {/* Cards */}
         <div className={gridClassName}>
           {cards.map((card, index) => {
-            // Company Card
-            if (cardType === "company") {
-              if (!card.icon) return null; // Prevent TypeScript error
+            switch (cardType) {
+              case "company":
+                if (!card.icon) return null;
+                return (
+                  <CompanyLogoCard
+                    key={index}
+                    logo={card.icon}
+                    name={card.title}
+                  />
+                );
 
-              return (
-                <CompanyLogoCard
-                  key={index}
-                  logo={card.icon}
-                  name={card.title}
-                />
-              );
+              case "ambassador":
+                return (
+                  <AmbassadorCard
+                    key={index}
+                    level={card.level || 1}
+                    title={card.title || ""}
+                    description={card.description || ""}
+                  />
+                );
+
+              default:
+                return (
+                  <InfoCard
+                    key={index}
+                    icon={card.icon!}
+                    title={card.title || ""}
+                    subTitle={card.subtitle || ""}
+                    button={button || ""}
+                    description={card.description || ""}
+                  />
+                );
             }
-
-            // Default → InfoCard
-            return (
-              <InfoCard
-                key={index}
-                icon={card.icon!}
-                title={card.title || ""}
-                subTitle={card.subtitle || ""}
-                button={button || ""}
-                description={card.description || ""}
-              />
-            );
           })}
         </div>
       </Container>

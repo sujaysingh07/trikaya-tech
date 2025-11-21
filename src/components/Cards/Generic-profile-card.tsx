@@ -13,8 +13,6 @@ interface GenericProfileCardProps {
   buttonText?: string;
   variant?: "default" | "arena" | "community";
   className?: string;
-
-  // NEW FIELDS (optional)
   isFeatured?: boolean;
   rating?: number;
   showRating?: boolean;

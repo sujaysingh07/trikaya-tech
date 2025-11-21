@@ -96,33 +96,29 @@ export default function Business() {
     },
   ];
 
-    const institutionCards = [
-      {
-        icon: "/icons/Clipboard.svg",
-        title: "XYZ University",
-        subtitle: "Blockchain-Enabled Student Records",
-        description:
-          "Implemented blockchain verification for 10,000+ students, improving placement rates by 35%.",
-      },
-      {
-        icon: "/icons/Clipboard.svg",
-        title: "Tech Corp Inc.",
-        subtitle: "AI-Powered Campus Hiring",
-        description:
-          "Reduced hiring time by 50% using Trikaya's verified talent pool and smart matching.",
-      },
-      {
-        icon: "/icons/Clipboard.svg",
-        title: "National Institute",
-        subtitle: "Integrated Learning Ecosystem",
-        description:
-          "Enhanced curriculum with industry-aligned courses, achieving 90% student engagement.",
-      },
-    ];
-
-
-
-
+  const institutionCards = [
+    {
+      icon: "/icons/Clipboard.svg",
+      title: "XYZ University",
+      subtitle: "Blockchain-Enabled Student Records",
+      description:
+        "Implemented blockchain verification for 10,000+ students, improving placement rates by 35%.",
+    },
+    {
+      icon: "/icons/Clipboard.svg",
+      title: "Tech Corp Inc.",
+      subtitle: "AI-Powered Campus Hiring",
+      description:
+        "Reduced hiring time by 50% using Trikaya's verified talent pool and smart matching.",
+    },
+    {
+      icon: "/icons/Clipboard.svg",
+      title: "National Institute",
+      subtitle: "Integrated Learning Ecosystem",
+      description:
+        "Enhanced curriculum with industry-aligned courses, achieving 90% student engagement.",
+    },
+  ];
 
   const partnerModelCards = [
     {
@@ -228,13 +224,9 @@ export default function Business() {
       />
 
       <CallToAction
-        title="Build Your Future with Trikaya"
-        subtitle={
-          <>Find the right opportunity. Get verified. Grow your career.</>
-        }
-        buttons={[
-          { label: "Get Started Now", href: "#", variant: "secondary" },
-        ]}
+        title="Our Partners & Accreditations"
+        subtitle={<></>}
+        buttons={[]}
         showRocketBg={true}
       />
     </>

@@ -27,22 +27,22 @@ export default function JobCard({
       <div className="flex items-center gap-2">
         <span
           className={clsx(
-            "px-3 py-1 text-[16px] font-medium  rounded-full",
-            `${employmentType}` === "Internship"
-              ? " bg-[#EBEAEA] text-[#666666]"
+            "px-3 py-1 text-[16px] font-medium rounded-full",
+            ["Internship", "Summer", "Summer 2025"].includes(employmentType)
+              ? "bg-[#EBEAEA] text-[#666666]"
               : "bg-primary-color text-white"
           )}
         >
           {employmentType}
         </span>
         <span className="px-3  gap-1 py-1 text-base flex items-center font-medium bg-[#D6E4FF] text-primary-color rounded-full">
-          <Icons variant="VerifiedBadge" />
+          <Icons variant="VerifiedBadge" color="#0A58F5" />
           Verified
         </span>
       </div>
 
       {/* Job Title & Company */}
-      <div className="flex flex-col gap-1"> 
+      <div className="flex flex-col gap-1">
         <h3 className="text-xl font-semibold">{title}</h3>
         <p className="text-base text-[#03061E]">{company}</p>
       </div>

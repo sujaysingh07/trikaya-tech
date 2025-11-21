@@ -14,12 +14,12 @@ export interface GenericBannerProps {
 }
 
 export default function GenericBanner({
-  title = "Matched by Trikaya AI",
-  subtitle = "Let Trikaya AI analyze your verified profile and recommend jobs and learning paths that fit your goals.",
+  title = "",
+  subtitle = "",
   ctaLabel = "Get My Matches",
   ctaHref = "#",
-  bottomText = "Update your skills and learning progress to improve your AI match score.",
-  bottomHref = "#",
+  bottomText = "",
+  bottomHref = "",
   bottomIcon,
   className = "",
   bgColor = "#1F62E6",
@@ -41,7 +41,7 @@ export default function GenericBanner({
         {/* MAIN CONTENT */}
         <div className="max-w-4xl mx-auto">
           {title && (
-            <h3 className="text-[#FFFFFF] text-xl sm:text-2xl font-semibold">
+            <h3 className="text-[#FFFFFF] text-[36px] sm:text-2xl font-bold ">
               {title}
             </h3>
           )}

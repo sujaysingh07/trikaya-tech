@@ -7,13 +7,14 @@ import problemSolving from "@/public/icons/Star-employee.svg";
 import NotVerified from "@/public/icons/SecurityCv.svg";
 import WirelessNetwork from "@/public/icons/BusinessTips.svg";
 import Container from "@/src/components/ui/Container";
-import Link from "next/link";
 import FeatureSplitCardThree from "@/src/components/common/ScaleGridThree";
-import mentor from "@/public/images/mentors/Mentor.jpg";
 import certifiedImage from "@/public/Ai-bg.png";
 import GenericBanner from "@/src/components/common/GenericBanner";
 import { Icons } from "@/public/icons/icon";
 import SectionHeader from "@/src/components/common/SectionHeader";
+import GenericButton from "@/src/components/common/GenericButton";
+import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
+import CallToAction from "@/src/components/common/CallToAction";
 export default function JobsInternship() {
   const mentorCards = [
     {
@@ -91,7 +92,7 @@ export default function JobsInternship() {
     },
   ];
 
-   const ImpressCards = [
+  const ImpressCards = [
     {
       id: 1,
       title: "Role-Based Question Banks",
@@ -113,7 +114,41 @@ export default function JobsInternship() {
       icon: "/icons/assessment-lab.svg",
     },
   ];
+  const companyCards = [
+    { icon: "/icons/assessment-lab.svg", title: "Company" },
+    { icon: "/icons/assessment-lab.svg", title: "Company" },
+    { icon: "/icons/assessment-lab.svg", title: "Company" },
+    { icon: "/icons/assessment-lab.svg", title: "Company" },
+    { icon: "/icons/assessment-lab.svg", title: "Company" },
+    { icon: "/icons/assessment-lab.svg", title: "Company" },
+    { icon: "/icons/assessment-lab.svg", title: "Company" },
+    { icon: "/icons/assessment-lab.svg", title: "Company" },
+  ];
 
+  const experts = [
+    {
+      name: "Arjun Patel",
+      title: "AI Engineer at Microsoft",
+      quote:
+        "Completed Blockchain Lab → Earned Verified CV → Hired at Microsoft",
+      image: "/images/Arav.jpg",
+    },
+    {
+      name: "Priya Sharma",
+      title: "Data Scientist at Google",
+      description: "",
+      image: "/images/Diya.jpg",
+      quote: "Built 5 verified projects → AI Match Score 95% → Joined Google",
+    },
+    {
+      name: "Rahul Mehta",
+      title: "Blockchain Developer at Coinbase",
+      description: "",
+      image: "/images/Rohan.jpg",
+      quote:
+        "Trikaya-Verified CV → 3 interviews in 1 week → Offer from Coinbase",
+    }
+  ];
 
   return (
     <>
@@ -204,22 +239,53 @@ export default function JobsInternship() {
           gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-11"
           headingAlign={"left"}
         />
-        <div className="flex justify-center items-center pb-10">
-          <Link
-            href={""}
-            className="block text-center bg-primary-color  hover:bg-[#0048d9] text-white font-semibold text-base leading-[100%] px-4 py-4 rounded-md transition"
-          >
-            Start Interview Prep
-          </Link>
-        </div>
+        <GenericButton
+          label="Start Interview Prep"
+          href="/interview-prep"
+          variant="primary"
+          align="center"
+        />
         <CardGridSection
           heading={"Trusted by Employers  "}
           highlight="Worldwide"
           containerClassName="my-11"
           description="Companies hiring through Trikaya's verified ecosystem."
-          cards={ImpressCards}
-          gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-11"
+          cards={companyCards}
+          gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-11"
           headingAlign={"left"}
+          cardType="company"
+        />
+        <GenericButton
+          label="View All Hiring Partners"
+          href="/hiring-partners"
+          variant="secondary"
+          align="center"
+        />
+        <Container>
+          <SectionHeader
+            title="Success  "
+            highlight="Stories"
+            description="Meet learners who landed their dream jobs through Trikaya."
+          />
+          <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[35px] justify-items-center py-11">
+            {experts.map((expert, index) => (
+              <GenericProfileCard
+                key={index}
+                {...expert}
+                buttonText="Read Full Story"
+              />
+            ))}
+          </div>
+        </Container>
+        <CallToAction
+          title="Build Your Future with Trikaya"
+          subtitle={
+            <>Find the right opportunity. Get verified. Grow your career.</>
+          }
+          buttons={[
+            { label: "Get Started Now", href: "#", variant: "secondary" },
+          ]}
+          showRocketBg={true}
         />
       </section>
     </>

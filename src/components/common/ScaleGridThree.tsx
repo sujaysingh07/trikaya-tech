@@ -25,7 +25,7 @@ interface FeatureSplitCardThreeProps {
   buttonLabel?: string;
   buttonLink?: string;
 
-  image?: string | StaticImageData ;
+  image?: string | StaticImageData;
   reverse?: boolean;
   darkMode?: boolean;
 }
@@ -45,7 +45,7 @@ export default function FeatureSplitCardThree({
   buttonLabel = "Generate My Verified CV",
   buttonLink = "#",
 
-  image ="",
+  image = "",
   reverse = false,
   darkMode = false,
 }: FeatureSplitCardThreeProps) {
@@ -138,12 +138,20 @@ export default function FeatureSplitCardThree({
               key={index}
               className="flex justify-between bg-[#F2F6FF] border border-[#CCCCCC] py-3.5 px-5 rounded-[12px]"
             >
-              <span>{item.label}</span>
-
-              <span className="flex gap-2 items-center bg-[#D6E4FF] px-2.5 py-0.5 rounded-full">
-                <Icons variant="VerifiedBadge" />
-                Verified
+              <span className="text-[22px] font-semibold leading-[25px] tracking-[0.5%]">
+                {item.label}
               </span>
+              {["AI Match: 94%"].includes(item.label) ? (
+                <span className="flex gap-2 items-center text-[#1D9402] bg-[#CFFFC5] px-2.5 py-0.5 rounded-full">
+                  <Icons variant="VerifiedBadge" color="#1D9402" />
+                  Active
+                </span>
+              ) : (
+                <span className="flex gap-2 items-center text-primary-color bg-[#D6E4FF] px-2.5 py-0.5 rounded-full">
+                  <Icons variant="VerifiedBadge" color="#0A58F5" />
+                  Verified
+                </span>
+              )}
             </div>
           ))}
         </div>

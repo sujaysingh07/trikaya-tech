@@ -4,10 +4,26 @@ import rewards from "@/public/icons/Rewards.svg";
 import problemSolving from "@/public/icons/ProblemSolving.svg";
 import NotVerified from "@/public/icons/NotVerified.svg";
 import WirelessNetwork from "@/public/icons/WirelessNetwork .svg";
-
+import mentor from "@/public/images/mentors/Mentor.jpg";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import TopRated from "@/src/components/common/TopRated";
 import Mentorshipprogram from "@/src/components/common/MentorshipProgram";
+import Container from "@/src/components/ui/Container";
+import FeatureSplitCardTwo from "@/src/components/common/ScaleGridTwo";
+import SectionHeader from "@/src/components/common/SectionHeader";
+import SkillCard from "@/src/components/Cards/SkillCard";
+import Link from "next/link";
+import LearnerCard from "@/src/components/Cards/Learner-card";
+import CallToAction from "@/src/components/common/CallToAction";
+export interface LearnerTestimonial {
+  id: number;
+  name: string;
+  rating: string;
+  review: string;
+  mentor: string;
+  image: string;
+}
+
 export default function Mentorship() {
   const mentorCards = [
     {
@@ -33,6 +49,36 @@ export default function Mentorship() {
         "Your mentorship sessions are tracked and verifiable through Trikaya Protocol.",
     },
   ];
+ const learnerTestimonials: LearnerTestimonial[] = [
+   {
+     id: 1,
+     name: "Alex Kumar",
+     rating: "4.8/5",
+     review:
+       "My mentor helped me land my dream job at a top tech company. The personalised guidance made all the difference!",
+     mentor: "Sarah Johnson, AI Specialist",
+     image: "/images/mentors/learner1.png",
+   },
+   {
+     id: 2,
+     name: "Maria Garcia",
+     rating: "4.8/5",
+     review:
+       "The project review sessions gave me insights I couldn't find anywhere else. My portfolio improved dramatically.",
+     mentor: "Rahul Singh, Blockchain Architect",
+     image: "/images/mentors/learner2.png",
+   },
+   {
+     id: 3,
+     name: "James Wilson",
+     rating: "4.8/5",
+     review:
+       "Trikaya mentorship accelerated my learning by months. The practical advice was invaluable for my career transition.",
+     mentor: "Emily Chen, Data Science Lead",
+     image: "/images/mentors/learner3.png",
+   },
+ ];
+
   return (
     <>
       <Banner
@@ -52,40 +98,57 @@ export default function Mentorship() {
       <CardGridSection
         heading={"Why Mentorship"}
         highlight="Matters?"
+        containerClassName="my-11"
         description="Accelerate your growth with personalized learning experiences from experts who've been where you are."
         cards={mentorCards}
         headingAlign={"left"}
       />
-      {/* <section className="py-12">
-        <Container>
-          <SectionHeader
-            title="Why Mentorship "
-            highlight="Matters?"
-            description="Accelerate your growth with personalized learning experiences from experts who've been where you are."
-          />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {mentorCards.map((skill, index) => (
-              <SkillCard
-                key={index}
-                icon={skill.icon}
-                title={skill.title}
-                description={skill.description}
-              />
-            ))}
-          </div>
-          <div className="flex justify-center my-[50px]">
-            <Link
-              href="#"
-              className="px-6 py-3 bg-primary-color text-white rounded-md text-lg font-semibold hover:bg-primary-color/90 transition"
-            >
-              Find Your Mentor
-            </Link>
-          </div>
-        </Container>
-      </section> */}
 
-      <TopRated/>
+      <TopRated />
       <Mentorshipprogram />
+      <Container>
+        <FeatureSplitCardTwo
+          title="How Mentor Profiles Work"
+          description="Each mentor profile showcases expertise, session format, reviews, and availability."
+          buttonLabel="Explore All Mentors"
+          buttonLink="#"
+          image={mentor}
+          reverse={false} // image on left
+          darkMode={false}
+        />
+        <SectionHeader
+          title="What Learners "
+          highlight="Say"
+          className="mt-11 md:mt-0"
+          description="Hear from learners who grew their careers with Trikaya mentorship."
+        />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 my-11">
+          {learnerTestimonials.map((item) => (
+            <LearnerCard key={item.id} {...item} />
+          ))}
+        </div>
+      </Container>
+      <CallToAction
+        title="Share Your Knowledge. Become a Mentor."
+        subtitle={
+          <>
+            Empower the next generation of tech professionals. Join
+            Trikaya&apos;s verified
+            <br />
+            mentorship network and guide learners in your domain.
+          </>
+        }
+        buttons={[
+          {
+            label: "Apply to Become a Mentor",
+            href: "#",
+            variant: "primary",
+          },
+          { label: "Learn How It Works", href: "#", variant: "secondary" },
+        ]}
+        showRocketBg={true}
+      />
     </>
   );
 }

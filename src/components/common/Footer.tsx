@@ -190,7 +190,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="/privacy-policy"
                       className="hover:text-white transition-colors"
                     >
                       Privacy Policy
@@ -198,7 +198,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="/terms-of-service"
                       className="hover:text-white transition-colors"
                     >
                       Terms of Services

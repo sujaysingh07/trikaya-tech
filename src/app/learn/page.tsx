@@ -10,12 +10,11 @@ import BlackFluidSection from "@/src/components/common/BlackFluidSection";
 import FeatureSplitCard from "@/src/components/common/ScaleGrid";
 import certifiedImage from "@/public/images/earn-certificate.png";
 import Container from "@/src/components/ui/Container";
-import CommunityCard from "@/src/components/Cards/Community-card";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import Link from "next/link";
 import CallToAction from "@/src/components/common/CallToAction";
 import Code from "@/public/code.png"
-import GenericProfileCard from "@/src/components/Cards/Community-card";
+import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
 export default function Learn() {
   const LearnCards = [
     {
@@ -88,12 +87,14 @@ export default function Learn() {
       <CardGridSection
         heading={"Why Learn with "}
         highlight="Trikaya?"
+        containerClassName="my-11"
+        gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-11 "
         description="Learning at Trikaya isn't just about completing courses — it's about proving your skills, applying them in real projects, and being recognized by employers."
         cards={LearnCards}
       />
       <PracticeSection />
       <BlackFluidSection />
-      <Container className="pt-16">
+      <Container className="pt-11">
         <FeatureSplitCard
           title="Earn Blockchain-Verified Certificates"
           description="Every course completion earns you a certificate validated through Trikaya Protocol. Share it on LinkedIn, showcase it to employers, and add it to your Trikaya-Verified CV."
@@ -103,35 +104,33 @@ export default function Learn() {
           reverse={false} // image on left
           darkMode={false}
         />
+        <div className="pt-11">
+          <FeatureSplitCard
+            title={
+              <>
+                <span className="block md:hidden">
+                  Learn. Practice. Perfect Your Skills.
+                </span>
 
+                <span
+                  className="hidden md:block"
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      "Learn. Practice.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perfect Your Skills.",
+                  }}
+                />
+              </>
+            }
+            description="Each learning path connects directly to Practice Labs — so you can code, test, and deploy what you learn instantly."
+            buttonLabel="Open a Lab"
+            buttonLink="#"
+            image={Code}
+            reverse={true}
+            darkMode={false}
+          />
+        </div>
 
-        <FeatureSplitCard
-          title={
-            <>
-              {/* Mobile title (no spaces) */}
-              <span className="block md:hidden">
-                Learn. Practice. Perfect Your Skills.
-              </span>
-
-              {/* Desktop title (with spacing) */}
-              <span
-                className="hidden md:block"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    "Learn. Practice.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perfect Your Skills.",
-                }}
-              />
-            </>
-          }
-          description="Each learning path connects directly to Practice Labs — so you can code, test, and deploy what you learn instantly."
-          buttonLabel="Open a Lab"
-          buttonLink="#"
-          image={Code}
-          reverse={true}
-          darkMode={false}
-        />
-
-        <section className="pt-16 ">
+        <section className="pt-11 ">
           <SectionHeader
             title="Learn from Mentors. "
             highlight="Grow with Community."
@@ -144,7 +143,7 @@ export default function Learn() {
             ))}
           </div>
 
-          <div className=" py-[90px] flex justify-center">
+          <div className=" py-11 flex justify-center">
             <Link
               href=""
               className="px-10 py-4 bg-black text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-all duration-200"

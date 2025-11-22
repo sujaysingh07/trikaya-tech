@@ -7,7 +7,7 @@ import SectionHeader from "./SectionHeader";
 const opportunities = [
   {
     id: 1,
-    bgImage: "/images/Blockchain.png",
+    bgImage: "/Blocks.png",
     title: "Blockchain",
     description: "Learn smart contracts, DeFi, NFTs, and dApp development.",
     learners: "1,200+",
@@ -57,7 +57,7 @@ const opportunities = [
 
 export default function PracticeSection() {
   return (
-    <section className="pb-16 bg-white">
+    <section className="mb-11 bg-white">
       <Container>
         <SectionHeader
           title="Choose Your "

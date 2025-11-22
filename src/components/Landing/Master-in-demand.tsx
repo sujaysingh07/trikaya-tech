@@ -32,7 +32,7 @@ const skills = [
 
 export default function MasterInDemand() {
     return (
-        <section className="py-12">
+        <section className="mb-11">
             <Container>
                 {/* Heading and subtext */}
                 <SectionHeader title={"Master in -Demand "} highlight="Tech Skills" description="Choose from four cutting-edge technology domains designed to prepare you for the future of work."/>

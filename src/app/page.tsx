@@ -70,18 +70,18 @@ export default function Home() {
   const [index, setIndex] = useState(0);
 
   // ---------------- AUTO-SLIDE ONLY FOR DESKTOP ----------------
-  useEffect(() => {
-    if (isMobile) return; // ❌ Stop sliding on mobile
+useEffect(() => {
+  const intervalTime = isMobile ? 5000 : 3000; // 5s for mobile, 3s for desktop
 
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % banners.length);
-    }, 3000);
+  const timer = setInterval(() => {
+    setIndex((prev) => (prev + 1) % banners.length);
+  }, intervalTime);
 
-    return () => clearInterval(timer);
-  }, [banners.length, isMobile]);
+  return () => clearInterval(timer);
+}, [banners?.length, isMobile]);
 
-  // ---- Mobile → first banner only
-  const currentBanner = isMobile ? banners[0] : banners[index];
+const currentBanner = banners[index];
+
 
   return (
     <div className="transition-all duration-700">

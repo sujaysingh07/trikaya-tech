@@ -19,7 +19,7 @@ interface GradientImageCardProps {
   task?: string
 }
 
-export default function GradientImageCard({
+export default function GradientImageCardThree({
   title,
   description,
   buttonLabel = "Explore now",
@@ -36,7 +36,7 @@ export default function GradientImageCard({
   return (
     <div
       className={clsx(
-        "relative flex flex-col md:flex-row items-center justify-between overflow-hidden rounded-[20px] p-8 md:p-10 shadow-md hover:shadow-lg transition-all duration-300",
+        "relative flex flex-col md:flex-row items-center justify-between overflow-hidden rounded-[30px] p-8 md:p-10 shadow-md hover:shadow-lg transition-all duration-300",
         reverse ? "md:flex-row-reverse" : "",
         className
       )}
@@ -81,7 +81,7 @@ export default function GradientImageCard({
           alt={title}
           fill
           className={clsx(
-            "object-contain transition-transform duration-500",
+            "object-cover transition-transform duration-500",
             reverse ? "object-left" : "object-right",
             imagePosition === "center" && "object-center",
             imagePosition === "left" && "object-left",

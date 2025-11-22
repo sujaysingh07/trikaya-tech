@@ -53,7 +53,7 @@ export default function HackathonSection() {
         ))}
       </div>
 
-      <div className="py-12">
+      <div className="pt-11">
         <HackathonBanner
           title={
             <>

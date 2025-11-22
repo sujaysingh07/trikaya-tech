@@ -1,4 +1,3 @@
-"use client";
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -26,7 +25,7 @@ export default function FeatureSplitCard({
   return (
     <section
       className={clsx(
-        "flex flex-col md:flex-row my-[50px] md:my-[100px] items-center justify-between rounded-[30px] border-2 transition-all duration-300 md:gap-[72px]",
+        "flex flex-col md:flex-row my-0 md:my-[70px] items-center justify-between rounded-[30px] border-2 transition-all duration-300 md:gap-[72px]",
         reverse ? "md:flex-row-reverse " : ""
       )}
     >

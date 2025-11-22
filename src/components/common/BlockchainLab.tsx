@@ -80,7 +80,7 @@ const labData: LabCardProps[] = [
 
 export default function BlockchainLab() {
   return (
-    <Container className="py-16">
+    <Container className="mb-11">
       <div className=" mx-auto">
         {/* Header */}
         <SectionHeader

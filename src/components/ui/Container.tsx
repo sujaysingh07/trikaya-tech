@@ -10,7 +10,7 @@ const Container: React.FC<ContainerProps> = ({ children, className }) => {
     return (
         <div
             className={clsx(
-                "mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8",
+                "mx-auto w-full max-w-[1440px] px-5 lg:px-8",
                 className
             )}
         >

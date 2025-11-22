@@ -1,10 +1,9 @@
-"use client";
+
 import { Icons } from "@/public/icons/icon";
 import GradientImageCardTwo from "../Cards/GradientImageCardTwo";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 
 const opportunities = [
   {
@@ -20,7 +19,7 @@ const opportunities = [
   },
   {
     id: 2,
-    bgImage: "/images/AI-assignment.jpg",
+    bgImage: "/AI-assignment.jpg",
     title: "AI Assignments",
     description: "Machine learning models and neural network projects",
     tasks: "30 Tasks",
@@ -33,7 +32,7 @@ const opportunities = [
   {
     id: 3,
     title: "Data Science Assignments",
-    bgImage: "/images/data-science.jpg",
+    bgImage: "/data-science.jpg",
     description: "Data analysis, visualization, and predictive modeling",
     tasks: "28 Tasks",
     gradientFrom: "#fcfcfd",
@@ -43,7 +42,7 @@ const opportunities = [
   },
   {
     id: 4,
-    bgImage: "/images/cybersecurity.jpg",
+    bgImage: "/cybersecurity.jpg",
     title: "Cybersecurity Tasks",
     description: "Security audits, penetration testing, and threat analysis",
     tasks: "18 Tasks",
@@ -57,7 +56,7 @@ const opportunities = [
 
 export default function AssignmentChallenges() {
   return (
-    <section className="py-16 bg-[#F2F2F2]">
+    <section className="py-11 bg-[#F2F2F2]">
       <Container>
         <SectionHeader
           title="Assignments & "
@@ -67,7 +66,7 @@ export default function AssignmentChallenges() {
         />
 
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-[46px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-[46px] gap-y-[27px] pt-[46px]">
           {opportunities.map((item) => (
             <GradientImageCardTwo
               key={item.id}
@@ -81,20 +80,15 @@ export default function AssignmentChallenges() {
               gradientTo={item.gradientTo}
               reverse={item.reverse}
               textColor={item.textColor as "light" | "dark"}
-              imagePosition={
-                item.id === 1 || item.id === 2 || item.id === 4
-                  ? "max-right"
-                  : "max-right"
-              }
               className="h-[310px]"
             />
           ))}
         </div>
 
-        <div className="bg-primary-color p-6 sm:p-8 md:p-10 mt-16 rounded-[30px] flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
+        <div className="bg-primary-color p-6 sm:p-8 md:p-10 mt-11 rounded-[30px] flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
           {/* LEFT SECTION */}
           <div className="flex gap-4 sm:gap-6 md:gap-8 items-start">
-            <Icons variant="ProgressCheck" className="min-w-[40px]" />
+            <Icons variant="ProgressCheck" className="min-w-10" />
 
             <div className="text-white">
               <p className="text-[26px] sm:text-[32px] md:text-[38px] font-bold leading-tight">

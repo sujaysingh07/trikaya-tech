@@ -63,7 +63,7 @@ export default function Ambassdor() {
       description: "Receive verified proof of your leadership role.",
     },
     {
-      icon: "/icons/Tshirt.svg",
+      icon: "/icons/TShirt.svg",
       title: "Swags & Merchandise",
       description: "Get exclusive Trikaya hoodies, T-shirts, and goodies.",
     },

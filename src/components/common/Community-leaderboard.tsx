@@ -22,16 +22,16 @@ export default function LeaderboardRow({
       {/* LEFT: Rank + Name */}
       <div className="flex items-center gap-6">
         {/* Rank Number */}
-        <span className="text-[22px] font-bold text-primary-color w-6 text-center">
+        <span className="text-base md:text-[22px] font-bold text-primary-color w-6 text-center">
           {rank}
         </span>
 
         {/* Name + Points */}
         <div className="flex flex-col gap-2">
-          <h3 className="text-[16px] md:text-[22px] font-semibold leading-[25px] text-[#0A0A0F]">
+          <h3 className="text-[16px] whitespace-nowrap md:text-[22px] font-semibold leading-[25px] text-[#0A0A0F]">
             {name}
           </h3>
-          <p className="text-base text-[16px] font-normal text-[#666666]">
+          <p className="text-xs md:text-base font-normal text-[#666666]">
             {points} KP
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function LeaderboardRow({
         {badges.map((badge, index) => (
           <span
             key={index}
-            className="px-3 py-1 text-base font-medium rounded-full bg-[#EBEAEA] text-[#666666]"
+            className="px-3 py-1 text-xs md:text-base font-medium rounded-full bg-[#EBEAEA] text-[#666666]"
           >
             {badge}
           </span>

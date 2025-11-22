@@ -33,7 +33,7 @@ export default function GradientImageCard({
   reverse = false,
   className = "",
   imagePosition,
-  task,
+  task,   
   date,
   mode,
 }: GradientImageCardProps) {
@@ -48,7 +48,7 @@ export default function GradientImageCard({
   return (
     <div
       className={clsx(
-        "relative flex flex-col md:flex-row items-center justify-between overflow-hidden rounded-[30px] p-8 md:p-10 shadow-md hover:shadow-lg transition-all duration-300",
+        "relative flex flex-col md:flex-row items-center justify-between overflow-hidden rounded-[30px] p-5 md:p-10 shadow-md hover:shadow-lg transition-all duration-300",
         reverse ? "md:flex-row-reverse" : "",
         className
       )}
@@ -67,7 +67,7 @@ export default function GradientImageCard({
         )}
       >
         {/* Title */}
-        <h3 className="font-bold text-2xl md:text-[28px] leading-tight">
+        <h3 className="font-bold text-[18px] md:text-[28px] leading-tight">
           {title}
         </h3>
 
@@ -79,7 +79,7 @@ export default function GradientImageCard({
         {/* DATE ROW */}
         <div className="flex gap-4">
           {date && (
-            <div className="flex items-center gap-2 text-[#4F5162] text-sm mt-2">
+            <div className="flex items-center gap-2 text-[#4F5162] text-xs md:text-sm mt-2">
               <Icons variant="Calendar" className="w-5 h-5" />
               <span>{date}</span>
             </div>
@@ -89,7 +89,7 @@ export default function GradientImageCard({
           {mode && (
             <span
               className={clsx(
-                "text-xs font-medium px-3 py-1 rounded-full inline-block mt-2",
+                "text-xs font-medium flex items-center px-3 py-1 rounded-full mt-2",
                 modeClass
               )}
             >

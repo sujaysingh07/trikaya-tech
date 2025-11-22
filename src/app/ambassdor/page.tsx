@@ -200,7 +200,7 @@ export default function Ambassdor() {
       name: "Rahul Verma",
       title: "NIT Trichy",
       description: "",
-      image: "/images/arav.jpg",
+      image: "/images/Arav.jpg",
       quote:
       "Led AI/ML workshops for 500+ students and secured internship at a top startup.",
     },

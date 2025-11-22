@@ -177,7 +177,8 @@ export default function JobsInternship() {
       <section className="py-12">
         <Container>
           <SectionHeader
-            title="Latest Opportunities"
+            title="Latest "
+            highlight="Opportunities"
             description="Browse verified openings across Blockchain, AI, Data Science, and Cybersecurity."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-11">
@@ -185,7 +186,7 @@ export default function JobsInternship() {
               <JobCard key={i} {...job} />
             ))}
           </div>
-          <div className="py-11">
+          <div className="md:py-11">
             <FeatureSplitCardThree
               leftTitle="Showcase Your Verified Achievements"
               leftDescription="Your Trikaya-Verified CV is powered by blockchain — proving your skills, projects, and credentials are authentic."

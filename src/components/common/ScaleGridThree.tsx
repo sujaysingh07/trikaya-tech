@@ -57,7 +57,7 @@ export default function FeatureSplitCardThree({
       )}
     >
       {/* LEFT IMAGE + CONTENT */}
-      <div className="relative w-full md:w-1/2 h-[340px] md:h-[420px] group rounded-[30px] ">
+      <div className="relative w-full md:w-1/2 h-[340px] md:h-[420px] group rounded-[30px] hidden md:block ">
         {" "}
         <Image
           src={image}
@@ -65,7 +65,7 @@ export default function FeatureSplitCardThree({
           height={500}
           quality={100}
           alt="AI Background"
-          className=" object-left w-full h-full rounded-[30px] md:scale-y-130 bg-black mix-blend-luminosity"
+          className=" object-left w-full h-full rounded-[30px] md:scale-y-130 bg-black mix-blend-luminosity "
         />
         <div className="absolute inset-0 top-0 left-0 px-[45px] text-white">
           <div className="flex flex-col gap-4">
@@ -117,7 +117,7 @@ export default function FeatureSplitCardThree({
       {/* RIGHT CONTENT */}
       <div
         className={clsx(
-          "relative w-full md:w-1/2 h-auto md:h-[420px] group py-[53px]",
+          "relative w-full md:w-1/2 h-auto md:h-[420px] group md:py-[53px]",
           reverse ? "p-5" : "p-5"
         )}
       >
@@ -132,13 +132,13 @@ export default function FeatureSplitCardThree({
         </p>
 
         {/* VERIFIED ITEMS */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col justify-center gap-4">
           {verifiedItems.map((item, index) => (
             <div
               key={index}
-              className="flex justify-between bg-[#F2F6FF] border border-[#CCCCCC] py-3.5 px-5 rounded-[12px]"
+              className="flex justify-between items-center bg-[#F2F6FF] border border-[#CCCCCC] py-3.5 px-5 rounded-[12px]"
             >
-              <span className="text-[22px] font-semibold leading-[25px] tracking-[0.5%]">
+              <span className="text-xs leading-normal md:text-[22px] font-semibold md:leading-[25px] tracking-[0.5%]">
                 {item.label}
               </span>
               {["AI Match: 94%"].includes(item.label) ? (
@@ -147,7 +147,7 @@ export default function FeatureSplitCardThree({
                   Active
                 </span>
               ) : (
-                <span className="flex gap-2 items-center text-primary-color bg-[#D6E4FF] px-2.5 py-0.5 rounded-full">
+                <span className="flex gap-2 items-center text-xs md:text-base py-1 text-primary-color bg-[#D6E4FF] px-2.5 md:py-0.5 rounded-full">
                   <Icons variant="VerifiedBadge" color="#0A58F5" />
                   Verified
                 </span>

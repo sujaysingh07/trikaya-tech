@@ -23,7 +23,7 @@ export default function CommunityCard({
     >
       {/* TOP SECTION */}
       <div className="flex items-start justify-between gap-4">
-        <h3 className="text-[22px] font-semibold text-[#0A0A0F] leading-snug">
+        <h3 className="text-base md:text-[22px] font-semibold text-[#0A0A0F] leading-snug">
           {title}
         </h3>
 

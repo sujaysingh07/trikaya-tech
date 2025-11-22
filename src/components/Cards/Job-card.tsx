@@ -69,7 +69,7 @@ export default function JobCard({
       <div className="flex items-center gap-3 mt-auto">
         <Link
           href="#"
-          className="bg-primary-color w-full text-white px-6 text-center py-2.5 rounded-md text-sm font-semibold hover:bg-primary-color/90 transition"
+          className="bg-primary-color w-full text-white whitespace-nowrap px-6 text-center py-2.5 rounded-md text-sm font-semibold hover:bg-primary-color/90 transition"
         >
           Apply Now
         </Link>

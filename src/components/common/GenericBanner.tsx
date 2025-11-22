@@ -41,13 +41,13 @@ export default function GenericBanner({
         {/* MAIN CONTENT */}
         <div className="max-w-4xl mx-auto">
           {title && (
-            <h3 className="text-[#FFFFFF] text-[36px] sm:text-2xl font-bold ">
+            <h3 className="text-[#FFFFFF] md:text-[36px] text-2xl font-bold ">
               {title}
             </h3>
           )}
 
           {subtitle && (
-            <p className="text-[#FFFFFF] text-[28px] mt-2 leading-9 font-light tracking-tighter">
+            <p className="text-[#FFFFFF] text-base md:text-[28px] mt-2 leading-normal md:leading-9 font-light tracking-tighter">
               {subtitle}
             </p>
           )}

@@ -243,7 +243,7 @@ export default function Community() {
       title: "Community Organizer",
       quote:
         "Hosting Trikaya meetups helped me build leadership skills and connect with amazing people.",
-      image: "/images/arav.jpg",
+      image: "/images/Arav.jpg",
     },
   ];
 
@@ -329,7 +329,7 @@ export default function Community() {
           highlight="Leaderboard"
           description="Every contribution counts. Earn KP, badges, and verified recognition for helping others, completing labs, or hosting events."
         />
-        <div className="bg-[#FAFAFA] rounded-[30px] p-6 space-y-2  my-11">
+        <div className="bg-[#FAFAFA] rounded-[30px] md:p-6 space-y-2  my-11">
           {leaderboardData.map((item) => (
             <LeaderboardRow key={item.rank} {...item} />
           ))}
@@ -365,16 +365,16 @@ export default function Community() {
           ))}
         </div>
       </Container>
-        <CallToAction
-          title="Build Your Future with Trikaya"
-          subtitle={
-            <>Find the right opportunity. Get verified. Grow your career.</>
-          }
-          buttons={[
-            { label: "Get Started Now", href: "#", variant: "secondary" },
-          ]}
-          showRocketBg={true}
-        />
+      <CallToAction
+        title="Build Your Future with Trikaya"
+        subtitle={
+          <>Find the right opportunity. Get verified. Grow your career.</>
+        }
+        buttons={[
+          { label: "Get Started Now", href: "#", variant: "secondary" },
+        ]}
+        showRocketBg={true}
+      />
     </>
   );
 }

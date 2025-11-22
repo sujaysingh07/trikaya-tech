@@ -13,7 +13,7 @@ interface MeetupCalloutProps {
 }
 
 export default function MeetupCallout({
-  icon = "/icons/M   ic.svg",
+  icon = "/icons/Mic.svg",
   title,
   subtitle,
   buttonLabel,

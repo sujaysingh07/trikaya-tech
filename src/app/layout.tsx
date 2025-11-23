@@ -44,6 +44,7 @@ export const metadata: Metadata = {
 
     apple: "/favicons/apple-touch-icon.png",
   },
+  manifest: "/favicons/site.webmanifest",
 
   // ✅ OG (Open Graph) Images
   openGraph: {

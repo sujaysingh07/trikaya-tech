@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     //  shortcut: "/favicon.ico",
     apple: "/favicons/apple-touch-icon.png",
   },
-  manifest: "/favicons/site.webmanifest",
+  // manifest: "/favicons/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta
+        {/* <meta
           name="theme-color"
           content="#000000"
           media="(prefers-color-scheme: dark)"
@@ -54,32 +54,9 @@ export default function RootLayout({
           name="theme-color"
           content="#ffffff"
           media="(prefers-color-scheme: light)"
-        />
+        /> */}
 
-        <Script
-          id="script"
-          dangerouslySetInnerHTML={{
-            __html: `
-      function setFavicon() {
-        const darkIcon = "/favicons/favicon-light.svg"; // for dark theme
-        const lightIcon = "/favicons/favicon-dark.svg"; // for light theme
 
-        const favicon = document.querySelector("link[rel='icon']") || document.createElement("link");
-        favicon.rel = "icon";
-
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        favicon.href = prefersDark ? darkIcon : lightIcon;
-
-        document.head.appendChild(favicon);
-      }
-
-      setFavicon();
-
-      // Listen for theme changes
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", setFavicon);
-    `,
-          }}
-        />
       </head>
       <body className={` ${inter.variable} antialiased`}>
         <Navbar />

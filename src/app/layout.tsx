@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         sizes: "any",
       },
 
-      // Light mode → show DARK ICON (same as default)
+      // Light mode → show DARK ICON
       {
         url: "/favicons/favicon-dark.svg",
         sizes: "any",
@@ -44,7 +44,38 @@ export const metadata: Metadata = {
 
     apple: "/favicons/apple-touch-icon.png",
   },
+
+  // ✅ OG (Open Graph) Images
+  openGraph: {
+    title:
+      "Trikaya – AI & Blockchain-Powered Job Platform for Verified Skills and Fair Hiring",
+    description:
+      "Trikaya is an AI & Blockchain-powered job platform ensuring verified skills, transparent hiring, and fair opportunities.",
+    type: "website",
+    locale: "en_US",
+    url: "https://www.trikaya.io/",
+    siteName: "Trikaya",
+    images: [
+      {
+        url: "/favicons/og-image.png", // add your OG image here
+        width: 1024,
+        height: 630,
+        alt: "Trikaya – AI & Blockchain-Powered Job Platform",
+      },
+    ],
+  },
+
+  // ✅ Twitter Card
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Trikaya – AI & Blockchain-Powered Job Platform for Verified Skills and Fair Hiring",
+    description:
+      "Trikaya is an AI & Blockchain-powered platform promoting transparent, skill-verified recruitment.",
+    images: ["/favicons/og-image.png"],
+  },
 };
+
 
 
 export default function RootLayout({

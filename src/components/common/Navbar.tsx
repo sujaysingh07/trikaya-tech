@@ -17,13 +17,13 @@ const Navbar = () => {
     { id: "learn", label: "Learn", path: "/learn" },
     { id: "practice", label: "Practice", path: "/practice" },
     { id: "arena", label: "Arena", path: "/arena" },
-    { id: "mentorship", label: "Mentorship", path: "/mentorship" },
-    { id: "jobs", label: "Jobs", path: "/jobs" },
-    { id: "internships", label: "Internships", path: "/internships" },
-    { id: "community", label: "Community", path: "/community" },
-    { id: "business", label: "Business", path: "/business" },
-    { id: "ambassdor", label: "Ambassdor", path: "/ambassdor" },
-    { id: "resources", label: "Resources", path: "/resources" },
+    { id: "mentorship", label: "Mentorship", path: "#" },
+    { id: "jobs", label: "Jobs & internship", path: "/" },
+    // { id: "internships", label: "Internships", path: "/internships" },
+    { id: "community", label: "Community", path: "#" },
+    { id: "business", label: "Business", path: "#" },
+    // { id: "ambassdor", label: "Ambassdor", path: "#" },
+    { id: "resources", label: "Resources", path: "#" },
   ];
 
   const handleNavigation = (id: string, path: string) => {

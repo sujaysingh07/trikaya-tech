@@ -19,7 +19,7 @@ interface GradientImageCardProps {
   task?: string
 }
 
-export default function GradientImageCard({
+export default function GradientImageCardThree({
   title,
   description,
   buttonLabel = "Explore now",

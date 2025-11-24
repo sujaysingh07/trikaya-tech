@@ -11,7 +11,7 @@ import DailyWeeklyChallenges from "@/src/components/common/DailyWeekly";
 import SkillQuests from "@/src/components/common/SkillQuests";
 import PerformanceCard from "@/src/components/Cards/Performance-card";
 import SectionHeader from "@/src/components/common/SectionHeader";
-import GenericProfileCard from "@/src/components/Cards/Community-card";
+import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
 import CallToAction from "@/src/components/common/CallToAction";
 import { LeaderBoardType } from "@/src/components/common/Leaderboard";
 export type CompetitionType = {

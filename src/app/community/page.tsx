@@ -1,91 +1,380 @@
 import Banner from "@/src/components/common/CommonBanner";
-import mentorship from "@/public/images/engineer-girl.jpg";
+import mentorship from "@/public/images/community.jpg";
+import CardGridSection from "@/src/components/common/CardGridSection";
+import rewards from "@/public/icons/BrainWires.svg";
+import problemSolving from "@/public/icons/WirelessNetwork.svg";
+import NotVerified from "@/public/icons/Mentor.svg";
+import WirelessNetwork from "@/public/icons/BadgeVerification.svg";
+import SkillCard from "@/src/components/Cards/SkillCard";
+import InfoCard from "@/src/components/Cards/Info-card";
+import SectionHeader from "@/src/components/common/SectionHeader";
 import Container from "@/src/components/ui/Container";
-import Link from "next/link";
-import JobCard, { JobCardProps } from "@/src/components/Cards/Job-card";
+import CommunityCard from "@/src/components/Cards/Community-card";
+import CommunityJoinCard from "@/src/components/Cards/CommunityJoin-card";
+import { button } from "framer-motion/client";
+import GradientImageCardThree from "@/src/components/Cards/GradientImageCardThree";
+import MeetupCallout from "@/src/components/common/MeetupCallout";
+import CommunityLeaderboard from "@/src/components/common/Community-leaderboard";
+import LeaderboardRow from "@/src/components/common/Community-leaderboard";
+import GenericButton from "@/src/components/common/GenericButton";
+import ReusableCard from "@/src/components/Cards/SkillCard";
+import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
+import CallToAction from "@/src/components/common/CallToAction";
 export default function Community() {
-    const jobData: JobCardProps[] = [
-        {
-            title: "AI Engineer",
-            description:
-                "Designs, builds, and deploys intelligent systems that can learn, reason, and make decisions.",
-            company: "Tech Corp",
-            location: "New York, NY",
-            salary: "$120K – $180K",
-            type: "Full Time",
-            employmentType: "Full Time",
-        },
-        {
-            title: "Data Scientist Intern",
-            description:
-                "Designs, builds, and deploys intelligent systems that can learn, reason, and make decisions.",
-            company: "Tech Corp",
-            location: "New York, NY",
-            salary: "$40/hr",
-            type: "Internship",
-            employmentType: "Internship",
-        },
-        {
-            title: "Blockchain Developer",
-            description:
-                "Designs, builds, and deploys intelligent systems that can learn, reason, and make decisions.",
-            company: "Crypto Ventures",
-            location: "San Francisco, CA",
-            salary: "$140K – $200K",
-            type: "Full Time",
-            employmentType: "Full Time",
-        },
-        {
-            title: "Cybersecurity Analyst",
-            description:
-                "Designs, builds, and deploys intelligent systems that can learn, reason, and make decisions.",
-            company: "SecureNet",
-            location: "Remote",
-            salary: "$100K – $150K",
-            type: "Full Time",
-            employmentType: "Full Time",
-        },
-    ];
+  const mentorCards = [
+    {
+      icon: rewards,
+      title: "Collaborate & Share",
+      description:
+        "Join discussions, exchange ideas, and co-create with peers.",
+    },
+    {
+      icon: NotVerified,
+      title: "Learn from Mentors",
+      description:
+        "Get direct access to experts through AMA sessions and workshops.",
+    },
+    {
+      icon: problemSolving,
+      title: "Network Globally",
+      description:
+        "Connect with developers, professionals, and hiring partners worldwide.",
+    },
+    {
+      icon: WirelessNetwork,
+      title: "Earn Recognition",
+      description:
+        "Get rewarded for your contributions and verified activity on blockchain.",
+    },
+  ];
+  const posts = [
+    {
+      title: "Building a DeFi Protocol – Tips & Tricks",
+      author: "Alex Kumar",
+      likes: 123,
+      tags: ["Blockchain", "DeFi"],
+      isActive: true,
+    },
+    {
+      title: "My Journey from Bootcamp to FAANG",
+      author: "Priya Sharma",
+      likes: 89,
+      tags: ["Career", "Success"],
+    },
+    {
+      title: "AI Model Optimization Techniques",
+      author: "Rahul Mehta",
+      likes: 67,
+      tags: ["All", "Tips"],
+    },
+    {
+      title: "Trikaya Community Meetup – Bangalore",
+      author: "Community Team",
+      likes: 203,
+      tags: ["Announcement", "Events"],
+    },
+  ];
+  const data = [
+    {
+      icon: "/icons/group-discussion.svg",
+      title: "Blockchain Builders",
+      description: "Discuss smart contracts, DeFi, and on-chain innovation.",
+      members: "45K+ members",
+      buttonLabel: "Join Group Now",
+    },
+    {
+      icon: "/icons/calendar.svg",
+      title: "AI Innovators",
+      description: "Collaborate on ML, NLP, and GenAI projects.",
+      members: "10K+ members",
+    },
+    {
+      icon: "/icons/calendar.svg",
+      title: "Data Science Hub",
+      description: "Share datasets, visualizations, and analytics tricks.",
+      members: "23K+ members",
+    },
+    {
+      icon: "/icons/calendar.svg",
+      title: "Cybersecurity Club",
+      description: "Explore vulnerabilities, ethical hacking, and CTFs.",
+      members: "13K+ members",
+    },
+    {
+      icon: "/icons/calendar.svg",
+      title: "Trikaya Ambassadors",
+      description: "Lead campus and city-level community growth.",
+      members: "5K+ members",
+    },
+    {
+      icon: "/icons/calendar.svg",
+      title: "Career Circle",
+      description: "Peer mentoring, resume reviews, and interview prep.",
+      members: "11K+ members",
+    },
+  ];
 
-    return (
-        <>
-            <Banner
-                title={"Join Our "}
-                highlight={"Community"}
-                description="Connect with 50,000+ learners, developers, and tech enthusiasts worldwide."
-                image={mentorship}
-                primaryButton={{
-                    label: "Start Learning",
-                    href: "",
-                }}
-                secondaryButton={{
-                    label: "Explore Labs",
-                    href: "",
-                }}
+  const eventData = [
+    {
+      id: 1,
+      title: "AI Workshop: Building Your First LLM App",
+      description:
+        "Learn to build and deploy AI applications with real-world examples.",
+      task: "Nov 15, 2025 • 4:00 PM IST",
+      mode: "Online",
+      bgImage: "/images/community-event.png",
+      buttonLabel: "Register Now",
+      buttonLink: "/events/ai-workshop",
+      gradientFrom: "#F0F4FF",
+      gradientTo: "#FFFFFF",
+      reverse: false,
+    },
+    {
+      id: 2,
+      title: "Blockchain Hackathon 2025",
+      description:
+        "48-hour challenge to build the next breakthrough DeFi solution.",
+      task: "Nov 22–24, 2025 • All Day",
+      mode: "Bangalore",
+      bgImage: "/images/Blockchain.png",
+      buttonLabel: "Register Now",
+      buttonLink: "/events/blockchain-hackathon",
+      gradientFrom: "#F0F4FF",
+      gradientTo: "#FFFFFF",
+      reverse: false,
+    },
+    {
+      id: 3,
+      title: "Career Fair: Meet Top Tech Recruiters",
+      description:
+        "Connect with 50+ hiring partners actively looking for talent.",
+      task: "Dec 5, 2025 • 10:00 AM – 4:00 PM",
+      mode: "Hybrid",
+      bgImage: "/images/community-event-two.png",
+      buttonLabel: "Register Now",
+      buttonLink: "/events/career-fair",
+      gradientFrom: "#F0F4FF",
+      gradientTo: "#FFFFFF",
+      reverse: false,
+    },
+    {
+      id: 4,
+      title: "Community AMA with Industry Leaders",
+      description:
+        "Ask anything about tech careers, skills, and industry trends.",
+      task: "Dec 10, 2025 • 7:00 PM IST",
+      mode: "Online",
+
+      bgImage: "/images/community-event-three.png",
+      buttonLabel: "Register Now",
+      buttonLink: "/events/community-ama",
+      gradientFrom: "#F0F4FF",
+      gradientTo: "#FFFFFF",
+      reverse: false,
+    },
+  ];
+
+  const leaderboardData = [
+    {
+      rank: 1,
+      name: "Arjun Patel",
+      points: 8540,
+      badges: ["Helper", "Mentor", "Host"],
+    },
+    {
+      rank: 2,
+      name: "Sneha Reddy",
+      points: 7890,
+      badges: ["Contributor", "Helper"],
+    },
+    {
+      rank: 3,
+      name: "Vikram Singh",
+      points: 7320,
+      badges: ["Helper", "Host"],
+    },
+    {
+      rank: 4,
+      name: "Ananya Gupta",
+      points: 6950,
+      badges: ["Contributor", "Helper"],
+    },
+    {
+      rank: 5,
+      name: "Rohan Kumar",
+      points: 6740,
+      badges: ["Helper", "Mentor"],
+    },
+  ];
+
+  const badges = [
+    {
+      icon: "/icons/pen.svg",
+      title: "Community Helper",
+    },
+    {
+      icon: "/icons/pen.svg",
+      title: "Event Host",
+    },
+    {
+      icon: "/icons/pen.svg",
+      title: "Verified Contributor",
+    },
+  ];
+
+  const experts = [
+    {
+      name: "Rajesh Kumar",
+      title: "Software Engineer at Microsoft",
+      quote:
+        "Joined Trikaya AI Group → Landed Internship at Microsoft. The community support was incredible!",
+      image: "/icons/rajesh.svg",
+    },
+    {
+      name: "Meera Shah",
+      title: "Blockchain Developer",
+      description: "",
+      image: "/images/Diya.jpg",
+      quote:
+        "From zero blockchain knowledge to building my first DApp in 3 months with Trikaya mentors.",
+    },
+    {
+      name: "Karthik Iyer",
+      title: "Community Organizer",
+      quote:
+        "Hosting Trikaya meetups helped me build leadership skills and connect with amazing people.",
+      image: "/images/Arav.jpg",
+    },
+  ];
+
+  return (
+    <>
+      <Banner
+        title={"Learn Together. Build Together."}
+        highlight={"Grow Together."}
+        description="Join the Trikaya Community — where innovators, learners, and mentors collaborate on emerging technologies, share knowledge, and celebrate verified achievements."
+        image="/community.png"
+        primaryButton={{
+          label: "Join the Community",
+          href: "",
+        }}
+        secondaryButton={{
+          label: "Explore Events",
+          href: "",
+        }}
+      />
+      <CardGridSection
+        heading={"Why Join the Trikaya "}
+        highlight="Community?"
+        containerClassName="my-11"
+        description="Exclusive job opportunities and internships"
+        cards={mentorCards}
+        headingAlign={"left"}
+      />
+      <Container>
+        <SectionHeader
+          title={"Community"}
+          highlight="Feed"
+          description="Stay updated with posts, discussions, and announcements from across Trikaya."
+        />
+        <div className="space-y-4 my-11">
+          {posts.map((p, i) => (
+            <CommunityCard key={i} {...p} />
+          ))}
+        </div>
+
+        <SectionHeader
+          title={"Community"}
+          highlight="Feed"
+          description="Stay updated with posts, discussions, and announcements from across Trikaya."
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 py-11">
+          {data.map((item, i) => (
+            <CommunityJoinCard key={i} {...item} />
+          ))}
+        </div>
+
+        <SectionHeader
+          title={"Upcoming Community "}
+          highlight="Events"
+          description="Attend online workshops, webinars, and city-level meetups hosted by Trikaya mentors and partners."
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-[46px] gap-y-[27px] py-11">
+          {eventData.map((item) => (
+            <GradientImageCardThree
+              key={item.id}
+              title={item.title}
+              description={item.description}
+              buttonLabel={item.buttonLabel}
+              buttonLink={item.buttonLink}
+              task={item.task} // <-- now correct
+              bgImage={item.bgImage}
+              date={item.task}
+              mode={item.mode}
+              gradientFrom={item.gradientFrom}
+              gradientTo={item.gradientTo}
+              reverse={item.reverse}
+              className="h-[310px]"
             />
-            <section className="py-12">
-                <Container>
-                    <div className="flex flex-col gap-3 ">
-                        <h2 className="font-bold text-4xl">Community</h2>
-                        <p className="text-base  max-w-2xl ">
-                            Exclusive job opportunities and internships
-                        </p>
-                    </div>
-                    <div className="flex flex-col gap-5 mt-10">
-                        {jobData.map((job, index) => (
-                            <JobCard key={index} {...job} />
-                        ))}
-                    </div>
-                    <div className="flex justify-center my-[50px]">
-                        <Link
-                            href="#"
-                            className="px-6 py-3 bg-primary-color text-white rounded-md text-lg font-semibold hover:bg-primary-color/90 transition"
-                        >
-                            Find Your Mentor
-                        </Link>
-                    </div>
-                </Container>
-            </section>
-        </>
-    );
+          ))}
+        </div>
+        <MeetupCallout
+          title="Want to host a Trikaya Meetup?"
+          subtitle="Organize events in your city and grow your leadership skills."
+          buttonLabel="Apply as Organiser"
+          buttonLink="#"
+        />
+        <SectionHeader
+          title="Community "
+          highlight="Leaderboard"
+          description="Every contribution counts. Earn KP, badges, and verified recognition for helping others, completing labs, or hosting events."
+        />
+        <div className="bg-[#FAFAFA] rounded-[30px] md:p-6 space-y-2  my-11">
+          {leaderboardData.map((item) => (
+            <LeaderboardRow key={item.rank} {...item} />
+          ))}
+        </div>
+        <GenericButton
+          label="View Full Leadership"
+          href="#"
+          variant="primary"
+          align="center"
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pb-11">
+          {badges.map((b, index) => (
+            <ReusableCard
+              key={index}
+              icon={b.icon}
+              title={b.title}
+              className=""
+            />
+          ))}
+        </div>
+        <SectionHeader
+          title="Community    "
+          highlight="Highlights"
+          description="Meet the learners and mentors shaping the Trikaya ecosystem."
+        />
+        <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[35px] justify-items-center py-11">
+          {experts.map((expert, index) => (
+            <GenericProfileCard
+              key={index}
+              {...expert}
+              buttonText="Read Full Story"
+            />
+          ))}
+        </div>
+      </Container>
+      <CallToAction
+        title="Build Your Future with Trikaya"
+        subtitle={
+          <>Find the right opportunity. Get verified. Grow your career.</>
+        }
+        buttons={[
+          { label: "Get Started Now", href: "#", variant: "secondary" },
+        ]}
+        showRocketBg={true}
+      />
+    </>
+  );
 }

@@ -80,11 +80,6 @@ export default function AssignmentChallenges() {
               gradientTo={item.gradientTo}
               reverse={item.reverse}
               textColor={item.textColor as "light" | "dark"}
-              // imagePosition={
-              //   item.id === 1 || item.id === 2 || item.id === 4
-              //     ? "max-right"
-              //     : "max-right"
-              // }
               className="h-[310px]"
             />
           ))}

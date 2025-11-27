@@ -20,10 +20,10 @@ const Navbar = () => {
     { id: "arena", label: "Arena", path: "/arena" },
     { id: "mentorship", label: "Mentorship", path: "/mentorship" },
     { id: "jobs", label: "Jobs", path: "/jobs" },
-    { id: "internship", label: "Internship", path: "/internship" },
+    { id: "internship", label: "Internship", path: "/internships" },
     { id: "community", label: "Community", path: "/community" },
     { id: "business", label: "Business", path: "/business" },
-    {id:"ambassdor",label:"Ambassdor",path:"/ambassdor"},
+    { id: "ambassdor", label: "Ambassdor", path: "/ambassdor" },
     {
       id: "resources",
       label: "Resources",

@@ -9,6 +9,7 @@ import { useRouter, usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -17,18 +18,28 @@ const Navbar = () => {
     { id: "learn", label: "Learn", path: "/learn" },
     { id: "practice", label: "Practice", path: "/practice" },
     { id: "arena", label: "Arena", path: "/arena" },
-    { id: "mentorship", label: "Mentorship", path: "#" },
-    { id: "jobs", label: "Jobs & internship", path: "/" },
-    // { id: "internships", label: "Internships", path: "/internships" },
-    { id: "community", label: "Community", path: "#" },
-    { id: "business", label: "Business", path: "#" },
-    // { id: "ambassdor", label: "Ambassdor", path: "#" },
-    { id: "resources", label: "Resources", path: "#" },
+    { id: "mentorship", label: "Mentorship", path: "/mentorship" },
+    { id: "jobs", label: "Jobs", path: "/jobs" },
+    { id: "internship", label: "Internship", path: "/internship" },
+    { id: "community", label: "Community", path: "/community" },
+    { id: "business", label: "Business", path: "/business" },
+    {id:"ambassdor",label:"Ambassdor",path:"/ambassdor"},
+    {
+      id: "resources",
+      label: "Resources",
+      path: "#",
+      children: [
+        { label: "Blog", path: "/blog" },
+        { label: "About", path: "/about" },
+        { label: "Learning", path: "/learning" },
+      ],
+    },
   ];
 
-  const handleNavigation = (id: string, path: string) => {
+  const handleNavigation = (path: string) => {
     router.push(path);
     setIsOpen(false);
+    setOpenDropdown(null);
   };
 
   useEffect(() => {
@@ -59,28 +70,38 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <div className="flex items-center gap-2">
-            {navItems.map((item) => {
-              const isActive = pathname === item.path;
-
-              return (
+            {navItems.map((item) => (
+              <div className="relative group" key={item.id}>
                 <button
-                  key={item.id}
-                  onClick={() => handleNavigation(item.id, item.path)}
-                  className={`px-3 py-2 text-sm md:text-[13px] lg:text-[15px] font-semibold cursor-pointer rounded-md 
-                    ${
-                      isActive
-                        ? "text-[#9ABCFF]"
-                        : "text-white hover:text-[#9ABCFF]"
-                    }
-                  `}
+                  onClick={() => !item.children && handleNavigation(item.path)}
+                  className={`px-3 py-2 text-sm md:text-[13px] lg:text-[15px] font-semibold cursor-pointer rounded-md ${
+                    pathname === item.path
+                      ? "text-[#9ABCFF]"
+                      : "text-white hover:text-[#9ABCFF]"
+                  }`}
                 >
                   {item.label}
                 </button>
-              );
-            })}
+
+                {/* Desktop Dropdown */}
+                {item.children && (
+                  <div className="absolute hidden  group-hover:flex flex-col bg-white text-black rounded-md shadow-md top-full left-0 w-40 p-2">
+                    {item.children.map((child, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleNavigation(child.path)}
+                        className="text-left w-full px-3 cursor-pointer py-2 text-sm hover:bg-[#CCCCCC]/50 rounded"
+                      >
+                        {child.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
 
-          {/* Launch App — Desktop */}
+          {/* Launch App Button */}
           <Link
             href="https://builder.trikaya.io/"
             target="_blank"
@@ -105,26 +126,42 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden px-4 pb-4 space-y-3 bg-white border-t border-gray-100">
           {navItems.map((item) => {
-            const isActive = pathname === item.path;
+            const hasChildren = Boolean(item.children);
 
             return (
-              <button
-                key={item.id}
-                onClick={() => handleNavigation(item.id, item.path)}
-                className={`block w-full text-left text-sm font-medium 
-                  ${
-                    isActive
-                      ? "text-primary-color border-l-4 border-primary-color pl-2"
-                      : "text-black hover:text-primary-color"
+              <div key={item.id}>
+                <button
+                  onClick={() =>
+                    hasChildren
+                      ? setOpenDropdown(
+                          openDropdown === item.id ? null : item.id
+                        )
+                      : handleNavigation(item.path)
                   }
-                `}
-              >
-                {item.label}
-              </button>
+                  className="block w-full text-left text-sm font-medium text-black hover:text-primary-color"
+                >
+                  {item.label}
+                </button>
+
+                {/* Mobile Children */}
+                {hasChildren && openDropdown === item.id && (
+                  <div className="ml-4 mt-1 space-y-1">
+                    {item?.children?.map((child, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleNavigation(child.path)}
+                        className="block text-left text-sm text-gray-700 hover:text-primary-color"
+                      >
+                        {child.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             );
           })}
 
-          {/* Launch App — Mobile */}
+          {/* Launch App Button Mobile */}
           <Link
             href="https://builder.trikaya.io/"
             target="_blank"

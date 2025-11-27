@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 interface BannerProps {
-  title: string;
+  title: string ;
   highlight?: string;
   description: string;
   image: StaticImageData;

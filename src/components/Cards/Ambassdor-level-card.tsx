@@ -1,6 +1,6 @@
 import React from "react";
 interface AmbassadorCardProps {
-  level: number;
+  level: number | string;
   title: string;
   description: string;
 }

@@ -28,6 +28,14 @@ interface FeatureSplitCardThreeProps {
   image?: string | StaticImageData;
   reverse?: boolean;
   darkMode?: boolean;
+  primaryButton?: {
+    label?: string;
+    href?: string;
+  };
+  secondaryButton?: {
+    label?: string;
+    href?: string;
+  };
 }
 
 export default function FeatureSplitCardThree({
@@ -44,7 +52,14 @@ export default function FeatureSplitCardThree({
 
   buttonLabel = "Generate My Verified CV",
   buttonLink = "#",
-
+  primaryButton = {
+    label: "",
+    href: "",
+  },
+  secondaryButton = {
+    label: "",
+    href: "",
+  },
   image = "",
   reverse = false,
   darkMode = false,
@@ -131,6 +146,29 @@ export default function FeatureSplitCardThree({
           {description}
         </p>
 
+        {verifiedItems.length === 0 && (
+          <>
+            <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+              <Link
+                href={primaryButton.href!}
+                className="px-6 py-3 bg-black w-full md:w-auto text-white rounded-md text-lg font-semibold hover:bg-gray-800 transition"
+              >
+                {primaryButton.label}
+              </Link>
+              {secondaryButton && (
+                <Link
+                  href={secondaryButton.href!}
+                  className="px-6 py-3 bg-white text-black md:w-auto border border-black w-full rounded-md text-lg font-semibold hover:bg-primary-color/90 transition"
+                >
+                  {secondaryButton.label}
+                </Link>
+              )}
+            </div>
+            <span className="text-xs font-normal pt-4 flex">
+              Submissions are reviewed by Trikaya mentors before publication.
+            </span>
+          </>
+        )}
         {/* VERIFIED ITEMS */}
         <div className="flex flex-col justify-center gap-4">
           {verifiedItems.map((item, index) => (

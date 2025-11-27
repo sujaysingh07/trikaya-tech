@@ -112,6 +112,7 @@ export default function Mentorship() {
           description="Each mentor profile showcases expertise, session format, reviews, and availability."
           buttonLabel="Explore All Mentors"
           buttonLink="#"
+          variant="featured"
           image={mentor}
           reverse={false} // image on left
           darkMode={false}

@@ -158,7 +158,7 @@ export default function FeatureSplitCardThree({
               {secondaryButton && (
                 <Link
                   href={secondaryButton.href!}
-                  className="px-6 py-3 bg-white text-black md:w-auto border border-black w-full rounded-md text-lg font-semibold hover:bg-primary-color/90 transition"
+                  className="px-6 py-3 bg-white text-black md:w-auto border border-black w-full rounded-md text-lg font-semibold hover:bg-primary-color/90 transition hover:text-white"
                 >
                   {secondaryButton.label}
                 </Link>

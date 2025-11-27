@@ -4,14 +4,28 @@ import InfoCard from "../Cards/Info-card";
 import CompanyLogoCard from "../Cards/CompanyLogo-card";
 import { StaticImageData } from "next/image";
 import AmbassadorCard from "../Cards/Ambassdor-level-card";
+import BlogCard from "../Cards/Blog-card";
+import InsightCard from "../Cards/Insight-cards";
+import AuthorCard from "../Cards/Author";
+import JobCard from "../Cards/Job-card";
+import MaterialCard from "../Cards/Material-card";
 
 interface CardItem {
   icon?: string | StaticImageData;
   title?: string;
   description?: string;
   subtitle?: string;
-  button?:string
-  level?: number;
+  button?: string;
+  level?: number | string;
+  category?: string;
+  author?: string;
+  date?: string;
+  readTime?: string;
+  name?: string;
+  role?: string;
+  badge?: string;
+  articlesCount?: number;
+  fileType?: string;
 }
 
 interface CardGridSectionProps {
@@ -22,8 +36,16 @@ interface CardGridSectionProps {
   gridClassName?: string;
   headingAlign?: "left" | "center";
   description?: string;
-  cardType?: "info" | "company" | "ambassador";
-  button?:string
+  cardType?:
+    | "info"
+    | "company"
+    | "ambassador"
+    | "Blog"
+    | "Insight"
+    | "Author"
+    | "material";
+  button?: string;
+  variantCategory?: "blog" | "category";
 }
 
 export default function CardGridSection({
@@ -35,8 +57,8 @@ export default function CardGridSection({
   headingAlign = "left",
   description,
   cardType = "info",
-  button
-  
+  button,
+  variantCategory,
 }: CardGridSectionProps) {
   return (
     <section>
@@ -83,11 +105,61 @@ export default function CardGridSection({
                   />
                 );
 
+              case "Blog":
+                if (!card.icon) return null;
+                return (
+                  <BlogCard
+                    key={index}
+                    icon={card?.icon}
+                    category={card.category || ""}
+                    title={card.title || ""}
+                    description={card.description || ""}
+                    author={card.author || ""}
+                    date={card.date || ""}
+                    readTime={card.readTime || ""}
+                  />
+                );
+              case "Insight":
+                return (
+                  <InsightCard
+                    key={card.description}
+                    variantCategory={variantCategory || "blog"}
+                    category={card.category || ""}
+                    title={card.title || ""}
+                    description={card.description || ""}
+                    author={card.author || ""}
+                    date={card.date || ""}
+                    icon={card.icon || ""}
+                    readTime={card.readTime || ""}
+                  />
+                );
+
+              case "Author":
+                return (
+                  <AuthorCard
+                    icon={card.icon || ""}
+                    name={card.name || ""}
+                    role={card.role || ""}
+                    articlesCount={card.articlesCount || 0}
+                  />
+                );
+              case "material":
+                return (
+                  <MaterialCard
+                    key={card.title}
+                    category={card.category || ""}
+                    level={card?.level || ""}
+                    title={card.title || ""}
+                    description={card.description || ""}
+                    fileType={card.fileType || ""}
+                  />
+                );
               default:
                 return (
                   <InfoCard
                     key={index}
                     icon={card.icon!}
+                    badge={card.badge}
                     title={card.title || ""}
                     subTitle={card.subtitle || ""}
                     button={button || ""}

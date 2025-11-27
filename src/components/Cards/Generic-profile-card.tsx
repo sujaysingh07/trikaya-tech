@@ -17,6 +17,7 @@ interface GenericProfileCardProps {
   rating?: number;
   showRating?: boolean;
   ratingColor?: string;
+  experties?:string;
 }
 
 export default function GenericProfileCard({
@@ -29,7 +30,7 @@ export default function GenericProfileCard({
   buttonText = "Book Now",
   variant = "default",
   className,
-
+  experties,
   isFeatured = false,
   rating,
   showRating = false,
@@ -77,6 +78,7 @@ export default function GenericProfileCard({
         <h3 className="font-semibold text-[20px] text-[#111827]">{name}</h3>
         <p className="text-base text-[#666666] leading-snug mt-1">{title}</p>
 
+        <h3 className="font-semibold text-[20px] text-[#111827] my-2">{experties}</h3>
         {/* Optional description */}
         {description && (
           <p className="text-sm text-[#4B5563] mt-1">{description}</p>

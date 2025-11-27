@@ -42,7 +42,7 @@ export default function BlogSection() {
 
   const blogData = [
     {
-      icon: "/images/Blockchain-bot.png",
+      icon: "/images/blockchain-bot.png",
       category: "Blockchain",
       title: "AI-Powered Mentorship: Finding Your Perfect Career Guide",
       description:
@@ -74,7 +74,7 @@ export default function BlogSection() {
   ];
   const articleData = [
     {
-      icon: "/images/Blockchain-bot.png",
+      icon: "/images/blockchain-bot.png",
       category: "Blockchain",
       title: "Building Your First Decentralized App on Web3",
       description:
@@ -114,7 +114,7 @@ export default function BlogSection() {
       readTime: "11 min read",
     },
     {
-      icon: "/images/Blockchain-bot.png",
+      icon: "/images/blockchain-bot.png",
       category: "Community",
       title: "The Power of Community-Driven Learning",
       description:

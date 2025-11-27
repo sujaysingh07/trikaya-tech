@@ -64,50 +64,6 @@ export default function Learning() {
     },
   ];
 
-  const whoGainCards = [
-    {
-      icon: "/icons/BlockchainLink.svg",
-      title: "Blockchain-Verified Credential",
-      description: "Receive verified proof of your leadership role.",
-    },
-    {
-      icon: "/icons/TShirt.svg",
-      title: "Swags & Merchandise",
-      description: "Get exclusive Trikaya hoodies, T-shirts, and goodies.",
-    },
-    {
-      icon: "/icons/WorkingMan.svg",
-      title: "Internship Opportunities",
-      description: "Top ambassadors get internship and referral access.",
-    },
-    {
-      icon: "/icons/Collab.svg",
-      title: "Mentorship Access",
-      description: "Direct guidance from Trikaya mentors and team.",
-    },
-  ];
-  const ApplyCards = [
-    {
-      icon: "/icons/FeedbackForms.svg",
-      title: "Submit Application Form",
-      description: "Fill out your profile and motivation statement.",
-    },
-    {
-      icon: "/icons/SearchUserWithTie.svg",
-      title: "Shortlisting",
-      description: "Our team reviews your application and campus details.",
-    },
-    {
-      icon: "/icons/Discuss.svg",
-      title: "Interview / Discussion",
-      description: "Selected candidates join a short orientation call.",
-    },
-    {
-      icon: "/icons/onboarding.svg",
-      title: "Onboarding",
-      description: "Welcome to the Trikaya Ambassador family!",
-    },
-  ];
 
  const materialData = [
   {

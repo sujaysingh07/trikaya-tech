@@ -55,6 +55,13 @@ const Navbar = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"; // Disable scroll
+    } else {
+      document.body.style.overflow = "auto"; // Enable scroll
+    }
+  }, [isOpen]);
   return (
     <nav className="w-full bg-[#000000] sticky top-0 z-50">
       <Container className="flex items-center justify-between py-3.5">
@@ -124,79 +131,79 @@ const Navbar = () => {
       </Container>
 
       {/* Mobile Dropdown */}
-     <div
-            className={clsx(
-              "fixed left-0 right-0 top-18 bg-white text-black transition-transform duration-500 ease-in-out h-[calc(100vh-64px)]",
-              isOpen ? "translate-y-0" : "-translate-y-[120%]"
-            )}
-          >
-    
-            <div className="px-6 pt-2 flex flex-col h-full gap-0 overflow-y-auto">
-              {navItems.map((item) => {
-                const hasChildren = Boolean(item.children);
-    
-    return (
-      <div key={item.id} className="w-full">
-        <button
-          onClick={() =>
-            hasChildren
-              ? setOpenDropdown(openDropdown === item.id ? null : item.id)
-              : handleNavigation(item.path)
-          }
-          className="flex items-center justify-between w-full text-left text-lg font-semibold py-3"
-        >
-          {item.label}
-    
-          {hasChildren && (
-            <ChevronDown
-              className={clsx(
-                "transition-transform duration-300",
-                openDropdown === item.id && "rotate-180"
-              )}
-              size={20}
-            />
-          )}
-        </button>
-    
-        {/* Accordion Children */}
-        {hasChildren && (
-          <div
-            className={clsx(
-              "pl-4 overflow-hidden transition-all duration-300",
-              openDropdown === item.id
-                ? "max-h-40 opacity-100"
-                : "max-h-0 opacity-0"
-            )}
-          >
-            {item.children?.map((child, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleNavigation(child.path)}
-                className="block py-2 w-full text-left text-base text-[#666666] hover:text-[#9ABCFF] transition"
-              >
-                {child.label}
-              </button>
-            ))}
-          </div>
+      <div
+        className={clsx(
+          "fixed left-0 right-0 top-16 bg-white overflow-y-auto z-50 transition-transform duration-500 ease-in-out h-[calc(100vh-64px)] ",
+          isOpen ? "translate-y-0" : "-translate-y-[120%]"
         )}
+      >
+        {/* Close Button */}
+  
+
+        <div className="px-6  flex flex-col h-full">
+          {navItems.map((item) => {
+            const hasChildren = Boolean(item.children);
+            return (
+              <div key={item.id} className="w-full">
+                <button
+                  onClick={() =>
+                    hasChildren
+                      ? setOpenDropdown(
+                          openDropdown === item.id ? null : item.id
+                        )
+                      : handleNavigation(item.path)
+                  }
+                  className="flex items-center justify-between w-full text-left text-lg font-semibold py-3"
+                >
+                  {item.label}
+                  {hasChildren && (
+                    <ChevronDown
+                      className={clsx(
+                        "transition-transform duration-300",
+                        openDropdown === item.id && "rotate-180"
+                      )}
+                      size={20}
+                    />
+                  )}
+                </button>
+
+                {/* Accordion Dropdown */}
+                {hasChildren && (
+                  <div
+                    className={clsx(
+                      "pl-4 overflow-hidden transition-all duration-300",
+                      openDropdown === item.id
+                        ? "max-h-40 opacity-100"
+                        : "max-h-0 opacity-0"
+                    )}
+                  >
+                    {item.children?.map((child, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => handleNavigation(child.path)}
+                        className="block py-2 text-left text-base text-[#666666] hover:text-[#9ABCFF] transition"
+                      >
+                        {child.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+
+          <div className="" />
+
+          <Link
+            href="https://builder.trikaya.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-3 bg-[#111] border-2 border-[#4B4B4B] text-white rounded-lg font-semibold hover:bg-gray-800 transition text-center"
+          >
+            Launch App
+          </Link>
+        </div>
       </div>
-    );
-    
-              })}
-    
-              <div className="flex-grow" />
-    
-              {/* Launch App */}
-              <Link
-                href="https://builder.trikaya.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3 bg-[#111] border-2 border-[#4B4B4B] text-white rounded-lg font-semibold hover:bg-gray-800 transition text-center"
-              >
-                Launch App
-              </Link>
-            </div>
-          </div>
     </nav>
   );
 };

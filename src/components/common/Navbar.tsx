@@ -133,7 +133,7 @@ const Navbar = () => {
       {/* Mobile Dropdown */}
       <div
         className={clsx(
-          "fixed left-0 right-0 top-16 bg-white overflow-y-auto z-50 transition-transform duration-500 ease-in-out h-[calc(100vh-64px)] ",
+          "fixed left-0 right-0 top-18 bg-white overflow-y-auto z-50 transition-transform duration-500 ease-in-out h-[calc(100vh-64px)] ",
           isOpen ? "translate-y-0" : "-translate-y-[120%]"
         )}
       >
@@ -193,7 +193,7 @@ const Navbar = () => {
             })}
           </div>
 
-          <div className="pt-2" />
+          <div className="pt-4" />
 
           <Link
             href="https://builder.trikaya.io/"

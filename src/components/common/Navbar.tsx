@@ -138,61 +138,62 @@ const Navbar = () => {
         )}
       >
         {/* Close Button */}
-  
 
-        <div className="px-6  flex flex-col h-full">
-          {navItems.map((item) => {
-            const hasChildren = Boolean(item.children);
-            return (
-              <div key={item.id} className="w-full">
-                <button
-                  onClick={() =>
-                    hasChildren
-                      ? setOpenDropdown(
-                          openDropdown === item.id ? null : item.id
-                        )
-                      : handleNavigation(item.path)
-                  }
-                  className="flex items-center justify-between w-full text-left text-lg font-semibold py-3"
-                >
-                  {item.label}
-                  {hasChildren && (
-                    <ChevronDown
-                      className={clsx(
-                        "transition-transform duration-300",
-                        openDropdown === item.id && "rotate-180"
-                      )}
-                      size={20}
-                    />
-                  )}
-                </button>
-
-                {/* Accordion Dropdown */}
-                {hasChildren && (
-                  <div
-                    className={clsx(
-                      "pl-4 overflow-hidden transition-all duration-300",
-                      openDropdown === item.id
-                        ? "max-h-40 opacity-100"
-                        : "max-h-0 opacity-0"
-                    )}
+        <div className="px-6  flex flex-col justify-between h-full">
+          <div>
+            {navItems.map((item) => {
+              const hasChildren = Boolean(item.children);
+              return (
+                <div key={item.id} className="w-full">
+                  <button
+                    onClick={() =>
+                      hasChildren
+                        ? setOpenDropdown(
+                            openDropdown === item.id ? null : item.id
+                          )
+                        : handleNavigation(item.path)
+                    }
+                    className="flex items-center justify-between w-full text-left text-lg font-semibold py-3"
                   >
-                    {item.children?.map((child, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleNavigation(child.path)}
-                        className="block py-2 text-left text-base text-[#666666] hover:text-[#9ABCFF] transition"
-                      >
-                        {child.label}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                    {item.label}
+                    {hasChildren && (
+                      <ChevronDown
+                        className={clsx(
+                          "transition-transform duration-300",
+                          openDropdown === item.id && "rotate-180"
+                        )}
+                        size={20}
+                      />
+                    )}
+                  </button>
 
-          <div className="" />
+                  {/* Accordion Dropdown */}
+                  {hasChildren && (
+                    <div
+                      className={clsx(
+                        "pl-4 overflow-hidden transition-all duration-300",
+                        openDropdown === item.id
+                          ? "max-h-40 opacity-100"
+                          : "max-h-0 opacity-0"
+                      )}
+                    >
+                      {item.children?.map((child, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleNavigation(child.path)}
+                          className="block py-2 text-left text-base text-[#666666] hover:text-[#9ABCFF] transition"
+                        >
+                          {child.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="pb-2" />
 
           <Link
             href="https://builder.trikaya.io/"

@@ -33,16 +33,21 @@ export default function CourseCard({
     <div
       className={clsx(
         className,
-        "flex flex-col overflow-hidden max-w-[410px] bg-white rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300"
+        "flex max-w-[410px] flex-col overflow-hidden rounded-[20px] bg-white shadow-sm transition-all duration-300 hover:shadow-md",
       )}
     >
       {/* Top Image Section */}
-      <div className="relative w-full h-40">
-        <Image src={image} alt={title} fill className="object-cover grayscale-100" />
+      <div className="relative h-40 w-full">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover grayscale-100"
+        />
 
         {/* Badge */}
         <div
-          className="absolute top-4 left-4 px-3 py-1 text-sm font-medium rounded-full text-black"
+          className="absolute top-4 left-4 rounded-full px-3 py-1 text-sm font-medium text-black"
           style={{ backgroundColor: levelColor }}
         >
           {level}
@@ -51,16 +56,16 @@ export default function CourseCard({
 
       {/* Content */}
       <div className="flex flex-col gap-2 p-5">
-        <h3 className="font-semibold text-[#03061E] text-[22px] leading-snug">
+        <h3 className="text-[22px] leading-snug font-semibold text-[#03061E]">
           {title}
         </h3>
 
-        <div className="flex items-center gap-2 text-gray-600 text-sm">
+        <div className="flex items-center gap-2 text-sm text-gray-600">
           <Icons variant="UserCard" />
           <span>Mentor: {mentor}</span>
         </div>
 
-        <div className="flex items-center gap-2 text-gray-600 text-sm">
+        <div className="flex items-center gap-2 text-sm text-gray-600">
           <Icons variant="Clock" />
 
           <span>{duration}</span>
@@ -69,7 +74,7 @@ export default function CourseCard({
         {/* Button */}
         <Link
           href={buttonLink}
-          className="mt-4  max-w-[181px] text-center bg-black text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-[#222] transition"
+          className="mt-4 max-w-[181px] rounded-md bg-black px-4 py-2 text-center text-sm font-semibold text-white transition hover:bg-[#222]"
         >
           {buttonLabel}
         </Link>

@@ -52,7 +52,7 @@ const challenges: Challenge[] = [
 
 export default function DailyWeeklyChallenges() {
   return (
-    <section className="bg-black text-white py-11">
+    <section className="bg-black py-11 text-white">
       <Container>
         {/* Header */}
         <SectionHeader
@@ -63,14 +63,14 @@ export default function DailyWeeklyChallenges() {
         />
 
         {/* Challenge Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {challenges.map((challenge, index) => (
             <div
               key={index}
-              className="bg-white border border-[#1E1E1E] rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col"
+              className="flex flex-col overflow-hidden rounded-2xl border border-[#1E1E1E] bg-white transition-all duration-300 hover:shadow-lg"
             >
               {/* Image */}
-              <div className="relative w-full h-[140px] sm:h-[150px]">
+              <div className="relative h-[140px] w-full sm:h-[150px]">
                 <Image
                   src={challenge.image}
                   alt={challenge.title}
@@ -80,25 +80,25 @@ export default function DailyWeeklyChallenges() {
               </div>
 
               {/* Content */}
-              <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between">
+              <div className="flex flex-1 flex-col justify-between p-4 sm:p-5">
                 <div>
                   {/* Duration */}
-                  <p className="text-[#666666] text-xs sm:text-sm mb-2 flex items-center gap-2">
+                  <p className="mb-2 flex items-center gap-2 text-xs text-[#666666] sm:text-sm">
                     <Icons variant="Clock" color="#666666" />
                     {challenge.duration}
                   </p>
 
                   {/* Title */}
-                  <h3 className="text-[18px] sm:text-[20px] font-semibold text-[#03061E] mb-3">
+                  <h3 className="mb-3 text-[18px] font-semibold text-[#03061E] sm:text-[20px]">
                     {challenge.title}
                   </h3>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="mb-6 flex flex-wrap gap-2">
                     {challenge.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-[10px] sm:text-xs bg-[#EBEAEA] text-[#475569] px-2 sm:px-3 py-1 rounded-full"
+                        className="rounded-full bg-[#EBEAEA] px-2 py-1 text-[10px] text-[#475569] sm:px-3 sm:text-xs"
                       >
                         {tag}
                       </span>
@@ -110,11 +110,11 @@ export default function DailyWeeklyChallenges() {
                 <div className="flex items-center justify-between pt-2">
                   <Link
                     href={challenge.href}
-                    className="bg-primary-color hover:bg-[#1556C8] text-white text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-md transition"
+                    className="bg-primary-color rounded-md px-3 py-2 text-xs font-semibold text-white transition hover:bg-[#1556C8] sm:px-4 sm:text-sm"
                   >
                     Start
                   </Link>
-                  <p className="text-primary-color text-sm sm:text-base font-semibold">
+                  <p className="text-primary-color text-sm font-semibold sm:text-base">
                     {challenge.points}
                   </p>
                 </div>
@@ -125,8 +125,8 @@ export default function DailyWeeklyChallenges() {
 
         {/* Bottom Banner */}
         <div className="mt-12 flex justify-center text-center">
-          <div className="w-full sm:max-w-[500px] md:max-w-[679px] bg-[#0A0A0A] border border-[#CAF50A] rounded-[30px] px-4 sm:px-6 py-6 flex flex-col items-center">
-            <div className="flex flex-col sm:flex-row items-center gap-3 mb-2">
+          <div className="flex w-full flex-col items-center rounded-[30px] border border-[#CAF50A] bg-[#0A0A0A] px-4 py-6 sm:max-w-[500px] sm:px-6 md:max-w-[679px]">
+            <div className="mb-2 flex flex-col items-center gap-3 sm:flex-row">
               {/* Responsive SVG */}
               <div className="w-[55px] sm:w-[70px]">
                 <svg
@@ -188,9 +188,9 @@ export default function DailyWeeklyChallenges() {
               </div>
 
               {/* Banner Text */}
-              <p className="text-white text-sm sm:text-base md:text-[20px] font-medium leading-snug">
+              <p className="text-sm leading-snug font-medium text-white sm:text-base md:text-[20px]">
                 Complete challenges to unlock Arena KP and level up your{" "}
-                <span className="text-[#CAF50A] font-semibold">
+                <span className="font-semibold text-[#CAF50A]">
                   Trikaya Badge
                 </span>
                 .

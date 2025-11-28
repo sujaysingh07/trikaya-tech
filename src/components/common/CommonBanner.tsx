@@ -38,7 +38,7 @@ const Banner: React.FC<BannerProps> = ({
   isSearchBar = false,
 }) => {
   return (
-    <section className="relative w-full  bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2] overflow-hidden">
+    <section className="relative w-full overflow-hidden bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2]">
       {/* Background Image — only on right side */}
       <motion.div
         key={highlight}
@@ -46,29 +46,29 @@ const Banner: React.FC<BannerProps> = ({
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -80 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="absolute right-0 top-0 h-full w-1/2 z-0 overflow-hidden hidden md:block"
+        className="absolute top-0 right-0 z-0 hidden h-full w-1/2 overflow-hidden md:block"
       >
         <Image
           src={image}
           alt={highlight || "Banner Image"}
           fill
           // quality={100}
-          className="object-right object-contain scale-150"
+          className="scale-150 object-contain object-right"
           priority
         />
-        <div className="absolute left-0 top-0 h-full w-24 bg-linear-to-r from-[#F2F2F2] to-transparent pointer-events-none" />
+        <div className="pointer-events-none absolute top-0 left-0 h-full w-24 bg-linear-to-r from-[#F2F2F2] to-transparent" />
       </motion.div>
 
       {/* Content Section */}
       <Container>
         <div
           className={cn(
-            "relative z-10 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20 py-20",
-            reverse && "md:flex-row-reverse"
+            "relative z-10 flex flex-col-reverse items-center justify-between gap-12 py-20 md:flex-row md:gap-20",
+            reverse && "md:flex-row-reverse",
           )}
         >
           {/* Text Section */}
-          <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
+          <div className="flex w-full flex-col justify-center text-center md:w-1/2 md:text-left">
             <motion.div
               key={highlight}
               initial={{ opacity: 0, y: 40 }}
@@ -77,7 +77,7 @@ const Banner: React.FC<BannerProps> = ({
               transition={{ duration: 0.8, ease: "easeInOut" }}
             >
               <h2
-                className="text-3xl sm:text-4xl lg:text-[66px] font-bold leading-[1.2]"
+                className="text-3xl leading-[1.2] font-bold sm:text-4xl lg:text-[66px]"
                 style={{ color: titleColor }}
               >
                 {title}{" "}
@@ -85,21 +85,21 @@ const Banner: React.FC<BannerProps> = ({
                   <span style={{ color: highlightColor }}>{highlight}</span>
                 )}
               </h2>
-              <p className="mt-5  text-gray-600 text-base sm:text-lg lg:text-xl leading-relaxed">
+              <p className="mt-5 text-base leading-relaxed text-gray-600 sm:text-lg lg:text-xl">
                 {description}
               </p>
               {!isSearchBar && (
-                <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+                <div className="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
                   <Link
                     href={primaryButton.href}
-                    className="px-6 py-3 bg-black w-full md:w-auto text-white rounded-md text-lg font-semibold hover:bg-gray-800 transition"
+                    className="w-full rounded-md bg-black px-6 py-3 text-lg font-semibold text-white transition hover:bg-gray-800 md:w-auto"
                   >
                     {primaryButton.label}
                   </Link>
                   {secondaryButton && (
                     <Link
                       href={secondaryButton.href}
-                      className="px-6 py-3 bg-primary-color md:w-auto w-full text-white rounded-md text-lg font-semibold hover:bg-primary-color/90 transition"
+                      className="bg-primary-color hover:bg-primary-color/90 w-full rounded-md px-6 py-3 text-lg font-semibold text-white transition md:w-auto"
                     >
                       {secondaryButton.label}
                     </Link>

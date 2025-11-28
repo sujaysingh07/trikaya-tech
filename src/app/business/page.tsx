@@ -147,7 +147,7 @@ export default function Business() {
         title={"Empowering Institutions."}
         highlight={"Enabling Employers."}
         description="Trikaya bridges learning and industry through verified skills, AI-driven analytics, and collaborative partnerships. Build stronger talent pipelines and transform how you educate, assess, and hire."
-        image={'/business.png'}
+        image={"/business.png"}
         primaryButton={{
           label: "Partner With Trikaya",
           href: "",

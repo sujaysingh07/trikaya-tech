@@ -47,7 +47,7 @@ export default function HackathonSection() {
         description="Join large-scale hackathons designed around Blockchain, AI, Data Science, and Cybersecurity. Build innovative solutions, pitch to employers, and gain real exposure."
       />
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-9">
+      <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {hackathonList.map((hack, index) => (
           <HackathonCard key={index} hackathon={hack} />
         ))}

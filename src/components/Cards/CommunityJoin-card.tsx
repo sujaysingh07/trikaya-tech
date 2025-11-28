@@ -9,7 +9,7 @@ interface CommunityJoinCardProps {
   description: string;
   members: string; // "45K+ members"
   isActive?: boolean;
-    buttonLabel?: string;
+  buttonLabel?: string;
 }
 
 export default function CommunityJoinCard({
@@ -17,36 +17,36 @@ export default function CommunityJoinCard({
   title,
   description,
   members,
-    buttonLabel = "Join Now",
+  buttonLabel = "Join Now",
 }: CommunityJoinCardProps) {
   return (
     <div
       className={clsx(
-        "w-full rounded-2xl p-6 border bg-white transition-all duration-200 cursor-pointer",
-        "border-[#E5E7EB] hover:border-primary-color "
+        "w-full cursor-pointer rounded-2xl border bg-white p-6 transition-all duration-200",
+        "hover:border-primary-color border-[#E5E7EB]",
       )}
     >
       {/* ICON */}
       <Image src={icon} alt={title} width={74} height={74} />
 
       {/* TITLE */}
-      <h3 className="text-[22px] font-semibold text-[#03061E] leading-[25px] tracking-[.5%] mt-3">
+      <h3 className="mt-3 text-[22px] leading-[25px] font-semibold tracking-[.5%] text-[#03061E]">
         {title}
       </h3>
 
       {/* DESCRIPTION */}
-      <p className="text-base leading-[25px] text-[#666666] mt-1">
+      <p className="mt-1 text-base leading-[25px] text-[#666666]">
         {description}
       </p>
 
       {/* MEMBERS */}
-      <p className="text-base text-black font-medium tracking-[.5%] mt-3 flex items-center gap-2">
+      <p className="mt-3 flex items-center gap-2 text-base font-medium tracking-[.5%] text-black">
         <Icons variant="group-people" />
         {members}
       </p>
 
       {/* BUTTON */}
-      <button className="mt-4 bg-primary-color text-white px-5 py-2.5 rounded-md font-medium hover:bg-[#0048D9] transition">
+      <button className="bg-primary-color mt-4 rounded-md px-5 py-2.5 font-medium text-white transition hover:bg-[#0048D9]">
         {buttonLabel}
       </button>
     </div>

@@ -35,22 +35,22 @@ export default function InviteCard({
       {/* Blue accent behind the card (bottom-left/right) */}
       <Container>
         <div className="mx-auto">
-          <div className="relative bg-white rounded-[30px] border border-primary-color shadow-sm overflow-hidden">
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-0 p-6 md:p-10">
+          <div className="border-primary-color relative overflow-hidden rounded-[30px] border bg-white shadow-sm">
+            <div className="flex flex-col items-center gap-6 p-6 md:flex-row md:gap-0 md:p-10">
               {/* Left: content & CTA */}
               <div className="md:flex-1 md:pr-8">
-                <h3 className="text-xl md:text-[35px] font-bold leading-tight">
+                <h3 className="text-xl leading-tight font-bold md:text-[35px]">
                   {title}
                 </h3>
 
-                <p className="mt-2 text-sm md:text-base font-normal  max-w-xl">
+                <p className="mt-2 max-w-xl text-sm font-normal md:text-base">
                   {subtitle}
                 </p>
 
                 <div className="mt-6">
                   <Link
                     href={ctaHref}
-                    className="inline-block bg-primary-color whitespace-nowrap hover:bg-[#1556c8] text-[20px]  text-white font-semibold px-10 py-3 rounded-lg shadow-sm transition"
+                    className="bg-primary-color inline-block rounded-lg px-10 py-3 text-[20px] font-semibold whitespace-nowrap text-white shadow-sm transition hover:bg-[#1556c8]"
                     aria-label={ctaLabel}
                   >
                     {ctaLabel}
@@ -59,21 +59,21 @@ export default function InviteCard({
               </div>
 
               {/* Right: amount & features */}
-              <div className="md:w-[320px] shrink-0 flex flex-col items-start md:items-end text-right md:text-right">
+              <div className="flex shrink-0 flex-col items-start text-right md:w-[320px] md:items-end md:text-right">
                 <div className="flex flex-col items-end">
-                  <span className="text-4xl md:text-[100px] font-semibold leading-none">
+                  <span className="text-4xl leading-none font-semibold md:text-[100px]">
                     {amount}
                   </span>
-                  <span className="mt-1 text-xs md:text-base text-center text-black">
+                  <span className="mt-1 text-center text-xs text-black md:text-base">
                     {amountSub}
                   </span>
                 </div>
 
-                <ul className="mt-6 space-y-3 w-full md:w-auto">
+                <ul className="mt-6 w-full space-y-3 md:w-auto">
                   {features.map((f, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <span
-                        className="flex h-7 w-7 md:h-8 md:w-8 items-center justify-center rounded-full bg-blue-50"
+                        className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-50 md:h-8 md:w-8"
                         aria-hidden
                       >
                         {/* check icon */}
@@ -91,7 +91,7 @@ export default function InviteCard({
                         </svg>
                       </span>
 
-                      <span className="text-sm md:text-[22px] font-semibold">
+                      <span className="text-sm font-semibold md:text-[22px]">
                         {f.label}
                       </span>
                     </li>

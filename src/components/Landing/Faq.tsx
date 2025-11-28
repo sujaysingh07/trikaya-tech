@@ -5,13 +5,13 @@ import Image from "next/image";
 import CallToAction from "../common/CallToAction";
 export default function ReferralFaqSection() {
   return (
-    <section className="relative bg-primary-color pt-11 md:pb-[300px] text-white">
+    <section className="bg-primary-color relative pt-11 text-white md:pb-[300px]">
       <Image
         src="/rocket-bg.svg"
         alt="Rocket Background"
         fill
         priority
-        className="object-cover md:block hidden object-bottom pointer-events-none select-none"
+        className="pointer-events-none hidden object-cover object-bottom select-none md:block"
       />
 
       <Container>
@@ -31,7 +31,6 @@ export default function ReferralFaqSection() {
           { label: "Explore Labs", href: "#", variant: "secondary" },
         ]}
         showRocketBg={false}
-
       />
     </section>
   );

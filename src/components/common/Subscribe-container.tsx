@@ -1,4 +1,3 @@
-
 import SectionHeader from "./SectionHeader";
 import SubscribeForm from "./SubscribeForm";
 import Container from "../ui/Container";
@@ -12,13 +11,11 @@ export default function SubscribeCard({
   subtitle?: string;
   note?: string;
 }) {
-
-
   return (
     <Container className="">
-      <div className=" w-full md:border-primary-color  md:border rounded-[30px] mb-11">
+      <div className="md:border-primary-color mb-11 w-full rounded-[30px] md:border">
         {/* Heading */}
-        <div className="py-[23px] flex flex-col max-w-[800px] w-full justify-center mx-auto text-center gap-4">
+        <div className="mx-auto flex w-full max-w-[800px] flex-col justify-center gap-4 py-[23px] text-center">
           <SectionHeader
             title={title || ""}
             className=""
@@ -28,9 +25,7 @@ export default function SubscribeCard({
           <SubscribeForm />
 
           {/* Privacy note */}
-          <span className="text-xs text-[#000000] mt-1">
-           {note}
-          </span>
+          <span className="mt-1 text-xs text-[#000000]">{note}</span>
         </div>
       </div>
     </Container>

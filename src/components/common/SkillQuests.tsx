@@ -56,7 +56,7 @@ const quests: Quest[] = [
 
 export default function SkillQuests() {
   return (
-    <Container className="py-11 ">
+    <Container className="py-11">
       {/* Heading */}
       <SectionHeader
         title="Skill "
@@ -65,43 +65,43 @@ export default function SkillQuests() {
       />
 
       {/* Quest Cards */}
-      <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3 mt-10">
+      <div className="mt-10 grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
         {quests.map((quest, index) => (
           <motion.div
             key={index}
             whileHover={{ y: -5 }}
-            className="bg-white border border-[##CCCCCC] rounded-[30px] p-6 flex flex-col justify-between transition-all duration-300"
+            className="flex flex-col justify-between rounded-[30px] border border-[##CCCCCC] bg-white p-6 transition-all duration-300"
           >
             {/* Top */}
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="mb-4 flex items-center justify-between">
                 <span
-                  className={`text-base font-medium px-3 py-1 rounded-full ${quest.levelColor}`}
+                  className={`rounded-full px-3 py-1 text-base font-medium ${quest.levelColor}`}
                 >
                   {quest.level}
                 </span>
-                <p className="text-black font-bold text-sm flex items-center gap-1">
+                <p className="flex items-center gap-1 text-sm font-bold text-black">
                   <Icons variant="Clock" /> {quest.duration}
                 </p>
               </div>
 
-              <h3 className="text-xl font-semibold text-[#03061E] mb-2">
+              <h3 className="mb-2 text-xl font-semibold text-[#03061E]">
                 {quest.title}
               </h3>
-              <p className="text-[#03061E] text-base leading-relaxed mb-6">
+              <p className="mb-6 text-base leading-relaxed text-[#03061E]">
                 {quest.description}
               </p>
 
-              <div className="inline-flex items-center text-xs font-bold bg-[#EBEAEA] text-[#475569] px-3 py-1 rounded-full">
-                {quest.badge} <span className="ml-1 ">{quest.points}</span>
+              <div className="inline-flex items-center rounded-full bg-[#EBEAEA] px-3 py-1 text-xs font-bold text-[#475569]">
+                {quest.badge} <span className="ml-1">{quest.points}</span>
               </div>
             </div>
 
             {/* Footer */}
-            <div className="mt-6 flex ">
+            <div className="mt-6 flex">
               <Link
                 href={quest.href}
-                className="block text-center bg-[#2563EB] max-w-[164px] w-full hover:bg-[#1556C8] text-white font-semibold text-[20px] leading-[100%] px-4 py-3 rounded-md transition"
+                className="block w-full max-w-[164px] rounded-md bg-[#2563EB] px-4 py-3 text-center text-[20px] leading-[100%] font-semibold text-white transition hover:bg-[#1556C8]"
               >
                 Join Quest
               </Link>
@@ -111,9 +111,9 @@ export default function SkillQuests() {
       </div>
 
       {/* Bottom Banner */}
-      <div className="mt-10 border border-primary-color rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="border-primary-color mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border p-6 md:flex-row">
         <div className="flex items-center gap-2">
-          <div className=" p-3 rounded-full">
+          <div className="rounded-full p-3">
             <svg
               width="71"
               height="71"
@@ -171,20 +171,18 @@ export default function SkillQuests() {
               <circle cx="26.6655" cy="41.4619" r="2.60249" fill="black" />
             </svg>
           </div>
-          <p className="text-[#111827] text-sm md:text-[20px] font-semibold tracking-[0.5%] max-w-xl">
+          <p className="max-w-xl text-sm font-semibold tracking-[0.5%] text-[#111827] md:text-[20px]">
             Complete all three quests to earn the Arena Master Badge and access
             exclusive mentorships.
           </p>
         </div>
 
-       
-          <Link
-            href={''}
-            className="block text-center bg-black  hover:bg-[#1556C8] text-white font-semibold text-base leading-[100%] px-4 py-4 rounded-md transition"
-          >
-        Explore All Hackathons
-          </Link>
-     
+        <Link
+          href={""}
+          className="block rounded-md bg-black px-4 py-4 text-center text-base leading-[100%] font-semibold text-white transition hover:bg-[#1556C8]"
+        >
+          Explore All Hackathons
+        </Link>
       </div>
     </Container>
   );

@@ -19,7 +19,6 @@ import trikayaStandard from "@/public/trikaya-standard.png";
 import { useIsMobile } from "../hooks/useMobile";
 
 export default function Home() {
-  
   const isMobile = useIsMobile();
 
   const banners = [
@@ -70,18 +69,17 @@ export default function Home() {
   const [index, setIndex] = useState(0);
 
   // ---------------- AUTO-SLIDE ONLY FOR DESKTOP ----------------
-useEffect(() => {
-  const intervalTime = isMobile ? 5000 : 3000; // 5s for mobile, 3s for desktop
+  useEffect(() => {
+    const intervalTime = isMobile ? 5000 : 3000; // 5s for mobile, 3s for desktop
 
-  const timer = setInterval(() => {
-    setIndex((prev) => (prev + 1) % banners.length);
-  }, intervalTime);
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % banners.length);
+    }, intervalTime);
 
-  return () => clearInterval(timer);
-}, [banners?.length, isMobile]);
+    return () => clearInterval(timer);
+  }, [banners?.length, isMobile]);
 
-const currentBanner = banners[index];
-
+  const currentBanner = banners[index];
 
   return (
     <div className="transition-all duration-700">

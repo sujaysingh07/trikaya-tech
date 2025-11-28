@@ -12,24 +12,24 @@ export default function ProgramFeatureCard({
   description,
 }: ProgramFeatureProps) {
   return (
-    <div className="flex flex-col md:flex-row md:gap-5 gap-3 items-center bg-gradient-to-br from-[#f9f9fb] to-[#d6d6e3] p-5 md:p-6 rounded-[30px] h-auto md:min-h-[215px] transition-all duration-300 text-center md:text-left">
+    <div className="flex h-auto flex-col items-center gap-3 rounded-[30px] bg-gradient-to-br from-[#f9f9fb] to-[#d6d6e3] p-5 text-center transition-all duration-300 md:min-h-[215px] md:flex-row md:gap-5 md:p-6 md:text-left">
       {/* Icon */}
-      <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
+      <div className="flex h-16 w-16 items-center justify-center md:h-20 md:w-20">
         <Image
           src={icon}
           width={80}
           height={80}
           alt={title}
-          className="object-contain w-14 h-14 md:w-20 md:h-20"
+          className="h-14 w-14 object-contain md:h-20 md:w-20"
         />
       </div>
 
       {/* Text */}
       <div>
-        <h3 className="text-[20px] md:text-[28px] font-bold leading-snug">
+        <h3 className="text-[20px] leading-snug font-bold md:text-[28px]">
           {title}
         </h3>
-        <p className="text-sm md:text-base font-normal mt-[2px] leading-normal">
+        <p className="mt-[2px] text-sm leading-normal font-normal md:text-base">
           {description}
         </p>
       </div>

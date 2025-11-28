@@ -25,21 +25,17 @@ export default function GenericButton({
           align === "center"
             ? "justify-center"
             : align === "right"
-            ? "justify-end"
-            : "justify-start"
+              ? "justify-end"
+              : "justify-start"
         }`}
       >
         <Link
           href={href}
-          className={`
-          px-6 py-3 rounded-md text-lg font-semibold text-center transition w-full whitespace-nowrap md:w-auto
-          ${
+          className={`w-full rounded-md px-6 py-3 text-center text-lg font-semibold whitespace-nowrap transition md:w-auto ${
             variant === "primary"
-              ? "bg-primary-color text-white hover:bg-[#0048d9] border border-gray-200"
+              ? "bg-primary-color border border-gray-200 text-white hover:bg-[#0048d9]"
               : "bg-black text-white hover:bg-gray-800"
-          }
-          ${className}
-        `}
+          } ${className} `}
         >
           {label}
         </Link>

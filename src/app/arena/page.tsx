@@ -194,7 +194,7 @@ export default function Arena() {
           highlight="Champions"
           description="Meet Trikaya users who turned their Arena wins into job offers, internships, and projects."
         />
-        <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[35px] justify-items-center py-11">
+        <div className="mx-auto grid grid-cols-1 justify-items-center gap-[35px] py-11 sm:grid-cols-2 lg:grid-cols-4">
           {experts.map((expert, index) => (
             <GenericProfileCard
               key={index}

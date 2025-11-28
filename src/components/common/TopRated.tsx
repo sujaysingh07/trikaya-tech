@@ -41,19 +41,19 @@ export const mentorsData = [
 ];
 
 export default function TopRated() {
-    return (
-      <Container>
-        <SectionHeader
-          title="Top-Rated "
-          highlight="Mentors"
-          description="Meet our most sought-after mentors who've helped hundreds of learners achieve their goals."
-        />
+  return (
+    <Container>
+      <SectionHeader
+        title="Top-Rated "
+        highlight="Mentors"
+        description="Meet our most sought-after mentors who've helped hundreds of learners achieve their goals."
+      />
 
-        <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[35px] justify-items-center py-10">
-          {mentorsData.map((mentor, index) => (
-            <GenericProfileCard key={index} {...mentor} buttonText="Book Now" />
-          ))}
-        </div>
-      </Container>
-    );
+      <div className="mx-auto grid grid-cols-1 justify-items-center gap-[35px] py-10 sm:grid-cols-2 lg:grid-cols-4">
+        {mentorsData.map((mentor, index) => (
+          <GenericProfileCard key={index} {...mentor} buttonText="Book Now" />
+        ))}
+      </div>
+    </Container>
+  );
 }

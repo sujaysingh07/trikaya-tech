@@ -277,7 +277,7 @@ export default function Community() {
           highlight="Feed"
           description="Stay updated with posts, discussions, and announcements from across Trikaya."
         />
-        <div className="space-y-4 my-11">
+        <div className="my-11 space-y-4">
           {posts.map((p, i) => (
             <CommunityCard key={i} {...p} />
           ))}
@@ -288,7 +288,7 @@ export default function Community() {
           highlight="Feed"
           description="Stay updated with posts, discussions, and announcements from across Trikaya."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 py-11">
+        <div className="grid grid-cols-1 gap-6 py-11 sm:grid-cols-2 lg:grid-cols-2">
           {data.map((item, i) => (
             <CommunityJoinCard key={i} {...item} />
           ))}
@@ -299,7 +299,7 @@ export default function Community() {
           highlight="Events"
           description="Attend online workshops, webinars, and city-level meetups hosted by Trikaya mentors and partners."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-[46px] gap-y-[27px] py-11">
+        <div className="grid grid-cols-1 gap-x-[46px] gap-y-[27px] py-11 sm:grid-cols-2">
           {eventData.map((item) => (
             <GradientImageCardThree
               key={item.id}
@@ -329,7 +329,7 @@ export default function Community() {
           highlight="Leaderboard"
           description="Every contribution counts. Earn KP, badges, and verified recognition for helping others, completing labs, or hosting events."
         />
-        <div className="bg-[#FAFAFA] rounded-[30px] md:p-6 space-y-2  my-11">
+        <div className="my-11 space-y-2 rounded-[30px] bg-[#FAFAFA] md:p-6">
           {leaderboardData.map((item) => (
             <LeaderboardRow key={item.rank} {...item} />
           ))}
@@ -340,7 +340,7 @@ export default function Community() {
           variant="primary"
           align="center"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pb-11">
+        <div className="grid grid-cols-1 gap-6 pb-11 sm:grid-cols-3">
           {badges.map((b, index) => (
             <ReusableCard
               key={index}
@@ -355,7 +355,7 @@ export default function Community() {
           highlight="Highlights"
           description="Meet the learners and mentors shaping the Trikaya ecosystem."
         />
-        <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[35px] justify-items-center py-11">
+        <div className="mx-auto grid grid-cols-1 justify-items-center gap-[35px] py-11 sm:grid-cols-2 lg:grid-cols-3">
           {experts.map((expert, index) => (
             <GenericProfileCard
               key={index}

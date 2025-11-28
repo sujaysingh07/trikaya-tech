@@ -11,13 +11,7 @@ export default function CompanyLogoCard({
   name = "Company",
 }: CompanyLogoCardProps) {
   return (
-    <div
-      className="
-        border rounded-3xl p-6 bg-white 
-        flex flex-col items-center justify-center 
-        shadow-sm hover:shadow-md transition
-      "
-    >
+    <div className="flex flex-col items-center justify-center rounded-3xl border bg-white p-6 shadow-sm transition hover:shadow-md">
       <Image
         src={logo}
         alt={name}

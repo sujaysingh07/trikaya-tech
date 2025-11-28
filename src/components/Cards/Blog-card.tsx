@@ -1,5 +1,3 @@
-
-
 import Image, { StaticImageData } from "next/image";
 
 interface BlogCardProps {
@@ -22,38 +20,39 @@ export default function BlogCard({
   readTime,
 }: BlogCardProps) {
   return (
-    <div className="bg-white rounded-[30px] border border-[#CCCCCC] hover:border-primary-color cursor-pointer hover:shadow-lg transition overflow-hidden max-w-[410px]">
+    <div className="hover:border-primary-color max-w-[410px] cursor-pointer overflow-hidden rounded-[30px] border border-[#CCCCCC] bg-white transition hover:shadow-lg">
       {/* Image */}
-      <div className="relative w-full h-[180px]">
+      <div className="relative h-[180px] w-full">
         <Image
           src={icon}
           alt={title}
           fill
-          className="object-cover rounded-t-2xl"
+          className="rounded-t-2xl object-cover"
         />
 
         {/* Category Tag */}
-        <span className="absolute top-3 left-3 bg-primary-color text-white text-base font-medium px-3 py-1 rounded-full">
+        <span className="bg-primary-color absolute top-3 left-3 rounded-full px-3 py-1 text-base font-medium text-white">
           {category}
         </span>
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col gap-2">
-        <h3 className="text-[22px] font-semibold text-[#03061E] leading-snug">
+      <div className="flex flex-col gap-2 p-5">
+        <h3 className="text-[22px] leading-snug font-semibold text-[#03061E]">
           {title}
         </h3>
 
-        <p className="text-sm text-[#666666] line-clamp-2">{description}</p>
+        <p className="line-clamp-2 text-sm text-[#666666]">{description}</p>
 
         {/* Metadata */}
-        <div className="flex items-center gap-2 text-xs text-[#666666] mt-2">
+        <div className="mt-2 flex items-center gap-2 text-xs text-[#666666]">
           <span>{author}</span>
-          { date && <div>
-          <span className="mx-1">•</span>
-          <span>{date}</span>
-          </div>
-          }
+          {date && (
+            <div>
+              <span className="mx-1">•</span>
+              <span>{date}</span>
+            </div>
+          )}
           <span className="mx-1">•</span>
           <span>{readTime}</span>
         </div>

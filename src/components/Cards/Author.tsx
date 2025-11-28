@@ -17,9 +17,9 @@ export default function AuthorCard({
   profileLink = "#",
 }: AuthorCardProps) {
   return (
-    <div className="flex flex-col items-center bg-white rounded-3xl border border-[#E4E4E7] p-6 text-center transition hover:border-primary-color hover:shadow-md cursor-pointer gap-3">
+    <div className="hover:border-primary-color flex cursor-pointer flex-col items-center gap-3 rounded-3xl border border-[#E4E4E7] bg-white p-6 text-center transition hover:shadow-md">
       {/* Avatar */}
-      <div className="relative w-20 h-20 rounded-full overflow-hidden border border-[#D6D6D6]">
+      <div className="relative h-20 w-20 overflow-hidden rounded-full border border-[#D6D6D6]">
         <Image src={icon} alt={name} fill className="object-cover" />
       </div>
 
@@ -37,7 +37,7 @@ export default function AuthorCard({
       {/* Button */}
       <Link
         href={profileLink}
-        className="bg-[#1D4ED8] hover:bg-[#1341b2] text-white text-sm font-medium px-5 py-2 rounded-lg transition"
+        className="rounded-lg bg-[#1D4ED8] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#1341b2]"
       >
         View Author
       </Link>

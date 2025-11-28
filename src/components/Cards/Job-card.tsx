@@ -1,5 +1,3 @@
-
-
 import Link from "next/link";
 import { Icons } from "@/public/icons/icon";
 import clsx from "clsx";
@@ -22,20 +20,20 @@ export default function JobCard({
   employmentType,
 }: JobCardProps) {
   return (
-    <div className="border border-gray-300 rounded-[22px] max-w-[410px] p-6 flex flex-col gap-5 hover:border-primary-color transition-all duration-300 bg-white">
+    <div className="hover:border-primary-color flex max-w-[410px] flex-col gap-5 rounded-[22px] border border-gray-300 bg-white p-6 transition-all duration-300">
       {/* Badges */}
       <div className="flex items-center gap-2">
         <span
           className={clsx(
-            "px-3 py-1 text-[16px] font-medium rounded-full",
+            "rounded-full px-3 py-1 text-[16px] font-medium",
             ["Internship", "Summer", "Summer 2025"].includes(employmentType)
               ? "bg-[#EBEAEA] text-[#666666]"
-              : "bg-primary-color text-white"
+              : "bg-primary-color text-white",
           )}
         >
           {employmentType}
         </span>
-        <span className="px-3  gap-1 py-1 text-base flex items-center font-medium bg-[#D6E4FF] text-primary-color rounded-full">
+        <span className="text-primary-color flex items-center gap-1 rounded-full bg-[#D6E4FF] px-3 py-1 text-base font-medium">
           <Icons variant="VerifiedBadge" color="#0A58F5" />
           Verified
         </span>
@@ -49,34 +47,34 @@ export default function JobCard({
 
       {/* Job Meta */}
       <div className="flex flex-col gap-3 text-sm text-[#4F5162]">
-        <div className="flex items-center gap-2 ">
+        <div className="flex items-center gap-2">
           <Icons variant="LocationPin" color="#666666" />
           <span>{location}</span>
         </div>
 
-        <div className="flex items-center gap-2 ">
+        <div className="flex items-center gap-2">
           <Icons variant="Bag" />
           <span>{type}</span>
         </div>
 
-        <div className="flex items-center gap-2 ">
+        <div className="flex items-center gap-2">
           <Icons variant="DollarCircle" />
           <span>{salary}</span>
         </div>
       </div>
 
       {/* Buttons */}
-      <div className="flex items-center gap-3 mt-auto">
+      <div className="mt-auto flex items-center gap-3">
         <Link
           href="#"
-          className="bg-primary-color w-full text-white whitespace-nowrap px-6 text-center py-2.5 rounded-md text-sm font-semibold hover:bg-primary-color/90 transition"
+          className="bg-primary-color hover:bg-primary-color/90 w-full rounded-md px-6 py-2.5 text-center text-sm font-semibold whitespace-nowrap text-white transition"
         >
           Apply Now
         </Link>
 
         <Link
           href="#"
-          className="border border-primary-color w-full text-center text-primary-color px-6 py-2.5 rounded-md text-sm font-semibold hover:bg-blue-50 transition"
+          className="border-primary-color text-primary-color w-full rounded-md border px-6 py-2.5 text-center text-sm font-semibold transition hover:bg-blue-50"
         >
           Details
         </Link>

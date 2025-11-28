@@ -13,7 +13,7 @@ import Container from "@/src/components/ui/Container";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import Link from "next/link";
 import CallToAction from "@/src/components/common/CallToAction";
-import Code from "@/public/code.png"
+import Code from "@/public/code.png";
 import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
 export default function Learn() {
   const LearnCards = [
@@ -42,32 +42,31 @@ export default function Learn() {
     },
   ];
 
-
-   const experts = [
-     {
-       name: "Dr. Sarah Chen",
-       title: "Blockchain Expert",
-       description: "Smart Contracts, DeFi",
-       image: "/images/sarah.jpg",
-     },
-     {
-       name: "Prof. Michael Ross",
-       title: "AI Research Lead",
-       description: "Machine Learning, Neural Networks",
-     },
-     {
-       name: "Emma Williams",
-       title: "Data Scientist",
-       description: "Analytics, Visualization",
-       image: "/images/emma.jpg",
-     },
-     {
-       name: "James Anderson",
-       title: "Security Architect",
-       description: "Ethical Hacking, Network Security",
-       image: "/images/james.jpg",
-     },
-   ];
+  const experts = [
+    {
+      name: "Dr. Sarah Chen",
+      title: "Blockchain Expert",
+      description: "Smart Contracts, DeFi",
+      image: "/images/sarah.jpg",
+    },
+    {
+      name: "Prof. Michael Ross",
+      title: "AI Research Lead",
+      description: "Machine Learning, Neural Networks",
+    },
+    {
+      name: "Emma Williams",
+      title: "Data Scientist",
+      description: "Analytics, Visualization",
+      image: "/images/emma.jpg",
+    },
+    {
+      name: "James Anderson",
+      title: "Security Architect",
+      description: "Ethical Hacking, Network Security",
+      image: "/images/james.jpg",
+    },
+  ];
   return (
     <>
       <Banner
@@ -130,23 +129,23 @@ export default function Learn() {
           />
         </div>
 
-        <section className="pt-11 ">
+        <section className="pt-11">
           <SectionHeader
             title="Learn from Mentors. "
             highlight="Grow with Community."
             description="Interact with top mentors, join peer discussions, and get your doubts cleared in the Trikaya Community."
             align="left"
           />
-          <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[35px] justify-items-center pt-10">
+          <div className="mx-auto grid grid-cols-1 justify-items-center gap-[35px] pt-10 sm:grid-cols-2 lg:grid-cols-4">
             {experts.map((expert, index) => (
               <GenericProfileCard key={index} {...expert} />
             ))}
           </div>
 
-          <div className=" py-11 flex justify-center">
+          <div className="flex justify-center py-11">
             <Link
               href=""
-              className="px-10 py-4 bg-black text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-all duration-200"
+              className="rounded-md bg-black px-10 py-4 text-sm font-medium text-white transition-all duration-200 hover:bg-blue-700"
             >
               Join the Trikaya Community
             </Link>

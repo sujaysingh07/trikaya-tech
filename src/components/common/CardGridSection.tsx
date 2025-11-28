@@ -69,7 +69,7 @@ export default function CardGridSection({
             headingAlign === "center" ? "justify-center text-center" : "gap-3"
           }`}
         >
-          <h2 className="font-bold text-2xl md:text-4xl text-[#03061E]">
+          <h2 className="text-2xl font-bold text-[#03061E] md:text-4xl">
             {heading}{" "}
             {highlight && (
               <span className="text-primary-color">{highlight}</span>
@@ -77,7 +77,7 @@ export default function CardGridSection({
           </h2>
 
           {description && (
-            <p className="text-base mx-auto sm:mx-0">{description}</p>
+            <p className="mx-auto text-base sm:mx-0">{description}</p>
           )}
         </div>
 

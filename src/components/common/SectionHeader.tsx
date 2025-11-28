@@ -23,15 +23,15 @@ export default function SectionHeader({
   return (
     <div
       className={clsx(
-        "flex flex-col gap-3 ",
-        align === "center" ? "text-center items-center" : "text-left",
-        className
+        "flex flex-col gap-3",
+        align === "center" ? "items-center text-center" : "text-left",
+        className,
       )}
     >
       <h2
         className={clsx(
-          "font-bold text-2xl md:text-4xl transition-colors duration-300",
-          isDark ? "text-white" : "text-black"
+          "text-2xl font-bold transition-colors duration-300 md:text-4xl",
+          isDark ? "text-white" : "text-black",
         )}
       >
         {title}{" "}
@@ -39,7 +39,7 @@ export default function SectionHeader({
           <span
             className={clsx(
               "transition-colors duration-300",
-              "text-primary-color"
+              "text-primary-color",
             )}
           >
             {highlight}
@@ -50,8 +50,8 @@ export default function SectionHeader({
       {description && (
         <p
           className={clsx(
-            " text-base transition-colors duration-300",
-            isDark ? "text-gray-300" : "text-black"
+            "text-base transition-colors duration-300",
+            isDark ? "text-gray-300" : "text-black",
           )}
         >
           {description}

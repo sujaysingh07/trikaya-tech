@@ -4,7 +4,7 @@ import clsx from "clsx";
 interface PerformanceCardProps {
   leaderboardData: LeaderBoardType[];
   className?: string;
-  cardClassName?:string
+  cardClassName?: string;
   buttonAlign?: "left" | "center" | "right";
   buttonText?: string;
   onButtonClick?: () => void;
@@ -25,11 +25,11 @@ export default function PerformanceCard({
   return (
     <div
       className={clsx(
-        "relative w-full bg-[#F0F5FF] rounded-[30px] p-8 md:p-10 z-10",
-        className
+        "relative z-10 w-full rounded-[30px] bg-[#F0F5FF] p-8 md:p-10",
+        className,
       )}
     >
-      <h2 className="text-2xl md:text-[37px] font-extrabold leading-[100%] text-black mb-8">
+      <h2 className="mb-8 text-2xl leading-[100%] font-extrabold text-black md:text-[37px]">
         Top Performers This Month
       </h2>
 
@@ -39,19 +39,19 @@ export default function PerformanceCard({
           <div
             key={player.rank}
             className={clsx(
-              "flex items-center justify-between py-3 md:py-4 transition-all duration-300 ",
-              cardClassName
+              "flex items-center justify-between py-3 transition-all duration-300 md:py-4",
+              cardClassName,
             )}
           >
             {/* Left: Rank + Name */}
             <div className="flex items-center gap-4">
               <div
-                className={`w-8 h-8 md:w-10 md:h-10 ${player.color} text-white font-semibold rounded-full flex items-center justify-center`}
+                className={`h-8 w-8 md:h-10 md:w-10 ${player.color} flex items-center justify-center rounded-full font-semibold text-white`}
               >
                 {player.rank}
               </div>
               <div>
-                <h3 className="text-base md:text-[20px] font-semibold text-black">
+                <h3 className="text-base font-semibold text-black md:text-[20px]">
                   {player.name}
                 </h3>
                 <p className="text-base text-gray-700">
@@ -62,11 +62,11 @@ export default function PerformanceCard({
 
             {/* Right: KP + Growth */}
             <div className="flex flex-col items-end">
-              <p className="text-base md:text-[20px] font-semibold text-black">
+              <p className="text-base font-semibold text-black md:text-[20px]">
                 {player.xp}
               </p>
               {player.growth && (
-                <p className="text-base text-[#1D9402] flex items-center gap-1">
+                <p className="flex items-center gap-1 text-base text-[#1D9402]">
                   <svg
                     width="22"
                     height="15"
@@ -89,7 +89,7 @@ export default function PerformanceCard({
 
       {/* CTA Button */}
       <div
-        className={clsx("mt-8 w-full flex", {
+        className={clsx("mt-8 flex w-full", {
           "justify-start": buttonAlign === "left",
           "justify-center": buttonAlign === "center",
           "justify-end": buttonAlign === "right",
@@ -97,7 +97,7 @@ export default function PerformanceCard({
       >
         <button
           onClick={onButtonClick}
-          className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-base font-semibold py-3 px-6 rounded-lg transition-all"
+          className="rounded-lg bg-[#2563EB] px-6 py-3 text-base font-semibold text-white transition-all hover:bg-[#1D4ED8]"
         >
           {buttonText}
         </button>

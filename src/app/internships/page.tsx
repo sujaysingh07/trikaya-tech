@@ -43,63 +43,56 @@ export default function JobsInternship() {
     },
   ];
 
-const internshipData: JobCardProps[] = [
-  {
-    title: "AI Research Intern",
-    company: "TechNova Solutions",
-    location: "Remote",
-    salary: "$2,000/month",
-    type: "Duration: 3 months",
-    employmentType: "Summer 2025",
-    
-  },
-  {
-    title: "Blockchain Developer Intern",
-    company: "CryptoChain Labs",
-    location: "Bangalore",
-    salary: "$80K – $120K",
-    type: "Duration: 6 months",
-    employmentType: "Full-Time",
-    
-  },
-  {
-    title: "Data Science Intern",
-    company: "DataVision Inc",
-    location: "Remote",
-    salary: "$1,500/month",
-    type: "Duration: 4 months",
-    employmentType: "Part-Time",
-    
-  },
-  {
-    title: "Cybersecurity Intern",
-    company: "SecureNet Systems",
-    location: "Mumbai",
-    salary: "$1,600/month",
-    type: "Duration: 3 months",
-    employmentType: "Summer 2025",
-    
-  },
-  {
-    title: "Machine Learning Intern",
-    company: "AI Dynamics",
-    location: "Remote",
-    salary: "$2,200/month",
-    type: "Duration: 6 months",
-    employmentType: "Full-Time",
-
-  },
-  {
-    title: "Smart Contract Intern",
-    company: "Web3 Ventures",
-    location: "Delhi",
-    salary: "$1,900/month",
-    type: "Duration: 4 months",
-    employmentType: "Part-Time",
-    
-  },
-];
-
+  const internshipData: JobCardProps[] = [
+    {
+      title: "AI Research Intern",
+      company: "TechNova Solutions",
+      location: "Remote",
+      salary: "$2,000/month",
+      type: "Duration: 3 months",
+      employmentType: "Summer 2025",
+    },
+    {
+      title: "Blockchain Developer Intern",
+      company: "CryptoChain Labs",
+      location: "Bangalore",
+      salary: "$80K – $120K",
+      type: "Duration: 6 months",
+      employmentType: "Full-Time",
+    },
+    {
+      title: "Data Science Intern",
+      company: "DataVision Inc",
+      location: "Remote",
+      salary: "$1,500/month",
+      type: "Duration: 4 months",
+      employmentType: "Part-Time",
+    },
+    {
+      title: "Cybersecurity Intern",
+      company: "SecureNet Systems",
+      location: "Mumbai",
+      salary: "$1,600/month",
+      type: "Duration: 3 months",
+      employmentType: "Summer 2025",
+    },
+    {
+      title: "Machine Learning Intern",
+      company: "AI Dynamics",
+      location: "Remote",
+      salary: "$2,200/month",
+      type: "Duration: 6 months",
+      employmentType: "Full-Time",
+    },
+    {
+      title: "Smart Contract Intern",
+      company: "Web3 Ventures",
+      location: "Delhi",
+      salary: "$1,900/month",
+      type: "Duration: 4 months",
+      employmentType: "Part-Time",
+    },
+  ];
 
   const ImpressCards = [
     {
@@ -151,8 +144,7 @@ const internshipData: JobCardProps[] = [
     {
       name: "Priya Singh",
       title: "Data Science Intern at Microsoft",
-      quote:
-        "3 Verified Certifications → AI Match 92% → Microsoft Offer",
+      quote: "3 Verified Certifications → AI Match 92% → Microsoft Offer",
       image: "/images/Diya.jpg",
     },
   ];
@@ -187,7 +179,7 @@ const internshipData: JobCardProps[] = [
             title="Latest Internship Opportunities"
             description="Browse verified internships across AI, Blockchain, Data Science, and Cybersecurity."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-11">
+          <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {internshipData.map((internship, i) => (
               <JobCard key={i} {...internship} />
             ))}
@@ -275,7 +267,7 @@ const internshipData: JobCardProps[] = [
             highlight="Stories"
             description="Meet learners who landed their dream jobs through Trikaya."
           />
-          <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[35px] justify-items-center py-11">
+          <div className="mx-auto grid grid-cols-1 justify-items-center gap-[35px] py-11 sm:grid-cols-2 lg:grid-cols-3">
             {experts.map((expert, index) => (
               <GenericProfileCard
                 key={index}

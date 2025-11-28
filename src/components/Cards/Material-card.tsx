@@ -18,19 +18,19 @@ export default function MaterialCard({
   href = "#",
 }: MaterialCardProps) {
   return (
-    <div className="bg-white rounded-3xl border border-[#E4E4E7] p-6 flex flex-col gap-3 hover:border-primary-color transition">
+    <div className="hover:border-primary-color flex flex-col gap-3 rounded-3xl border border-[#E4E4E7] bg-white p-6 transition">
       {/* Badges */}
       <div className="flex items-center gap-2">
-        <span className="bg-primary-color text-white text-base font-medium px-3 py-1 rounded-full">
+        <span className="bg-primary-color rounded-full px-3 py-1 text-base font-medium text-white">
           {category}
         </span>
-        <span className="bg-[white] text-[#666666] text-base font-medium px-3 py-1 rounded-full border border-[#D0D5DD]">
+        <span className="rounded-full border border-[#D0D5DD] bg-[white] px-3 py-1 text-base font-medium text-[#666666]">
           {level}
         </span>
       </div>
 
       {/* Title */}
-      <h3 className="text-[22px] font-semibold text-[#03061E] leading-snug">
+      <h3 className="text-[22px] leading-snug font-semibold text-[#03061E]">
         {title}
       </h3>
 
@@ -38,14 +38,14 @@ export default function MaterialCard({
       <p className="text-[16px] font-normal text-[#666666]">{description}</p>
 
       {/* File Type */}
-      <span className="text-base text-[#666666] tracking-[-3.5%] leading-[25px]">
+      <span className="text-base leading-[25px] tracking-[-3.5%] text-[#666666]">
         {fileType}
       </span>
 
       {/* CTA Button */}
       <Link
         href={href}
-        className="mt-3 px-6 py-2 w-fit bg-primary-color text-white text-sm font-medium rounded-lg hover:bg-primary-color/90 transition"
+        className="bg-primary-color hover:bg-primary-color/90 mt-3 w-fit rounded-lg px-6 py-2 text-sm font-medium text-white transition"
       >
         Download
       </Link>

@@ -47,7 +47,7 @@ export default function About() {
         isSearchBar={false}
       />
       <Container>
-        <div className="w-full pt-5 my-11">
+        <div className="my-11 w-full pt-5">
           <FeatureSplitCardTwo
             title="Our Story"
             description="Founded in 2020, Trikaya was born from a simple observation: traditional education wasn't keeping pace with the rapidly evolving tech industry. We saw talented individuals struggling to break into emerging fields like Blockchain, AI, Data Science, and Cybersecurity due to lack of accessible, hands-on learning resources. Today, we've grown into a thriving platform serving 50,000+ learners worldwide, with 500+ expert mentors and partnerships with leading tech companies. Our comprehensive approach combines structured courses, hands-on practice, competitive challenges, personalized mentorship, and direct career pathways."

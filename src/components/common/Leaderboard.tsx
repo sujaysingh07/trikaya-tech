@@ -7,7 +7,7 @@ export type LeaderBoardType = {
   name: string;
   badges: number;
   xp: string;
-  growth?: string; 
+  growth?: string;
   color: string;
 };
 const leaderboardData: LeaderBoardType[] = [
@@ -55,7 +55,7 @@ const leaderboardData: LeaderBoardType[] = [
 
 export default function Leaderboard() {
   return (
-    <Container className="relative pt-11 overflow-hidden">
+    <Container className="relative overflow-hidden pt-11">
       <div>
         <SectionHeader
           title="Leaderboard & "
@@ -63,7 +63,7 @@ export default function Leaderboard() {
           description="Compete, collaborate, and climb the leaderboard. Your verified scores make you visible to top employers."
         />
       </div>
-      <div className="relative mx-auto rounded-[30px] flex flex-col md:flex-row items-center mt-10">
+      <div className="relative mx-auto mt-10 flex flex-col items-center rounded-[30px] md:flex-row">
         {/* LEFT SECTION */}
         <PerformanceCard
           leaderboardData={leaderboardData}
@@ -72,12 +72,12 @@ export default function Leaderboard() {
         />
 
         {/* RIGHT IMAGE (hidden on mobile) */}
-        <div className="hidden md:block absolute right-0 bottom-0 md:bottom-auto z-10 w-[45%] h-[545px] rounded-[30px] overflow-hidden shadow-lg">
+        <div className="absolute right-0 bottom-0 z-10 hidden h-[545px] w-[45%] overflow-hidden rounded-[30px] shadow-lg md:bottom-auto md:block">
           <Image
             src="/leaderboard.svg"
             alt="Leaderboard Background"
             fill
-            className="object-cover h-full"
+            className="h-full object-cover"
           />
         </div>
       </div>

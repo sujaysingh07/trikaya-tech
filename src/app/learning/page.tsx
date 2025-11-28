@@ -64,58 +64,56 @@ export default function Learning() {
     },
   ];
 
-
- const materialData = [
-  {
-    category: "Blockchain",
-    level: "Advanced",
-    title: "Smart Contract Design Guide",
-    description:
-      "Complete guide to designing secure and efficient smart contracts on Ethereum and Solidity.",
-    fileType: "Guide • PDF",
-  },
-  {
-    category: "AI",
-    level: "Intermediate",
-    title: "Python ML Cheat Sheet",
-    description:
-      "Quick reference for machine learning algorithms in Python with scikit-learn.",
-    fileType: "Cheat Sheet • PDF",
-  },
-  {
-    category: "Data Science",
-    level: "Beginner",
-    title: "Data Visualization Templates",
-    description:
-      "Pre-built visualization templates for common data analysis scenarios.",
-    fileType: "Template • Zip",
-  },
-  {
-    category: "Cybersecurity",
-    level: "Advanced",
-    title: "Penetration Testing Toolkit",
-    description:
-      "Complete toolkit for ethical hacking and penetration testing exercises.",
-    fileType: "Toolkit • Zip",
-  },
-  {
-    category: "Blockchain",
-    level: "Beginner",
-    title: "Blockchain Development Starter",
-    description:
-      "Getting started with blockchain development using Web3 and Solidity.",
-    fileType: "Guide • PDF",
-  },
-  {
-    category: "AI",
-    level: "Advanced",
-    title: "Neural Networks Whitepaper",
-    description:
-      "In-depth analysis of neural network architectures and applications.",
-    fileType: "Whitepaper • PDF",
-  },
-];
-
+  const materialData = [
+    {
+      category: "Blockchain",
+      level: "Advanced",
+      title: "Smart Contract Design Guide",
+      description:
+        "Complete guide to designing secure and efficient smart contracts on Ethereum and Solidity.",
+      fileType: "Guide • PDF",
+    },
+    {
+      category: "AI",
+      level: "Intermediate",
+      title: "Python ML Cheat Sheet",
+      description:
+        "Quick reference for machine learning algorithms in Python with scikit-learn.",
+      fileType: "Cheat Sheet • PDF",
+    },
+    {
+      category: "Data Science",
+      level: "Beginner",
+      title: "Data Visualization Templates",
+      description:
+        "Pre-built visualization templates for common data analysis scenarios.",
+      fileType: "Template • Zip",
+    },
+    {
+      category: "Cybersecurity",
+      level: "Advanced",
+      title: "Penetration Testing Toolkit",
+      description:
+        "Complete toolkit for ethical hacking and penetration testing exercises.",
+      fileType: "Toolkit • Zip",
+    },
+    {
+      category: "Blockchain",
+      level: "Beginner",
+      title: "Blockchain Development Starter",
+      description:
+        "Getting started with blockchain development using Web3 and Solidity.",
+      fileType: "Guide • PDF",
+    },
+    {
+      category: "AI",
+      level: "Advanced",
+      title: "Neural Networks Whitepaper",
+      description:
+        "In-depth analysis of neural network architectures and applications.",
+      fileType: "Whitepaper • PDF",
+    },
+  ];
 
   const whoApplyCards = [
     {
@@ -259,7 +257,7 @@ export default function Learning() {
           highlight="Picks"
           description="Resources personally recommended by Trikaya's expert mentors."
         />
-        <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[35px] justify-items-center py-11">
+        <div className="mx-auto grid grid-cols-1 justify-items-center gap-[35px] py-11 sm:grid-cols-2 lg:grid-cols-3">
           {ambassadors.map((ambassador, index) => (
             <GenericProfileCard
               key={index}

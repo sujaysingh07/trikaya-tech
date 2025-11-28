@@ -11,16 +11,20 @@ export default function AmbassadorCard({
   description,
 }: AmbassadorCardProps) {
   return (
-    <div className="border rounded-[30px] p-5 flex flex-col gap-2  transition-all border-[#CCCCCC]">
-      <div className="flex gap-2 items-center">
-        <span className="text-xs whitespace-nowrap md:text-base font-semibold bg-gray-100 px-3 text-[#666666] py-1 rounded-full w-fit">
+    <div className="flex flex-col gap-2 rounded-[30px] border border-[#CCCCCC] p-5 transition-all">
+      <div className="flex items-center gap-2">
+        <span className="w-fit rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold whitespace-nowrap text-[#666666] md:text-base">
           Level {level}
         </span>
 
-        <h3 className="text-base md:text-[22px] font-semibold leading-[25px]">{title}</h3>
+        <h3 className="text-base leading-[25px] font-semibold md:text-[22px]">
+          {title}
+        </h3>
       </div>
 
-      <p className="text-sm md:text-base font-normal text-[#666666]">{description}</p>
+      <p className="text-sm font-normal text-[#666666] md:text-base">
+        {description}
+      </p>
     </div>
   );
 }

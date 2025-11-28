@@ -17,7 +17,7 @@ interface GenericProfileCardProps {
   rating?: number;
   showRating?: boolean;
   ratingColor?: string;
-  experties?:string;
+  experties?: string;
 }
 
 export default function GenericProfileCard({
@@ -39,24 +39,24 @@ export default function GenericProfileCard({
   return (
     <div
       className={clsx(
-        "flex flex-col justify-between items-center text-center bg-white border border-gray-200 rounded-[30px] shadow-sm hover:shadow-md transition-all duration-300 p-6 w-full h-full",
-        className
+        "flex h-full w-full flex-col items-center justify-between rounded-[30px] border border-gray-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:shadow-md",
+        className,
       )}
     >
       {/* Profile Image + Labels */}
       <div className="flex flex-col items-center">
         {/* Profile Image */}
-        <div className="w-[90px] h-[90px] rounded-full overflow-hidden bg-gray-200 mb-3">
+        <div className="mb-3 h-[90px] w-[90px] overflow-hidden rounded-full bg-gray-200">
           {image ? (
             <Image
               src={image}
               alt={name}
               width={90}
               height={90}
-              className="object-cover w-full h-full"
+              className="h-full w-full object-cover"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-blue-600 text-white font-bold text-lg">
+            <div className="flex h-full w-full items-center justify-center bg-blue-600 text-lg font-bold text-white">
               {name
                 .split(" ")
                 .map((n) => n[0])
@@ -66,7 +66,7 @@ export default function GenericProfileCard({
           )}
         </div>
         {isFeatured && (
-          <div className="bg-[#1D4ED8] bg-linear-to-r from-primary-color to-[#06348F] -mt-5 text-white text-base font-semibold px-3 py-1 rounded-full mb-2 flex items-center gap-1">
+          <div className="from-primary-color -mt-5 mb-2 flex items-center gap-1 rounded-full bg-[#1D4ED8] bg-linear-to-r to-[#06348F] px-3 py-1 text-base font-semibold text-white">
             <Icons variant="Stars" />
             Featured
           </div>
@@ -75,21 +75,23 @@ export default function GenericProfileCard({
         {/* ⭐ Featured Tag */}
 
         {/* Name + Title */}
-        <h3 className="font-semibold text-[20px] text-[#111827]">{name}</h3>
-        <p className="text-base text-[#666666] leading-snug mt-1">{title}</p>
+        <h3 className="text-[20px] font-semibold text-[#111827]">{name}</h3>
+        <p className="mt-1 text-base leading-snug text-[#666666]">{title}</p>
 
-        <h3 className="font-semibold text-[20px] text-[#111827] my-2">{experties}</h3>
+        <h3 className="my-2 text-[20px] font-semibold text-[#111827]">
+          {experties}
+        </h3>
         {/* Optional description */}
         {description && (
-          <p className="text-sm text-[#4B5563] mt-1">{description}</p>
+          <p className="mt-1 text-sm text-[#4B5563]">{description}</p>
         )}
 
         {/* Quote */}
         {quote && (
           <p
             className={clsx(
-              "italic text-[15px] mt-3 font-medium",
-              variant === "arena" ? "text-[#1D4ED8]" : "text-[#2563EB]"
+              "mt-3 text-[15px] font-medium italic",
+              variant === "arena" ? "text-[#1D4ED8]" : "text-[#2563EB]",
             )}
           >
             “{quote}”
@@ -98,11 +100,11 @@ export default function GenericProfileCard({
 
         {/* ⭐ Rating */}
         {showRating && rating && (
-          <div className="flex items-center gap-1 mt-3 text-sm font-medium">
+          <div className="mt-3 flex items-center gap-1 text-sm font-medium">
             <span style={{ color: ratingColor }}>
               <Icons variant="Stars" />
             </span>
-            <span className="text-[#111827] font-bold text-base">
+            <span className="text-base font-bold text-[#111827]">
               {rating}/5
             </span>
           </div>
@@ -114,10 +116,10 @@ export default function GenericProfileCard({
         <button
           onClick={onButtonClick}
           className={clsx(
-            "px-6 mt-5 py-2 text-white text-sm font-medium rounded-md transition-all duration-200",
+            "mt-5 rounded-md px-6 py-2 text-sm font-medium text-white transition-all duration-200",
             variant === "arena"
               ? "bg-[#1D4ED8] hover:bg-[#153EAD]"
-              : "bg-blue-600 hover:bg-blue-700"
+              : "bg-blue-600 hover:bg-blue-700",
           )}
         >
           {buttonText}

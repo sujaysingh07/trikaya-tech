@@ -49,35 +49,35 @@ export default function Mentorship() {
         "Your mentorship sessions are tracked and verifiable through Trikaya Protocol.",
     },
   ];
- const learnerTestimonials: LearnerTestimonial[] = [
-   {
-     id: 1,
-     name: "Alex Kumar",
-     rating: "4.8/5",
-     review:
-       "My mentor helped me land my dream job at a top tech company. The personalised guidance made all the difference!",
-     mentor: "Sarah Johnson, AI Specialist",
-     image: "/images/mentors/learner1.png",
-   },
-   {
-     id: 2,
-     name: "Maria Garcia",
-     rating: "4.8/5",
-     review:
-       "The project review sessions gave me insights I couldn't find anywhere else. My portfolio improved dramatically.",
-     mentor: "Rahul Singh, Blockchain Architect",
-     image: "/images/mentors/learner2.png",
-   },
-   {
-     id: 3,
-     name: "James Wilson",
-     rating: "4.8/5",
-     review:
-       "Trikaya mentorship accelerated my learning by months. The practical advice was invaluable for my career transition.",
-     mentor: "Emily Chen, Data Science Lead",
-     image: "/images/mentors/learner3.png",
-   },
- ];
+  const learnerTestimonials: LearnerTestimonial[] = [
+    {
+      id: 1,
+      name: "Alex Kumar",
+      rating: "4.8/5",
+      review:
+        "My mentor helped me land my dream job at a top tech company. The personalised guidance made all the difference!",
+      mentor: "Sarah Johnson, AI Specialist",
+      image: "/images/mentors/learner1.png",
+    },
+    {
+      id: 2,
+      name: "Maria Garcia",
+      rating: "4.8/5",
+      review:
+        "The project review sessions gave me insights I couldn't find anywhere else. My portfolio improved dramatically.",
+      mentor: "Rahul Singh, Blockchain Architect",
+      image: "/images/mentors/learner2.png",
+    },
+    {
+      id: 3,
+      name: "James Wilson",
+      rating: "4.8/5",
+      review:
+        "Trikaya mentorship accelerated my learning by months. The practical advice was invaluable for my career transition.",
+      mentor: "Emily Chen, Data Science Lead",
+      image: "/images/mentors/learner3.png",
+    },
+  ];
 
   return (
     <>
@@ -124,7 +124,7 @@ export default function Mentorship() {
           description="Hear from learners who grew their careers with Trikaya mentorship."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 my-11">
+        <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {learnerTestimonials.map((item) => (
             <LearnerCard key={item.id} {...item} />
           ))}

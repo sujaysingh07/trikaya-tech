@@ -3,20 +3,20 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <Container className="w-full bg-white text-gray-800 py-16">
-      <div className="max-w-6xl mx-auto px-5 md:px-10 lg:px-20">
-        <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
-        <p className="text-sm text-gray-500 mb-5">
+    <Container className="w-full bg-white py-16 text-gray-800">
+      <div className="mx-auto max-w-6xl px-5 md:px-10 lg:px-20">
+        <h1 className="mb-6 text-4xl font-bold">Privacy Policy</h1>
+        <p className="mb-5 text-sm text-gray-500">
           Your privacy is important to us. This policy explains how we collect,
           use, and protect your personal information.
         </p>
-        <p className="text-sm text-gray-500 mb-10">
+        <p className="mb-10 text-sm text-gray-500">
           Last updated: January 8, 2025
         </p>
 
         <div className="space-y-10 leading-relaxed">
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Overview</h2>
+            <h2 className="mb-3 text-2xl font-semibold">Overview</h2>
             <p>
               At Trikaya, we are committed to protecting your privacy and
               ensuring the security of your personal information. This Privacy
@@ -29,11 +29,11 @@ const PrivacyPolicy = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-3">
+            <h2 className="mb-3 text-2xl font-semibold">
               Information We Collect
             </h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Personal Information
             </h3>
             <p>
@@ -43,7 +43,7 @@ const PrivacyPolicy = () => {
               number, resume, work history, education, skills, and preferences.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Professional Information
             </h3>
             <p>
@@ -53,14 +53,14 @@ const PrivacyPolicy = () => {
               recommendations and career coaching.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Usage Information</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Usage Information</h3>
             <p>
               We collect information about how you use our platform, including
               pages visited, features used, search queries, and interaction
               patterns. This helps us improve our services and user experience.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Device Information
             </h3>
             <p>
@@ -71,31 +71,31 @@ const PrivacyPolicy = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-3">
+            <h2 className="mb-3 text-2xl font-semibold">
               How We Use Your Information
             </h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Platform Services</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Platform Services</h3>
             <p>
               To provide, maintain, and improve our platform services, including
               job matching, skill verification, career coaching, and employer
               connections.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Personalization</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Personalization</h3>
             <p>
               To personalize your experience, including customized job
               recommendations, learning paths, and career advice based on your
               profile and preferences.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Communication</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Communication</h3>
             <p>
               To communicate with you about our services, send you job alerts,
               platform updates, and respond to your inquiries.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Analytics and Improvement
             </h3>
             <p>
@@ -105,16 +105,16 @@ const PrivacyPolicy = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Information Sharing</h2>
+            <h2 className="mb-3 text-2xl font-semibold">Information Sharing</h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">With Employers</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">With Employers</h3>
             <p>
               When you apply for jobs or express interest in opportunities, we
               share relevant profile information with potential employers. You
               control what information is shared through your privacy settings.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Blockchain Verification
             </h3>
             <p>
@@ -123,14 +123,14 @@ const PrivacyPolicy = () => {
               information is cryptographically secured and pseudonymized.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Service Providers</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Service Providers</h3>
             <p>
               We work with trusted third-party service providers who help us
               operate our platform, conduct analytics, and provide customer
               support. These providers are bound by confidentiality agreements.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Legal Requirements
             </h3>
             <p>
@@ -140,23 +140,23 @@ const PrivacyPolicy = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Data Security</h2>
+            <h2 className="mb-3 text-2xl font-semibold">Data Security</h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Encryption</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Encryption</h3>
             <p>
               We use industry-standard encryption to protect your data both in
               transit and at rest. All sensitive information is encrypted using
               AES-256 encryption.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Access Controls</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Access Controls</h3>
             <p>
               We implement strict access controls to ensure only authorized
               personnel can access user data, and only for legitimate business
               purposes.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Blockchain Security
             </h3>
             <p>
@@ -165,7 +165,7 @@ const PrivacyPolicy = () => {
               tampering or fraud.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Regular Audits</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Regular Audits</h3>
             <p>
               We conduct regular security audits and assessments to identify and
               address potential vulnerabilities in our systems.
@@ -173,29 +173,29 @@ const PrivacyPolicy = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-3">
+            <h2 className="mb-3 text-2xl font-semibold">
               Your Rights and Choices
             </h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Account Control</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Account Control</h3>
             <p>
               You can update, correct, or delete your account information at any
               time through your profile settings.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Privacy Settings</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Privacy Settings</h3>
             <p>
               You have control over what information is visible to employers and
               other users through comprehensive privacy settings.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Data Portability</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Data Portability</h3>
             <p>
               You can request a copy of your personal data in a machine-readable
               format and transfer it to other services.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Account Deletion</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Account Deletion</h3>
             <p>
               You can delete your account at any time. Some information may be
               retained for legal or security purposes as outlined in our data
@@ -204,29 +204,29 @@ const PrivacyPolicy = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Data Retention</h2>
+            <h2 className="mb-3 text-2xl font-semibold">Data Retention</h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Active Accounts</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Active Accounts</h3>
             <p>
               You can delete your account at any time. Some information may be
               retained for legal or security purposes as outlined in our data
               retention policy.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Inactive Accounts</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Inactive Accounts</h3>
             <p>
               If your account becomes inactive for an extended period, we may
               delete or anonymize your personal information after providing
               notice.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Legal Obligations</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Legal Obligations</h3>
             <p>
               Some information may be retained longer to comply with legal
               obligations, resolve disputes, or enforce our agreements.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Blockchain Records
             </h3>
             <p>

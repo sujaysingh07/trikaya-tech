@@ -190,11 +190,11 @@ export default function Ambassdor() {
       image: "/icons/rajesh.svg",
     },
     {
-        name: "Anjali Patel",
-        title: "BITS Pilani",
-        quote:
+      name: "Anjali Patel",
+      title: "BITS Pilani",
+      quote:
         "Became State Ambassador and mentored 15 campus ambassadors across Gujarat.",
-        image: "/images/Diya.jpg",
+      image: "/images/Diya.jpg",
     },
     {
       name: "Rahul Verma",
@@ -202,7 +202,7 @@ export default function Ambassdor() {
       description: "",
       image: "/images/Arav.jpg",
       quote:
-      "Led AI/ML workshops for 500+ students and secured internship at a top startup.",
+        "Led AI/ML workshops for 500+ students and secured internship at a top startup.",
     },
   ];
   return (
@@ -307,7 +307,7 @@ export default function Ambassdor() {
           highlight="Ambassadors"
           description="Learn from student leaders who've driven change on their campuses."
         />
-        <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[35px] justify-items-center py-11">
+        <div className="mx-auto grid grid-cols-1 justify-items-center gap-[35px] py-11 sm:grid-cols-2 lg:grid-cols-3">
           {ambassadors.map((ambassador, index) => (
             <GenericProfileCard
               key={index}
@@ -325,7 +325,7 @@ export default function Ambassdor() {
             of <br /> innovators.
           </>
         }
-        buttons={[{ label: "Apply Now", href: "",variant:'secondary' }]}
+        buttons={[{ label: "Apply Now", href: "", variant: "secondary" }]}
         showRocketBg={true}
       />
     </>

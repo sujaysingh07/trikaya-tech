@@ -1,4 +1,3 @@
-
 import { Icons } from "@/public/icons/icon";
 import GradientImageCardTwo from "../Cards/GradientImageCardTwo";
 import Container from "../ui/Container";
@@ -56,7 +55,7 @@ const opportunities = [
 
 export default function AssignmentChallenges() {
   return (
-    <section className="py-11 bg-[#F2F2F2]">
+    <section className="bg-[#F2F2F2] py-11">
       <Container>
         <SectionHeader
           title="Assignments & "
@@ -66,7 +65,7 @@ export default function AssignmentChallenges() {
         />
 
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-[46px] gap-y-[27px] pt-[46px]">
+        <div className="grid grid-cols-1 gap-x-[46px] gap-y-[27px] pt-[46px] sm:grid-cols-2">
           {opportunities.map((item) => (
             <GradientImageCardTwo
               key={item.id}
@@ -85,26 +84,26 @@ export default function AssignmentChallenges() {
           ))}
         </div>
 
-        <div className="bg-primary-color p-6 sm:p-8 md:p-10 mt-11 rounded-[30px] flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
+        <div className="bg-primary-color mt-11 flex flex-col items-start justify-between gap-6 rounded-[30px] p-6 sm:p-8 md:flex-row md:items-center md:gap-0 md:p-10">
           {/* LEFT SECTION */}
-          <div className="flex gap-4 sm:gap-6 md:gap-8 items-start">
+          <div className="flex items-start gap-4 sm:gap-6 md:gap-8">
             <Icons variant="ProgressCheck" className="min-w-10" />
 
             <div className="text-white">
-              <p className="text-[26px] sm:text-[32px] md:text-[38px] font-bold leading-tight">
+              <p className="text-[26px] leading-tight font-bold sm:text-[32px] md:text-[38px]">
                 Track your progress
               </p>
-              <span className="font-medium text-sm sm:text-base">
+              <span className="text-sm font-medium sm:text-base">
                 Complete assignments to level up your profile
               </span>
             </div>
           </div>
 
           {/* RIGHT SECTION */}
-          <div className="flex flex-col sm:flex-row gap-3.5 items-center w-full md:w-auto">
+          <div className="flex w-full flex-col items-center gap-3.5 sm:flex-row md:w-auto">
             <Link
               href={"#"}
-              className="w-full sm:w-auto text-center bg-white px-[30px] text-[16px] sm:text-[18px] text-black font-bold rounded-md py-4 sm:py-5 transition"
+              className="w-full rounded-md bg-white px-[30px] py-4 text-center text-[16px] font-bold text-black transition sm:w-auto sm:py-5 sm:text-[18px]"
             >
               Earn KP
             </Link>
@@ -114,7 +113,7 @@ export default function AssignmentChallenges() {
 
             <Link
               href={"#"}
-              className="w-full sm:w-auto text-center bg-white px-[30px] text-[16px] sm:text-[18px] text-black font-bold rounded-md py-4 sm:py-5 transition"
+              className="w-full rounded-md bg-white px-[30px] py-4 text-center text-[16px] font-bold text-black transition sm:w-auto sm:py-5 sm:text-[18px]"
             >
               Unlock Trikaya Badges
             </Link>

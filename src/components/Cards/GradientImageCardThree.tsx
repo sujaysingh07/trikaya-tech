@@ -19,7 +19,7 @@ interface GradientImageCardProps {
   imagePosition?: "left" | "center" | "right" | "max-right";
   task?: string; // Will be used for date OR mode
   date?: string; // "Nov 15, 2025 • 4:00 PM IST"
-  mode?: "Online" | "Hybrid" | "Bangalore" | string; 
+  mode?: "Online" | "Hybrid" | "Bangalore" | string;
 }
 
 export default function GradientImageCard({
@@ -33,7 +33,7 @@ export default function GradientImageCard({
   reverse = false,
   className = "",
   imagePosition,
-  task,   
+  task,
   date,
   mode,
 }: GradientImageCardProps) {
@@ -42,15 +42,15 @@ export default function GradientImageCard({
     mode === "Online"
       ? "bg-[#CFFFC5] text-[#1D9402]"
       : mode === "Hybrid"
-      ? "bg-[#CFFFC5] text-[#1D9402]"
-      : "bg-[#D6E4FF] text-[#0A58F5]";
+        ? "bg-[#CFFFC5] text-[#1D9402]"
+        : "bg-[#D6E4FF] text-[#0A58F5]";
 
   return (
     <div
       className={clsx(
-        "relative flex flex-col md:flex-row items-center justify-between overflow-hidden rounded-[30px] p-5 md:p-10 shadow-md hover:shadow-lg transition-all duration-300",
+        "relative flex flex-col items-center justify-between overflow-hidden rounded-[30px] p-5 shadow-md transition-all duration-300 hover:shadow-lg md:flex-row md:p-10",
         reverse ? "md:flex-row-reverse" : "",
-        className
+        className,
       )}
       style={{
         background: `linear-gradient(to ${
@@ -61,26 +61,26 @@ export default function GradientImageCard({
       {/* TEXT CONTENT */}
       <div
         className={clsx(
-          "flex flex-col gap-3 z-30",
-          reverse ? "md:text-right items-end" : "md:text-left items-start",
-          "max-w-[420px]"
+          "z-30 flex flex-col gap-3",
+          reverse ? "items-end md:text-right" : "items-start md:text-left",
+          "max-w-[420px]",
         )}
       >
         {/* Title */}
-        <h3 className="font-bold text-[18px] md:text-[28px] leading-tight">
+        <h3 className="text-[18px] leading-tight font-bold md:text-[28px]">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm md:text-base font-normal  leading-relaxed">
+        <p className="text-sm leading-relaxed font-normal md:text-base">
           {description}
         </p>
 
         {/* DATE ROW */}
         <div className="flex gap-4">
           {date && (
-            <div className="flex items-center gap-2 text-[#4F5162] text-xs md:text-sm mt-2">
-              <Icons variant="Calendar" className="w-5 h-5" />
+            <div className="mt-2 flex items-center gap-2 text-xs text-[#4F5162] md:text-sm">
+              <Icons variant="Calendar" className="h-5 w-5" />
               <span>{date}</span>
             </div>
           )}
@@ -89,8 +89,8 @@ export default function GradientImageCard({
           {mode && (
             <span
               className={clsx(
-                "text-xs font-medium flex items-center px-3 py-1 rounded-full mt-2",
-                modeClass
+                "mt-2 flex items-center rounded-full px-3 py-1 text-xs font-medium",
+                modeClass,
               )}
             >
               {mode}
@@ -103,8 +103,8 @@ export default function GradientImageCard({
           <Link
             href={buttonLink}
             className={clsx(
-              "inline-block w-fit mt-5 px-6 py-2.5 rounded-md font-semibold text-[20px] ",
-              "bg-primary-color text-white hover:bg-[#0048d9] transition"
+              "mt-5 inline-block w-fit rounded-md px-6 py-2.5 text-[20px] font-semibold",
+              "bg-primary-color text-white transition hover:bg-[#0048d9]",
             )}
           >
             {buttonLabel}
@@ -113,9 +113,9 @@ export default function GradientImageCard({
       </div>
 
       {/* IMAGE + GRADIENT OVERLAY */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden">
         {/* Gradient Overlay for readability */}
-        <div className="absolute inset-0 bg-linear-to-r from-white/80 via-white/40 to-transparent z-10"></div>
+        <div className="absolute inset-0 z-10 bg-linear-to-r from-white/80 via-white/40 to-transparent"></div>
 
         <Image
           src={bgImage}
@@ -126,7 +126,7 @@ export default function GradientImageCard({
             reverse ? "object-left" : "object-right",
             imagePosition === "center" && "object-center",
             imagePosition === "left" && "object-left",
-            imagePosition === "max-right" && "object-right translate-x-[5%]"
+            imagePosition === "max-right" && "translate-x-[5%] object-right",
           )}
         />
       </div>

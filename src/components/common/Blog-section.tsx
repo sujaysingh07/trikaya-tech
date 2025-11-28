@@ -163,65 +163,57 @@ export default function BlogSection() {
       readTime: "10 min read",
     },
   ];
-const authorData = [
-  {
-    icon: "/images/Arav.jpg",
-    name: "Dr. Sarah Johnson",
-    role: "Blockchain Mentor, Trikaya",
-    articlesCount: 12,
-  },
-  {
-    icon: "/images/Rohan.jpg",
-    name: "Rahul Sharma",
-    role: "AI/ML Expert, Trikaya",
-    articlesCount: 18,
-  },
-  {
-    icon: "/images/Diya.jpg",
-    name: "Priya Patel",
-    role: "Data Science Mentor",
-    articlesCount: 15,
-  },
-  {
-    icon: "/images/Deepak.jpg",
-    name: "Alex Kumar",
-    role: "Cybersecurity Specialist",
-    articlesCount: 10,
-  },
-];
+  const authorData = [
+    {
+      icon: "/images/Arav.jpg",
+      name: "Dr. Sarah Johnson",
+      role: "Blockchain Mentor, Trikaya",
+      articlesCount: 12,
+    },
+    {
+      icon: "/images/Rohan.jpg",
+      name: "Rahul Sharma",
+      role: "AI/ML Expert, Trikaya",
+      articlesCount: 18,
+    },
+    {
+      icon: "/images/Diya.jpg",
+      name: "Priya Patel",
+      role: "Data Science Mentor",
+      articlesCount: 15,
+    },
+    {
+      icon: "/images/Deepak.jpg",
+      name: "Alex Kumar",
+      role: "Cybersecurity Specialist",
+      articlesCount: 10,
+    },
+  ];
 
   return (
     <>
-      <Container className="w-full flex flex-col items-center px-4 py-11  ">
+      <Container className="flex w-full flex-col items-center px-4 py-11">
         <SearchBar onChange={(value) => handleSearch(value)} />
         <CategoryFilter
           categories={categories}
           onChange={handleCategoryChange}
         />
-        <div className="w-full flex justify-between flex-col md:flex-row gap-5">
+        <div className="flex w-full flex-col justify-between gap-5 md:flex-row">
           <SectionHeader
             title={"Featured "}
             highlight="Reads"
             description="Editor's picks and trending posts from the Trikaya ecosystem."
           />
 
-          <Select onValueChange={handleSortChange} >
-            <SelectTrigger
-              className="
-            relative
-            px-4 py-2 bg-[#F5F5F5] md:max-w-[200px] w-full 
-            rounded-[12px] border-none text-black
-            focus:outline-none 
-            [&>svg]:block
-            "
-            >
+          <Select onValueChange={handleSortChange}>
+            <SelectTrigger className="relative w-full rounded-[12px] border-none bg-[#F5F5F5] px-4 py-2 text-black focus:outline-none md:max-w-[200px] [&>svg]:block">
               <SelectValue placeholder="Newest" />
 
               {/* Custom Icon */}
-              <ChevronDown className="h-4 w-4 text-black absolute right-4" />
+              <ChevronDown className="absolute right-4 h-4 w-4 text-black" />
             </SelectTrigger>
 
-            <SelectContent className="rounded-[12px] shadow-md border-gray-100">
+            <SelectContent className="rounded-[12px] border-gray-100 shadow-md">
               <SelectGroup>
                 {sortOptions.map((option) => (
                   <SelectItem key={option} value={option}>
@@ -232,7 +224,7 @@ const authorData = [
             </SelectContent>
           </Select>
         </div>
-        <div className="w-full my-11">
+        <div className="my-11 w-full">
           <FeatureSplitCardTwo
             title="How Blockchain-Verified Credentials Are Shaping the Future of Education"
             description="Explore how blockchain technology is revolutionizing educational credentials, making them tamper-proof, portable, and instantly verifiable by employers worldwide."
@@ -247,7 +239,7 @@ const authorData = [
             darkMode={false}
           />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 w-full justify-center">
+        <div className="mt-10 grid w-full grid-cols-1 justify-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {blogData.map((blog, index) => (
             <BlogCard key={index} {...blog} />
           ))}

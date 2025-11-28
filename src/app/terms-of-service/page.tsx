@@ -3,21 +3,21 @@ import React from "react";
 
 const TermsOfService = () => {
   return (
-    <Container className="w-full bg-white text-gray-800 py-16">
-      <div className="max-w-6xl mx-auto px-5 md:px-10 lg:px-20">
-        <h1 className="text-4xl font-bold mb-6">Terms of Service</h1>
-        <p className="text-sm text-gray-500 mb-5">
+    <Container className="w-full bg-white py-16 text-gray-800">
+      <div className="mx-auto max-w-6xl px-5 md:px-10 lg:px-20">
+        <h1 className="mb-6 text-4xl font-bold">Terms of Service</h1>
+        <p className="mb-5 text-sm text-gray-500">
           These terms govern your use of the Trikaya platform and outline the
           rights and responsibilities of all users.
         </p>
-        <p className="text-sm text-gray-500 mb-10">
+        <p className="mb-10 text-sm text-gray-500">
           Effective Date: January 8, 2025
         </p>
 
         <div className="space-y-10 leading-relaxed">
           {/* Welcome Section */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Welcome to Trikaya</h2>
+            <h2 className="mb-3 text-2xl font-semibold">Welcome to Trikaya</h2>
             <p>
               These Terms of Service (&quot;Terms&quot;) govern your access to
               and use of the Trikaya platform, including our website, mobile
@@ -32,9 +32,9 @@ const TermsOfService = () => {
 
           {/* Acceptance of Terms */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Acceptance of Terms</h2>
+            <h2 className="mb-3 text-2xl font-semibold">Acceptance of Terms</h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Agreement</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Agreement</h3>
             <p>
               By accessing and using the Trikaya platform, you accept and agree
               to be bound by the terms and provision of this agreement. If you
@@ -42,7 +42,7 @@ const TermsOfService = () => {
               service.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Modifications</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Modifications</h3>
             <p>
               We reserve the right to modify these terms at any time. We will
               notify users of significant changes via email or platform
@@ -50,7 +50,7 @@ const TermsOfService = () => {
               constitutes acceptance of the new terms.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Eligibility</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Eligibility</h3>
             <p>
               You must be at least 18 years old and legally capable of entering
               into contracts to use our platform. By using our services, you
@@ -60,11 +60,11 @@ const TermsOfService = () => {
 
           {/* User Accounts and Responsibilities */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">
+            <h2 className="mb-3 text-2xl font-semibold">
               User Accounts and Responsibilities
             </h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Account Registration
             </h3>
             <p>
@@ -73,7 +73,7 @@ const TermsOfService = () => {
               are responsible for safeguarding your account credentials.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Profile Information
             </h3>
             <p>
@@ -82,7 +82,7 @@ const TermsOfService = () => {
               False or misleading information may result in account suspension.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Professional Conduct
             </h3>
             <p>
@@ -91,7 +91,7 @@ const TermsOfService = () => {
               discrimination, or inappropriate behavior is strictly prohibited.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Account Security</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Account Security</h3>
             <p>
               You are responsible for maintaining the confidentiality of your
               account and password. You agree to notify us immediately of any
@@ -101,9 +101,9 @@ const TermsOfService = () => {
 
           {/* Platform Usage */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Platform Usage</h2>
+            <h2 className="mb-3 text-2xl font-semibold">Platform Usage</h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Permitted Use</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Permitted Use</h3>
             <p>
               The platform is intended for professional career development, job
               searching, skill verification, and recruitment purposes.
@@ -111,7 +111,7 @@ const TermsOfService = () => {
               permission.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Prohibited Activities
             </h3>
             <p>
@@ -121,7 +121,7 @@ const TermsOfService = () => {
               termination.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Content Guidelines
             </h3>
             <p>
@@ -130,7 +130,7 @@ const TermsOfService = () => {
               violates intellectual property rights.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Skill Verification
             </h3>
             <p>
@@ -142,11 +142,11 @@ const TermsOfService = () => {
 
           {/* Intellectual Property */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">
+            <h2 className="mb-3 text-2xl font-semibold">
               Intellectual Property
             </h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Platform Ownership
             </h3>
             <p>
@@ -155,20 +155,20 @@ const TermsOfService = () => {
               property laws.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">User Content</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">User Content</h3>
             <p>
               You retain ownership of content you create, but grant us a license
               to use, modify, and display your content as necessary to provide
               our services.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Trademark</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Trademark</h3>
             <p>
               Trikaya, our logo, and related marks are trademarks of our
               company. You may not use these marks without written permission.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">DMCA Compliance</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">DMCA Compliance</h3>
             <p>
               We respect intellectual property rights and will respond to valid
               DMCA takedown notices. Users who repeatedly infringe copyrights
@@ -178,11 +178,11 @@ const TermsOfService = () => {
 
           {/* Disclaimers and Limitations */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">
+            <h2 className="mb-3 text-2xl font-semibold">
               Disclaimers and Limitations
             </h2>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Service Availability
             </h3>
             <p>
@@ -191,7 +191,7 @@ const TermsOfService = () => {
               discontinue services with reasonable notice.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Employment Outcomes
             </h3>
             <p>
@@ -200,7 +200,7 @@ const TermsOfService = () => {
               hiring decisions are made independently by employers.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Limitation of Liability
             </h3>
             <p>
@@ -209,7 +209,7 @@ const TermsOfService = () => {
               damages arising from platform use.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">User Interactions</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">User Interactions</h3>
             <p>
               We are not responsible for interactions between users or between
               users and employers. Users engage with others at their own risk
@@ -219,7 +219,7 @@ const TermsOfService = () => {
 
           {/* Privacy and Data Protection */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">
+            <h2 className="mb-3 text-2xl font-semibold">
               Privacy and Data Protection
             </h2>
             <p>
@@ -228,7 +228,7 @@ const TermsOfService = () => {
               use.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Blockchain Records
             </h3>
             <p>
@@ -237,14 +237,14 @@ const TermsOfService = () => {
               identifiable information.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">Data Security</h3>
+            <h3 className="mt-4 mb-2 text-xl font-medium">Data Security</h3>
             <p>
               We implement industry-standard security measures to protect your
               data, but cannot guarantee absolute security. Users are
               responsible for maintaining their own account security.
             </p>
 
-            <h3 className="text-xl font-medium mt-4 mb-2">
+            <h3 className="mt-4 mb-2 text-xl font-medium">
               Third-Party Services
             </h3>
             <p>
@@ -256,7 +256,7 @@ const TermsOfService = () => {
 
           {/* Termination */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Termination</h2>
+            <h2 className="mb-3 text-2xl font-semibold">Termination</h2>
             <p>
               We may terminate or suspend your account immediately, without
               prior notice or liability, for any reason whatsoever, including
@@ -269,7 +269,7 @@ const TermsOfService = () => {
 
           {/* Governing Law */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Governing Law</h2>
+            <h2 className="mb-3 text-2xl font-semibold">Governing Law</h2>
             <p>
               These Terms shall be interpreted and governed by the laws of the
               State of Karnatka India, without regard to its conflict of law

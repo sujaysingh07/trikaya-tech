@@ -16,7 +16,7 @@ interface GradientImageCardProps {
   textColor?: "light" | "dark";
   className?: string;
   imagePosition?: "left" | "center" | "right" | "max-right";
-  task?: string
+  task?: string;
 }
 
 export default function GradientImageCardThree({
@@ -36,9 +36,9 @@ export default function GradientImageCardThree({
   return (
     <div
       className={clsx(
-        "relative flex flex-col md:flex-row items-center justify-between overflow-hidden rounded-[30px] p-8 md:p-10 shadow-md hover:shadow-lg transition-all duration-300",
+        "relative flex flex-col items-center justify-between overflow-hidden rounded-[30px] p-8 shadow-md transition-all duration-300 hover:shadow-lg md:flex-row md:p-10",
         reverse ? "md:flex-row-reverse" : "",
-        className
+        className,
       )}
       style={{
         background: `linear-gradient(to ${
@@ -46,27 +46,27 @@ export default function GradientImageCardThree({
         }, ${gradientFrom}, ${gradientTo})`,
       }}
     >
-      <span className="absolute top-4 right-4 z-10 bg-[#DCFFD4] py-3 leading-[100%] px-2.5 rounded-[10px] text-[20px] font-semibold text-[#025908]">
+      <span className="absolute top-4 right-4 z-10 rounded-[10px] bg-[#DCFFD4] px-2.5 py-3 text-[20px] leading-[100%] font-semibold text-[#025908]">
         {task}
       </span>
 
       {/* Content */}
       <div
         className={clsx(
-          "flex flex-col gap-3 z-20", // make sure above gradient circle
+          "z-20 flex flex-col gap-3", // make sure above gradient circle
           "text-black",
           reverse ? "md:text-right" : "md:text-left",
-          "max-w-[380px]"
+          "max-w-[380px]",
         )}
       >
-        <h3 className="font-semibold text-2xl md:text-[28px]">{title}</h3>
-        <p className="text-sm md:text-base opacity-80">{description}</p>
+        <h3 className="text-2xl font-semibold md:text-[28px]">{title}</h3>
+        <p className="text-sm opacity-80 md:text-base">{description}</p>
 
         {buttonLabel && (
           <Link
             href={buttonLink}
             className={clsx(
-              "inline-block w-fit mt-7 px-6 py-2.5 rounded-md font-semibold text-sm transition bg-primary-color text-white hover:bg-[#0048d9]"
+              "bg-primary-color mt-7 inline-block w-fit rounded-md px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0048d9]",
             )}
           >
             {buttonLabel}
@@ -75,7 +75,7 @@ export default function GradientImageCardThree({
       </div>
 
       {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden">
         <Image
           src={bgImage}
           alt={title}
@@ -85,7 +85,7 @@ export default function GradientImageCardThree({
             reverse ? "object-left" : "object-right",
             imagePosition === "center" && "object-center",
             imagePosition === "left" && "object-left",
-            imagePosition === "max-right" && "object-right translate-x-[5%]"
+            imagePosition === "max-right" && "translate-x-[5%] object-right",
           )}
         />
       </div>

@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 interface BannerProps {
-  title: string ;
+  title: string;
   highlight?: string;
   description: string;
   image: StaticImageData;
@@ -35,17 +35,17 @@ const Banner: React.FC<BannerProps> = ({
   highlightColor = "#0A58F5",
 }) => {
   return (
-    <section className="w-full bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2] overflow-hidden mb-11">
+    <section className="mb-11 w-full overflow-hidden bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2]">
       <Container>
         <div
           className={cn(
-            "flex flex-col-reverse md:flex-row items-center justify-between py-10 md:py-16 gap-12 md:gap-20",
-            reverse && "md:flex-row-reverse"
+            "flex flex-col-reverse items-center justify-between gap-12 py-10 md:flex-row md:gap-20 md:py-16",
+            reverse && "md:flex-row-reverse",
           )}
         >
           {/* LEFT SECTION */}
-          <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
-            <div className="max-w-[550px] mx-auto md:mx-0">
+          <div className="flex w-full flex-col justify-center text-center md:w-1/2 md:text-left">
+            <div className="mx-auto max-w-[550px] md:mx-0">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={title + "-text"}
@@ -55,7 +55,7 @@ const Banner: React.FC<BannerProps> = ({
                   transition={{ duration: 0.7, ease: "easeInOut" }}
                 >
                   <h2
-                    className="text-3xl sm:text-4xl lg:text-[70px] font-bold leading-[1.2]"
+                    className="text-3xl leading-[1.2] font-bold sm:text-4xl lg:text-[70px]"
                     style={{ color: titleColor }}
                   >
                     {title}{" "}
@@ -64,15 +64,15 @@ const Banner: React.FC<BannerProps> = ({
                     )}
                   </h2>
 
-                  <p className="mt-5 text-gray-600 text-base sm:text-lg lg:text-xl leading-relaxed">
+                  <p className="mt-5 text-base leading-relaxed text-gray-600 sm:text-lg lg:text-xl">
                     {description}
                   </p>
 
-                  <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+                  <div className="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
                     <Link
                       href={primaryButton.href}
                       target="_blank"
-                      className="px-6 py-3 bg-black text-white w-full md:w-auto rounded-md text-lg font-semibold hover:bg-gray-800 transition"
+                      className="w-full rounded-md bg-black px-6 py-3 text-lg font-semibold text-white transition hover:bg-gray-800 md:w-auto"
                     >
                       {primaryButton.label}
                     </Link>
@@ -80,7 +80,7 @@ const Banner: React.FC<BannerProps> = ({
                     {secondaryButton && (
                       <Link
                         href={secondaryButton.href}
-                        className="px-6 py-3 bg-primary-color text-white w-full md:w-auto rounded-md text-lg font-semibold hover:bg-primary-color/90 transition"
+                        className="bg-primary-color hover:bg-primary-color/90 w-full rounded-md px-6 py-3 text-lg font-semibold text-white transition md:w-auto"
                       >
                         {secondaryButton.label}
                       </Link>
@@ -92,8 +92,8 @@ const Banner: React.FC<BannerProps> = ({
           </div>
 
           {/* RIGHT IMAGE SECTION */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end md:min-h-[450px]">
-            <div className="relative w-full sm:w-[400px] md:w-[480px] lg:w-[550px] min-h-[260px] overflow-hidden">
+          <div className="flex w-full justify-center md:min-h-[450px] md:w-1/2 md:justify-end">
+            <div className="relative min-h-[260px] w-full overflow-hidden sm:w-[400px] md:w-[480px] lg:w-[550px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={title + "-image"}
@@ -101,14 +101,14 @@ const Banner: React.FC<BannerProps> = ({
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -80 }}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
-                  className="w-full h-full"
+                  className="h-full w-full"
                 >
                   <Image
                     src={image}
                     alt={title}
                     width={800}
                     height={500}
-                    className="w-full h-auto object-contain"
+                    className="h-auto w-full object-contain"
                     priority
                   />
                 </motion.div>

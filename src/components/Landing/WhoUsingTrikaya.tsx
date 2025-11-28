@@ -49,7 +49,7 @@ export default function WhoTrikaya() {
     <section className="mb-11">
       <Container>
         <SectionHeader title={"Who’s using "} highlight="Trikaya?" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mt-10">
+        <div className="mt-10 grid grid-cols-1 justify-items-center gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, index) => (
             <TrikayaCard
               key={index}
@@ -74,9 +74,9 @@ const TrikayaCard = ({
   description: React.ReactNode;
 }) => {
   return (
-    <div className="bg-[#F1F3F4] p-2.5 rounded-[30px] shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden max-w-sm flex flex-col">
+    <div className="flex max-w-sm flex-col overflow-hidden rounded-[30px] bg-[#F1F3F4] p-2.5 shadow-md transition-shadow duration-300 hover:shadow-lg">
       {/* Image Section */}
-      <div className="relative w-full h-[153px] rounded-t-[30px] rounded-b-lg overflow-hidden">
+      <div className="relative h-[153px] w-full overflow-hidden rounded-t-[30px] rounded-b-lg">
         <Image
           src={image}
           alt={title}
@@ -87,12 +87,12 @@ const TrikayaCard = ({
       </div>
 
       {/* Text Section */}
-      <h3 className="font-bold text-center text-lg md:text-[22px] text-black py-2">
+      <h3 className="py-2 text-center text-lg font-bold text-black md:text-[22px]">
         {title}
       </h3>
 
-      <div className="flex flex-col grow justify-between bg-white rounded-b-[30px]  rounded-t-lg py-5 px-[15px] text-center">
-        <p className="text-[#03061E] text-sm md:text-base font-normal tracking-tight">
+      <div className="flex grow flex-col justify-between rounded-t-lg rounded-b-[30px] bg-white px-[15px] py-5 text-center">
+        <p className="text-sm font-normal tracking-tight text-[#03061E] md:text-base">
           {description}
         </p>
       </div>

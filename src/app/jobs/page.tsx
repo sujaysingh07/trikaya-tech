@@ -147,7 +147,7 @@ export default function JobsInternship() {
       image: "/images/Rohan.jpg",
       quote:
         "Trikaya-Verified CV → 3 interviews in 1 week → Offer from Coinbase",
-    }
+    },
   ];
 
   return (
@@ -181,7 +181,7 @@ export default function JobsInternship() {
             highlight="Opportunities"
             description="Browse verified openings across Blockchain, AI, Data Science, and Cybersecurity."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-11">
+          <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {jobData.map((job, i) => (
               <JobCard key={i} {...job} />
             ))}
@@ -268,7 +268,7 @@ export default function JobsInternship() {
             highlight="Stories"
             description="Meet learners who landed their dream jobs through Trikaya."
           />
-          <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[35px] justify-items-center py-11">
+          <div className="mx-auto grid grid-cols-1 justify-items-center gap-[35px] py-11 sm:grid-cols-2 lg:grid-cols-3">
             {experts.map((expert, index) => (
               <GenericProfileCard
                 key={index}

@@ -1,8 +1,7 @@
-
 import { LabCard } from "../Cards/LabCard";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
- export interface LabCardProps {
+export interface LabCardProps {
   level: string;
   duration: string;
   title: string;
@@ -10,7 +9,7 @@ import SectionHeader from "./SectionHeader";
   tags: string[];
   href: string;
   levelColor?: string;
-  LinkLabel?:string
+  LinkLabel?: string;
 }
 
 const labData: LabCardProps[] = [
@@ -76,12 +75,10 @@ const labData: LabCardProps[] = [
   },
 ];
 
-
-
 export default function BlockchainLab() {
   return (
     <Container className="mb-11">
-      <div className=" mx-auto">
+      <div className="mx-auto">
         {/* Header */}
         <SectionHeader
           title="Blockchain "
@@ -90,7 +87,7 @@ export default function BlockchainLab() {
         />
 
         {/* Grid */}
-        <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3 mt-10">
+        <div className="mt-10 grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
           {labData.map((lab, index) => (
             <LabCard key={index} {...lab} LinkLabel="Open Lab" />
           ))}

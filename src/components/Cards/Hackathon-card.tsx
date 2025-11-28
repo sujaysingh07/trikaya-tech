@@ -1,4 +1,3 @@
-
 import { Icons } from "@/public/icons/icon";
 import Link from "next/link";
 
@@ -19,11 +18,11 @@ interface HackathonCardProps {
 
 export function HackathonCard({ hackathon }: HackathonCardProps) {
   return (
-    <div className="border border-gray-200 rounded-[30px]  p-6 flex flex-col justify-between transition-all duration-300 bg-white">
+    <div className="flex flex-col justify-between rounded-[30px] border border-gray-200 bg-white p-6 transition-all duration-300">
       {/* Category Tag */}
       <div className="flex">
         <div
-          className={`flex w-auto px-4 py-1 text-base font-medium text-white rounded-full mb-4 ${"bg-primary-color"}`}
+          className={`mb-4 flex w-auto rounded-full px-4 py-1 text-base font-medium text-white ${"bg-primary-color"}`}
         >
           {hackathon.category}
         </div>
@@ -31,16 +30,16 @@ export function HackathonCard({ hackathon }: HackathonCardProps) {
 
       {/* Title */}
       <div className="py-2.5">
-        <h3 className="text-lg font-bold text-[#03061E] mb-2">
+        <h3 className="mb-2 text-lg font-bold text-[#03061E]">
           {hackathon.title}
         </h3>
 
         {/* Description */}
-        <p className="text-[#03061E] text-sm mb-5">{hackathon.description}</p>
+        <p className="mb-5 text-sm text-[#03061E]">{hackathon.description}</p>
       </div>
 
       {/* Info List */}
-      <ul className="space-y-2 text-sm text-[#4F5162] mb-6">
+      <ul className="mb-6 space-y-2 text-sm text-[#4F5162]">
         <li className="flex items-center gap-2">
           <svg
             width="24"
@@ -131,13 +130,13 @@ export function HackathonCard({ hackathon }: HackathonCardProps) {
 
       {/* Button */}
       <div className="flex">
-      <Link
-        href={hackathon.href}
-        className="mt-auto inline-block px-[30px] text-center bg-[#1F62E6] text-white font-semibold py-2.5 rounded-lg hover:bg-[#1556c8] transition"
+        <Link
+          href={hackathon.href}
+          className="mt-auto inline-block rounded-lg bg-[#1F62E6] px-[30px] py-2.5 text-center font-semibold text-white transition hover:bg-[#1556c8]"
         >
-        Register Now
-      </Link>
-          </div>
+          Register Now
+        </Link>
+      </div>
     </div>
   );
 }

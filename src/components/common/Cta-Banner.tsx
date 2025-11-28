@@ -26,19 +26,19 @@ export default function CtaBanner({
     <Container>
       <div
         className={clsx(
-          "w-full rounded-[20px] px-6 py-8 md:px-10 md:py-10 my-11 flex flex-col md:flex-row items-start md:items-center justify-between transition",
+          "my-11 flex w-full flex-col items-start justify-between rounded-[20px] px-6 py-8 transition md:flex-row md:items-center md:px-10 md:py-10",
           isPrimary
             ? "bg-primary-color text-white"
-            : "bg-white border border-primary-color text-black",
-          className
+            : "border-primary-color border bg-white text-black",
+          className,
         )}
       >
         {/* LEFT SECTION */}
         <div className="max-w-[926px]">
           <h2
             className={clsx(
-              "text-xl md:text-[35px] font-bold leading-[120%]",
-              isPrimary ? "text-white" : "text-black"
+              "text-xl leading-[120%] font-bold md:text-[35px]",
+              isPrimary ? "text-white" : "text-black",
             )}
           >
             {title}
@@ -47,8 +47,8 @@ export default function CtaBanner({
           {subtitle && (
             <p
               className={clsx(
-                "mt-2 text-sm md:text-base font-normal leading-[120%]",
-                isPrimary ? "text-white/90" : "text-[#505050]"
+                "mt-2 text-sm leading-[120%] font-normal md:text-base",
+                isPrimary ? "text-white/90" : "text-[#505050]",
               )}
             >
               {subtitle}
@@ -60,10 +60,10 @@ export default function CtaBanner({
         <Link
           href={buttonLink}
           className={clsx(
-            "mt-6 md:mt-0 px-6 py-3 rounded-md text-[18px] font-bold whitespace-nowrap transition ",
+            "mt-6 rounded-md px-6 py-3 text-[18px] font-bold whitespace-nowrap transition md:mt-0",
             isPrimary
-              ? "bg-white text-primary-color hover:bg-gray-100"
-              : "bg-primary-color text-white hover:bg-[#0048d9]"
+              ? "text-primary-color bg-white hover:bg-gray-100"
+              : "bg-primary-color text-white hover:bg-[#0048d9]",
           )}
         >
           {buttonLabel}
@@ -71,5 +71,4 @@ export default function CtaBanner({
       </div>
     </Container>
   );
-
 }

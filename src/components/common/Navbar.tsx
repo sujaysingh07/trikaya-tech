@@ -63,7 +63,7 @@ const Navbar = () => {
     }
   }, [isOpen]);
   return (
-    <nav className="w-full bg-[#000000] sticky top-0 z-50">
+    <nav className="sticky top-0 z-50 w-full bg-[#000000]">
       <Container className="flex items-center justify-between py-3.5">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -76,13 +76,13 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+        <div className="hidden items-center gap-6 md:flex lg:gap-8">
           <div className="flex items-center gap-2">
             {navItems.map((item) => (
-              <div className="relative group" key={item.id}>
+              <div className="group relative" key={item.id}>
                 <button
                   onClick={() => !item.children && handleNavigation(item.path)}
-                  className={`px-3 py-2 text-sm md:text-[13px] lg:text-[15px] font-semibold cursor-pointer rounded-md ${
+                  className={`cursor-pointer rounded-md px-3 py-2 text-sm font-semibold md:text-[13px] lg:text-[15px] ${
                     pathname === item.path
                       ? "text-[#9ABCFF]"
                       : "text-white hover:text-[#9ABCFF]"
@@ -93,12 +93,12 @@ const Navbar = () => {
 
                 {/* Desktop Dropdown */}
                 {item.children && (
-                  <div className="absolute hidden  group-hover:flex flex-col bg-white text-black rounded-md shadow-md top-full left-0 w-40 p-2">
+                  <div className="absolute top-full left-0 hidden w-40 flex-col rounded-md bg-white p-2 text-black shadow-md group-hover:flex">
                     {item.children.map((child, index) => (
                       <button
                         key={index}
                         onClick={() => handleNavigation(child.path)}
-                        className="text-left w-full px-3 cursor-pointer py-2 text-sm hover:bg-[#CCCCCC]/50 rounded"
+                        className="w-full cursor-pointer rounded px-3 py-2 text-left text-sm hover:bg-[#CCCCCC]/50"
                       >
                         {child.label}
                       </button>
@@ -114,14 +114,14 @@ const Navbar = () => {
             href="https://builder.trikaya.io/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-[30px] w-full py-3 max-w-[155px] bg-black border-2 border-[#CCCCCC] text-white rounded-[10px] font-semibold whitespace-nowrap hover:bg-gray-800 transition inline-flex items-center justify-center"
+            className="inline-flex w-full max-w-[155px] items-center justify-center rounded-[10px] border-2 border-[#CCCCCC] bg-black px-[30px] py-3 font-semibold whitespace-nowrap text-white transition hover:bg-gray-800"
           >
             Launch App
           </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
+        <button className="p-2 md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
             <X size={24} color="white" />
           ) : (
@@ -133,13 +133,13 @@ const Navbar = () => {
       {/* Mobile Dropdown */}
       <div
         className={clsx(
-          "fixed left-0 right-0 top-18 bg-white overflow-y-auto z-50 transition-transform duration-1000 ease-in-out h-[calc(100vh-64px)] ",
-          isOpen ? "translate-y-0" : "-translate-y-[120%]"
+          "fixed top-18 right-0 left-0 z-50 h-[calc(100vh-64px)] overflow-y-auto bg-white transition-transform duration-1000 ease-in-out",
+          isOpen ? "translate-y-0" : "-translate-y-[120%]",
         )}
       >
         {/* Close Button */}
 
-        <div className="px-6  flex flex-col h-full">
+        <div className="flex h-full flex-col px-6">
           <div>
             {navItems.map((item) => {
               const hasChildren = Boolean(item.children);
@@ -149,18 +149,18 @@ const Navbar = () => {
                     onClick={() =>
                       hasChildren
                         ? setOpenDropdown(
-                            openDropdown === item.id ? null : item.id
+                            openDropdown === item.id ? null : item.id,
                           )
                         : handleNavigation(item.path)
                     }
-                    className="flex items-center justify-between w-full text-left text-lg font-semibold py-3"
+                    className="flex w-full items-center justify-between py-3 text-left text-lg font-semibold"
                   >
                     {item.label}
                     {hasChildren && (
                       <ChevronDown
                         className={clsx(
                           "transition-transform duration-300",
-                          openDropdown === item.id && "rotate-180"
+                          openDropdown === item.id && "rotate-180",
                         )}
                         size={20}
                       />
@@ -171,17 +171,17 @@ const Navbar = () => {
                   {hasChildren && (
                     <div
                       className={clsx(
-                        "pl-4 overflow-hidden transition-all duration-300",
+                        "overflow-hidden pl-4 transition-all duration-300",
                         openDropdown === item.id
                           ? "max-h-40 opacity-100"
-                          : "max-h-0 opacity-0"
+                          : "max-h-0 opacity-0",
                       )}
                     >
                       {item.children?.map((child, idx) => (
                         <button
                           key={idx}
                           onClick={() => handleNavigation(child.path)}
-                          className="block py-2 text-left text-base text-[#666666] hover:text-[#9ABCFF] transition"
+                          className="block py-2 text-left text-base text-[#666666] transition hover:text-[#9ABCFF]"
                         >
                           {child.label}
                         </button>
@@ -199,7 +199,7 @@ const Navbar = () => {
             href="https://builder.trikaya.io/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full py-3 bg-[#111] border-2 border-[#4B4B4B] text-white rounded-lg font-semibold hover:bg-gray-800 transition text-center"
+            className="w-full rounded-lg border-2 border-[#4B4B4B] bg-[#111] py-3 text-center font-semibold text-white transition hover:bg-gray-800"
           >
             Launch App
           </Link>

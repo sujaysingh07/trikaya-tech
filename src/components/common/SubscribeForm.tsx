@@ -31,38 +31,37 @@ const SubscribeForm: React.FC<SubscribeFormProps> = ({
     },
   });
 
-return (
-  <form
-    onSubmit={formik.handleSubmit}
-    className="flex flex-col sm:flex-row gap-3 w-full max-w-[600px]"
-  >
-    <input
-      type="email"
-      name="email"
-      placeholder={placeholder}
-      autoComplete="off"
-      className={`w-full bg-[#F5F5F5] rounded-[12px] px-4 py-3 text-sm text-gray-700 focus:outline-none border ${
-        formik.touched.email && formik.errors.email
-          ? "border-red-500"
-          : formik.touched.email && !formik.errors.email
-          ? "border-green-500"
-          : "border-transparent"
-      }`}
-      onChange={formik.handleChange}
-      onBlur={formik.handleBlur}
-      value={formik.values.email}
-    />
-
-    <button
-      type="submit"
-      disabled={formik.isSubmitting}
-      className="w-full sm:w-auto px-6 py-3 bg-black text-white rounded-[12px] text-sm md:text-base font-semibold hover:bg-gray-900 transition disabled:opacity-60"
+  return (
+    <form
+      onSubmit={formik.handleSubmit}
+      className="flex w-full max-w-[600px] flex-col gap-3 sm:flex-row"
     >
-      {buttonLabel}
-    </button>
-  </form>
-);
+      <input
+        type="email"
+        name="email"
+        placeholder={placeholder}
+        autoComplete="off"
+        className={`w-full rounded-[12px] border bg-[#F5F5F5] px-4 py-3 text-sm text-gray-700 focus:outline-none ${
+          formik.touched.email && formik.errors.email
+            ? "border-red-500"
+            : formik.touched.email && !formik.errors.email
+              ? "border-green-500"
+              : "border-transparent"
+        }`}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.email}
+      />
 
+      <button
+        type="submit"
+        disabled={formik.isSubmitting}
+        className="w-full rounded-[12px] bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-gray-900 disabled:opacity-60 sm:w-auto md:text-base"
+      >
+        {buttonLabel}
+      </button>
+    </form>
+  );
 };
 
 export default SubscribeForm;

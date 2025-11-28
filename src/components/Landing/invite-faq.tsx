@@ -34,62 +34,41 @@ const faqItems = [
 ];
 export default function InviteFaq() {
   return (
-    <div
-      className="
-                grid grid-cols-1 
-                lg:grid-cols-[30%_70%] 
-                items-stretch 
-                md:-mt-[350px] 
-                z-99
-                gap-8
-                lg:h-[593px]
-                px-0 md:px-6 lg:px-0
-            "
-    >
+    <div className="z-99 grid grid-cols-1 items-stretch gap-8 px-0 md:-mt-[350px] md:px-6 lg:h-[593px] lg:grid-cols-[30%_70%] lg:px-0">
       {/* LEFT: Invite Friends Card */}
-      <div className="bg-[#ECECEC] text-[#03061E] rounded-[30px] h-auto md:h-[553px] overflow-hidden flex-col justify-between shadow-lg my-5 w-auto md:w-[120%] z-10">
+      <div className="z-10 my-5 h-auto w-auto flex-col justify-between overflow-hidden rounded-[30px] bg-[#ECECEC] text-[#03061E] shadow-lg md:h-[553px] md:w-[120%]">
         <div className="p-8">
-          <h2 className="md:text-[42px] text-3xl font-bold leading-snug">
+          <h2 className="text-3xl leading-snug font-bold md:text-[42px]">
             Invite friends. <br />
             <span className="text-primary-color">Earn credits.</span>
           </h2>
-          <p className=" mt-3 md:text-[22px] text-base md:leading-9">
+          <p className="mt-3 text-base md:text-[22px] md:leading-9">
             Share Trikaya with friends and unlock rewards.
           </p>
 
-          <Button className="mt-6 bg-primary-color hover:bg-[#0848c5] text-base text-white rounded-lg px-5">
+          <Button className="bg-primary-color mt-6 rounded-lg px-5 text-base text-white hover:bg-[#0848c5]">
             Get your referral link
           </Button>
         </div>
 
         {/* Image */}
-        <div className="w-full md:block hidden">
+        <div className="hidden w-full md:block">
           <Image
             src="/peple-bg.png"
             alt="Invite Friends"
             width={600}
             height={300}
-            className="w-full h-auto object-cover"
+            className="h-auto w-full object-cover"
           />
         </div>
       </div>
 
       {/* RIGHT: FAQ Section */}
-      <div
-        className="
-                    bg-[#073593] border-primary-color border-2 
-                    rounded-[30px] 
-                    p-6 md:p-8 
-                    text-white shadow-lg
-                    h-auto 
-                    lg:h-[593px]
-                    lg:pl-[120px]
-                "
-      >
-        <h3 className="text-[34px] font-semibold mb-4">Common Questions</h3>
+      <div className="border-primary-color h-auto rounded-[30px] border-2 bg-[#073593] p-6 text-white shadow-lg md:p-8 lg:h-[593px] lg:pl-[120px]">
+        <h3 className="mb-4 text-[34px] font-semibold">Common Questions</h3>
 
         <div className="border-t border-white/20 pt-4">
-          <p className=" text-base font-light leading-relaxed mb-4">
+          <p className="mb-4 text-base leading-relaxed font-light">
             <strong className="text-base font-bold">
               How do referral credits work?
             </strong>
@@ -108,7 +87,7 @@ export default function InviteFaq() {
                 value={`item-${id}`}
                 className="border-b border-white/10"
               >
-                <AccordionTrigger className="text-white text-base font-bold hover:no-underline [&>svg]:text-white [&>svg]:h-6 [&>svg]:w-6">
+                <AccordionTrigger className="text-base font-bold text-white hover:no-underline [&>svg]:h-6 [&>svg]:w-6 [&>svg]:text-white">
                   {question}
                 </AccordionTrigger>
                 <AccordionContent className="text-base font-light">

@@ -148,10 +148,10 @@ export default function FeatureSplitCardThree({
 
         {verifiedItems.length === 0 && (
           <>
-            <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+            <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-4 text-center">
               <Link
                 href={primaryButton.href!}
-                className="px-6 py-3 bg-black w-full md:w-auto text-white rounded-md text-lg font-semibold hover:bg-gray-800 transition"
+                className="px-6 py-3 bg-black w-full md:w-auto text-white rounded-md text-lg font-semibold hover:bg-gray-800 transition "
               >
                 {primaryButton.label}
               </Link>

@@ -198,18 +198,18 @@ const authorData = [
           categories={categories}
           onChange={handleCategoryChange}
         />
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between flex-col md:flex-row gap-5">
           <SectionHeader
             title={"Featured "}
             highlight="Reads"
             description="Editor's picks and trending posts from the Trikaya ecosystem."
           />
 
-          <Select onValueChange={handleSortChange}>
+          <Select onValueChange={handleSortChange} >
             <SelectTrigger
               className="
             relative
-            px-4 py-2 bg-[#F5F5F5] max-w-[200px] w-full
+            px-4 py-2 bg-[#F5F5F5] md:max-w-[200px] w-full 
             rounded-[12px] border-none text-black
             focus:outline-none 
             [&>svg]:block

@@ -3,20 +3,14 @@ import Link from "next/link";
 import clsx from "clsx";
 
 interface InsightCardProps {
-  variantCategory?: "blog" | "category" | undefined; // NEW VARIANT MODE
-
-  // Common fields
+  variantCategory?: "blog" | "category";
   title: string;
   description: string;
   href?: string;
-
-  // Blog fields
   category?: string;
   author?: string;
   date?: string;
   readTime?: string;
-
-  // Category card fields
   icon?: string | StaticImageData;
 }
 
@@ -25,21 +19,17 @@ export default function InsightCard({
   title,
   description,
   href = "#",
-
-  // Blog fields
   category,
   author,
   date,
   readTime,
-
-  // Category fields
   icon,
 }: InsightCardProps) {
   return (
-    <div className="flex justify-between items-center bg-white rounded-3xl border border-[#E4E4E7] p-6 gap-6 hover:shadow-md transition">
+    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center bg-white rounded-3xl border border-[#E4E4E7] p-5 md:p-6 gap-4 md:gap-6 hover:shadow-md transition w-full">
       {/* LEFT SIDE */}
-      <div className="flex items-center gap-4 w-full">
-        {/* ICON for Category Variant */}
+      <div className="flex flex-row lg:flex-row items-start gap-4 w-full">
+        {/* ICON for Category Layout */}
         {variantCategory === "category" && icon && (
           <div className="w-12 h-12 flex-shrink-0">
             <Image src={icon} alt={title} width={48} height={48} />
@@ -47,7 +37,7 @@ export default function InsightCard({
         )}
 
         <div className="flex flex-col gap-2 w-full">
-          {/* Category Tag Only in blog mode */}
+          {/* Category Tag for blog view */}
           {variantCategory === "blog" && category && (
             <span className="bg-primary-color text-white text-xs font-medium px-3 py-1 rounded-full w-fit">
               {category}
@@ -55,16 +45,16 @@ export default function InsightCard({
           )}
 
           {/* Title */}
-          <h3 className="text-[18px] md:text-[20px] font-semibold text-[#03061E] leading-snug">
+          <h3 className="text-[17px] md:text-[20px] font-semibold text-[#03061E] leading-snug">
             {title}
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-[#666666]">{description}</p>
+          <p className="text-sm md:text-base text-[#666666]">{description}</p>
 
           {/* Blog Meta */}
           {variantCategory === "blog" && (
-            <div className="flex items-center text-xs text-[#666666] gap-2 mt-1">
+            <div className="flex items-center text-xs md:text-sm text-[#666666] gap-2 mt-1 flex-wrap">
               <span>{author}</span>
               <span>•</span>
               <span>{date}</span>
@@ -78,10 +68,7 @@ export default function InsightCard({
       {/* CTA BUTTON */}
       <Link
         href={href}
-        className={clsx(
-          "px-5 py-2 text-sm font-medium rounded-lg whitespace-nowrap transition text-center w-[255px]",
-          "bg-primary-color text-white hover:bg-primary-color/90"
-        )}
+        className="w-full sm:w-[220px] md:w-[255px] mt-5 md:mt-0 text-center bg-primary-color text-white px-5 py-3 text-sm font-medium rounded-lg hover:bg-primary-color/90 transition"
       >
         {variantCategory === "blog" ? "Read More" : `Explore ${title}`}
       </Link>

@@ -31,38 +31,38 @@ const SubscribeForm: React.FC<SubscribeFormProps> = ({
     },
   });
 
-  return (
-    <form
-      onSubmit={formik.handleSubmit}
-      className="flex flex-col md:flex-row gap-4 justify-center md:justify-start"
+return (
+  <form
+    onSubmit={formik.handleSubmit}
+    className="flex flex-col sm:flex-row gap-3 w-full max-w-[600px]"
+  >
+    <input
+      type="email"
+      name="email"
+      placeholder={placeholder}
+      autoComplete="off"
+      className={`w-full bg-[#F5F5F5] rounded-[12px] px-4 py-3 text-sm text-gray-700 focus:outline-none border ${
+        formik.touched.email && formik.errors.email
+          ? "border-red-500"
+          : formik.touched.email && !formik.errors.email
+          ? "border-green-500"
+          : "border-transparent"
+      }`}
+      onChange={formik.handleChange}
+      onBlur={formik.handleBlur}
+      value={formik.values.email}
+    />
+
+    <button
+      type="submit"
+      disabled={formik.isSubmitting}
+      className="w-full sm:w-auto px-6 py-3 bg-black text-white rounded-[12px] text-sm md:text-base font-semibold hover:bg-gray-900 transition disabled:opacity-60"
     >
-      <div className="flex flex-col w-full max-w-[493px]">
-        <input
-          type="email"
-          name="email"
-          placeholder={placeholder}
-          autoComplete="off"
-          className={`bg-[#F5F5F5] rounded-md px-4 py-3 h-full text-sm text-gray-700 focus:outline-none border ${
-            formik.touched.email && formik.errors.email
-              ? "border-red-500"
-              : formik.touched.email && !formik.errors.email
-              ? "border-green-500"
-              : "border-transparent"
-          }`}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-        />
-      </div>
-      <button
-        type="submit"
-        disabled={formik.isSubmitting}
-        className="px-6 py-3 bg-black text-white rounded-md text-lg font-bold hover:bg-gray-800 transition disabled:opacity-60"
-      >
-        {buttonLabel}
-      </button>
-    </form>
-  );
+      {buttonLabel}
+    </button>
+  </form>
+);
+
 };
 
 export default SubscribeForm;

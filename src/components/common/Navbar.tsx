@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Container from "../ui/Container";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
+import clsx from "clsx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -123,55 +124,79 @@ const Navbar = () => {
       </Container>
 
       {/* Mobile Dropdown */}
-      {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-3 bg-white border-t border-gray-100">
-          {navItems.map((item) => {
-            const hasChildren = Boolean(item.children);
-
-            return (
-              <div key={item.id}>
-                <button
-                  onClick={() =>
-                    hasChildren
-                      ? setOpenDropdown(
-                          openDropdown === item.id ? null : item.id
-                        )
-                      : handleNavigation(item.path)
-                  }
-                  className="block w-full text-left text-sm font-medium text-black hover:text-primary-color"
-                >
-                  {item.label}
-                </button>
-
-                {/* Mobile Children */}
-                {hasChildren && openDropdown === item.id && (
-                  <div className="ml-4 mt-1 space-y-1">
-                    {item?.children?.map((child, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleNavigation(child.path)}
-                        className="block text-left text-sm text-gray-700 hover:text-primary-color"
-                      >
-                        {child.label}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-
-          {/* Launch App Button Mobile */}
-          <Link
-            href="https://builder.trikaya.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-[30px] w-full py-3 bg-black border-2 border-[#CCCCCC] text-white rounded-[10px] font-semibold whitespace-nowrap hover:bg-gray-800 transition inline-flex items-center justify-center"
+     <div
+            className={clsx(
+              "fixed left-0 right-0 top-18 bg-white text-black transition-transform duration-500 ease-in-out h-[calc(100vh-64px)]",
+              isOpen ? "translate-y-0" : "-translate-y-[120%]"
+            )}
           >
-            Launch App
-          </Link>
-        </div>
-      )}
+    
+            <div className="px-6 pt-2 flex flex-col h-full gap-0 overflow-y-auto">
+              {navItems.map((item) => {
+                const hasChildren = Boolean(item.children);
+    
+    return (
+      <div key={item.id} className="w-full">
+        <button
+          onClick={() =>
+            hasChildren
+              ? setOpenDropdown(openDropdown === item.id ? null : item.id)
+              : handleNavigation(item.path)
+          }
+          className="flex items-center justify-between w-full text-left text-lg font-semibold py-3"
+        >
+          {item.label}
+    
+          {hasChildren && (
+            <ChevronDown
+              className={clsx(
+                "transition-transform duration-300",
+                openDropdown === item.id && "rotate-180"
+              )}
+              size={20}
+            />
+          )}
+        </button>
+    
+        {/* Accordion Children */}
+        {hasChildren && (
+          <div
+            className={clsx(
+              "pl-4 overflow-hidden transition-all duration-300",
+              openDropdown === item.id
+                ? "max-h-40 opacity-100"
+                : "max-h-0 opacity-0"
+            )}
+          >
+            {item.children?.map((child, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleNavigation(child.path)}
+                className="block py-2 w-full text-left text-base text-[#666666] hover:text-[#9ABCFF] transition"
+              >
+                {child.label}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+    
+              })}
+    
+              <div className="flex-grow" />
+    
+              {/* Launch App */}
+              <Link
+                href="https://builder.trikaya.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 bg-[#111] border-2 border-[#4B4B4B] text-white rounded-lg font-semibold hover:bg-gray-800 transition text-center"
+              >
+                Launch App
+              </Link>
+            </div>
+          </div>
     </nav>
   );
 };

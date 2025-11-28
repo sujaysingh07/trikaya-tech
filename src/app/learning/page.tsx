@@ -310,14 +310,16 @@ export default function Learning() {
         note="Delivered monthly. No spam."
       />
       <CallToAction
-        title="Lead the Future with Trikaya"
+        title="Learn Smarter with Trikaya."
         subtitle={
           <>
-            Become a verified Student Ambassador and shape the next generation
-            of <br /> innovators.
+            Access the best verified materials and take your skills to the next
+            level.
           </>
         }
-        buttons={[{ label: "Apply Now", href: "", variant: "secondary" }]}
+        buttons={[
+          { label: "Explore Resources", href: "", variant: "secondary" },
+        ]}
         showRocketBg={true}
       />
     </>

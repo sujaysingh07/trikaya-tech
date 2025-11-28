@@ -139,7 +139,7 @@ const Navbar = () => {
       >
         {/* Close Button */}
 
-        <div className="px-6  flex flex-col justify-between h-full">
+        <div className="px-6  flex flex-col h-full">
           <div>
             {navItems.map((item) => {
               const hasChildren = Boolean(item.children);
@@ -193,7 +193,7 @@ const Navbar = () => {
             })}
           </div>
 
-          <div className="pb-2" />
+          <div className="pt-2" />
 
           <Link
             href="https://builder.trikaya.io/"

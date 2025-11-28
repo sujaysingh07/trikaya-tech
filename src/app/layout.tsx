@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import SmoothScroll from "../components/SmoothScroll";
+import Script from "next/script";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -89,7 +90,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* ✅ Google Tag Manager script */}
-        <script
+        <Script
+        id=""
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import InviteFaq from "./invite-faq";
 import Container from "../ui/Container";
 import Image from "next/image";

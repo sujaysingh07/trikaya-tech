@@ -1,7 +1,6 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import React from "react";
 import clsx from "clsx";
 
 interface GradientImageCardProps {
@@ -28,7 +27,6 @@ export default function GradientImageCardThree({
   gradientFrom = "#F0F4FF",
   gradientTo = "#FFFFFF",
   reverse = false,
-  textColor = "dark",
   className = "",
   imagePosition,
   task,

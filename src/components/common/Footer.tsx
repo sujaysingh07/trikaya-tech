@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Twitter, Github, Mail, X, Instagram } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 import Container from "../ui/Container";
 import { FaDiscord, FaTelegram, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 

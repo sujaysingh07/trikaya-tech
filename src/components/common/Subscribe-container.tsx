@@ -15,7 +15,7 @@ export default function SubscribeCard({
     <Container className="">
       <div className="md:border-primary-color mb-11 w-full rounded-[30px] md:border">
         {/* Heading */}
-        <div className="mx-auto flex w-full max-w-[800px] flex-col justify-center gap-4 py-[23px] text-center">
+        <div className="mx-auto flex w-full max-w-[800px] flex-col items-center justify-center gap-4 py-[23px] text-center">
           <SectionHeader
             title={title || ""}
             className=""

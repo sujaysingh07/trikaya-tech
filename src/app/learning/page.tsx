@@ -115,24 +115,6 @@ export default function Learning() {
     },
   ];
 
-  const whoApplyCards = [
-    {
-      title: "Any Stream or Discipline",
-      description: "Open to all backgrounds interested in tech & innovation.",
-    },
-    {
-      title: "Currently Enrolled Students",
-      description: "Must be pursuing undergraduate or postgraduate studies.",
-    },
-    {
-      title: "Communication & Leadership",
-      description: "Active in college communities or clubs.",
-    },
-    {
-      title: "Basic Tech Awareness",
-      description: "Familiarity with emerging technologies is a plus.",
-    },
-  ];
 
   const programStructureCards = [
     {

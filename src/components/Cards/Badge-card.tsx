@@ -1,8 +1,6 @@
-"use client";
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { Calendar, User } from "lucide-react"; // optional icons
 import clsx from "clsx";
 import { Icons } from "@/public/icons/icon";
 

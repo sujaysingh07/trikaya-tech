@@ -1,8 +1,6 @@
-"use client";
-import Image from "next/image";
+'use client'
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Clock } from "lucide-react";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 import { Icons } from "@/public/icons/icon";

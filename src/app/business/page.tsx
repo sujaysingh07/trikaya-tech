@@ -1,23 +1,12 @@
 import Banner from "@/src/components/common/CommonBanner";
-import mentorship from "@/public/images/community.jpg";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import rewards from "@/public/icons/OnlineLearning.svg";
 import NotVerified from "@/public/icons/DashboardCharts.svg";
 import problemSolving from "@/public/icons/TalentAcquisition.svg";
 import WirelessNetwork from "@/public/icons/Collaborative.svg";
-import SectionHeader from "@/src/components/common/SectionHeader";
-import Container from "@/src/components/ui/Container";
-import CommunityCard from "@/src/components/Cards/Community-card";
-import CommunityJoinCard from "@/src/components/Cards/CommunityJoin-card";
-import GradientImageCardThree from "@/src/components/Cards/GradientImageCardThree";
-import MeetupCallout from "@/src/components/common/MeetupCallout";
-import LeaderboardRow from "@/src/components/common/Community-leaderboard";
 import GenericButton from "@/src/components/common/GenericButton";
-import ReusableCard from "@/src/components/Cards/SkillCard";
-import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
 import CallToAction from "@/src/components/common/CallToAction";
 import CtaBanner from "@/src/components/common/Cta-Banner";
-import { desc, sub } from "framer-motion/client";
 export default function Business() {
   const mentorCards = [
     {

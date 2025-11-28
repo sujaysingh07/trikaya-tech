@@ -23,32 +23,6 @@ export type CompetitionType = {
   image: string;
 };
 export default function Arena() {
-  const competitions: CompetitionType[] = [
-    {
-      id: 1,
-      title: "Weekly Code Sprint",
-      subtitle: "Fast-paced coding challenges every week",
-      participants: "5,000+",
-      prizePool: "$1,000",
-      image: "/images/competitions/code-sprint.png",
-    },
-    {
-      id: 2,
-      title: "AI Challenge",
-      subtitle: "Build the best ML model for real datasets",
-      participants: "2,500+",
-      prizePool: "$5,000",
-      image: "/images/competitions/ai-challenge.png",
-    },
-    {
-      id: 3,
-      title: "Blockchain Hackathon",
-      subtitle: "Create innovative dApps and win prizes",
-      participants: "3,000+",
-      prizePool: "$10,000",
-      image: "/images/competitions/blockchain-hackathon.png",
-    },
-  ];
   const arenaCards = [
     {
       icon: rewards,

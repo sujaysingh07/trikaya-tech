@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import clsx from "clsx";
 
 interface InsightCardProps {
   variantCategory?: "blog" | "category";
@@ -31,7 +30,7 @@ export default function InsightCard({
       <div className="flex w-full flex-row items-start gap-4 lg:flex-row">
         {/* ICON for Category Layout */}
         {variantCategory === "category" && icon && (
-          <div className="h-12 w-12 flex-shrink-0">
+          <div className="h-12 w-12 shrink-0">
             <Image src={icon} alt={title} width={48} height={48} />
           </div>
         )}

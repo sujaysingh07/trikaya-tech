@@ -11,8 +11,6 @@ import Mentorshipprogram from "@/src/components/common/MentorshipProgram";
 import Container from "@/src/components/ui/Container";
 import FeatureSplitCardTwo from "@/src/components/common/ScaleGridTwo";
 import SectionHeader from "@/src/components/common/SectionHeader";
-import SkillCard from "@/src/components/Cards/SkillCard";
-import Link from "next/link";
 import LearnerCard from "@/src/components/Cards/Learner-card";
 import CallToAction from "@/src/components/common/CallToAction";
 export interface LearnerTestimonial {

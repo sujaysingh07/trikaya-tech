@@ -2,7 +2,6 @@
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import React from "react";
 import clsx from "clsx";
 import { Icons } from "@/public/icons/icon";
 
@@ -33,7 +32,6 @@ export default function GradientImageCard({
   reverse = false,
   className = "",
   imagePosition,
-  task,
   date,
   mode,
 }: GradientImageCardProps) {

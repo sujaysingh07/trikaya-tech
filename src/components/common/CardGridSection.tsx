@@ -7,7 +7,6 @@ import AmbassadorCard from "../Cards/Ambassdor-level-card";
 import BlogCard from "../Cards/Blog-card";
 import InsightCard from "../Cards/Insight-cards";
 import AuthorCard from "../Cards/Author";
-import JobCard from "../Cards/Job-card";
 import MaterialCard from "../Cards/Material-card";
 
 interface CardItem {

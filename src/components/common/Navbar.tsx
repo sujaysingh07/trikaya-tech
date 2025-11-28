@@ -133,7 +133,7 @@ const Navbar = () => {
       {/* Mobile Dropdown */}
       <div
         className={clsx(
-          "fixed left-0 right-0 top-18 bg-white overflow-y-auto z-50 transition-transform duration-500 ease-in-out h-[calc(100vh-64px)] ",
+          "fixed left-0 right-0 top-18 bg-white overflow-y-auto z-50 transition-transform duration-1000 ease-in-out h-[calc(100vh-64px)] ",
           isOpen ? "translate-y-0" : "-translate-y-[120%]"
         )}
       >

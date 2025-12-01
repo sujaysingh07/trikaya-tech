@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import SmoothScroll from "../components/SmoothScroll";
+import Script from "next/script";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -80,8 +81,6 @@ export const metadata: Metadata = {
   },
 };
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -91,13 +90,33 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* ✅ Google Tag Manager script */}
-        <script
+        <Script
+          id="gtm-script"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-MV6QFRCK');`,
+          }}
+        />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Trikaya",
+              alternateName: "Trikaya.io",
+              url: "https://www.trikaya.io/",
+              logo: "https://www.trikaya.io/logo/logo-trikaya-white.svg",
+              sameAs: [
+                "https://www.linkedin.com/company/trikaya-tech",
+                "https://www.instagram.com/trikaya_tech",
+              ],
+            }),
           }}
         />
       </head>

@@ -23,7 +23,7 @@ const Navbar = () => {
     // { id: "internships", label: "Internships", path: "/internships" },
     { id: "community", label: "Community", path: "#" },
     { id: "business", label: "Business", path: "#" },
-    // { id: "ambassdor", label: "Ambassdor", path: "#" },
+    // { id: "ambassador", label: "ambassador", path: "#" },
     { id: "resources", label: "Resources", path: "#" },
   ];
 

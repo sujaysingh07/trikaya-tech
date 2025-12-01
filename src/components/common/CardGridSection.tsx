@@ -3,7 +3,7 @@ import Container from "../ui/Container";
 import InfoCard from "../Cards/Info-card";
 import CompanyLogoCard from "../Cards/CompanyLogo-card";
 import { StaticImageData } from "next/image";
-import AmbassadorCard from "../Cards/Ambassdor-level-card";
+import AmbassadorCard from "../Cards/Ambassador-level-card";
 
 interface CardItem {
   icon?: string | StaticImageData;

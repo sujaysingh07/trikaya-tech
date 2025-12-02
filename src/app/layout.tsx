@@ -100,26 +100,35 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-MV6QFRCK');`,
           }}
         />
-          <Script
-            id="organization-schema"
-            type="application/ld+json"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                name: "Trikaya",
-                alternateName: "Trikaya.io",
-                url: "https://www.trikaya.io/",
-                logo: "https://www.trikaya.io/logo/logo-trikaya-white.svg",
-                sameAs: [
-                  "https://www.linkedin.com/company/trikaya-tech",
-                  "https://www.instagram.com/trikaya_tech",
-                ],
-              }),
-            }}
-          />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Trikaya",
+              alternateName: "Trikaya.io",
+              url: "https://www.trikaya.io/",
+              logo: "https://www.trikaya.io/logo/logo-trikaya-white.svg",
+              sameAs: [
+                "https://www.linkedin.com/company/trikaya-tech",
+                "https://www.instagram.com/trikaya_tech",
+              ],
+            }),
+          }}
+        />
       </head>
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-MV6QFRCK"
+          height="0"
+          width="0"
+          style={{ display: "none", visibility: "hidden" }}
+        ></iframe>
+      </noscript>
+
       <body className={` ${inter.variable} antialiased`}>
         <Navbar />
         <SmoothScroll>{children}</SmoothScroll>

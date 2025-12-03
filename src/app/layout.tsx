@@ -119,6 +119,45 @@ export default function RootLayout({
             }),
           }}
         />
+        <Script
+          id="Local Business Schema : Professional Service"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Trikaya",
+              image: "https://www.trikaya.io/logo/logo-trikaya-white.svg",
+              url: "https://www.trikaya.io/",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress:
+                  "Jbr Tech Park, Plot No. 77, 6th Rd, EPIP Zone, Whitefield",
+                addressLocality: "Bengaluru",
+                postalCode: "560066",
+                addressCountry: "IN",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 12.9782857,
+                longitude: 77.7278491,
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                ],
+                opens: "10:00",
+                closes: "19:00",
+              },
+            }),
+          }}
+        />
       </head>
       <noscript>
         <iframe

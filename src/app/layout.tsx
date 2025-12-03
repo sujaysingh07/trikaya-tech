@@ -111,7 +111,7 @@ export default function RootLayout({
               name: "Trikaya",
               alternateName: "Trikaya.io",
               url: "https://www.trikaya.io/",
-              logo: "https://www.trikaya.io/logo/logo-trikaya-white.svg",
+              logo: "https://www.trikaya.io/favicons/og-image.png",
               sameAs: [
                 "https://www.linkedin.com/company/trikaya-tech",
                 "https://www.instagram.com/trikaya_tech",
@@ -128,7 +128,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
               name: "Trikaya",
-              image: "https://www.trikaya.io/logo/logo-trikaya-white.svg",
+              image: "https://www.trikaya.io/favicons/og-image.png",
               url: "https://www.trikaya.io/",
               address: {
                 "@type": "PostalAddress",

@@ -55,7 +55,7 @@ export default function Mentorship() {
       review:
         "My mentor helped me land my dream job at a top tech company. The personalised guidance made all the difference!",
       mentor: "Sarah Johnson, AI Specialist",
-      image: "/images/mentors/learner1.png",
+      image: "/images/mentors/Learner1.png",
     },
     {
       id: 2,
@@ -64,7 +64,7 @@ export default function Mentorship() {
       review:
         "The project review sessions gave me insights I couldn't find anywhere else. My portfolio improved dramatically.",
       mentor: "Rahul Singh, Blockchain Architect",
-      image: "/images/mentors/learner2.png",
+      image: "/images/mentors/Learner2.png",
     },
     {
       id: 3,
@@ -73,7 +73,7 @@ export default function Mentorship() {
       review:
         "Trikaya mentorship accelerated my learning by months. The practical advice was invaluable for my career transition.",
       mentor: "Emily Chen, Data Science Lead",
-      image: "/images/mentors/learner3.png",
+      image: "/images/mentors/Learner3.png",
     },
   ];
 

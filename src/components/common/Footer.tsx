@@ -95,22 +95,22 @@ export default function Footer() {
               <h3 className="mb-4 font-semibold text-white">Platform</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="transition-colors hover:text-white">
+                  <Link href="/learn" className="transition-colors hover:text-white">
                     Learn
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="transition-colors hover:text-white">
+                  <Link href="/practice" className="transition-colors hover:text-white">
                     Practice
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="transition-colors hover:text-white">
+                  <Link href="/arena" className="transition-colors hover:text-white">
                     Arena
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="transition-colors hover:text-white">
+                  <Link href="/mentorship" className="transition-colors hover:text-white">
                     Mentorship
                   </Link>
                 </li>
@@ -123,21 +123,21 @@ export default function Footer() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="#" className="transition-colors hover:text-white">
-                    Jobs & Internship
+                    {/* Jobs & Internship */}
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="transition-colors hover:text-white">
+                  <Link href="/community" className="transition-colors hover:text-white">
                     Community
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="transition-colors hover:text-white">
-                    Resources
+                  <Link href="/resources" className="transition-colors hover:text-white">
+                    {/* Resources */}
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="transition-colors hover:text-white">
+                  <Link href="/blog" className="transition-colors hover:text-white">
                     Blog
                   </Link>
                 </li>
@@ -149,12 +149,12 @@ export default function Footer() {
               <h3 className="mb-4 font-semibold text-white">Company</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="transition-colors hover:text-white">
+                  <Link href="/about" className="transition-colors hover:text-white">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="transition-colors hover:text-white">
+                  <Link href="/business" className="transition-colors hover:text-white">
                     For Business
                   </Link>
                 </li>

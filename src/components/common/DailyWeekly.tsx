@@ -44,7 +44,7 @@ const challenges: Challenge[] = [
     title: "Cybersecurity CTF",
     duration: "1 Week",
     tags: ["Security", "Cryptography", "Penetration Testing"],
-    image: "/images/cybersecurity.jpg",
+    image: "/images/cyber.png",
     points: "1200 KP",
     href: "#",
   },

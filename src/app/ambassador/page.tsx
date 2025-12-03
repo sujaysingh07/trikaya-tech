@@ -5,8 +5,8 @@ import CallToAction from "@/src/components/common/CallToAction";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
 import Container from "@/src/components/ui/Container";
-export default function Ambassdor() {
-  const ambassdorCards = [
+export default function ambassador() {
+  const ambassadorCards = [
     {
       icon: "/icons/InnovationBulb.svg",
       title: "Lead Innovation Clubs",
@@ -96,7 +96,7 @@ export default function Ambassdor() {
     },
   ];
 
-  const AmbassdorRoleCards = [
+  const ambassadorRoleCards = [
     {
       icon: "/icons/OrganizeEvents.svg",
       title: "Organize Events",
@@ -151,7 +151,7 @@ export default function Ambassdor() {
     },
   ];
 
-  const AmbassdorLevelCards = [
+  const ambassadorLevelCards = [
     {
       level: 1,
       title: "Campus Ambassador",
@@ -206,7 +206,7 @@ export default function Ambassdor() {
         title={"Lead Innovation on "}
         highlight={"Your Campus."}
         description="Join the Trikaya Student Ambassador Program — become the face of emerging technology in your college, connect with mentors, host events, and grow your career with verified leadership credentials."
-        image="/ambassdor.png"
+        image="/ambassador.png"
         primaryButton={{
           label: "Apply Now",
           href: "",
@@ -222,7 +222,7 @@ export default function Ambassdor() {
         gridClassName="grid grid-cols-1 sm:grid-cols-3 gap-6 py-11"
         containerClassName="my-11"
         description="The Trikaya Student Ambassador Program (TSAP) is a leadership and learning initiative that empowers students to represent Trikaya at their institutions. Ambassadors build vibrant tech communities, promote innovation, and serve as liaisons between Trikaya and their campuses."
-        cards={ambassdorCards}
+        cards={ambassadorCards}
         headingAlign={"left"}
         button="Read Case Study"
       />
@@ -247,7 +247,7 @@ export default function Ambassdor() {
         cardType="ambassador"
         gridClassName="flex flex-col gap-4 my-11"
         description="The program is decentralized, with city, state, and national ambassador levels for greater impact."
-        cards={AmbassdorLevelCards}
+        cards={ambassadorLevelCards}
         headingAlign={"left"}
       />
       <CardGridSection
@@ -256,7 +256,7 @@ export default function Ambassdor() {
         description="Ambassadors are the bridge between students and the world of emerging technology."
         containerClassName=""
         gridClassName="grid grid-cols-1 sm:grid-cols-3 gap-6 py-11"
-        cards={AmbassdorRoleCards}
+        cards={ambassadorRoleCards}
         headingAlign={"left"}
       />
       <CardGridSection

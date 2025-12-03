@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: "Trikaya",
     images: [
       {
-        url: "/favicons/og-image.png", // add your OG image here
+        url: "/favicons/trikaya-og-logo.png", // add your OG image here
         width: 1024,
         height: 630,
         alt: "Trikaya – AI & Blockchain-Powered Job Platform",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
       "Trikaya – AI & Blockchain-Powered Job Platform for Verified Skills and Fair Hiring",
     description:
       "Trikaya is an AI & Blockchain-powered platform promoting transparent, skill-verified recruitment.",
-    images: ["/favicons/og-image.png"],
+    images: ["/favicons/trikaya-og-logo.png"],
   },
 };
 
@@ -91,7 +91,7 @@ export default function RootLayout({
       <head>
         {/* ✅ Google Tag Manager script */}
         <Script
-        id=""
+          id="gtm-script"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -100,7 +100,74 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-MV6QFRCK');`,
           }}
         />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Trikaya",
+              alternateName: "Trikaya.io",
+              url: "https://www.trikaya.io/",
+              logo: "https://www.trikaya.io/favicons/trikaya-og-logo.png",
+              sameAs: [
+                "https://www.linkedin.com/company/trikaya-tech",
+                "https://www.instagram.com/trikaya_tech",
+              ],
+            }),
+          }}
+        />
+        <Script
+          id="Local Business Schema : Professional Service"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Trikaya",
+              image: "https://www.trikaya.io/favicons/trikaya-og-logo.png",
+              url: "https://www.trikaya.io/",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress:
+                  "Jbr Tech Park, Plot No. 77, 6th Rd, EPIP Zone, Whitefield",
+                addressLocality: "Bengaluru",
+                postalCode: "560066",
+                addressCountry: "IN",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 12.9782857,
+                longitude: 77.7278491,
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                ],
+                opens: "10:00",
+                closes: "19:00",
+              },
+            }),
+          }}
+        />
       </head>
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-MV6QFRCK"
+          height="0"
+          width="0"
+          style={{ display: "none", visibility: "hidden" }}
+        ></iframe>
+      </noscript>
+
       <body className={` ${inter.variable} antialiased`}>
         <Navbar />
         <SmoothScroll>{children}</SmoothScroll>

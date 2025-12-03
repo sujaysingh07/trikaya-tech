@@ -20,11 +20,18 @@ const Navbar = () => {
     { id: "practice", label: "Practice", path: "/practice" },
     { id: "arena", label: "Arena", path: "/arena" },
     { id: "mentorship", label: "Mentorship", path: "/mentorship" },
-    { id: "jobs", label: "Jobs", path: "/jobs" },
-    { id: "internship", label: "Internship", path: "/internships" },
+     {
+      id: "jobs&internships",
+      label: "Jobs & Internships",
+      path: "#",
+      children: [
+        { label: "Jobs", path: "/jobs" },
+        { label: "Internships", path: "/internships" },
+      ],
+    },
     { id: "community", label: "Community", path: "/community" },
     { id: "business", label: "Business", path: "/business" },
-    { id: "ambassdor", label: "Ambassdor", path: "/ambassdor" },
+    { id: "ambassador", label: "Ambassador", path: "/ambassador" },
     {
       id: "resources",
       label: "Resources",

@@ -4,7 +4,7 @@ import clsx from "clsx";
 type Variant = "blog" | "featured" | "about";
 interface FeatureSplitCardProps {
   title: string | React.ReactNode;
-  description: string;
+  description: string | React.ReactNode;
   buttonLabel?: string;
   buttonLink?: string;
   image?: string | StaticImageData;
@@ -59,7 +59,7 @@ export default function FeatureSplitCardTwo({
         <h3 className="text-2xl leading-snug font-extrabold md:text-[37px]">
           {title}
         </h3>
-        <p className="mt-1 max-w-[500px] text-base font-normal text-gray-600">
+        <p className="mt-3 max-w-[500px] text-base font-normal text-black">
           {description}
         </p>
         {/* Feature List */}

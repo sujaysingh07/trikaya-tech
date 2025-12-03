@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: "Trikaya",
     images: [
       {
-        url: "/favicons/og-image.png", // add your OG image here
+        url: "/favicons/trikaya-og-logo.png", // add your OG image here
         width: 1024,
         height: 630,
         alt: "Trikaya – AI & Blockchain-Powered Job Platform",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
       "Trikaya – AI & Blockchain-Powered Job Platform for Verified Skills and Fair Hiring",
     description:
       "Trikaya is an AI & Blockchain-powered platform promoting transparent, skill-verified recruitment.",
-    images: ["/favicons/og-image.png"],
+    images: ["/favicons/trikaya-og-logo.png"],
   },
 };
 
@@ -111,7 +111,7 @@ export default function RootLayout({
               name: "Trikaya",
               alternateName: "Trikaya.io",
               url: "https://www.trikaya.io/",
-              logo: "https://www.trikaya.io/favicons/og-image.png",
+              logo: "https://www.trikaya.io/favicons/trikaya-og-logo.png",
               sameAs: [
                 "https://www.linkedin.com/company/trikaya-tech",
                 "https://www.instagram.com/trikaya_tech",
@@ -128,7 +128,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
               name: "Trikaya",
-              image: "https://www.trikaya.io/favicons/og-image.png",
+              image: "https://www.trikaya.io/favicons/trikaya-og-logo.png",
               url: "https://www.trikaya.io/",
               address: {
                 "@type": "PostalAddress",

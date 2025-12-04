@@ -67,7 +67,7 @@ export default function InsightCard({
       {/* CTA BUTTON */}
       <Link
         href={href}
-        className="bg-primary-color hover:bg-primary-color/90 mt-5 w-full rounded-lg px-5 py-3 text-center text-sm font-medium text-white transition sm:w-[220px] md:mt-0 md:w-[255px]"
+        className="bg-primary-color hover:bg-primary-color/90 whitespace-nowrap mt-5 w-full rounded-lg px-5 py-3 text-center text-sm font-medium text-white transition sm:w-[220px] md:mt-0 md:w-[300px]"
       >
         {variantCategory === "blog" ? "Read More" : `Explore ${title}`}
       </Link>

@@ -1,22 +1,28 @@
 import { Icons } from "@/public/icons/icon";
+import { formatCurrency, formatDateRange, formatDuration } from "@/src/lib/comman";
 import Link from "next/link";
 
-interface Hackathon {
+
+export type HackathonDataType = {
+    title: string;
+  short_description: string;
+  organizer_name: string;
+  organizer_logo: string | null;
+  organizer_website: string;
+  theme: string;
   category: string;
-  categoryColor?: string;
-  title: string;
-  description: string;
-  date: string;
-  duration: string;
-  reward: string;
-  href: string;
+  hackathon_start_date: string;  
+  hackathon_end_date: string;  
+  total_prize_pool: number;
+  registration_url: string;
 }
 
 interface HackathonCardProps {
-  hackathon: Hackathon;
+  key?: number;
+  hackathon: HackathonDataType;
 }
 
-export function HackathonCard({ hackathon }: HackathonCardProps) {
+export function HackathonCard( {hackathon} : HackathonCardProps) {
   return (
     <div className="flex flex-col justify-between rounded-[30px] border border-gray-200 bg-white p-6 transition-all duration-300">
       {/* Category Tag */}
@@ -35,7 +41,7 @@ export function HackathonCard({ hackathon }: HackathonCardProps) {
         </h3>
 
         {/* Description */}
-        <p className="mb-5 text-sm text-[#03061E]">{hackathon.description}</p>
+        <p className="mb-5 text-sm text-[#03061E]">{hackathon.short_description}</p>
       </div>
 
       {/* Info List */}
@@ -102,12 +108,14 @@ export function HackathonCard({ hackathon }: HackathonCardProps) {
             />
           </svg>
 
-          {hackathon.date}
+    {formatDateRange(hackathon.hackathon_start_date, hackathon.hackathon_end_date)}
+        
         </li>
 
         <li className="flex items-center gap-2">
           <Icons variant="Clock" />
-          {hackathon.duration}
+           {formatDuration(hackathon.hackathon_start_date, hackathon.hackathon_end_date)}
+          
         </li>
 
         <li className="flex items-center gap-2">
@@ -124,14 +132,15 @@ export function HackathonCard({ hackathon }: HackathonCardProps) {
             />
           </svg>
 
-          {hackathon.reward}
+           {formatCurrency(hackathon.total_prize_pool)}
         </li>
       </ul>
 
       {/* Button */}
       <div className="flex">
         <Link
-          href={hackathon.href}
+          href={hackathon.registration_url || '#'}
+          target="_blank"
           className="mt-auto inline-block rounded-lg bg-[#1F62E6] px-[30px] py-2.5 text-center font-semibold text-white transition hover:bg-[#1556c8]"
         >
           Register Now

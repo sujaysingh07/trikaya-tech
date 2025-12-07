@@ -1,4 +1,4 @@
-import { HackathonCard } from "../cards/HackathonCard";
+import { HackathonCard, HackathonDataType } from "../cards/HackathonCard";
 import Container from "../ui/Container";
 import HackathonBanner from "./GenericBanner";
 import SectionHeader from "./SectionHeader";
@@ -39,7 +39,8 @@ const hackathonList = [
   },
 ];
 
-export default function HackathonSection() {
+
+export default function HackathonSection({ hackathonData  }: { hackathonData: HackathonDataType[] }) {
   return (
     <Container className="pb-[50px]">
       <SectionHeader
@@ -48,7 +49,7 @@ export default function HackathonSection() {
       />
 
       <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {hackathonList.map((hack, index) => (
+        {hackathonData.map((hack, index) => (
           <HackathonCard key={index} hackathon={hack} />
         ))}
       </div>

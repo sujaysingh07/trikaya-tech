@@ -14,15 +14,21 @@ import SectionHeader from "@/src/components/common/SectionHeader";
 import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
 import { LeaderBoardType } from "@/src/components/common/Leaderboard";
-export type CompetitionType = {
-  id: number;
-  title: string;
-  subtitle: string;
-  participants: string;
-  prizePool: string;
-  image: string;
+import { httpRequest } from "@/src/lib/httpClient";
+import { HackathonDataType } from "@/src/components/cards/HackathonCard";
+
+
+
+export type APIResponse<T> = {
+  data: T;
+  message: string;
+  status: string;
 };
-export default function Arena() {
+export default async function Arena() {
+  const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(    
+    "/api/v1/hackathon"
+  ); 
+  console.log("hackathonsList:", hackathonData.data);
   const arenaCards = [
     {
       icon: rewards,
@@ -146,7 +152,7 @@ export default function Arena() {
         cards={arenaCards}
         headingAlign={"left"}
       />
-      <HackathonSection />
+      <HackathonSection hackathonData={hackathonData.data} />
       <DailyWeeklyChallenges />
       <SkillQuests />
       <Container>

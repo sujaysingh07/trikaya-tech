@@ -17,8 +17,6 @@ import { LeaderBoardType } from "@/src/components/common/Leaderboard";
 import { httpRequest } from "@/src/lib/httpClient";
 import { HackathonDataType } from "@/src/components/cards/HackathonCard";
 
-
-
 export type APIResponse<T> = {
   data: T;
   message: string;
@@ -28,7 +26,6 @@ export default async function Arena() {
   const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(    
     "/api/v1/hackathon"
   ); 
-  console.log("hackathonsList:", hackathonData.data);
   const arenaCards = [
     {
       icon: rewards,

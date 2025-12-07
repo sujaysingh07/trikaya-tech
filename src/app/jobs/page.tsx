@@ -1,6 +1,6 @@
 import Banner from "@/src/components/common/CommonBanner";
 import mentorship from "@/public/images/engineer-girl.png";
-import JobCard, { JobCardProps } from "@/src/components/Cards/Job-card";
+import JobCard, { JobCardProps } from "@/src/components/cards/JobCard";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import rewards from "@/public/icons/AiBrain.svg";
 import problemSolving from "@/public/icons/Star-employee.svg";
@@ -13,7 +13,7 @@ import GenericBanner from "@/src/components/common/GenericBanner";
 import { Icons } from "@/public/icons/icon";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import GenericButton from "@/src/components/common/GenericButton";
-import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
+import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
 export default function JobsInternship() {
   const mentorCards = [

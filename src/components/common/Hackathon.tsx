@@ -1,4 +1,4 @@
-import { HackathonCard } from "../Cards/Hackathon-card";
+import { HackathonCard } from "../cards/HackathonCard";
 import Container from "../ui/Container";
 import HackathonBanner from "./GenericBanner";
 import SectionHeader from "./SectionHeader";

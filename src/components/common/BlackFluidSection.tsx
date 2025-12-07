@@ -1,4 +1,4 @@
-import CourseCard from "../Cards/Badge-card";
+import CourseCard from "../cards/BadgeCard";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 

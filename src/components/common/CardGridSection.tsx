@@ -1,13 +1,13 @@
 import React from "react";
 import Container from "../ui/Container";
-import InfoCard from "../Cards/Info-card";
-import CompanyLogoCard from "../Cards/CompanyLogo-card";
+import InfoCard from "../cards/InfoCard";
+import CompanyLogoCard from "../cards/CompanyLogoCard";
 import { StaticImageData } from "next/image";
-import AmbassadorCard from "../Cards/Ambassador-level-card";
-import BlogCard from "../Cards/Blog-card";
-import InsightCard from "../Cards/Insight-cards";
-import AuthorCard from "../Cards/Author";
-import MaterialCard from "../Cards/Material-card";
+import AmbassadorCard from "../cards/AmbassadorLevelCard";
+import BlogCard from "../cards/BlogCard";
+import InsightCard from "../cards/InsightCard";
+import MaterialCard from "../cards/MaterialCard";
+import AuthorCard from "../cards/Author";
 
 interface CardItem {
   icon?: string | StaticImageData;

@@ -1,8 +1,8 @@
 import { Icons } from "@/public/icons/icon";
-import GradientImageCardTwo from "../Cards/GradientImageCardTwo";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 import Link from "next/link";
+import GradientImageCardTwo from "../cards/GradientImageCardTwo";
 
 const opportunities = [
   {

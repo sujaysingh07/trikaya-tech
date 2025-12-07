@@ -9,9 +9,9 @@ import WirelessNetwork from "@/public/icons/WirelessNetwork .svg";
 import HackathonSection from "@/src/components/common/Hackathon";
 import DailyWeeklyChallenges from "@/src/components/common/DailyWeekly";
 import SkillQuests from "@/src/components/common/SkillQuests";
-import PerformanceCard from "@/src/components/Cards/Performance-card";
+import PerformanceCard from "@/src/components/cards/PerformanceCard";
 import SectionHeader from "@/src/components/common/SectionHeader";
-import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
+import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
 import { LeaderBoardType } from "@/src/components/common/Leaderboard";
 export type CompetitionType = {

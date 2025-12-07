@@ -1,6 +1,6 @@
 "use client";
 
-import GradientImageCard from "../Cards/GradientImageCard";
+import GradientImageCard from "../cards/GradientImageCard";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 

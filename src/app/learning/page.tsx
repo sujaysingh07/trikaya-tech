@@ -3,7 +3,7 @@ import CardGridSection from "@/src/components/common/CardGridSection";
 import GenericButton from "@/src/components/common/GenericButton";
 import CallToAction from "@/src/components/common/CallToAction";
 import SectionHeader from "@/src/components/common/SectionHeader";
-import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
+import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import Container from "@/src/components/ui/Container";
 import FeatureSplitCardThree from "@/src/components/common/ScaleGridThree";
 import SubscribeCard from "@/src/components/common/Subscribe-container";

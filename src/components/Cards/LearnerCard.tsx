@@ -1,5 +1,5 @@
 import { Icons } from "@/public/icons/icon";
-import { LearnerTestimonial } from "@/src/app/mentorship/page";
+import { LearnerTestimonial } from "@/src/app/(web)/mentorship/page";
 import Image from "next/image";
 
 export default function LearnerCard({

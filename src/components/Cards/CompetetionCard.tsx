@@ -1,4 +1,4 @@
-import { CompetitionType } from "@/src/app/arena/page";
+import { CompetitionType } from "@/src/app/(web)/arena/page";
 import Image from "next/image";
 import Link from "next/link";
 export default function CompetetionCard(comp: CompetitionType) {

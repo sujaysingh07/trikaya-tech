@@ -1,26 +1,10 @@
 import { Icons } from "@/public/icons/icon";
 import { formatCurrency, formatDateRange, formatDuration } from "@/src/lib/comman";
+import { HackathonCardProps } from "@/src/lib/types/commonTypes";
 import Link from "next/link";
 
 
-export type HackathonDataType = {
-    title: string;
-  short_description: string;
-  organizer_name: string;
-  organizer_logo: string | null;
-  organizer_website: string;
-  theme: string;
-  category: string;
-  hackathon_start_date: string;  
-  hackathon_end_date: string;  
-  total_prize_pool: number;
-  registration_url: string;
-}
 
-interface HackathonCardProps {
-  key?: number;
-  hackathon: HackathonDataType;
-}
 
 export function HackathonCard( {hackathon} : HackathonCardProps) {
   return (

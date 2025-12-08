@@ -1,23 +1,26 @@
 import Link from "next/link";
 import { Icons } from "@/public/icons/icon";
 import clsx from "clsx";
+import { formatJobType } from "@/src/lib/comman";
 
 export interface JobCardProps {
-  title: string;
-  company: string;
-  location: string;
-  salary: string;
-  type: string;
-  employmentType: string; // Full-Time / Internship
+ job: JobItem;
+}
+
+export interface JobItem {
+  job_title: string;
+  company_name: string;
+  job_location:string,
+  salary:string,
+  type:string,
+  employment_type:string,
+  title:string
+  comany:string
+  
 }
 
 export default function JobCard({
-  title,
-  company,
-  location,
-  salary,
-  type,
-  employmentType,
+  job
 }: JobCardProps) {
   return (
     <div className="hover:border-primary-color flex max-w-[410px] flex-col gap-5 rounded-[22px] border border-gray-300 bg-white p-6 transition-all duration-300">
@@ -26,12 +29,12 @@ export default function JobCard({
         <span
           className={clsx(
             "rounded-full px-3 py-1 text-[16px] font-medium",
-            ["Internship", "Summer", "Summer 2025"].includes(employmentType)
+            ["Internship", "Summer", "Summer 2025"].includes(job.employment_type)
               ? "bg-[#EBEAEA] text-[#666666]"
               : "bg-primary-color text-white",
           )}
         >
-          {employmentType}
+          {formatJobType(job.employment_type)}
         </span>
         <span className="text-primary-color flex items-center gap-1 rounded-full bg-[#D6E4FF] px-3 py-1 text-base font-medium">
           <Icons variant="VerifiedBadge" color="#0A58F5" />
@@ -41,25 +44,25 @@ export default function JobCard({
 
       {/* Job Title & Company */}
       <div className="flex flex-col gap-1">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-base text-[#03061E]">{company}</p>
+        <h3 className="text-xl font-semibold">{job.job_title}</h3>
+        <p className="text-base text-[#03061E]">{job.company_name}</p>
       </div>
 
       {/* Job Meta */}
       <div className="flex flex-col gap-3 text-sm text-[#4F5162]">
         <div className="flex items-center gap-2">
           <Icons variant="LocationPin" color="#666666" />
-          <span>{location}</span>
+          <span>{job.job_location}</span>
         </div>
 
         <div className="flex items-center gap-2">
           <Icons variant="Bag" />
-          <span>{type}</span>
+          <span>{formatJobType(job.employment_type)}</span>
         </div>
 
         <div className="flex items-center gap-2">
           <Icons variant="DollarCircle" />
-          <span>{salary}</span>
+          <span>{job.salary || "Not Disclosed"}</span>
         </div>
       </div>
 

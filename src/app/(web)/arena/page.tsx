@@ -15,17 +15,21 @@ import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
 import { LeaderBoardType } from "@/src/components/common/Leaderboard";
 import { httpRequest } from "@/src/lib/httpClient";
-import { HackathonDataType } from "@/src/components/cards/HackathonCard";
+import { APIResponse, HackathonDataType, QuestDataType, WeeklyChallengeAPIItem,  } from "@/src/lib/types/commonTypes";
 
-export type APIResponse<T> = {
-  data: T;
-  message: string;
-  status: string;
-};
+
 export default async function Arena() {
   const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(    
     "/api/v1/hackathon"
   ); 
+  const questData = await httpRequest<APIResponse<QuestDataType[]>>("/api/v1/quests");
+
+  const weeklyChallengesData = await httpRequest<
+    APIResponse<WeeklyChallengeAPIItem[]>
+  >("/api/v1/challenges");
+
+
+
   const arenaCards = [
     {
       icon: rewards,
@@ -150,8 +154,8 @@ export default async function Arena() {
         headingAlign={"left"}
       />
       <HackathonSection hackathonData={hackathonData.data} />
-      <DailyWeeklyChallenges />
-      <SkillQuests />
+      <DailyWeeklyChallenges weeklyChallengesData={weeklyChallengesData.data || []} />
+      <SkillQuests questData={questData.data} />
       <Container>
         <SectionHeader
           title="Leaderboard & "

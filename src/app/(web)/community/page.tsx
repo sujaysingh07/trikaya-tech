@@ -15,7 +15,15 @@ import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
 import GradientImageCardThree from "@/src/components/cards/GradientImageCardThree";
 import ReusableCard from "@/src/components/cards/SkillCard";
-export default function Community() {
+import { httpRequest } from "@/src/lib/httpClient";
+import { APIResponse, EventsDataType } from "@/src/lib/types/commonTypes";
+import { formatEventDate, mapCategoryToMode } from "@/src/lib/comman";
+export default async function Community() {
+  const EventsData = await httpRequest<APIResponse<[]>>(    
+    "/api/v1/events"
+  ); 
+
+
   const mentorCards = [
     {
       icon: rewards,
@@ -295,17 +303,16 @@ export default function Community() {
           description="Attend online workshops, webinars, and city-level meetups hosted by Trikaya mentors and partners."
         />
         <div className="grid grid-cols-1 gap-x-[46px] gap-y-[27px] py-11 sm:grid-cols-2">
-          {eventData.map((item) => (
+          {EventsData.data.map((item: EventsDataType) => (
             <GradientImageCardThree
               key={item.id}
               title={item.title}
               description={item.description}
               buttonLabel={item.buttonLabel}
-              buttonLink={item.buttonLink}
-              task={item.task} // <-- now correct
-              bgImage={item.bgImage}
-              date={item.task}
-              mode={item.mode}
+              buttonLink={item.event_url}
+              bgImage={item.cover_photo_url}
+              date={formatEventDate(item.registration_deadline)}
+              mode={mapCategoryToMode(item.event_mode)}
               gradientFrom={item.gradientFrom}
               gradientTo={item.gradientTo}
               reverse={item.reverse}

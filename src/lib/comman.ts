@@ -1,3 +1,4 @@
+
 export function formatDateRange(startDate: string, endDate: string): string {
   const start = new Date(startDate);
   const end = new Date(endDate);
@@ -61,4 +62,43 @@ export function formatCurrency(amount: number): string {
     currency: "INR",
     maximumFractionDigits: 0, // remove decimal .00
   });
+}
+
+
+export function formatEventDate(isoDate: string) {
+  return new Date(isoDate).toLocaleString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
+
+
+export function mapCategoryToMode(category?: string) {
+  if (!category) return "Online";
+
+  const cat = category.toLowerCase();
+
+  if (cat === "webinar") return "Online";
+  if (cat === "workshop") return "Hybrid";
+
+  return category; // fallback
+}
+
+
+export function formatJobType(type: string): string {
+  const mapping: Record<string, string> = {
+    full_time: "Full-time",
+    part_time: "Part-time",
+    contract: "Contract",
+    consultant: "Consultant",
+    internship: "Internship",
+    freelance: "Freelance",
+    temporary: "Temporary",
+  };
+
+  return mapping[type] || type;
 }

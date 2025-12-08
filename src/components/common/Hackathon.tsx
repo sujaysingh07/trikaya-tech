@@ -1,43 +1,44 @@
-import { HackathonCard, HackathonDataType } from "../cards/HackathonCard";
+import { HackathonDataType } from "@/src/lib/types/commonTypes";
+import { HackathonCard } from "../cards/HackathonCard";
 import Container from "../ui/Container";
 import HackathonBanner from "./GenericBanner";
 import SectionHeader from "./SectionHeader";
 
-const hackathonList = [
-  {
-    category: "Social Innovation",
-    categoryColor: "bg-[#1F62E6]",
-    title: "Blockchain for Social Impact",
-    description:
-      "Build decentralized solutions that address real-world social challenges and create positive change.",
-    date: "March 15–17, 2025",
-    duration: "48 hours",
-    reward: "₹50,000 + Internship",
-    href: "#",
-  },
-  {
-    category: "Healthcare Tech",
-    categoryColor: "bg-[#00A6A6]",
-    title: "AI Healthcare Challenge",
-    description:
-      "Develop AI models to improve healthcare diagnostics and patient care systems.",
-    date: "March 15–17, 2025",
-    duration: "48 hours",
-    reward: "₹50,000 + Internship",
-    href: "#",
-  },
-  {
-    category: "Decentralized Finance",
-    categoryColor: "bg-[#7B61FF]",
-    title: "Web3 DeFi Hackathon",
-    description:
-      "Create innovative DeFi protocols and financial applications on blockchain.",
-    date: "March 15–17, 2025",
-    duration: "48 hours",
-    reward: "₹50,000 + Internship",
-    href: "#",
-  },
-];
+// const hackathonList = [
+//   {
+//     category: "Social Innovation",
+//     categoryColor: "bg-[#1F62E6]",
+//     title: "Blockchain for Social Impact",
+//     description:
+//       "Build decentralized solutions that address real-world social challenges and create positive change.",
+//     date: "March 15–17, 2025",
+//     duration: "48 hours",
+//     reward: "₹50,000 + Internship",
+//     href: "#",
+//   },
+//   {
+//     category: "Healthcare Tech",
+//     categoryColor: "bg-[#00A6A6]",
+//     title: "AI Healthcare Challenge",
+//     description:
+//       "Develop AI models to improve healthcare diagnostics and patient care systems.",
+//     date: "March 15–17, 2025",
+//     duration: "48 hours",
+//     reward: "₹50,000 + Internship",
+//     href: "#",
+//   },
+//   {
+//     category: "Decentralized Finance",
+//     categoryColor: "bg-[#7B61FF]",
+//     title: "Web3 DeFi Hackathon",
+//     description:
+//       "Create innovative DeFi protocols and financial applications on blockchain.",
+//     date: "March 15–17, 2025",
+//     duration: "48 hours",
+//     reward: "₹50,000 + Internship",
+//     href: "#",
+//   },
+// ];
 
 
 export default function HackathonSection({ hackathonData  }: { hackathonData: HackathonDataType[] }) {

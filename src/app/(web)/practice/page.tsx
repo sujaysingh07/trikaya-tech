@@ -11,6 +11,8 @@ import AssignmentChallenges from "@/src/components/common/AssignmentChallenges";
 import Leaderboard from "@/src/components/common/Leaderboard";
 import CallToAction from "@/src/components/common/CallToAction";
 import InviteCard from "@/src/components/common/Invite";
+import { httpRequest } from "@/src/lib/httpClient";
+import { APIResponse, AssignmentType,   } from "@/src/lib/types/commonTypes";
 const LearnCards = [
   {
     icon: structuredLearning,
@@ -36,7 +38,12 @@ const LearnCards = [
       "Showcase your practical achievements on your Trikaya-Verified CV.",
   },
 ];
-export default function Practice() {
+export default async function Practice() {
+    const assignmentData = await httpRequest<APIResponse<AssignmentType[]>>(
+  "/api/v1/assignments"
+);
+console.log("assignmentData", assignmentData.data);
+
   return (
     <>
       <Banner
@@ -76,7 +83,7 @@ export default function Practice() {
       />
       <BlockchainLab />
       <AILab />
-      <AssignmentChallenges />
+      <AssignmentChallenges challenge={assignmentData.data}/>
       <Leaderboard />
       <div className="py-11">
         <InviteCard

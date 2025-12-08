@@ -1,7 +1,8 @@
-import { CompetitionType } from "@/src/app/(web)/arena/page";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import Image from "next/image";
 import Link from "next/link";
-export default function CompetetionCard(comp: CompetitionType) {
+export default function CompetetionCard(comp: any) {
   return (
     <div className="w-full overflow-hidden rounded-[30px] border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg">
       {/* Image */}

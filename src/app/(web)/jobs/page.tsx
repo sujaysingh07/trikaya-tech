@@ -15,7 +15,9 @@ import SectionHeader from "@/src/components/common/SectionHeader";
 import GenericButton from "@/src/components/common/GenericButton";
 import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
-export default function JobsInternship() {
+import { APIResponse } from "@/src/lib/types/commonTypes";
+import { httpRequest } from "@/src/lib/httpClient";
+export default async function JobsInternship() {
   const mentorCards = [
     {
       icon: rewards,
@@ -40,57 +42,59 @@ export default function JobsInternship() {
       description: "Personalized suggestions to upskill and match your goals.",
     },
   ];
-
-  const jobData: JobCardProps[] = [
-    {
-      title: "AI Engineer Intern",
-      company: "TechNova Solutions",
-      location: "Remote",
-      salary: "$50K – $70K",
-      type: "0–2 yrs",
-      employmentType: "Internship",
-    },
-    {
-      title: "Blockchain Developer",
-      company: "CryptoChain Labs",
-      location: "Bangalore",
-      salary: "$80K – $120K",
-      type: "3–5 yrs",
-      employmentType: "Full-Time",
-    },
-    {
-      title: "Data Scientist",
-      company: "DataVision Inc",
-      location: "Remote",
-      salary: "$60K – $90K",
-      type: "0–2 yrs",
-      employmentType: "Full-Time",
-    },
-    {
-      title: "Cybersecurity Analyst",
-      company: "SecureNet Systems",
-      location: "Mumbai",
-      salary: "$70K – $100K",
-      type: "3–5 yrs",
-      employmentType: "Full-Time",
-    },
-    {
-      title: "Machine Learning Intern",
-      company: "AI Dynamics",
-      location: "Remote",
-      salary: "$40K – $60K",
-      type: "0–2 yrs",
-      employmentType: "Internship",
-    },
-    {
-      title: "Smart Contract Developer",
-      company: "Web3. Ventures",
-      location: "Delhi",
-      salary: "$90K – $130K",
-      type: "3–5 yrs",
-      employmentType: "Full-Time",
-    },
-  ];
+  const jobsData = await httpRequest<APIResponse<[]>>(    
+      "/api/v1/jobs"
+    );
+  // const jobData: JobCardProps[] = [
+  //   {
+  //     title: "AI Engineer Intern",
+  //     company: "TechNova Solutions",
+  //     location: "Remote",
+  //     salary: "$50K – $70K",
+  //     type: "0–2 yrs",
+  //     employmentType: "Internship",
+  //   },
+  //   {
+  //     title: "Blockchain Developer",
+  //     company: "CryptoChain Labs",
+  //     location: "Bangalore",
+  //     salary: "$80K – $120K",
+  //     type: "3–5 yrs",
+  //     employmentType: "Full-Time",
+  //   },
+  //   {
+  //     title: "Data Scientist",
+  //     company: "DataVision Inc",
+  //     location: "Remote",
+  //     salary: "$60K – $90K",
+  //     type: "0–2 yrs",
+  //     employmentType: "Full-Time",
+  //   },
+  //   {
+  //     title: "Cybersecurity Analyst",
+  //     company: "SecureNet Systems",
+  //     location: "Mumbai",
+  //     salary: "$70K – $100K",
+  //     type: "3–5 yrs",
+  //     employmentType: "Full-Time",
+  //   },
+  //   {
+  //     title: "Machine Learning Intern",
+  //     company: "AI Dynamics",
+  //     location: "Remote",
+  //     salary: "$40K – $60K",
+  //     type: "0–2 yrs",
+  //     employmentType: "Internship",
+  //   },
+  //   {
+  //     title: "Smart Contract Developer",
+  //     company: "Web3. Ventures",
+  //     location: "Delhi",
+  //     salary: "$90K – $130K",
+  //     type: "3–5 yrs",
+  //     employmentType: "Full-Time",
+  //   },
+  // ];
 
   const ImpressCards = [
     {
@@ -182,8 +186,8 @@ export default function JobsInternship() {
             description="Browse verified openings across Blockchain, AI, Data Science, and Cybersecurity."
           />
           <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {jobData.map((job, i) => (
-              <JobCard key={i} {...job} />
+            {jobsData.data.map((job, i) => (
+              <JobCard key={i} job={job} />
             ))}
           </div>
           <div className="md:py-11">

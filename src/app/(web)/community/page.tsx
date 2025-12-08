@@ -117,65 +117,65 @@ export default async function Community() {
     },
   ];
 
-  const eventData = [
-    {
-      id: 1,
-      title: "AI Workshop: Building Your First LLM App",
-      description:
-        "Learn to build and deploy AI applications with real-world examples.",
-      task: "Nov 15, 2025 • 4:00 PM IST",
-      mode: "Online",
-      bgImage: "/images/community-event.png",
-      buttonLabel: "Register Now",
-      buttonLink: "/events/ai-workshop",
-      gradientFrom: "#F0F4FF",
-      gradientTo: "#FFFFFF",
-      reverse: false,
-    },
-    {
-      id: 2,
-      title: "Blockchain Hackathon 2025",
-      description:
-        "48-hour challenge to build the next breakthrough DeFi solution.",
-      task: "Nov 22–24, 2025 • All Day",
-      mode: "Bangalore",
-      bgImage: "/images/Blockchain.png",
-      buttonLabel: "Register Now",
-      buttonLink: "/events/blockchain-hackathon",
-      gradientFrom: "#F0F4FF",
-      gradientTo: "#FFFFFF",
-      reverse: false,
-    },
-    {
-      id: 3,
-      title: "Career Fair: Meet Top Tech Recruiters",
-      description:
-        "Connect with 50+ hiring partners actively looking for talent.",
-      task: "Dec 5, 2025 • 10:00 AM – 4:00 PM",
-      mode: "Hybrid",
-      bgImage: "/images/community-event-two.png",
-      buttonLabel: "Register Now",
-      buttonLink: "/events/career-fair",
-      gradientFrom: "#F0F4FF",
-      gradientTo: "#FFFFFF",
-      reverse: false,
-    },
-    {
-      id: 4,
-      title: "Community AMA with Industry Leaders",
-      description:
-        "Ask anything about tech careers, skills, and industry trends.",
-      task: "Dec 10, 2025 • 7:00 PM IST",
-      mode: "Online",
+  // const eventData = [
+  //   {
+  //     id: 1,
+  //     title: "AI Workshop: Building Your First LLM App",
+  //     description:
+  //       "Learn to build and deploy AI applications with real-world examples.",
+  //     task: "Nov 15, 2025 • 4:00 PM IST",
+  //     mode: "Online",
+  //     bgImage: "/images/community-event.png",
+  //     buttonLabel: "Register Now",
+  //     buttonLink: "/events/ai-workshop",
+  //     gradientFrom: "#F0F4FF",
+  //     gradientTo: "#FFFFFF",
+  //     reverse: false,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Blockchain Hackathon 2025",
+  //     description:
+  //       "48-hour challenge to build the next breakthrough DeFi solution.",
+  //     task: "Nov 22–24, 2025 • All Day",
+  //     mode: "Bangalore",
+  //     bgImage: "/images/Blockchain.png",
+  //     buttonLabel: "Register Now",
+  //     buttonLink: "/events/blockchain-hackathon",
+  //     gradientFrom: "#F0F4FF",
+  //     gradientTo: "#FFFFFF",
+  //     reverse: false,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Career Fair: Meet Top Tech Recruiters",
+  //     description:
+  //       "Connect with 50+ hiring partners actively looking for talent.",
+  //     task: "Dec 5, 2025 • 10:00 AM – 4:00 PM",
+  //     mode: "Hybrid",
+  //     bgImage: "/images/community-event-two.png",
+  //     buttonLabel: "Register Now",
+  //     buttonLink: "/events/career-fair",
+  //     gradientFrom: "#F0F4FF",
+  //     gradientTo: "#FFFFFF",
+  //     reverse: false,
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Community AMA with Industry Leaders",
+  //     description:
+  //       "Ask anything about tech careers, skills, and industry trends.",
+  //     task: "Dec 10, 2025 • 7:00 PM IST",
+  //     mode: "Online",
 
-      bgImage: "/images/community-event-three.png",
-      buttonLabel: "Register Now",
-      buttonLink: "/events/community-ama",
-      gradientFrom: "#F0F4FF",
-      gradientTo: "#FFFFFF",
-      reverse: false,
-    },
-  ];
+  //     bgImage: "/images/community-event-three.png",
+  //     buttonLabel: "Register Now",
+  //     buttonLink: "/events/community-ama",
+  //     gradientFrom: "#F0F4FF",
+  //     gradientTo: "#FFFFFF",
+  //     reverse: false,
+  //   },
+  // ];
 
   const leaderboardData = [
     {

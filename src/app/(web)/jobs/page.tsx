@@ -1,6 +1,6 @@
 import Banner from "@/src/components/common/CommonBanner";
 import mentorship from "@/public/images/engineer-girl.png";
-import JobCard, { JobCardProps } from "@/src/components/cards/JobCard";
+import JobCard from "@/src/components/cards/JobCard";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import rewards from "@/public/icons/AiBrain.svg";
 import problemSolving from "@/public/icons/Star-employee.svg";

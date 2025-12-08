@@ -4,49 +4,49 @@ import Container from "../ui/Container";
 import { WeeklyChallengeAPIItem } from "@/src/lib/types/commonTypes";
 import WeeklyChallengeCard from "../cards/WeeklyChallengeCard";
 
-interface Challenge {
-  title: string;
-  duration: string;
-  tags: string[];
-  image: string;
-  points: string;
-  href: string;
-}
+// interface Challenge {
+//   title: string;
+//   duration: string;
+//   tags: string[];
+//   image: string;
+//   points: string;
+//   href: string;
+// }
 
-const challenges: Challenge[] = [
-  {
-    title: "Smart Contract Debug Challenge",
-    duration: "24 Weeks",
-    tags: ["Blockchain", "Solidity", "Security"],
-    image: "/images/smartContract.png",
-    points: "500 KP",
-    href: "#",
-  },
-  {
-    title: "AI Model Optimization",
-    duration: "1 Week",
-    tags: ["AI", "Python", "TensorFlow"],
-    image: "/images/AI-model.png",
-    points: "1000 KP",
-    href: "#",
-  },
-  {
-    title: "Data Structure Sprint",
-    duration: "48 Weeks",
-    tags: ["DSA", "Algorithms", "Problem Solving"],
-    image: "/images/data.png",
-    points: "750 KP",
-    href: "#",
-  },
-  {
-    title: "Cybersecurity CTF",
-    duration: "1 Week",
-    tags: ["Security", "Cryptography", "Penetration Testing"],
-    image: "/images/cyber.png",
-    points: "1200 KP",
-    href: "#",
-  },
-];
+// const challenges: Challenge[] = [
+//   {
+//     title: "Smart Contract Debug Challenge",
+//     duration: "24 Weeks",
+//     tags: ["Blockchain", "Solidity", "Security"],
+//     image: "/images/smartContract.png",
+//     points: "500 KP",
+//     href: "#",
+//   },
+//   {
+//     title: "AI Model Optimization",
+//     duration: "1 Week",
+//     tags: ["AI", "Python", "TensorFlow"],
+//     image: "/images/AI-model.png",
+//     points: "1000 KP",
+//     href: "#",
+//   },
+//   {
+//     title: "Data Structure Sprint",
+//     duration: "48 Weeks",
+//     tags: ["DSA", "Algorithms", "Problem Solving"],
+//     image: "/images/data.png",
+//     points: "750 KP",
+//     href: "#",
+//   },
+//   {
+//     title: "Cybersecurity CTF",
+//     duration: "1 Week",
+//     tags: ["Security", "Cryptography", "Penetration Testing"],
+//     image: "/images/cyber.png",
+//     points: "1200 KP",
+//     href: "#",
+//   },
+// ];
 interface DailyWeeklyChallengesProps {
   weeklyChallengesData: WeeklyChallengeAPIItem[];
 }

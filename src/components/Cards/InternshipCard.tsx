@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Icons } from "@/public/icons/icon";
 import clsx from "clsx";
-import { JobCardProps } from "./JobCard";
 
 export interface InternshipCardProps {
   title: string;

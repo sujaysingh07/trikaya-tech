@@ -1,19 +1,19 @@
 import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
 
-interface ReusableCardProps {
+interface SkillCardProps {
   icon: string | StaticImageData;
   title: string;
   description?: string; // optional to support badge-cards
   className?: string;
 }
 
-export default function ReusableCard({
+export default function SkillCard({
   icon,
   title,
   description,
   className = "",
-}: ReusableCardProps) {
+}: SkillCardProps) {
   return (
     <div
       className={clsx(

@@ -53,7 +53,6 @@ interface DailyWeeklyChallengesProps {
 
 
 export default function DailyWeeklyChallenges({ weeklyChallengesData }: DailyWeeklyChallengesProps) {
-  console.log("Received weeklyChallengesData:", weeklyChallengesData);
   return (
     <section className="bg-black py-11 text-white">
       <Container>

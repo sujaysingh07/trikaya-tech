@@ -102,3 +102,20 @@ export function formatJobType(type: string): string {
 
   return mapping[type] || type;
 }
+
+export function formatCompactSalary(amount: number): string {
+  if (isNaN(amount)) return "N/A";
+
+  // Indian salary formatting
+  if (amount >= 1_00_00_000) {
+    return `₹${(amount / 1_00_00_000).toFixed(1).replace(/\.0$/, "")}Cr`; // Crores
+  }
+  if (amount >= 1_00_000) {
+    return `₹${(amount / 1_00_000).toFixed(1).replace(/\.0$/, "")}L`; // Lakhs
+  }
+  if (amount >= 1_000) {
+    return `₹${(amount / 1_000).toFixed(1).replace(/\.0$/, "")}K`; // Thousands
+  }
+
+  return `₹${amount}`;
+}

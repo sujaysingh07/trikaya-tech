@@ -24,6 +24,7 @@ export default async function Community() {
   ); 
 
 
+
   const mentorCards = [
     {
       icon: rewards,

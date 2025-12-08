@@ -119,3 +119,51 @@ export function formatCompactSalary(amount: number): string {
 
   return `₹${amount}`;
 }
+
+
+export function formatEventWithDate(
+  startDate: string,
+  endDate?: string
+): string {
+  const start = new Date(startDate);
+  const end = endDate ? new Date(endDate) : null;
+
+  const isSameDay =
+    end &&
+    start.getFullYear() === end.getFullYear() &&
+    start.getMonth() === end.getMonth() &&
+    start.getDate() === end.getDate();
+
+  const formatDate = (date: Date) =>
+    date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+
+  const formatTime = (date: Date) =>
+    date.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "Asia/Kolkata",
+    });
+
+  if (!end) {
+    return `${formatDate(start)} • ${formatTime(start)} IST`;
+  }
+
+  if (isSameDay) {
+    const startTime = formatTime(start);
+    const endTime = formatTime(end);
+    return `${formatDate(start)} • ${startTime} - ${endTime}`;
+  }
+
+  const startFormatted = start.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
+  const endFormatted = formatDate(end);
+
+  return `${startFormatted}-${endFormatted} • All Day`;
+}

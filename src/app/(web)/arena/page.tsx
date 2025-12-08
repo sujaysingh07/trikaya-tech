@@ -22,6 +22,7 @@ export default async function Arena() {
   const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(    
     "/api/v1/hackathon"
   ); 
+
   const questData = await httpRequest<APIResponse<QuestDataType[]>>("/api/v1/quests");
 
   const weeklyChallengesData = await httpRequest<
@@ -153,6 +154,7 @@ export default async function Arena() {
         cards={arenaCards}
         headingAlign={"left"}
       />
+      
       <HackathonSection hackathonData={hackathonData.data} />
       <DailyWeeklyChallenges weeklyChallengesData={weeklyChallengesData.data || []} />
       <SkillQuests questData={questData.data} />

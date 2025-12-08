@@ -16,7 +16,7 @@ import CallToAction from "@/src/components/common/CallToAction";
 import GradientImageCardThree from "@/src/components/cards/GradientImageCardThree";
 import { httpRequest } from "@/src/lib/httpClient";
 import { APIResponse, EventsDataType } from "@/src/lib/types/commonTypes";
-import { formatEventDate, mapCategoryToMode } from "@/src/lib/common";
+import { formatEventDate, formatEventWithDate, mapCategoryToMode } from "@/src/lib/common";
 import SkillCard from "@/src/components/cards/SkillCard";
 export default async function Community() {
   const EventsData = await httpRequest<APIResponse<[]>>(    
@@ -312,7 +312,7 @@ export default async function Community() {
               buttonLabel={item.buttonLabel}
               buttonLink={item.event_url}
               bgImage={item.cover_photo_url}
-              date={formatEventDate(item.registration_deadline)}
+              date={formatEventWithDate(item.date_time, item.end_date_time)}
               mode={mapCategoryToMode(item.event_mode)}
               gradientFrom={item.gradientFrom}
               gradientTo={item.gradientTo}

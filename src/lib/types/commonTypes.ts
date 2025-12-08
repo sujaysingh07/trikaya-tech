@@ -88,6 +88,8 @@ export type EventsDataType = {
   gradientFrom?: string;
   gradientTo?: string;
   reverse?: boolean;
+  end_date_time:string;
+  date_time:string;
 }
 
  

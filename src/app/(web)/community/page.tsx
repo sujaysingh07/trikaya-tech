@@ -16,12 +16,15 @@ import CallToAction from "@/src/components/common/CallToAction";
 import GradientImageCardThree from "@/src/components/cards/GradientImageCardThree";
 import { httpRequest } from "@/src/lib/httpClient";
 import { APIResponse, EventsDataType } from "@/src/lib/types/commonTypes";
-import { formatEventDate, formatEventWithDate, mapCategoryToMode } from "@/src/lib/common";
+import { formatEventWithDate, getFormattedCurrentDateTime, mapCategoryToMode } from "@/src/lib/common";
 import SkillCard from "@/src/components/cards/SkillCard";
+import NotFound from "@/src/components/common/NotFound";
 export default async function Community() {
-  const EventsData = await httpRequest<APIResponse<[]>>(    
-    "/api/v1/events"
-  ); 
+  const startDate = getFormattedCurrentDateTime();
+  const EventsData = await httpRequest<APIResponse<[]>>(
+    `/api/v1/events?startDate=${startDate}`
+  );
+
 
 
 
@@ -303,24 +306,33 @@ export default async function Community() {
           highlight="Events"
           description="Attend online workshops, webinars, and city-level meetups hosted by Trikaya mentors and partners."
         />
-        <div className="grid grid-cols-1 gap-x-[46px] gap-y-[27px] py-11 sm:grid-cols-2">
-          {EventsData.data.map((item: EventsDataType) => (
-            <GradientImageCardThree
-              key={item.id}
-              title={item.title}
-              description={item.description}
-              buttonLabel={item.buttonLabel}
-              buttonLink={item.event_url}
-              bgImage={item.cover_photo_url}
-              date={formatEventWithDate(item.date_time, item.end_date_time)}
-              mode={mapCategoryToMode(item.event_mode)}
-              gradientFrom={item.gradientFrom}
-              gradientTo={item.gradientTo}
-              reverse={item.reverse}
-              className="h-[310px]"
-            />
-          ))}
-        </div>
+        <>
+          {EventsData?.data?.length ? (
+            <div className="grid grid-cols-1 gap-x-[46px] gap-y-[27px] py-11 sm:grid-cols-2">
+
+              {EventsData.data.map((item: EventsDataType) => (
+                <GradientImageCardThree
+                  key={item.id}
+                  title={item.title}
+                  description={item.description}
+                  buttonLabel={item.buttonLabel}
+                  buttonLink={item.event_url}
+                  bgImage={item.cover_photo_url}
+                  date={formatEventWithDate(item.date_time, item.end_date_time)}
+                  mode={mapCategoryToMode(item.event_mode)}
+                  gradientFrom={item.gradientFrom}
+                  gradientTo={item.gradientTo}
+                  reverse={item.reverse}
+                  className="h-[310px]"
+                />
+              ))}
+
+            </div>
+          ) : (
+            <NotFound name="Upcoming Events" />
+          )}
+        </>
+
         <MeetupCallout
           title="Want to host a Trikaya Meetup?"
           subtitle="Organize events in your city and grow your leadership skills."
@@ -381,3 +393,5 @@ export default async function Community() {
     </>
   );
 }
+
+

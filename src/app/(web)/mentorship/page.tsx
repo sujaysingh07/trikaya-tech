@@ -3,7 +3,7 @@ import mentorship from "@/public/images/mentorship.png";
 import rewards from "@/public/icons/Rewards.svg";
 import problemSolving from "@/public/icons/ProblemSolving.svg";
 import NotVerified from "@/public/icons/NotVerified.svg";
-import WirelessNetwork from "@/public/icons/WirelessNetwork .svg";
+import WirelessNetwork from "@/public/icons/WirelessNetwork.svg";
 import mentor from "@/public/images/mentors/Mentor.jpg";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import TopRated from "@/src/components/common/TopRated";

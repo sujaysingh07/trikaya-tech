@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Icons } from "@/public/icons/icon";
 import clsx from "clsx";
-import { formatJobType } from "@/src/lib/comman";
+import { formatJobType } from "@/src/lib/common";
 
 export interface JobCardProps {
  job: JobItem;

@@ -1,5 +1,5 @@
 import { Icons } from "@/public/icons/icon";
-import { formatCurrency, formatDateRange, formatDuration } from "@/src/lib/comman";
+import { formatCurrency, formatDateRange, formatDuration } from "@/src/lib/common";
 import { HackathonCardProps } from "@/src/lib/types/commonTypes";
 import Link from "next/link";
 

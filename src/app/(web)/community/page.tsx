@@ -16,7 +16,7 @@ import CallToAction from "@/src/components/common/CallToAction";
 import GradientImageCardThree from "@/src/components/cards/GradientImageCardThree";
 import { httpRequest } from "@/src/lib/httpClient";
 import { APIResponse, EventsDataType } from "@/src/lib/types/commonTypes";
-import { formatEventDate, mapCategoryToMode } from "@/src/lib/comman";
+import { formatEventDate, mapCategoryToMode } from "@/src/lib/common";
 import SkillCard from "@/src/components/cards/SkillCard";
 export default async function Community() {
   const EventsData = await httpRequest<APIResponse<[]>>(    

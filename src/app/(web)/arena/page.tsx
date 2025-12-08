@@ -5,7 +5,7 @@ import CardGridSection from "@/src/components/common/CardGridSection";
 import rewards from "@/public/icons/Rewards.svg";
 import problemSolving from "@/public/icons/ProblemSolving.svg";
 import NotVerified from "@/public/icons/NotVerified.svg";
-import WirelessNetwork from "@/public/icons/WirelessNetwork .svg";
+import WirelessNetwork from "@/public/icons/WirelessNetwork.svg";
 import HackathonSection from "@/src/components/common/Hackathon";
 import DailyWeeklyChallenges from "@/src/components/common/DailyWeekly";
 import SkillQuests from "@/src/components/common/SkillQuests";

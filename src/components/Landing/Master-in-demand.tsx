@@ -3,8 +3,8 @@ import machineLearning from "@/public/icons/MachineLearning.svg";
 import Blockchain from "@/public/icons/BlockchainTechnology.svg";
 import Database from "@/public/icons/DataScience.svg";
 import CyberSecurity from "@/public/icons/Cybersecurity.svg";
-import SkillCard from "../Cards/SkillCard";
 import SectionHeader from "../common/SectionHeader";
+import SkillCard from "../cards/SkillCard";
 
 const skills = [
   {

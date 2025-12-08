@@ -1,4 +1,4 @@
-import GenericProfileCard from "../Cards/Generic-profile-card";
+import GenericProfileCard from "../cards/GenericProfileCard";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 export const mentorsData = [

@@ -36,12 +36,10 @@ export default function GradientImageCard({
   mode,
 }: GradientImageCardProps) {
   // Mode Badge Colors
-  const modeClass =
-    mode === "Online"
-      ? "bg-[#CFFFC5] text-[#1D9402]"
-      : mode === "Hybrid"
-        ? "bg-[#CFFFC5] text-[#1D9402]"
-        : "bg-[#D6E4FF] text-[#0A58F5]";
+  const modeClass = mode?.toLowerCase().includes("online") ||
+  mode?.toLowerCase().includes("hybrid")
+  ? "bg-[#CFFFC5] text-[#1D9402]"
+  : "bg-[#D6E4FF] text-[#0A58F5]";
 
   return (
     <div
@@ -61,7 +59,7 @@ export default function GradientImageCard({
         className={clsx(
           "z-30 flex flex-col gap-3",
           reverse ? "items-end md:text-right" : "items-start md:text-left",
-          "max-w-[420px]",
+          "",
         )}
       >
         {/* Title */}
@@ -70,7 +68,7 @@ export default function GradientImageCard({
         </h3>
 
         {/* Description */}
-        <p className="text-sm leading-relaxed font-normal md:text-base">
+        <p className="text-sm leading-relaxed font-normal md:text-base line-clamp-2" title={description}>
           {description}
         </p>
 
@@ -87,7 +85,7 @@ export default function GradientImageCard({
           {mode && (
             <span
               className={clsx(
-                "mt-2 flex items-center rounded-full px-3 py-1 text-xs font-medium",
+                "mt-2 flex items-center rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap",
                 modeClass,
               )}
             >
@@ -100,6 +98,7 @@ export default function GradientImageCard({
         {buttonLabel && (
           <Link
             href={buttonLink}
+            target="_blank"
             className={clsx(
               "mt-5 inline-block w-fit rounded-md px-6 py-2.5 text-[20px] font-semibold",
               "bg-primary-color text-white transition hover:bg-[#0048d9]",

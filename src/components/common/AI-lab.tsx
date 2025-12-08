@@ -1,8 +1,8 @@
 import { Icons } from "@/public/icons/icon";
-import { LabCard } from "../Cards/LabCard";
 import Container from "../ui/Container";
 import { LabCardProps } from "./BlockchainLab";
 import SectionHeader from "./SectionHeader";
+import { LabCard } from "../cards/LabCard";
 
 export default function AILab() {
   const labData: LabCardProps[] = [

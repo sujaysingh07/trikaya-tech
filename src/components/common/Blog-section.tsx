@@ -14,7 +14,7 @@ import {
 import { ChevronDown } from "lucide-react";
 import FeatureSplitCardTwo from "./ScaleGridTwo";
 import mentor from "@/public/images/mentors/Mentor.jpg";
-import BlogCard from "../Cards/Blog-card";
+import BlogCard from "../cards/BlogCard";
 import GenericButton from "./GenericButton";
 import CardGridSection from "./CardGridSection";
 import SubscribeCard from "./Subscribe-container";

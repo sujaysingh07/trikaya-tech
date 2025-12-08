@@ -89,7 +89,7 @@ const Navbar = () => {
               <div className="group relative" key={item.id}>
                 <button
                   onClick={() => !item.children && handleNavigation(item.path)}
-                  className={`cursor-pointer rounded-md px-3 py-2 text-sm font-semibold md:text-[13px] lg:text-[15px] ${
+                  className={`cursor-pointer rounded-md px-3 py-2 whitespace-nowrap text-sm font-semibold md:text-[13px] lg:text-[15px] ${
                     pathname === item.path
                       ? "text-[#9ABCFF]"
                       : "text-white hover:text-[#9ABCFF]"

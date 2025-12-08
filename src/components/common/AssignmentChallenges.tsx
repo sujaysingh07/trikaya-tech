@@ -1,59 +1,61 @@
 import { Icons } from "@/public/icons/icon";
-import GradientImageCardTwo from "../Cards/GradientImageCardTwo";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 import Link from "next/link";
+import GradientImageCardTwo from "../cards/GradientImageCardTwo";
+import { AssignmentType } from "@/src/lib/types/commonTypes";
 
-const opportunities = [
-  {
-    id: 1,
-    bgImage: "/images/Blockchain.png",
-    title: "Blockchain Assignments",
-    description: "Smart contract development and blockchain architecture",
-    tasks: "24 Tasks",
-    gradientFrom: "#fcfcfd",
-    gradientTo: "#d5d5e2",
-    textColor: "light",
-    buttonLabel: "Start Assignment",
-  },
-  {
-    id: 2,
-    bgImage: "/AI-assignment.jpg",
-    title: "AI Assignments",
-    description: "Machine learning models and neural network projects",
-    tasks: "30 Tasks",
-    gradientFrom: "#fcfcfd",
-    gradientTo: "#d5d5e2",
-    textColor: "light",
-    reverse: false,
-    buttonLabel: "Start Assignment",
-  },
-  {
-    id: 3,
-    title: "Data Science Assignments",
-    bgImage: "/data-science.jpg",
-    description: "Data analysis, visualization, and predictive modeling",
-    tasks: "28 Tasks",
-    gradientFrom: "#fcfcfd",
-    gradientTo: "#d5d5e2",
-    textColor: "dark",
-    buttonLabel: "Start Assignment",
-  },
-  {
-    id: 4,
-    bgImage: "/cybersecurity.jpg",
-    title: "Cybersecurity Tasks",
-    description: "Security audits, penetration testing, and threat analysis",
-    tasks: "18 Tasks",
-    gradientFrom: "#F3F4F6",
-    gradientTo: "#d5d5e2",
-    textColor: "light",
-    buttonLabel: "Start Assignment",
-    reverse: false,
-  },
-];
 
-export default function AssignmentChallenges() {
+// const opportunities = [
+//   {
+//     id: 1,
+//     bgImage: "/images/Blockchain.png",
+//     title: "Blockchain Assignments",
+//     description: "Smart contract development and blockchain architecture",
+//     tasks: "24 Tasks",
+//     gradientFrom: "#fcfcfd",
+//     gradientTo: "#d5d5e2",
+//     textColor: "light",
+//     buttonLabel: "Start Assignment",
+//   },
+//   {
+//     id: 2,
+//     bgImage: "/AI-assignment.jpg",
+//     title: "AI Assignments",
+//     description: "Machine learning models and neural network projects",
+//     tasks: "30 Tasks",
+//     gradientFrom: "#fcfcfd",
+//     gradientTo: "#d5d5e2",
+//     textColor: "light",
+//     reverse: false,
+//     buttonLabel: "Start Assignment",
+//   },
+//   {
+//     id: 3,
+//     title: "Data Science Assignments",
+//     bgImage: "/data-science.jpg",
+//     description: "Data analysis, visualization, and predictive modeling",
+//     tasks: "28 Tasks",
+//     gradientFrom: "#fcfcfd",
+//     gradientTo: "#d5d5e2",
+//     textColor: "dark",
+//     buttonLabel: "Start Assignment",
+//   },
+//   {
+//     id: 4,
+//     bgImage: "/cybersecurity.jpg",
+//     title: "Cybersecurity Tasks",
+//     description: "Security audits, penetration testing, and threat analysis",
+//     tasks: "18 Tasks",
+//     gradientFrom: "#F3F4F6",
+//     gradientTo: "#d5d5e2",
+//     textColor: "light",
+//     buttonLabel: "Start Assignment",
+//     reverse: false,
+//   },
+// ];
+
+export default function AssignmentChallenges({ challenge }: { challenge: AssignmentType[] }) {
   return (
     <section className="bg-[#F2F2F2] py-11">
       <Container>
@@ -66,15 +68,15 @@ export default function AssignmentChallenges() {
 
         {/* Responsive Grid */}
         <div className="grid grid-cols-1 gap-x-[46px] gap-y-[27px] pt-[46px] sm:grid-cols-2">
-          {opportunities.map((item) => (
+          {challenge.map((item:AssignmentType) => (
             <GradientImageCardTwo
               key={item.id}
               title={item.title}
               description={item.description}
-              buttonLabel={item.buttonLabel}
-              buttonLink="#"
-              task={item.tasks}
-              bgImage={item.bgImage}
+              buttonLabel={"Start Assignment"}
+              buttonLink={item.assignment_url || "#"}
+              task={item.points + " KP"}
+              bgImage={item?.bgImage || "/images/Blockchain.png"}
               gradientFrom={item.gradientFrom}
               gradientTo={item.gradientTo}
               reverse={item.reverse}

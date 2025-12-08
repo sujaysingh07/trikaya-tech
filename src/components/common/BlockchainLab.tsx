@@ -1,4 +1,4 @@
-import { LabCard } from "../Cards/LabCard";
+import { LabCard } from "../cards/LabCard";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 export interface LabCardProps {

@@ -1,7 +1,7 @@
 import Link from "next/link";
-import ProgramFeatureCard from "../Cards/ProgramFeatureCard";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
+import ProgramFeatureCard from "../cards/ProgramFeatureCard";
 
 export default function Mentorshipprogram() {
   const programFeatures = [

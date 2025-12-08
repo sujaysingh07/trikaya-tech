@@ -1,58 +1,52 @@
-'use client'
+
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
-import { Icons } from "@/public/icons/icon";
+import QuestCard from "../cards/QuestCard";
+import {  QuestDataType } from "@/src/lib/types/commonTypes";
 
-interface Quest {
-  level: string;
-  levelColor: string;
-  duration: string;
-  title: string;
-  description: string;
-  badge: string;
-  points: string;
-  href: string;
-}
 
-const quests: Quest[] = [
-  {
-    level: "Intermediate",
-    levelColor: "bg-[#DDF3FF] text-[#0A58F5]",
-    duration: "8–10 hours",
-    title: "AI Innovator Quest",
-    description:
-      "Master machine learning fundamentals through hands-on projects and real-world applications.",
-    badge: "AI Master Badge",
-    points: "+ 2000 KP",
-    href: "#",
-  },
-  {
-    level: "Beginner",
-    levelColor: "bg-[#F7FFD1] text-[#1D9402]",
-    duration: "5–7 hours",
-    title: "Blockchain Builder Quest",
-    description:
-      "Learn to build and deploy smart contracts, dApps, and understand blockchain architecture.",
-    badge: "Blockchain Badge",
-    points: "+ 1500 KP",
-    href: "#",
-  },
-  {
-    level: "Pro",
-    levelColor: "bg-[#0A58F5] text-[#FFFFFF]",
-    duration: "12–15 hours",
-    title: "Full Stack Champion Quest",
-    description:
-      "Complete end-to-end projects covering frontend, backend, and database management.",
-    badge: "Full Stack Badge",
-    points: "+ 3000 KP",
-    href: "#",
-  },
-];
 
-export default function SkillQuests() {
+// const quests: Quest[] = [
+//   {
+//     level: "Intermediate",
+//     levelColor: "bg-[#DDF3FF] text-[#0A58F5]",
+//     duration: "8–10 hours",
+//     title: "AI Innovator Quest",
+//     description:
+//       "Master machine learning fundamentals through hands-on projects and real-world applications.",
+//     badge: "AI Master Badge",
+//     points: "+ 2000 KP",
+//     href: "#",
+//   },
+//   {
+//     level: "Beginner",
+//     levelColor: "bg-[#F7FFD1] text-[#1D9402]",
+//     duration: "5–7 hours",
+//     title: "Blockchain Builder Quest",
+//     description:
+//       "Learn to build and deploy smart contracts, dApps, and understand blockchain architecture.",
+//     badge: "Blockchain Badge",
+//     points: "+ 1500 KP",
+//     href: "#",
+//   },
+//   {
+//     level: "Pro",
+//     levelColor: "bg-[#0A58F5] text-[#FFFFFF]",
+//     duration: "12–15 hours",
+//     title: "Full Stack Champion Quest",
+//     description:
+//       "Complete end-to-end projects covering frontend, backend, and database management.",
+//     badge: "Full Stack Badge",
+//     points: "+ 3000 KP",
+//     href: "#",
+//   },
+// ];
+
+
+
+export default function SkillQuests({ questData }: { questData: QuestDataType[] }) {
+
   return (
     <Container className="py-11">
       {/* Heading */}
@@ -64,47 +58,8 @@ export default function SkillQuests() {
 
       {/* Quest Cards */}
       <div className="mt-10 grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
-        {quests.map((quest, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ y: -5 }}
-            className="flex flex-col justify-between rounded-[30px] border border-[##CCCCCC] bg-white p-6 transition-all duration-300"
-          >
-            {/* Top */}
-            <div>
-              <div className="mb-4 flex items-center justify-between">
-                <span
-                  className={`rounded-full px-3 py-1 text-base font-medium ${quest.levelColor}`}
-                >
-                  {quest.level}
-                </span>
-                <p className="flex items-center gap-1 text-sm font-bold text-black">
-                  <Icons variant="Clock" /> {quest.duration}
-                </p>
-              </div>
-
-              <h3 className="mb-2 text-xl font-semibold text-[#03061E]">
-                {quest.title}
-              </h3>
-              <p className="mb-6 text-base leading-relaxed text-[#03061E]">
-                {quest.description}
-              </p>
-
-              <div className="inline-flex items-center rounded-full bg-[#EBEAEA] px-3 py-1 text-xs font-bold text-[#475569]">
-                {quest.badge} <span className="ml-1">{quest.points}</span>
-              </div>
-            </div>
-
-            {/* Footer */}
-            <div className="mt-6 flex">
-              <Link
-                href={quest.href}
-                className="block w-full max-w-[164px] rounded-md bg-[#2563EB] px-4 py-3 text-center text-[20px] leading-[100%] font-semibold text-white transition hover:bg-[#1556C8]"
-              >
-                Join Quest
-              </Link>
-            </div>
-          </motion.div>
+        {questData.map((quest, index) => (
+          <QuestCard key={index} quest={quest}  />
         ))}
       </div>
 

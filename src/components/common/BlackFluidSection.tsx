@@ -1,4 +1,4 @@
-import CourseCard from "../Cards/Badge-card";
+import CourseCard from "../cards/BadgeCard";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 
@@ -6,54 +6,54 @@ export default function BlackFluidSection() {
   const coursesData = [
     {
       id: 1,
-      title: "Introduction to Solidity",
-      mentor: "Dr. Sarah Chen",
-      duration: "4 Weeks",
+      title: "Blockchain Technology Explained",
+      mentor: "Tekta AI",
+      duration: "2 Hours",
       level: "Beginner",
       levelColor: "#FFB82E", // yellow
       image: "/images/solidity.jpg",
     },
     {
       id: 2,
-      title: "Deep Learning Fundamentals",
-      mentor: "Prof. Michael Ross",
-      duration: "6 Weeks",
+      title: "Blockchain Full Course",
+      mentor: "Edureka",
+      duration: "4 hours",
       level: "Intermediate",
       levelColor: "#54FF2E", // green
       image: "/images/deep-learning.png",
     },
     {
       id: 3,
-      title: "Data Analytics Mastery",
-      mentor: "Emma Williams",
-      duration: "5 Weeks",
+      title: "Ethereum Basics & EVM Explained",
+      mentor: "Trikaya",
+      duration: "75 minutes",
       level: "Beginner",
       levelColor: "#FFB82E", // yellow
       image: "/images/data-analytics.png",
     },
     {
       id: 4,
-      title: "Ethical Hacking Essentials",
-      mentor: "James Anderson",
-      duration: "8 Weeks",
+      title: "Introduction to Decentralized Storage ",
+      mentor: "Trikaya",
+      duration: "140 minutes",
       level: "Advanced",
       levelColor: "#D8BAFF", // purple
       image: "/images/ethical-hacking.png",
     },
     {
       id: 5,
-      title: "Smart Contract Security",
-      mentor: "Dr. Sarah Chen",
-      duration: "7 Weeks",
+      title: "Deep Learning Fundamentsals",
+      mentor: "Trikaya",
+      duration: "2 hours",
       level: "Advanced",
       levelColor: "#D8BAFF", // purple
       image: "/images/smart-contract.png",
     },
     {
       id: 6,
-      title: "Generative AI with Python",
-      mentor: "Prof. Michael Ross",
-      duration: "5 Weeks",
+      title: "Data Analytics Mastery",
+      mentor: "Trikaya",
+      duration: "2 hours",
       level: "Intermediate",
       levelColor: "#54FF2E", // green
       image: "/images/generative-ai.png",

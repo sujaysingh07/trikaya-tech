@@ -158,7 +158,6 @@ export default function RootLayout({
             }),
           }}
         />
-      </head>
       <noscript>
         <iframe
           src="https://www.googletagmanager.com/ns.html?id=GTM-MV6QFRCK"
@@ -167,6 +166,7 @@ export default function RootLayout({
           style={{ display: "none", visibility: "hidden" }}
         ></iframe>
       </noscript>
+      </head>
 
       <body className={` ${inter.variable} antialiased`}>
         <Navbar />

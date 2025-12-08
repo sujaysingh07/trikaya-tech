@@ -1,6 +1,6 @@
 import Banner from "@/src/components/common/CommonBanner";
 import mentorship from "@/public/images/engineer-girl.png";
-import JobCard, { JobCardProps } from "@/src/components/Cards/Job-card";
+import JobCard from "@/src/components/cards/JobCard";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import rewards from "@/public/icons/Brain.svg";
 import problemSolving from "@/public/icons/OnlineProfile.svg";
@@ -13,8 +13,18 @@ import GenericBanner from "@/src/components/common/GenericBanner";
 import { Icons } from "@/public/icons/icon";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import GenericButton from "@/src/components/common/GenericButton";
-import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
+import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
+import { Inter } from "next/font/google";
+import InternshipCard from "@/src/components/cards/InternshipCard";
+export interface JobCardProps {
+  title: string;
+  company: string;
+  location: string;
+  salary: string;
+  type: string;
+  employmentType: string; // Full-Time / Internship
+}
 export default function JobsInternship() {
   const mentorCards = [
     {
@@ -42,6 +52,8 @@ export default function JobsInternship() {
         "Get mentorship and guidance to kickstart your professional journey.",
     },
   ];
+
+  
 
   const internshipData: JobCardProps[] = [
     {
@@ -181,7 +193,7 @@ export default function JobsInternship() {
           />
           <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {internshipData.map((internship, i) => (
-              <JobCard key={i} {...internship} />
+              <InternshipCard key={i} {...internship} />
             ))}
           </div>
           <div className="py-11">

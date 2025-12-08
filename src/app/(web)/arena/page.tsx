@@ -9,20 +9,27 @@ import WirelessNetwork from "@/public/icons/WirelessNetwork .svg";
 import HackathonSection from "@/src/components/common/Hackathon";
 import DailyWeeklyChallenges from "@/src/components/common/DailyWeekly";
 import SkillQuests from "@/src/components/common/SkillQuests";
-import PerformanceCard from "@/src/components/Cards/Performance-card";
+import PerformanceCard from "@/src/components/cards/PerformanceCard";
 import SectionHeader from "@/src/components/common/SectionHeader";
-import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
+import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
 import { LeaderBoardType } from "@/src/components/common/Leaderboard";
-export type CompetitionType = {
-  id: number;
-  title: string;
-  subtitle: string;
-  participants: string;
-  prizePool: string;
-  image: string;
-};
-export default function Arena() {
+import { httpRequest } from "@/src/lib/httpClient";
+import { APIResponse, HackathonDataType, QuestDataType, WeeklyChallengeAPIItem,  } from "@/src/lib/types/commonTypes";
+
+
+export default async function Arena() {
+  const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(    
+    "/api/v1/hackathon"
+  ); 
+  const questData = await httpRequest<APIResponse<QuestDataType[]>>("/api/v1/quests");
+
+  const weeklyChallengesData = await httpRequest<
+    APIResponse<WeeklyChallengeAPIItem[]>
+  >("/api/v1/challenges");
+
+
+
   const arenaCards = [
     {
       icon: rewards,
@@ -146,9 +153,9 @@ export default function Arena() {
         cards={arenaCards}
         headingAlign={"left"}
       />
-      <HackathonSection />
-      <DailyWeeklyChallenges />
-      <SkillQuests />
+      <HackathonSection hackathonData={hackathonData.data} />
+      <DailyWeeklyChallenges weeklyChallengesData={weeklyChallengesData.data || []} />
+      <SkillQuests questData={questData.data} />
       <Container>
         <SectionHeader
           title="Leaderboard & "

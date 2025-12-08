@@ -1,7 +1,7 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import Container from "../ui/Container";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import SubscribeForm from "./SubscribeForm";

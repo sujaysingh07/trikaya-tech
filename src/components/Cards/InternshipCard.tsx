@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Icons } from "@/public/icons/icon";
 import clsx from "clsx";
+import { JobCardProps } from "./JobCard";
 
-export interface JobCardProps {
+export interface InternshipCardProps {
   title: string;
   company: string;
   location: string;
@@ -11,14 +12,14 @@ export interface JobCardProps {
   employmentType: string; // Full-Time / Internship
 }
 
-export default function JobCard({
+export default function InternshipCard({
   title,
   company,
   location,
   salary,
   type,
   employmentType,
-}: JobCardProps) {
+}: InternshipCardProps) {
   return (
     <div className="hover:border-primary-color flex max-w-[410px] flex-col gap-5 rounded-[22px] border border-gray-300 bg-white p-6 transition-all duration-300">
       {/* Badges */}

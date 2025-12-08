@@ -6,16 +6,24 @@ import NotVerified from "@/public/icons/Mentor.svg";
 import WirelessNetwork from "@/public/icons/BadgeVerification.svg";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import Container from "@/src/components/ui/Container";
-import CommunityCard from "@/src/components/Cards/Community-card";
-import CommunityJoinCard from "@/src/components/Cards/CommunityJoin-card";
-import GradientImageCardThree from "@/src/components/Cards/GradientImageCardThree";
+import CommunityCard from "@/src/components/cards/CommunityCard";
+import CommunityJoinCard from "@/src/components/cards/CommunityJoinCard";
 import MeetupCallout from "@/src/components/common/MeetupCallout";
 import LeaderboardRow from "@/src/components/common/Community-leaderboard";
 import GenericButton from "@/src/components/common/GenericButton";
-import ReusableCard from "@/src/components/Cards/SkillCard";
-import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
+import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
-export default function Community() {
+import GradientImageCardThree from "@/src/components/cards/GradientImageCardThree";
+import ReusableCard from "@/src/components/cards/SkillCard";
+import { httpRequest } from "@/src/lib/httpClient";
+import { APIResponse, EventsDataType } from "@/src/lib/types/commonTypes";
+import { formatEventDate, mapCategoryToMode } from "@/src/lib/comman";
+export default async function Community() {
+  const EventsData = await httpRequest<APIResponse<[]>>(    
+    "/api/v1/events"
+  ); 
+
+
   const mentorCards = [
     {
       icon: rewards,
@@ -295,17 +303,16 @@ export default function Community() {
           description="Attend online workshops, webinars, and city-level meetups hosted by Trikaya mentors and partners."
         />
         <div className="grid grid-cols-1 gap-x-[46px] gap-y-[27px] py-11 sm:grid-cols-2">
-          {eventData.map((item) => (
+          {EventsData.data.map((item: EventsDataType) => (
             <GradientImageCardThree
               key={item.id}
               title={item.title}
               description={item.description}
               buttonLabel={item.buttonLabel}
-              buttonLink={item.buttonLink}
-              task={item.task} // <-- now correct
-              bgImage={item.bgImage}
-              date={item.task}
-              mode={item.mode}
+              buttonLink={item.event_url}
+              bgImage={item.cover_photo_url}
+              date={formatEventDate(item.registration_deadline)}
+              mode={mapCategoryToMode(item.event_mode)}
               gradientFrom={item.gradientFrom}
               gradientTo={item.gradientTo}
               reverse={item.reverse}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Container from "../ui/Container";
-import PerformanceCard from "../Cards/Performance-card";
+import PerformanceCard from "../cards/PerformanceCard";
 import SectionHeader from "./SectionHeader";
 export type LeaderBoardType = {
   rank: number;

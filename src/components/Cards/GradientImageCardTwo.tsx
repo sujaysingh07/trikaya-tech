@@ -18,7 +18,7 @@ interface GradientImageCardProps {
   task?: string;
 }
 
-export default function GradientImageCardThree({
+export default function GradientImageCardTwo({
   title,
   description,
   buttonLabel = "Explore now",
@@ -63,6 +63,7 @@ export default function GradientImageCardThree({
         {buttonLabel && (
           <Link
             href={buttonLink}
+            target="_blank"
             className={clsx(
               "bg-primary-color mt-7 inline-block w-fit rounded-md px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0048d9]",
             )}

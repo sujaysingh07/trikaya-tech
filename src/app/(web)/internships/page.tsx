@@ -15,6 +15,10 @@ import GenericButton from "@/src/components/common/GenericButton";
 import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
 import InternshipCard from "@/src/components/cards/InternshipCard";
+import { APIResponse } from "@/src/lib/types/commonTypes";
+import { httpRequest } from "@/src/lib/httpClient";
+import NotFound from "@/src/components/common/NotFound";
+import { formatCompactSalary } from "@/src/lib/common";
 export interface JobCardProps {
   title: string;
   company: string;
@@ -23,7 +27,30 @@ export interface JobCardProps {
   type: string;
   employmentType: string; // Full-Time / Internship
 }
-export default function JobsInternship() {
+
+export interface InternshipAPIType {
+  job_id: string;
+  slug: string;
+  company_name: string;
+  company_url: string;
+  internship_title: string;
+  internship_location: string;
+  skills_required: number;
+  skills_preferred: number;
+  application_start_date: string | null;
+  application_deadline: string | null;
+  work_type: string; // remote | office | hybrid
+  duration_in_weeks: number;
+  stipend_amount: number | null;
+  is_paid: boolean;
+  stipend_currency: string;
+  registration_url: string;
+}
+
+export default async function JobsInternship() {
+    const response = await httpRequest<APIResponse<[]>>(
+      "/api/v1/internships"
+    );
   const mentorCards = [
     {
       icon: rewards,
@@ -53,56 +80,56 @@ export default function JobsInternship() {
 
   
 
-  const internshipData: JobCardProps[] = [
-    {
-      title: "AI Research Intern",
-      company: "TechNova Solutions",
-      location: "Remote",
-      salary: "$2,000/month",
-      type: "Duration: 3 months",
-      employmentType: "Summer 2025",
-    },
-    {
-      title: "Blockchain Developer Intern",
-      company: "CryptoChain Labs",
-      location: "Bangalore",
-      salary: "$80K – $120K",
-      type: "Duration: 6 months",
-      employmentType: "Full-Time",
-    },
-    {
-      title: "Data Science Intern",
-      company: "DataVision Inc",
-      location: "Remote",
-      salary: "$1,500/month",
-      type: "Duration: 4 months",
-      employmentType: "Part-Time",
-    },
-    {
-      title: "Cybersecurity Intern",
-      company: "SecureNet Systems",
-      location: "Mumbai",
-      salary: "$1,600/month",
-      type: "Duration: 3 months",
-      employmentType: "Summer 2025",
-    },
-    {
-      title: "Machine Learning Intern",
-      company: "AI Dynamics",
-      location: "Remote",
-      salary: "$2,200/month",
-      type: "Duration: 6 months",
-      employmentType: "Full-Time",
-    },
-    {
-      title: "Smart Contract Intern",
-      company: "Web3 Ventures",
-      location: "Delhi",
-      salary: "$1,900/month",
-      type: "Duration: 4 months",
-      employmentType: "Part-Time",
-    },
-  ];
+  // const internshipData: JobCardProps[] = [
+  //   {
+  //     title: "AI Research Intern",
+  //     company: "TechNova Solutions",
+  //     location: "Remote",
+  //     salary: "$2,000/month",
+  //     type: "Duration: 3 months",
+  //     employmentType: "Summer 2025",
+  //   },
+  //   {
+  //     title: "Blockchain Developer Intern",
+  //     company: "CryptoChain Labs",
+  //     location: "Bangalore",
+  //     salary: "$80K – $120K",
+  //     type: "Duration: 6 months",
+  //     employmentType: "Full-Time",
+  //   },
+  //   {
+  //     title: "Data Science Intern",
+  //     company: "DataVision Inc",
+  //     location: "Remote",
+  //     salary: "$1,500/month",
+  //     type: "Duration: 4 months",
+  //     employmentType: "Part-Time",
+  //   },
+  //   {
+  //     title: "Cybersecurity Intern",
+  //     company: "SecureNet Systems",
+  //     location: "Mumbai",
+  //     salary: "$1,600/month",
+  //     type: "Duration: 3 months",
+  //     employmentType: "Summer 2025",
+  //   },
+  //   {
+  //     title: "Machine Learning Intern",
+  //     company: "AI Dynamics",
+  //     location: "Remote",
+  //     salary: "$2,200/month",
+  //     type: "Duration: 6 months",
+  //     employmentType: "Full-Time",
+  //   },
+  //   {
+  //     title: "Smart Contract Intern",
+  //     company: "Web3 Ventures",
+  //     location: "Delhi",
+  //     salary: "$1,900/month",
+  //     type: "Duration: 4 months",
+  //     employmentType: "Part-Time",
+  //   },
+  // ];
 
   const ImpressCards = [
     {
@@ -159,6 +186,8 @@ export default function JobsInternship() {
     },
   ];
 
+
+
   return (
     <>
       <Banner
@@ -189,11 +218,32 @@ export default function JobsInternship() {
             title="Latest Internship Opportunities"
             description="Browse verified internships across AI, Blockchain, Data Science, and Cybersecurity."
           />
-          <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {internshipData.map((internship, i) => (
-              <InternshipCard key={i} {...internship} />
-            ))}
-          </div>
+          {response?.data?.length ? (
+            <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {response.data.map((internship: InternshipAPIType, i) => (
+                <InternshipCard
+                  key={internship.job_id}
+                  title={internship.internship_title}
+                  company={internship.company_name}
+                  location={internship.internship_location || "N/A"}
+                  salary={
+                    internship.is_paid
+                      ? ` ${formatCompactSalary(Number(internship.stipend_amount))}`
+                      : "Unpaid"
+                  }
+                  type={`${internship.duration_in_weeks} Weeks`}
+                  employmentType={internship.work_type}
+                  registerUrl={internship.registration_url}
+                  
+                />
+              ))}
+            </div>
+          ) : (
+            <NotFound name="Internships" />
+          )}
+
+
+
           <div className="py-11">
             <FeatureSplitCardThree
               leftTitle="Build Your Verified Student Profile"

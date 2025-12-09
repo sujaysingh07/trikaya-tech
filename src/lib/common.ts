@@ -181,3 +181,27 @@ export function formatEventWithDate(
 
   return `${startFormatted}-${endFormatted} • All Day`;
 }
+
+
+export const getRankColor = (rank: number) => {
+  const colors = [
+    "bg-[#22C55E]", // Green
+    "bg-[#FACC15]", // Yellow
+    "bg-[#EF4444]", // Red
+    "bg-[#94A3B8]", // Slate Grey
+  ];
+
+  switch (rank) {
+    case 1:
+      return colors[0];
+    case 2:
+      return colors[1];
+    case 3:
+      return colors[2];
+    case 4:
+      return colors[3];
+    default:
+      return colors[Math.floor(Math.random() * colors.length)];
+  }
+};
+

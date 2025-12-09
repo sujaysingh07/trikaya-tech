@@ -39,9 +39,7 @@ const LearnCards = [
   },
 ];
 export default async function Practice() {
-//     const assignmentData = await httpRequest<APIResponse<AssignmentType[]>>(
-//   "/api/v1/assignments"
-// );
+
 
 
   return (

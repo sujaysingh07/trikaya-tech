@@ -15,13 +15,14 @@ import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
 import { LeaderBoardType } from "@/src/components/common/Leaderboard";
 import { httpRequest } from "@/src/lib/httpClient";
-import { APIResponse, HackathonDataType, QuestDataType, WeeklyChallengeAPIItem,  } from "@/src/lib/types/commonTypes";
+import { APIResponse, HackathonDataType, QuestDataType, WeeklyChallengeAPIItem, } from "@/src/lib/types/commonTypes";
+import { getRankColor } from "@/src/lib/common";
 
 
 export default async function Arena() {
-  const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(    
+  const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(
     "/api/v1/hackathon"
-  ); 
+  );
 
   const questData = await httpRequest<APIResponse<QuestDataType[]>>("/api/v1/quests");
 
@@ -29,8 +30,21 @@ export default async function Arena() {
     APIResponse<WeeklyChallengeAPIItem[]>
   >("/api/v1/challenges");
 
+  const response = await httpRequest<
+    APIResponse<{ name: string; karma_points: number }[]>
+  >("/api/v1/leaderboard");
 
+  
+  const leaderboardData: LeaderBoardType[] = response?.data?.slice(0,10).map((item, index) => ({
+    rank: index + 1,
+    name: item.name,
+    badges: item.karma_points,
+    xp: `${item.karma_points} KP`, 
+    growth: "+0%", 
+    color: getRankColor(index + 1), 
+  }));
 
+  
   const arenaCards = [
     {
       icon: rewards,
@@ -55,48 +69,7 @@ export default async function Arena() {
       description: "Work with peers, mentors, and companies on real projects.",
     },
   ];
-  const leaderboardData: LeaderBoardType[] = [
-    {
-      rank: 1,
-      name: "Alex Chen",
-      badges: 12,
-      xp: "15,420 KP",
-      growth: "+240",
-      color: "bg-[#22C55E]",
-    },
-    {
-      rank: 2,
-      name: "Sarah Kumar",
-      badges: 12,
-      xp: "15,420 KP",
-      growth: "+240",
-      color: "bg-[#FACC15]",
-    },
-    {
-      rank: 3,
-      name: "Michael Zhang",
-      badges: 12,
-      xp: "15,420 KP",
-      growth: "+240",
-      color: "bg-[#EF4444]",
-    },
-    {
-      rank: 4,
-      name: "Emma Rodriguez",
-      badges: 12,
-      xp: "15,420 KP",
-      growth: "+240",
-      color: "bg-[#94A3B8]",
-    },
-    {
-      rank: 5,
-      name: "James Wilson",
-      badges: 12,
-      xp: "15,420 KP",
-      growth: "+240",
-      color: "bg-[#94A3B8]",
-    },
-  ];
+
 
   const experts = [
     {
@@ -154,7 +127,7 @@ export default async function Arena() {
         cards={arenaCards}
         headingAlign={"left"}
       />
-      
+
       <HackathonSection hackathonData={hackathonData.data} />
       <DailyWeeklyChallenges weeklyChallengesData={weeklyChallengesData.data || []} />
       <SkillQuests questData={questData.data} />
@@ -202,3 +175,4 @@ export default async function Arena() {
     </>
   );
 }
+

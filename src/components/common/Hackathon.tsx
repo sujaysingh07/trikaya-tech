@@ -50,6 +50,15 @@ export default function HackathonSection({ hackathonData  }: { hackathonData: Ha
       />
 
       <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+         {/* {jobsData?.data && jobsData.data.length > 0 ? (
+                    <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                      {jobsData.data.map((job, i) => (
+                        <JobCard key={i} job={job} />
+                      ))}
+                    </div>
+                  ) : (
+                    <NotFound name="Jobs" />
+                  )} */}
         {hackathonData.map((hack, index) => (
           <HackathonCard key={index} hackathon={hack} />
         ))}

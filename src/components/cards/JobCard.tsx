@@ -1,22 +1,24 @@
 import Link from "next/link";
 import { Icons } from "@/public/icons/icon";
 import clsx from "clsx";
-import { formatJobType } from "@/src/lib/comman";
+import { formatCompactSalary, formatCurrency, formatJobType } from "@/src/lib/common";
 
 export interface JobCardProps {
- job: JobItem;
+  job: JobItem;
 }
 
 export interface JobItem {
   job_title: string;
   company_name: string;
-  job_location:string,
-  salary:string,
-  type:string,
-  employment_type:string,
-  title:string
-  comany:string
-  
+  job_location: string,
+  salary: string,
+  type: string,
+  employment_type: string,
+  title: string
+  comany: string
+  salary_currency: string
+  salary_min: string
+  salary_max: string
 }
 
 export default function JobCard({
@@ -62,7 +64,7 @@ export default function JobCard({
 
         <div className="flex items-center gap-2">
           <Icons variant="DollarCircle" />
-          <span>{job.salary || "Not Disclosed"}</span>
+          <span>{formatCompactSalary(Number(job.salary_min))} - {formatCompactSalary(Number(job.salary_max))}</span>
         </div>
       </div>
 

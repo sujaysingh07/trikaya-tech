@@ -3,7 +3,7 @@ import Container from "../ui/Container";
 import InfoCard from "../cards/InfoCard";
 import CompanyLogoCard from "../cards/CompanyLogoCard";
 import { StaticImageData } from "next/image";
-import AmbassadorCard from "../cards/AmbassadorLevelCard";
+import AmbassadorCard from "../cards/AmbassadorCard";
 import BlogCard from "../cards/BlogCard";
 import InsightCard from "../cards/InsightCard";
 import MaterialCard from "../cards/MaterialCard";

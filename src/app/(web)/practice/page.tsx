@@ -39,10 +39,8 @@ const LearnCards = [
   },
 ];
 export default async function Practice() {
-    const assignmentData = await httpRequest<APIResponse<AssignmentType[]>>(
-  "/api/v1/assignments"
-);
-console.log("assignmentData", assignmentData.data);
+
+
 
   return (
     <>
@@ -83,7 +81,8 @@ console.log("assignmentData", assignmentData.data);
       />
       <BlockchainLab />
       <AILab />
-      <AssignmentChallenges challenge={assignmentData.data}/>
+      {/* <AssignmentChallenges challenge={assignmentData.data}/> */}
+      <AssignmentChallenges />
       <Leaderboard />
       <div className="py-11">
         <InviteCard

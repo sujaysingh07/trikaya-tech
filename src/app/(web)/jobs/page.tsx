@@ -1,6 +1,6 @@
 import Banner from "@/src/components/common/CommonBanner";
 import mentorship from "@/public/images/engineer-girl.png";
-import JobCard, { JobCardProps } from "@/src/components/cards/JobCard";
+import JobCard from "@/src/components/cards/JobCard";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import rewards from "@/public/icons/AiBrain.svg";
 import problemSolving from "@/public/icons/Star-employee.svg";
@@ -17,6 +17,7 @@ import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
 import { APIResponse } from "@/src/lib/types/commonTypes";
 import { httpRequest } from "@/src/lib/httpClient";
+import NotFound from "@/src/components/common/NotFound";
 export default async function JobsInternship() {
   const mentorCards = [
     {
@@ -42,9 +43,9 @@ export default async function JobsInternship() {
       description: "Personalized suggestions to upskill and match your goals.",
     },
   ];
-  const jobsData = await httpRequest<APIResponse<[]>>(    
-      "/api/v1/jobs"
-    );
+  const jobsData = await httpRequest<APIResponse<[]>>(
+    "/api/v1/jobs"
+  );
   // const jobData: JobCardProps[] = [
   //   {
   //     title: "AI Engineer Intern",
@@ -185,11 +186,15 @@ export default async function JobsInternship() {
             highlight="Opportunities"
             description="Browse verified openings across Blockchain, AI, Data Science, and Cybersecurity."
           />
-          <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {jobsData.data.map((job, i) => (
-              <JobCard key={i} job={job} />
-            ))}
-          </div>
+          {jobsData?.data && jobsData.data.length > 0 ? (
+            <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {jobsData.data.map((job, i) => (
+                <JobCard key={i} job={job} />
+              ))}
+            </div>
+          ) : (
+            <NotFound name="Jobs" />
+          )}
           <div className="md:py-11">
             <FeatureSplitCardThree
               leftTitle="Showcase Your Verified Achievements"

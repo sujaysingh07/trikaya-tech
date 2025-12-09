@@ -102,3 +102,106 @@ export function formatJobType(type: string): string {
 
   return mapping[type] || type;
 }
+
+export function formatCompactSalary(amount: number): string {
+  if (isNaN(amount)) return "N/A";
+
+  // Indian salary formatting
+  if (amount >= 1_00_00_000) {
+    return `₹${(amount / 1_00_00_000).toFixed(1).replace(/\.0$/, "")}Cr`; // Crores
+  }
+  if (amount >= 1_00_000) {
+    return `₹${(amount / 1_00_000).toFixed(1).replace(/\.0$/, "")}L`; // Lakhs
+  }
+  if (amount >= 1_000) {
+    return `₹${(amount / 1_000).toFixed(1).replace(/\.0$/, "")}K`; // Thousands
+  }
+
+  return `₹${amount}`;
+}
+
+export function getFormattedCurrentDateTime(): string {
+  const date = new Date();
+
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, "0");
+  const day = `${date.getDate()}`.padStart(2, "0");
+
+  const hours = `${date.getHours()}`.padStart(2, "0");
+  const minutes = `${date.getMinutes()}`.padStart(2, "0");
+  const seconds = `${date.getSeconds()}`.padStart(2, "0");
+
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+
+export function formatEventWithDate(
+  startDate: string,
+  endDate?: string
+): string {
+  const start = new Date(startDate);
+  const end = endDate ? new Date(endDate) : null;
+
+  const isSameDay =
+    end &&
+    start.getFullYear() === end.getFullYear() &&
+    start.getMonth() === end.getMonth() &&
+    start.getDate() === end.getDate();
+
+  const formatDate = (date: Date) =>
+    date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+
+  const formatTime = (date: Date) =>
+    date.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "Asia/Kolkata",
+    });
+
+  if (!end) {
+    return `${formatDate(start)} • ${formatTime(start)} IST`;
+  }
+
+  if (isSameDay) {
+    const startTime = formatTime(start);
+    const endTime = formatTime(end);
+    return `${formatDate(start)} • ${startTime} - ${endTime}`;
+  }
+
+  const startFormatted = start.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
+  const endFormatted = formatDate(end);
+
+  return `${startFormatted}-${endFormatted} • All Day`;
+}
+
+
+export const getRankColor = (rank: number) => {
+  const colors = [
+    "bg-[#22C55E]", // Green
+    "bg-[#FACC15]", // Yellow
+    "bg-[#EF4444]", // Red
+    "bg-[#94A3B8]", // Slate Grey
+  ];
+
+  switch (rank) {
+    case 1:
+      return colors[0];
+    case 2:
+      return colors[1];
+    case 3:
+      return colors[2];
+    case 4:
+      return colors[3];
+    default:
+      return colors[Math.floor(Math.random() * colors.length)];
+  }
+};
+

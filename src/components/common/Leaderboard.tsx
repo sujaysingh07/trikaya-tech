@@ -2,6 +2,9 @@ import Image from "next/image";
 import Container from "../ui/Container";
 import PerformanceCard from "../cards/PerformanceCard";
 import SectionHeader from "./SectionHeader";
+import { httpRequest } from "@/src/lib/httpClient";
+import { APIResponse } from "@/src/lib/types/commonTypes";
+import { getRankColor } from "@/src/lib/common";
 export type LeaderBoardType = {
   rank: number;
   name: string;
@@ -10,49 +13,19 @@ export type LeaderBoardType = {
   growth?: string;
   color: string;
 };
-const leaderboardData: LeaderBoardType[] = [
-  {
-    rank: 1,
-    name: "Alex Chen",
-    badges: 12,
-    xp: "15,420 KP",
-    growth: "+240",
-    color: "bg-[#22C55E]",
-  },
-  {
-    rank: 2,
-    name: "Sarah Kumar",
-    badges: 12,
-    xp: "15,420 KP",
-    growth: "+240",
-    color: "bg-[#FACC15]",
-  },
-  {
-    rank: 3,
-    name: "Michael Zhang",
-    badges: 12,
-    xp: "15,420 KP",
-    growth: "+240",
-    color: "bg-[#EF4444]",
-  },
-  {
-    rank: 4,
-    name: "Emma Rodriguez",
-    badges: 12,
-    xp: "15,420 KP",
-    growth: "+240",
-    color: "bg-[#94A3B8]",
-  },
-  {
-    rank: 5,
-    name: "James Wilson",
-    badges: 12,
-    xp: "15,420 KP",
-    growth: "+240",
-    color: "bg-[#94A3B8]",
-  },
-];
+const response = await httpRequest<
+  APIResponse<{ name: string; karma_points: number }[]>
+>("/api/v1/leaderboard");
 
+
+const leaderboardData: LeaderBoardType[] = response?.data?.slice(0, 5).map((item, index) => ({
+  rank: index + 1,
+  name: item.name,
+  badges: item.karma_points,
+  xp: `${item.karma_points} KP`,
+  growth: "+0%",
+  color: getRankColor(index + 1),
+}));
 export default function Leaderboard() {
   return (
     <Container className="relative overflow-hidden pt-11">

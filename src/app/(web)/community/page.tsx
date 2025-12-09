@@ -14,14 +14,18 @@ import GenericButton from "@/src/components/common/GenericButton";
 import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import CallToAction from "@/src/components/common/CallToAction";
 import GradientImageCardThree from "@/src/components/cards/GradientImageCardThree";
-import ReusableCard from "@/src/components/cards/SkillCard";
 import { httpRequest } from "@/src/lib/httpClient";
 import { APIResponse, EventsDataType } from "@/src/lib/types/commonTypes";
-import { formatEventDate, mapCategoryToMode } from "@/src/lib/comman";
+import { formatEventWithDate, getFormattedCurrentDateTime, mapCategoryToMode } from "@/src/lib/common";
+import SkillCard from "@/src/components/cards/SkillCard";
+import NotFound from "@/src/components/common/NotFound";
 export default async function Community() {
-  const EventsData = await httpRequest<APIResponse<[]>>(    
-    "/api/v1/events"
-  ); 
+  const startDate = getFormattedCurrentDateTime();
+  const EventsData = await httpRequest<APIResponse<[]>>(
+    `/api/v1/events?startDate=${startDate}`
+  );
+
+
 
 
   const mentorCards = [
@@ -117,65 +121,65 @@ export default async function Community() {
     },
   ];
 
-  const eventData = [
-    {
-      id: 1,
-      title: "AI Workshop: Building Your First LLM App",
-      description:
-        "Learn to build and deploy AI applications with real-world examples.",
-      task: "Nov 15, 2025 • 4:00 PM IST",
-      mode: "Online",
-      bgImage: "/images/community-event.png",
-      buttonLabel: "Register Now",
-      buttonLink: "/events/ai-workshop",
-      gradientFrom: "#F0F4FF",
-      gradientTo: "#FFFFFF",
-      reverse: false,
-    },
-    {
-      id: 2,
-      title: "Blockchain Hackathon 2025",
-      description:
-        "48-hour challenge to build the next breakthrough DeFi solution.",
-      task: "Nov 22–24, 2025 • All Day",
-      mode: "Bangalore",
-      bgImage: "/images/Blockchain.png",
-      buttonLabel: "Register Now",
-      buttonLink: "/events/blockchain-hackathon",
-      gradientFrom: "#F0F4FF",
-      gradientTo: "#FFFFFF",
-      reverse: false,
-    },
-    {
-      id: 3,
-      title: "Career Fair: Meet Top Tech Recruiters",
-      description:
-        "Connect with 50+ hiring partners actively looking for talent.",
-      task: "Dec 5, 2025 • 10:00 AM – 4:00 PM",
-      mode: "Hybrid",
-      bgImage: "/images/community-event-two.png",
-      buttonLabel: "Register Now",
-      buttonLink: "/events/career-fair",
-      gradientFrom: "#F0F4FF",
-      gradientTo: "#FFFFFF",
-      reverse: false,
-    },
-    {
-      id: 4,
-      title: "Community AMA with Industry Leaders",
-      description:
-        "Ask anything about tech careers, skills, and industry trends.",
-      task: "Dec 10, 2025 • 7:00 PM IST",
-      mode: "Online",
+  // const eventData = [
+  //   {
+  //     id: 1,
+  //     title: "AI Workshop: Building Your First LLM App",
+  //     description:
+  //       "Learn to build and deploy AI applications with real-world examples.",
+  //     task: "Nov 15, 2025 • 4:00 PM IST",
+  //     mode: "Online",
+  //     bgImage: "/images/community-event.png",
+  //     buttonLabel: "Register Now",
+  //     buttonLink: "/events/ai-workshop",
+  //     gradientFrom: "#F0F4FF",
+  //     gradientTo: "#FFFFFF",
+  //     reverse: false,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Blockchain Hackathon 2025",
+  //     description:
+  //       "48-hour challenge to build the next breakthrough DeFi solution.",
+  //     task: "Nov 22–24, 2025 • All Day",
+  //     mode: "Bangalore",
+  //     bgImage: "/images/Blockchain.png",
+  //     buttonLabel: "Register Now",
+  //     buttonLink: "/events/blockchain-hackathon",
+  //     gradientFrom: "#F0F4FF",
+  //     gradientTo: "#FFFFFF",
+  //     reverse: false,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Career Fair: Meet Top Tech Recruiters",
+  //     description:
+  //       "Connect with 50+ hiring partners actively looking for talent.",
+  //     task: "Dec 5, 2025 • 10:00 AM – 4:00 PM",
+  //     mode: "Hybrid",
+  //     bgImage: "/images/community-event-two.png",
+  //     buttonLabel: "Register Now",
+  //     buttonLink: "/events/career-fair",
+  //     gradientFrom: "#F0F4FF",
+  //     gradientTo: "#FFFFFF",
+  //     reverse: false,
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Community AMA with Industry Leaders",
+  //     description:
+  //       "Ask anything about tech careers, skills, and industry trends.",
+  //     task: "Dec 10, 2025 • 7:00 PM IST",
+  //     mode: "Online",
 
-      bgImage: "/images/community-event-three.png",
-      buttonLabel: "Register Now",
-      buttonLink: "/events/community-ama",
-      gradientFrom: "#F0F4FF",
-      gradientTo: "#FFFFFF",
-      reverse: false,
-    },
-  ];
+  //     bgImage: "/images/community-event-three.png",
+  //     buttonLabel: "Register Now",
+  //     buttonLink: "/events/community-ama",
+  //     gradientFrom: "#F0F4FF",
+  //     gradientTo: "#FFFFFF",
+  //     reverse: false,
+  //   },
+  // ];
 
   const leaderboardData = [
     {
@@ -302,24 +306,33 @@ export default async function Community() {
           highlight="Events"
           description="Attend online workshops, webinars, and city-level meetups hosted by Trikaya mentors and partners."
         />
-        <div className="grid grid-cols-1 gap-x-[46px] gap-y-[27px] py-11 sm:grid-cols-2">
-          {EventsData.data.map((item: EventsDataType) => (
-            <GradientImageCardThree
-              key={item.id}
-              title={item.title}
-              description={item.description}
-              buttonLabel={item.buttonLabel}
-              buttonLink={item.event_url}
-              bgImage={item.cover_photo_url}
-              date={formatEventDate(item.registration_deadline)}
-              mode={mapCategoryToMode(item.event_mode)}
-              gradientFrom={item.gradientFrom}
-              gradientTo={item.gradientTo}
-              reverse={item.reverse}
-              className="h-[310px]"
-            />
-          ))}
-        </div>
+        <>
+          {EventsData?.data?.length ? (
+            <div className="grid grid-cols-1 gap-x-[46px] gap-y-[27px] py-11 sm:grid-cols-2">
+
+              {EventsData.data.map((item: EventsDataType) => (
+                <GradientImageCardThree
+                  key={item.id}
+                  title={item.title}
+                  description={item.description}
+                  buttonLabel={item.buttonLabel}
+                  buttonLink={item.event_url}
+                  bgImage={item.cover_photo_url}
+                  date={formatEventWithDate(item.date_time, item.end_date_time)}
+                  mode={mapCategoryToMode(item.event_mode)}
+                  gradientFrom={item.gradientFrom}
+                  gradientTo={item.gradientTo}
+                  reverse={item.reverse}
+                  className="h-[310px]"
+                />
+              ))}
+
+            </div>
+          ) : (
+            <NotFound name="Upcoming Events" />
+          )}
+        </>
+
         <MeetupCallout
           title="Want to host a Trikaya Meetup?"
           subtitle="Organize events in your city and grow your leadership skills."
@@ -344,7 +357,7 @@ export default async function Community() {
         />
         <div className="grid grid-cols-1 gap-6 pb-11 sm:grid-cols-3">
           {badges.map((b, index) => (
-            <ReusableCard
+            <SkillCard
               key={index}
               icon={b.icon}
               title={b.title}
@@ -380,3 +393,5 @@ export default async function Community() {
     </>
   );
 }
+
+

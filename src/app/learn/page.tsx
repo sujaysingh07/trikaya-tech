@@ -15,6 +15,18 @@ import Link from "next/link";
 import CallToAction from "@/src/components/common/CallToAction";
 import Code from "@/public/code.png"
 import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Learn | AI, Blockchain, Data Science & Cybersecurity Courses",
+  description:
+    "Trikaya Learn offers expert-led AI, Blockchain, Data Science, and Cybersecurity courses with verified skills, practical training, and mentorship to boost your career.",
+  keywords: ['Trikaya Learn', 'Trikaya', 'Trikaya Platform', 'Trikaya tech', 'Trikaya Io', 'Trikaya AI', 'Learn AI', 'Blockchain Courses', 'Data Science Certification', ' Cybersecurity Training', 'Solidity Course', 'Deep Learning Fundamentals', 'Ethical Hacking Essentials', 'Python for Generative AI', 'Verified Certificates', 'Tech Mentorship', 'Smart Contract Development', ' Hands- on Tech Labs', 'Coding Bootcamps', 'Trikaya Learning Path'],
+  canonical: generateCanonical("/learn"),
+});
+
 export default function Learn() {
   const LearnCards = [
     {
@@ -43,31 +55,31 @@ export default function Learn() {
   ];
 
 
-   const experts = [
-     {
-       name: "Dr. Sarah Chen",
-       title: "Blockchain Expert",
-       description: "Smart Contracts, DeFi",
-       image: "/images/sarah.jpg",
-     },
-     {
-       name: "Prof. Michael Ross",
-       title: "AI Research Lead",
-       description: "Machine Learning, Neural Networks",
-     },
-     {
-       name: "Emma Williams",
-       title: "Data Scientist",
-       description: "Analytics, Visualization",
-       image: "/images/emma.jpg",
-     },
-     {
-       name: "James Anderson",
-       title: "Security Architect",
-       description: "Ethical Hacking, Network Security",
-       image: "/images/james.jpg",
-     },
-   ];
+  const experts = [
+    {
+      name: "Dr. Sarah Chen",
+      title: "Blockchain Expert",
+      description: "Smart Contracts, DeFi",
+      image: "/images/sarah.jpg",
+    },
+    {
+      name: "Prof. Michael Ross",
+      title: "AI Research Lead",
+      description: "Machine Learning, Neural Networks",
+    },
+    {
+      name: "Emma Williams",
+      title: "Data Scientist",
+      description: "Analytics, Visualization",
+      image: "/images/emma.jpg",
+    },
+    {
+      name: "James Anderson",
+      title: "Security Architect",
+      description: "Ethical Hacking, Network Security",
+      image: "/images/james.jpg",
+    },
+  ];
   return (
     <>
       <Banner

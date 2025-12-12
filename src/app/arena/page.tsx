@@ -14,6 +14,8 @@ import SectionHeader from "@/src/components/common/SectionHeader";
 import GenericProfileCard from "@/src/components/Cards/Generic-profile-card";
 import CallToAction from "@/src/components/common/CallToAction";
 import { LeaderBoardType } from "@/src/components/common/Leaderboard";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
 export type CompetitionType = {
   id: number;
   title: string;
@@ -22,6 +24,14 @@ export type CompetitionType = {
   prizePool: string;
   image: string;
 };
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Arena | AI, Blockchain, Data Science & Cybersecurity Skill Challenges",
+  description:
+    "Trikaya Arena lets you compete in real-world AI, Blockchain, Data Science, and Cybersecurity challenges to validate your skills and earn industry recognition.",
+  keywords: ['Trikaya Arena', 'Trikaya',' Trikaya Platform', 'Trikaya tech', 'Trikaya Io', 'Trikaya AI', 'Tech Hackathons', 'Coding Competitions',' Blockchain Challenges', 'AI Challenges', 'Data Science Quests', 'Cybersecurity CTF', 'Code Quests',' Hackathon'],
+  canonical: generateCanonical("/arena"),
+});
 export default function Arena() {
   const competitions: CompetitionType[] = [
     {

@@ -11,6 +11,18 @@ import AssignmentChallenges from "@/src/components/common/AssignmentChallenges";
 import Leaderboard from "@/src/components/common/Leaderboard";
 import CallToAction from "@/src/components/common/CallToAction";
 import InviteCard from "@/src/components/common/Invite";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Practice | Hands-On AI, Blockchain, Data Science & Cybersecurity Exercises",
+  description:
+    "Trikaya Practice offers real-world AI, Blockchain, Data Science, and Cybersecurity exercises to validate your skills, build confidence, and prepare for future careers.",
+  keywords: ['Trikaya Practice', 'Trikaya', 'Trikaya Platform',' Trikaya tech', 'Trikaya Io', 'Trikaya AI', 'Hands - On Labs, Coding Practice', 'Skill Verification',' Blockchain Labs', 'AI Labs',' Solidity Smart Contract', 'DeFi Protocol', 'Machine Learning Projects', 'Neural Network Practice', 'MLOps', 'Data Science Assignments', 'Cybersecurity Challenges', 'Verified Skills Portfolio', 'Tech Leaderboard', 'Real - World Projects'],
+  canonical: generateCanonical("/practice"),
+});
+
   const LearnCards = [
     {
       icon: structuredLearning,

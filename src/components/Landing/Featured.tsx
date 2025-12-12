@@ -14,7 +14,7 @@ import {
 import AmazonLogo from "@/public/logo/amazon.png";
 import accenture from "@/public/logo/accenture.png";
 import customer from "@/public/logo/customerXps.png";
-import { formatToIST } from "@/lib/formatToIST";
+import { formatToIST } from "@/src/lib/formatToIST";
 import Container from "../ui/Container";
 import SectionHeader from "../common/SectionHeader";
 

@@ -39,22 +39,25 @@ export default function Footer() {
               {/* Social Icons */}
               <div className="flex items-center gap-4 text-gray-400">
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/trikaya-tech"
                   aria-label="LinkedIn"
+                  target="_blank"
                   className="hover:text-white transition-colors"
                 >
                   <Linkedin size={18} color="white" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://x.com/trikaya_tech"
+                  target="_blank"
                   aria-label="X (formerly Twitter)"
                   className="hover:text-white transition-colors"
                 >
                   <FaXTwitter />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.instagram.com/trikaya_tech"
                   aria-label="Instagram"
+                  target="_blank"
                   className="hover:text-white transition-colors"
                 >
                   <Instagram size={18} color="white" />

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/common/Navbar";
@@ -113,7 +113,6 @@ export default function RootLayout({
             }),
           }}
         />
-      </head>
       <noscript>
         <iframe
           src="https://www.googletagmanager.com/ns.html?id=GTM-MV6QFRCK"
@@ -122,6 +121,7 @@ export default function RootLayout({
           style={{ display: "none", visibility: "hidden" }}
         ></iframe>
       </noscript>
+      </head>
 
       <body className={` ${inter.variable} antialiased`}>
         <Navbar />

@@ -70,6 +70,7 @@ export default function RootLayout({
               sameAs: [
                 "https://www.linkedin.com/company/trikaya-tech",
                 "https://www.instagram.com/trikaya_tech",
+                "https://x.com/trikaya_tech"
               ],
             }),
           }}

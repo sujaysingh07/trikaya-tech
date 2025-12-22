@@ -82,6 +82,7 @@ export default function Practice() {
         <CardGridSection
           heading={"Why Practice on"}
           highlight="Trikaya?"
+          showH1tag={true}
           containerClassName="my-11"
           description="Build in real environments, track your progress, and earn verified credentials recognized by employers."
           cards={LearnCards}

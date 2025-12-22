@@ -73,7 +73,7 @@ const Banner: React.FC<BannerProps> = ({
                 exit={{ opacity: 0, y: -40 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
               >
-                <h1
+                <h2
                   className="text-3xl sm:text-4xl lg:text-[66px] font-bold leading-[1.2]"
                   style={{ color: titleColor }}
                 >
@@ -81,7 +81,7 @@ const Banner: React.FC<BannerProps> = ({
                   {highlight && (
                     <span style={{ color: highlightColor }}>{highlight}</span>
                   )}
-                </h1>
+                </h2>
 
                 <p className="mt-5  text-gray-600 text-base sm:text-lg lg:text-xl leading-relaxed">
                   {description}

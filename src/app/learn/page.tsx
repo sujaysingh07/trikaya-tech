@@ -99,6 +99,7 @@ export default function Learn() {
       <CardGridSection
         heading={"Why Learn with "}
         highlight="Trikaya?"
+        showH1tag={true}
         containerClassName="my-11"
         gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-11 "
         description="Learning at Trikaya isn't just about completing courses — it's about proving your skills, applying them in real projects, and being recognized by employers."

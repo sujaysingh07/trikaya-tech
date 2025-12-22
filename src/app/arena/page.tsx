@@ -176,6 +176,7 @@ export default function Arena() {
       <CardGridSection
         heading={"Why Join the Trikaya "}
         highlight="Arena?"
+        showH1tag={true}
         containerClassName="my-11"
         gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-11 "
         description="The ultimate space to test your skills, collaborate, and showcase verified achievements."

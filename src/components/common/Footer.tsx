@@ -39,37 +39,40 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex items-center gap-4 text-gray-400">
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/trikaya-tech"
                 aria-label="LinkedIn"
-                className="transition-colors hover:text-white"
+                target="_blank"
+                className="hover:text-white transition-colors"
               >
                 <Linkedin size={18} color="white" />
               </Link>
               <Link
-                href="#"
+                href="https://x.com/trikaya_tech"
+                target="_blank"
                 aria-label="X (formerly Twitter)"
-                className="transition-colors hover:text-white"
+                className="hover:text-white transition-colors"
               >
                 <FaXTwitter />
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/trikaya_tech"
                 aria-label="Instagram"
-                className="transition-colors hover:text-white"
+                target="_blank"
+                className="hover:text-white transition-colors"
               >
                 <Instagram size={18} color="white" />
               </Link>
               <Link
                 href="#"
                 aria-label="telegram"
-                className="transition-colors hover:text-white"
+                className="hover:text-white transition-colors"
               >
                 <FaTelegram color="white" />
               </Link>
               <Link
                 href="#"
                 aria-label="Whatsapp"
-                className="transition-colors hover:text-white"
+                className="hover:text-white transition-colors"
               >
                 <FaWhatsapp color="white" />
               </Link>
@@ -77,7 +80,7 @@ export default function Footer() {
               <Link
                 href="#"
                 aria-label="Discord"
-                className="transition-colors hover:text-white"
+                className="hover:text-white transition-colors"
               >
                 <FaDiscord color="white" />
               </Link>

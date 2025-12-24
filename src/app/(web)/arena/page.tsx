@@ -17,7 +17,17 @@ import { LeaderBoardType } from "@/src/components/common/Leaderboard";
 import { httpRequest } from "@/src/lib/httpClient";
 import { APIResponse, HackathonDataType, QuestDataType, WeeklyChallengeAPIItem, } from "@/src/lib/types/commonTypes";
 import { getRankColor } from "@/src/lib/common";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
 
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Arena | AI, Blockchain, Data Science & Cybersecurity Skill Challenges",
+  description:
+    "Trikaya Arena lets you compete in real-world AI, Blockchain, Data Science, and Cybersecurity challenges to validate your skills and earn industry recognition.",
+  keywords: ['Trikaya Arena', 'Trikaya', ' Trikaya Platform', 'Trikaya tech', 'Trikaya Io', 'Trikaya AI', 'Tech Hackathons', 'Coding Competitions', ' Blockchain Challenges', 'AI Challenges', 'Data Science Quests', 'Cybersecurity CTF', 'Code Quests', ' Hackathon'],
+  canonical: generateCanonical("/arena"),
+});
 
 export default async function Arena() {
   const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(
@@ -129,6 +139,7 @@ export default async function Arena() {
       <CardGridSection
         heading={"Why Join the Trikaya "}
         highlight="Arena?"
+        showH1tag={true}
         containerClassName="my-11"
         gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-11 "
         description="The ultimate space to test your skills, collaborate, and showcase verified achievements."

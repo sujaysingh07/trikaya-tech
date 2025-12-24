@@ -45,6 +45,7 @@ interface CardGridSectionProps {
     | "material";
   button?: string;
   variantCategory?: "blog" | "category";
+  showH1tag?: boolean;
 }
 
 export default function CardGridSection({
@@ -58,7 +59,9 @@ export default function CardGridSection({
   cardType = "info",
   button,
   variantCategory,
+  showH1tag = false
 }: CardGridSectionProps) {
+  const HeadingTag = showH1tag ? "h1" : "h2";
   return (
     <section>
       <Container className={containerClassName}>
@@ -68,12 +71,12 @@ export default function CardGridSection({
             headingAlign === "center" ? "justify-center text-center" : "gap-3"
           }`}
         >
-          <h2 className="text-2xl font-bold text-[#03061E] md:text-4xl">
+          <HeadingTag className="font-bold text-2xl md:text-4xl text-[#03061E]">
             {heading}{" "}
             {highlight && (
               <span className="text-primary-color">{highlight}</span>
             )}
-          </h2>
+          </HeadingTag>
 
           {description && (
             <p className="mx-auto text-base sm:mx-0">{description}</p>

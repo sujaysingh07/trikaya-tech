@@ -15,6 +15,17 @@ import Link from "next/link";
 import CallToAction from "@/src/components/common/CallToAction";
 import Code from "@/public/code.png";
 import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Learn | AI, Blockchain, Data Science & Cybersecurity Courses",
+  description:
+    "Trikaya Learn offers expert-led AI, Blockchain, Data Science, and Cybersecurity courses with verified skills, practical training, and mentorship to boost your career.",
+  keywords: ['Trikaya Learn', 'Trikaya', 'Trikaya Platform', 'Trikaya tech', 'Trikaya Io', 'Trikaya AI', 'Learn AI', 'Blockchain Courses', 'Data Science Certification', ' Cybersecurity Training', 'Solidity Course', 'Deep Learning Fundamentals', 'Ethical Hacking Essentials', 'Python for Generative AI', 'Verified Certificates', 'Tech Mentorship', 'Smart Contract Development', ' Hands- on Tech Labs', 'Coding Bootcamps', 'Trikaya Learning Path'],
+  canonical: generateCanonical("/learn"),
+});
 export default function Learn() {
   const LearnCards = [
     {
@@ -86,6 +97,7 @@ export default function Learn() {
       <CardGridSection
         heading={"Why Learn with "}
         highlight="Trikaya?"
+        showH1tag={true}
         containerClassName="my-11"
         gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-11 "
         description="Learning at Trikaya isn't just about completing courses — it's about proving your skills, applying them in real projects, and being recognized by employers."

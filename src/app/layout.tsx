@@ -10,7 +10,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env.TRIKAYA_NODE_ENV === "production";
 console.log(isProduction)
 export const metadata: Metadata = {
   title:

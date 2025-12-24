@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 const isProduction = process.env.TRIKAYA_NODE_ENV === "production";
-console.log(isProduction)
+console.log(isProduction,"node environment")
 export const metadata: Metadata = {
   title:
     "Trikaya – AI & Blockchain-Powered Job Platform for Verified Skills and Fair Hiring",

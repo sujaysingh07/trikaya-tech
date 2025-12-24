@@ -1,4 +1,4 @@
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env.TRIKAYA_NODE_ENV === "production";
 
 if (!isProduction) {
     console.log("⏭️  Skipping sitemap generation (non-production)");

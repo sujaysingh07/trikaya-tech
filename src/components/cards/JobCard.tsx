@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Icons } from "@/public/icons/icon";
 import clsx from "clsx";
-import { formatCompactSalary, formatJobType } from "@/src/lib/common";
+import { formatCompactSalary, formatCompactSalaryWithCurrency, formatJobType } from "@/src/lib/common";
 
 export interface JobCardProps {
   job: JobItem;
@@ -65,7 +65,7 @@ export default function JobCard({
 
         <div className="flex items-center gap-2">
           <Icons variant="DollarCircle" />
-          <span>{formatCompactSalary(Number(job.salary_min))} - {formatCompactSalary(Number(job.salary_max))}</span>
+          <span>{formatCompactSalaryWithCurrency(Number(job.salary_min), job.salary_currency)} - {formatCompactSalaryWithCurrency(Number(job.salary_max), job.salary_currency)}</span>
         </div>
       </div>
 

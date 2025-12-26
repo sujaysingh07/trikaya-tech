@@ -19,7 +19,7 @@ import InternshipCard from "@/src/components/cards/InternshipCard";
 import { APIResponse } from "@/src/lib/types/commonTypes";
 import { httpRequest } from "@/src/lib/httpClient";
 import NotFound from "@/src/components/common/NotFound";
-import { formatCompactSalary } from "@/src/lib/common";
+import { formatCompactSalary, formatCompactSalaryWithCurrency } from "@/src/lib/common";
 import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
 import { generateCanonical } from "@/src/lib/utils";
 export const metadata = generatePageMetadata({
@@ -60,6 +60,8 @@ export default async function JobsInternship() {
     const response = await httpRequest<APIResponse<[]>>(
       "/api/v1/internships",
     );
+
+  
   const mentorCards = [
     {
       icon: rewards,
@@ -237,12 +239,13 @@ export default async function JobsInternship() {
                   location={internship.internship_location || "N/A"}
                   salary={
                     internship.is_paid
-                      ? ` ${formatCompactSalary(Number(internship.stipend_amount))}`
+                      ? ` ${formatCompactSalaryWithCurrency(Number(internship.stipend_amount),internship.stipend_currency)}`
                       : "Unpaid"
                   }
                   type={`${internship.duration_in_weeks} Weeks`}
                   employmentType={internship.work_type}
                   registerUrl={internship.registration_url}
+                  // currency={internship.stipend_currency}
                   
                 />
               ))}

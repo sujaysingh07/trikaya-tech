@@ -120,6 +120,54 @@ export function formatCompactSalary(amount: number): string {
   return `₹${amount}`;
 }
 
+export function formatCompactSalaryWithCurrency(
+  amount: number,
+  currency: string = "INR",
+): string {
+  if (isNaN(amount)) return "N/A";
+
+  const currencySymbols: Record<string, string> = {
+    INR: "₹",
+    USD: "$",
+    EUR: "€",
+    GBP: "£",
+  };
+
+  const symbol = currencySymbols[currency] ?? currency;
+
+  // 🇮🇳 Indian numbering system
+  if (currency === "INR") {
+    if (amount >= 1_00_00_000) {
+      return `${symbol}${(amount / 1_00_00_000)
+        .toFixed(1)
+        .replace(/\.0$/, "")}Cr`;
+    }
+    if (amount >= 1_00_000) {
+      return `${symbol}${(amount / 1_00_000).toFixed(1).replace(/\.0$/, "")}L`;
+    }
+    if (amount >= 1_000) {
+      return `${symbol}${(amount / 1_000).toFixed(1).replace(/\.0$/, "")}K`;
+    }
+    return `${symbol}${amount}`;
+  }
+
+  // 🌍 International (USD, EUR, etc.)
+  if (amount >= 1_000_000_000) {
+    return `${symbol}${(amount / 1_000_000_000)
+      .toFixed(1)
+      .replace(/\.0$/, "")}B`;
+  }
+  if (amount >= 1_000_000) {
+    return `${symbol}${(amount / 1_000_000).toFixed(1).replace(/\.0$/, "")}M`;
+  }
+  if (amount >= 1_000) {
+    return `${symbol}${(amount / 1_000).toFixed(1).replace(/\.0$/, "")}K`;
+  }
+
+  return `${symbol}${amount}`;
+}
+
+
 export function getFormattedCurrentDateTime(): string {
   const date = new Date();
 

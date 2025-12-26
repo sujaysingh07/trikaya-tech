@@ -1,25 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Banner from "../components/Landing/Hero";
 import StatsSection from "../components/common/Stats";
 import rightImage from "@/public/right-image.png";
-import WhoTrikaya from "../components/Landing/WhoUsingTrikaya";
-import Offers from "../components/Landing/Offers";
-import FeaturedJob from "../components/Landing/Featured";
-import MasterInDemand from "../components/Landing/Master-in-demand";
-import Journey from "../components/Landing/Journey";
-import Opportunity from "../components/Landing/Opportunity";
-import Unlock from "../components/Landing/Unlock";
-import ReferralFaqSection from "../components/Landing/Faq";
-import Partners from "../components/Landing/Partner";
 import career from "@/public/career.png";
 import trikayaAi from "@/public/trikaya-ai.png";
 import trikayaStandard from "@/public/trikaya-standard.png";
 import { useIsMobile } from "../hooks/useMobile";
+import Banner from "../components/landing/Hero";
+import WhoTrikaya from "../components/landing/WhoUsingTrikaya";
+import Offers from "../components/landing/Offers";
+import FeaturedJob from "../components/landing/Featured";
+import MasterInDemand from "../components/landing/Master-in-demand";
+import Journey from "../components/landing/Journey";
+import Opportunity from "../components/landing/Opportunity";
+import Unlock from "../components/landing/Unlock";
+import ReferralFaqSection from "../components/landing/Faq";
+import Partners from "../components/landing/Partner";
 
 export default function Home() {
-  
   const isMobile = useIsMobile();
 
   const banners = [
@@ -70,18 +69,17 @@ export default function Home() {
   const [index, setIndex] = useState(0);
 
   // ---------------- AUTO-SLIDE ONLY FOR DESKTOP ----------------
-useEffect(() => {
-  const intervalTime = isMobile ? 5000 : 3000; // 5s for mobile, 3s for desktop
+  useEffect(() => {
+    const intervalTime = isMobile ? 5000 : 3000; // 5s for mobile, 3s for desktop
 
-  const timer = setInterval(() => {
-    setIndex((prev) => (prev + 1) % banners.length);
-  }, intervalTime);
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % banners.length);
+    }, intervalTime);
 
-  return () => clearInterval(timer);
-}, [banners?.length, isMobile]);
+    return () => clearInterval(timer);
+  }, [banners?.length, isMobile]);
 
-const currentBanner = banners[index];
-
+  const currentBanner = banners[index];
 
   return (
     <div className="transition-all duration-700">

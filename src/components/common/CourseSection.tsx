@@ -55,37 +55,37 @@ const courses = [
 
 export default function CoursesSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="bg-white py-16">
       <Container>
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-2">
           {courses.map((course) => (
             <div
               key={course.id}
-              className="border border-gray-200 hover:border-primary-color transition-all rounded-xl p-6 flex flex-col justify-between shadow-sm hover:shadow-lg bg-white"
+              className="hover:border-primary-color flex flex-col justify-between rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg"
             >
               {/* Icon + Title */}
 
-              <div className="flex gap-3 mb-4">
+              <div className="mb-4 flex gap-3">
                 <Image
                   src={course.icon}
                   alt={course.title}
                   width={68}
                   height={68}
-                  className="object-contain "
+                  className="object-contain"
                 />
-                <div className="flex gap-2 flex-col justify-center">
-                  <h3 className="text-lg sm:text-xl font-semibold text-[#03061E]">
+                <div className="flex flex-col justify-center gap-2">
+                  <h3 className="text-lg font-semibold text-[#03061E] sm:text-xl">
                     {course.title}
                   </h3>
-                  <p className="text-gray-500 text-sm sm:text-base mb-5">
+                  <p className="mb-5 text-sm text-gray-500 sm:text-base">
                     {course.subtitle}
                   </p>
                 </div>
               </div>
 
               {/* Course details */}
-              <div className="grid grid-cols-2 gap-x-6 gap-y-3 py-4 text-sm sm:text-base text-gray-700">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-3 py-4 text-sm text-gray-700 sm:text-base">
                 {/* Duration */}
                 <div className="flex items-center gap-2">
                   <Clock size={20} className="text-gray-500" />
@@ -159,8 +159,8 @@ export default function CoursesSection() {
                 </div>
 
                 {/* Level */}
-                <div className="flex items-center gap-2 font-bold text-base">
-                  <span className={course.levelColor + " flex "}>
+                <div className="flex items-center gap-2 text-base font-bold">
+                  <span className={course.levelColor + " flex"}>
                     <svg
                       width="24"
                       height="24"
@@ -192,7 +192,7 @@ export default function CoursesSection() {
               <div className="mt-6">
                 <Link
                   href="#"
-                  className="w-full text-center px-4 max-w-[163px] bg-primary-color text-base text-white py-2.5 rounded-md font-semibold hover:bg-[#0048d9] transition"
+                  className="bg-primary-color w-full max-w-[163px] rounded-md px-4 py-2.5 text-center text-base font-semibold text-white transition hover:bg-[#0048d9]"
                 >
                   Enroll Now
                 </Link>

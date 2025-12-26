@@ -18,10 +18,7 @@ export function generatePageMetadata({
   description: string;
   canonical?: string;
   keywords?: string[] | string;
-  robots?: {
-    index?: boolean;
-    follow?: boolean;
-  };
+  robots?: Metadata["robots"];
   ogImage?: string;
   verification?: Record<string, string>;
 }): Metadata {
@@ -63,10 +60,7 @@ export function generatePageMetadata({
 
     manifest: "/favicons/site.webmanifest",
 
-    robots: {
-      index: robots.index,
-      follow: robots.follow,
-    },
+    robots,
 
     openGraph: {
       title,

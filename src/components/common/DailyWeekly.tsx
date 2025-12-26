@@ -1,58 +1,60 @@
 "use client";
-
-import Image from "next/image";
-import Link from "next/link";
 import SectionHeader from "./SectionHeader";
-import { Icons } from "@/public/icons/icon";
 import Container from "../ui/Container";
+import { WeeklyChallengeAPIItem } from "@/src/lib/types/commonTypes";
+import WeeklyChallengeCard from "../cards/WeeklyChallengeCard";
 
-interface Challenge {
-  title: string;
-  duration: string;
-  tags: string[];
-  image: string;
-  points: string;
-  href: string;
+// interface Challenge {
+//   title: string;
+//   duration: string;
+//   tags: string[];
+//   image: string;
+//   points: string;
+//   href: string;
+// }
+
+// const challenges: Challenge[] = [
+//   {
+//     title: "Smart Contract Debug Challenge",
+//     duration: "24 Weeks",
+//     tags: ["Blockchain", "Solidity", "Security"],
+//     image: "/images/smartContract.png",
+//     points: "500 KP",
+//     href: "#",
+//   },
+//   {
+//     title: "AI Model Optimization",
+//     duration: "1 Week",
+//     tags: ["AI", "Python", "TensorFlow"],
+//     image: "/images/AI-model.png",
+//     points: "1000 KP",
+//     href: "#",
+//   },
+//   {
+//     title: "Data Structure Sprint",
+//     duration: "48 Weeks",
+//     tags: ["DSA", "Algorithms", "Problem Solving"],
+//     image: "/images/data.png",
+//     points: "750 KP",
+//     href: "#",
+//   },
+//   {
+//     title: "Cybersecurity CTF",
+//     duration: "1 Week",
+//     tags: ["Security", "Cryptography", "Penetration Testing"],
+//     image: "/images/cyber.png",
+//     points: "1200 KP",
+//     href: "#",
+//   },
+// ];
+interface DailyWeeklyChallengesProps {
+  weeklyChallengesData: WeeklyChallengeAPIItem[];
 }
 
-const challenges: Challenge[] = [
-  {
-    title: "Smart Contract Debug Challenge",
-    duration: "24 Weeks",
-    tags: ["Blockchain", "Solidity", "Security"],
-    image: "/images/smartContract.png",
-    points: "500 KP",
-    href: "#",
-  },
-  {
-    title: "AI Model Optimization",
-    duration: "1 Week",
-    tags: ["AI", "Python", "TensorFlow"],
-    image: "/images/AI-model.png",
-    points: "1000 KP",
-    href: "#",
-  },
-  {
-    title: "Data Structure Sprint",
-    duration: "48 Weeks",
-    tags: ["DSA", "Algorithms", "Problem Solving"],
-    image: "/images/data.png",
-    points: "750 KP",
-    href: "#",
-  },
-  {
-    title: "Cybersecurity CTF",
-    duration: "1 Week",
-    tags: ["Security", "Cryptography", "Penetration Testing"],
-    image: "/images/cyber.png",
-    points: "1200 KP",
-    href: "#",
-  },
-];
 
-export default function DailyWeeklyChallenges() {
+export default function DailyWeeklyChallenges({ weeklyChallengesData }: DailyWeeklyChallengesProps) {
   return (
-    <section className="bg-black text-white py-11">
+    <section className="bg-black py-11 text-white">
       <Container>
         {/* Header */}
         <SectionHeader
@@ -63,70 +65,24 @@ export default function DailyWeeklyChallenges() {
         />
 
         {/* Challenge Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
-          {challenges.map((challenge, index) => (
-            <div
-              key={index}
-              className="bg-white border border-[#1E1E1E] rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col"
-            >
-              {/* Image */}
-              <div className="relative w-full h-[140px] sm:h-[150px]">
-                <Image
-                  src={challenge.image}
-                  alt={challenge.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between">
-                <div>
-                  {/* Duration */}
-                  <p className="text-[#666666] text-xs sm:text-sm mb-2 flex items-center gap-2">
-                    <Icons variant="Clock" color="#666666" />
-                    {challenge.duration}
-                  </p>
-
-                  {/* Title */}
-                  <h3 className="text-[18px] sm:text-[20px] font-semibold text-[#03061E] mb-3">
-                    {challenge.title}
-                  </h3>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {challenge.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="text-[10px] sm:text-xs bg-[#EBEAEA] text-[#475569] px-2 sm:px-3 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-2">
-                  <Link
-                    href={challenge.href}
-                    className="bg-primary-color hover:bg-[#1556C8] text-white text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-md transition"
-                  >
-                    Start
-                  </Link>
-                  <p className="text-primary-color text-sm sm:text-base font-semibold">
-                    {challenge.points}
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {weeklyChallengesData.map((item) => (
+            <WeeklyChallengeCard
+              key={item.id}
+              title={item.title}
+              points={item.points}
+              category={item.category}
+              challenge_url={item.challenge_url}
+              image={item.image || "/images/AI-model.png"}
+              duration={item.duration || "1 Week"}
+            />
           ))}
         </div>
 
         {/* Bottom Banner */}
         <div className="mt-12 flex justify-center text-center">
-          <div className="w-full sm:max-w-[500px] md:max-w-[679px] bg-[#0A0A0A] border border-[#CAF50A] rounded-[30px] px-4 sm:px-6 py-6 flex flex-col items-center">
-            <div className="flex flex-col sm:flex-row items-center gap-3 mb-2">
+          <div className="flex w-full flex-col items-center rounded-[30px] border border-[#CAF50A] bg-[#0A0A0A] px-4 py-6 sm:max-w-[500px] sm:px-6 md:max-w-[679px]">
+            <div className="mb-2 flex flex-col items-center gap-3 sm:flex-row">
               {/* Responsive SVG */}
               <div className="w-[55px] sm:w-[70px]">
                 <svg
@@ -188,9 +144,9 @@ export default function DailyWeeklyChallenges() {
               </div>
 
               {/* Banner Text */}
-              <p className="text-white text-sm sm:text-base md:text-[20px] font-medium leading-snug">
+              <p className="text-sm leading-snug font-medium text-white sm:text-base md:text-[20px]">
                 Complete challenges to unlock Arena KP and level up your{" "}
-                <span className="text-[#CAF50A] font-semibold">
+                <span className="font-semibold text-[#CAF50A]">
                   Trikaya Badge
                 </span>
                 .

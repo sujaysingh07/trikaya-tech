@@ -1,17 +1,18 @@
-
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/common/Navbar";
-import Footer from "../components/common/Footer";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 import SmoothScroll from "../components/SmoothScroll";
 import Script from "next/script";
 import { generatePageMetadata } from "../lib/generatePageMetadata";
 import { generateCanonical } from "../lib/utils";
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
+
+const isProduction = process.env.TRIKAYA_NODE_ENV === "production";
+console.log(isProduction, "node environment")
 
 export const metadata = generatePageMetadata({
   title:
@@ -34,7 +35,19 @@ export const metadata = generatePageMetadata({
     "Emerging Technologies",
   ],
   canonical: generateCanonical("/"),
+  robots: isProduction
+    ? { index: true, follow: true }
+    : {
+      index: false,
+      follow: false,
+      nocache: true,
+      googleBot: {
+        index: false,
+        follow: false,
+      },
+    },
 });
+
 
 export default function RootLayout({
   children,
@@ -114,14 +127,14 @@ export default function RootLayout({
             }),
           }}
         />
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MV6QFRCK"
-          height="0"
-          width="0"
-          style={{ display: "none", visibility: "hidden" }}
-        ></iframe>
-      </noscript>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MV6QFRCK"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
       </head>
 
       <body className={` ${inter.variable} antialiased`}>

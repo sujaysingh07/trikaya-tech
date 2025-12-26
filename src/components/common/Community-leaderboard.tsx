@@ -16,33 +16,33 @@ export default function LeaderboardRow({
   return (
     <div
       className={clsx(
-        "flex items-center justify-between rounded-2xl px-4 py-4 hover:bg-[#F0F5FF] transition-all ease-in",
+        "flex items-center justify-between rounded-2xl px-4 py-4 transition-all ease-in hover:bg-[#F0F5FF]",
       )}
     >
       {/* LEFT: Rank + Name */}
       <div className="flex items-center gap-6">
         {/* Rank Number */}
-        <span className="text-base md:text-[22px] font-bold text-primary-color w-6 text-center">
+        <span className="text-primary-color w-6 text-center text-base font-bold md:text-[22px]">
           {rank}
         </span>
 
         {/* Name + Points */}
         <div className="flex flex-col gap-2">
-          <h3 className="text-[16px] whitespace-nowrap md:text-[22px] font-semibold leading-[25px] text-[#0A0A0F]">
+          <h3 className="text-[16px] leading-[25px] font-semibold whitespace-nowrap text-[#0A0A0F] md:text-[22px]">
             {name}
           </h3>
-          <p className="text-xs md:text-base font-normal text-[#666666]">
+          <p className="text-xs font-normal text-[#666666] md:text-base">
             {points} KP
           </p>
         </div>
       </div>
 
       {/* RIGHT: Badges */}
-      <div className="flex items-center gap-2 flex-wrap justify-end min-w-40">
+      <div className="flex min-w-40 flex-wrap items-center justify-end gap-2">
         {badges.map((badge, index) => (
           <span
             key={index}
-            className="px-3 py-1 text-xs md:text-base font-medium rounded-full bg-[#EBEAEA] text-[#666666]"
+            className="rounded-full bg-[#EBEAEA] px-3 py-1 text-xs font-medium text-[#666666] md:text-base"
           >
             {badge}
           </span>

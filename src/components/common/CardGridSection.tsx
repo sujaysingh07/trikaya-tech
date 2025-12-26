@@ -1,20 +1,34 @@
 import React from "react";
 import Container from "../ui/Container";
-import InfoCard from "../Cards/Info-card";
-import CompanyLogoCard from "../Cards/CompanyLogo-card";
+import InfoCard from "../cards/InfoCard";
+import CompanyLogoCard from "../cards/CompanyLogoCard";
 import { StaticImageData } from "next/image";
-import AmbassadorCard from "../Cards/Ambassador-level-card";
+import AmbassadorCard from "../cards/AmbassadorCard";
+import BlogCard from "../cards/BlogCard";
+import InsightCard from "../cards/InsightCard";
+import MaterialCard from "../cards/MaterialCard";
+import AuthorCard from "../cards/Author";
 
 interface CardItem {
   icon?: string | StaticImageData;
   title?: string;
   description?: string;
   subtitle?: string;
-  button?:string
-  level?: number;
+  button?: string;
+  level?: number | string;
+  category?: string;
+  author?: string;
+  date?: string;
+  readTime?: string;
+  name?: string;
+  role?: string;
+  badge?: string;
+  articlesCount?: number;
+  fileType?: string;
 }
 
 interface CardGridSectionProps {
+  id?:string
   heading: string;
   highlight?: string;
   cards: CardItem[];
@@ -22,12 +36,21 @@ interface CardGridSectionProps {
   gridClassName?: string;
   headingAlign?: "left" | "center";
   description?: string;
-  cardType?: "info" | "company" | "ambassador";
-  button?:string
-  showH1tag?:boolean
+  cardType?:
+    | "info"
+    | "company"
+    | "ambassador"
+    | "Blog"
+    | "Insight"
+    | "Author"
+    | "material";
+  button?: string;
+  variantCategory?: "blog" | "category";
+  showH1tag?: boolean;
 }
 
 export default function CardGridSection({
+  id,
   heading,
   highlight,
   cards,
@@ -37,22 +60,20 @@ export default function CardGridSection({
   description,
   cardType = "info",
   button,
-  showH1tag=false
-  
+  variantCategory,
+  showH1tag = false
 }: CardGridSectionProps) {
   const HeadingTag = showH1tag ? "h1" : "h2";
-  
   return (
     <section>
-      <Container className={containerClassName}>
+      <Container className={containerClassName} >
         {/* Heading */}
         <div
           className={`flex flex-col ${
             headingAlign === "center" ? "justify-center text-center" : "gap-3"
           }`}
+          id={id}
         >
-
-
           <HeadingTag className="font-bold text-2xl md:text-4xl text-[#03061E]">
             {heading}{" "}
             {highlight && (
@@ -61,7 +82,7 @@ export default function CardGridSection({
           </HeadingTag>
 
           {description && (
-            <p className="text-base mx-auto sm:mx-0">{description}</p>
+            <p className="mx-auto text-base sm:mx-0">{description}</p>
           )}
         </div>
 
@@ -89,11 +110,61 @@ export default function CardGridSection({
                   />
                 );
 
+              case "Blog":
+                if (!card.icon) return null;
+                return (
+                  <BlogCard
+                    key={index}
+                    icon={card?.icon}
+                    category={card.category || ""}
+                    title={card.title || ""}
+                    description={card.description || ""}
+                    author={card.author || ""}
+                    date={card.date || ""}
+                    readTime={card.readTime || ""}
+                  />
+                );
+              case "Insight":
+                return (
+                  <InsightCard
+                    key={card.description}
+                    variantCategory={variantCategory || "blog"}
+                    category={card.category || ""}
+                    title={card.title || ""}
+                    description={card.description || ""}
+                    author={card.author || ""}
+                    date={card.date || ""}
+                    icon={card.icon || ""}
+                    readTime={card.readTime || ""}
+                  />
+                );
+
+              case "Author":
+                return (
+                  <AuthorCard
+                    icon={card.icon || ""}
+                    name={card.name || ""}
+                    role={card.role || ""}
+                    articlesCount={card.articlesCount || 0}
+                  />
+                );
+              case "material":
+                return (
+                  <MaterialCard
+                    key={card.title}
+                    category={card.category || ""}
+                    level={card?.level || ""}
+                    title={card.title || ""}
+                    description={card.description || ""}
+                    fileType={card.fileType || ""}
+                  />
+                );
               default:
                 return (
                   <InfoCard
                     key={index}
                     icon={card.icon!}
+                    badge={card.badge}
                     title={card.title || ""}
                     subTitle={card.subtitle || ""}
                     button={button || ""}

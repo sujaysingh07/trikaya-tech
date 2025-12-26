@@ -1,62 +1,55 @@
-"use client";
-import Image from "next/image";
+
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Clock } from "lucide-react";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
-import { Icons } from "@/public/icons/icon";
+import QuestCard from "../cards/QuestCard";
+import { QuestDataType } from "@/src/lib/types/commonTypes";
+import NotFound from "./NotFound";
 
-interface Quest {
-  level: string;
-  levelColor: string;
-  duration: string;
-  title: string;
-  description: string;
-  badge: string;
-  points: string;
-  href: string;
-}
 
-const quests: Quest[] = [
-  {
-    level: "Intermediate",
-    levelColor: "bg-[#DDF3FF] text-[#0A58F5]",
-    duration: "8–10 hours",
-    title: "AI Innovator Quest",
-    description:
-      "Master machine learning fundamentals through hands-on projects and real-world applications.",
-    badge: "AI Master Badge",
-    points: "+ 2000 KP",
-    href: "#",
-  },
-  {
-    level: "Beginner",
-    levelColor: "bg-[#F7FFD1] text-[#1D9402]",
-    duration: "5–7 hours",
-    title: "Blockchain Builder Quest",
-    description:
-      "Learn to build and deploy smart contracts, dApps, and understand blockchain architecture.",
-    badge: "Blockchain Badge",
-    points: "+ 1500 KP",
-    href: "#",
-  },
-  {
-    level: "Pro",
-    levelColor: "bg-[#0A58F5] text-[#FFFFFF]",
-    duration: "12–15 hours",
-    title: "Full Stack Champion Quest",
-    description:
-      "Complete end-to-end projects covering frontend, backend, and database management.",
-    badge: "Full Stack Badge",
-    points: "+ 3000 KP",
-    href: "#",
-  },
-];
 
-export default function SkillQuests() {
+// const quests: Quest[] = [
+//   {
+//     level: "Intermediate",
+//     levelColor: "bg-[#DDF3FF] text-[#0A58F5]",
+//     duration: "8–10 hours",
+//     title: "AI Innovator Quest",
+//     description:
+//       "Master machine learning fundamentals through hands-on projects and real-world applications.",
+//     badge: "AI Master Badge",
+//     points: "+ 2000 KP",
+//     href: "#",
+//   },
+//   {
+//     level: "Beginner",
+//     levelColor: "bg-[#F7FFD1] text-[#1D9402]",
+//     duration: "5–7 hours",
+//     title: "Blockchain Builder Quest",
+//     description:
+//       "Learn to build and deploy smart contracts, dApps, and understand blockchain architecture.",
+//     badge: "Blockchain Badge",
+//     points: "+ 1500 KP",
+//     href: "#",
+//   },
+//   {
+//     level: "Pro",
+//     levelColor: "bg-[#0A58F5] text-[#FFFFFF]",
+//     duration: "12–15 hours",
+//     title: "Full Stack Champion Quest",
+//     description:
+//       "Complete end-to-end projects covering frontend, backend, and database management.",
+//     badge: "Full Stack Badge",
+//     points: "+ 3000 KP",
+//     href: "#",
+//   },
+// ];
+
+
+
+export default function SkillQuests({ questData }: { questData: QuestDataType[] }) {
+
   return (
-    <Container className="py-11 ">
+    <Container className="py-11">
       {/* Heading */}
       <SectionHeader
         title="Skill "
@@ -65,55 +58,20 @@ export default function SkillQuests() {
       />
 
       {/* Quest Cards */}
-      <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3 mt-10">
-        {quests.map((quest, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ y: -5 }}
-            className="bg-white border border-[##CCCCCC] rounded-[30px] p-6 flex flex-col justify-between transition-all duration-300"
-          >
-            {/* Top */}
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <span
-                  className={`text-base font-medium px-3 py-1 rounded-full ${quest.levelColor}`}
-                >
-                  {quest.level}
-                </span>
-                <p className="text-black font-bold text-sm flex items-center gap-1">
-                  <Icons variant="Clock" /> {quest.duration}
-                </p>
-              </div>
-
-              <h3 className="text-xl font-semibold text-[#03061E] mb-2">
-                {quest.title}
-              </h3>
-              <p className="text-[#03061E] text-base leading-relaxed mb-6">
-                {quest.description}
-              </p>
-
-              <div className="inline-flex items-center text-xs font-bold bg-[#EBEAEA] text-[#475569] px-3 py-1 rounded-full">
-                {quest.badge} <span className="ml-1 ">{quest.points}</span>
-              </div>
-            </div>
-
-            {/* Footer */}
-            <div className="mt-6 flex ">
-              <Link
-                href={quest.href}
-                className="block text-center bg-[#2563EB] max-w-[164px] w-full hover:bg-[#1556C8] text-white font-semibold text-[20px] leading-[100%] px-4 py-3 rounded-md transition"
-              >
-                Join Quest
-              </Link>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+      {questData.length ?
+        <>
+          <div className="mt-10 grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
+            {questData.map((quest, index) => (
+              <QuestCard key={index} quest={quest} />
+            ))}
+          </div>
+        </> : <NotFound name="Quests" />
+      }
 
       {/* Bottom Banner */}
-      <div className="mt-10 border border-primary-color rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="border-primary-color mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border p-6 md:flex-row">
         <div className="flex items-center gap-2">
-          <div className=" p-3 rounded-full">
+          <div className="rounded-full p-3">
             <svg
               width="71"
               height="71"
@@ -171,20 +129,18 @@ export default function SkillQuests() {
               <circle cx="26.6655" cy="41.4619" r="2.60249" fill="black" />
             </svg>
           </div>
-          <p className="text-[#111827] text-sm md:text-[20px] font-semibold tracking-[0.5%] max-w-xl">
+          <p className="max-w-xl text-sm font-semibold tracking-[0.5%] text-[#111827] md:text-[20px]">
             Complete all three quests to earn the Arena Master Badge and access
             exclusive mentorships.
           </p>
         </div>
 
-       
-          <Link
-            href={''}
-            className="block text-center bg-black  hover:bg-[#1556C8] text-white font-semibold text-base leading-[100%] px-4 py-4 rounded-md transition"
-          >
-        Explore All Hackathons
-          </Link>
-     
+        <Link
+          href={""}
+          className="block rounded-md bg-black px-4 py-4 text-center text-base leading-[100%] font-semibold text-white transition hover:bg-[#1556C8]"
+        >
+          Explore All Hackathons
+        </Link>
       </div>
     </Container>
   );

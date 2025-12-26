@@ -1,6 +1,6 @@
 "use client";
 
-import GradientImageCard from "../Cards/GradientImageCard";
+import GradientImageCard from "../cards/GradientImageCard";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 
@@ -67,7 +67,7 @@ export default function PracticeSection() {
         />
 
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {opportunities.map((item) => (
             <GradientImageCard
               key={item.id}

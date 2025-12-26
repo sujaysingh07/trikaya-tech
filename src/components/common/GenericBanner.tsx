@@ -27,27 +27,21 @@ export default function GenericBanner({
   return (
     <section className={`w-full ${className}`}>
       <div
-        className="
-          mx-auto
-          rounded-[20px]
-          py-8
-          px-4 sm:px-6
-          text-center
-        "
+        className="mx-auto rounded-[20px] px-4 py-8 text-center sm:px-6"
         style={{
           background: bgColor,
         }}
       >
         {/* MAIN CONTENT */}
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto max-w-4xl">
           {title && (
-            <h3 className="text-[#FFFFFF] md:text-[36px] text-2xl font-bold ">
+            <h3 className="text-2xl font-bold text-[#FFFFFF] md:text-[36px]">
               {title}
             </h3>
           )}
 
           {subtitle && (
-            <p className="text-[#FFFFFF] text-base md:text-[28px] mt-2 leading-normal md:leading-9 font-light tracking-tighter">
+            <p className="mt-2 text-base leading-normal font-light tracking-tighter text-[#FFFFFF] md:text-[28px] md:leading-9">
               {subtitle}
             </p>
           )}
@@ -56,19 +50,7 @@ export default function GenericBanner({
             <div className="mt-6 sm:mt-8">
               <Link
                 href={ctaHref}
-                className="
-                  inline-block
-                  bg-white
-                  text-black
-                  font-semibold
-                  text-sm sm:text-base
-                  rounded-md
-                  px-5 sm:px-6
-                  py-3
-                  shadow-sm
-                  hover:shadow-md
-                  transition
-                "
+                className="inline-block rounded-md bg-white px-5 py-3 text-sm font-semibold text-black shadow-sm transition hover:shadow-md sm:px-6 sm:text-base"
               >
                 {ctaLabel}
               </Link>
@@ -81,24 +63,7 @@ export default function GenericBanner({
           <div className="mt-6 flex justify-center">
             <Link
               href={bottomHref || "#"}
-              className="
-                flex items-center gap-1
-                bg-transparent
-                text-[#FFFFFF] sm:text-sm
-                px-4 py-2
-                font-light
-                text-base
-                leading-[25px]
-                tracking-[.5%]
-                rounded-md
-                border border-[#CCCCCC]
-                backdrop-blur-sm
-                hover:bg-white/20
-                transition
-                max-w-[1043px]
-                w-full
-                justify-center
-              "
+              className="flex w-full max-w-[1043px] items-center justify-center gap-1 rounded-md border border-[#CCCCCC] bg-transparent px-4 py-2 text-base leading-[25px] font-light tracking-[.5%] text-[#FFFFFF] backdrop-blur-sm transition hover:bg-white/20 sm:text-sm"
             >
               {bottomIcon && <span>{bottomIcon}</span>}
               {bottomText}

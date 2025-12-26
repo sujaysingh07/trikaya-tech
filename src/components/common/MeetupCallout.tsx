@@ -1,10 +1,9 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 
 interface MeetupCalloutProps {
-  icon?: string ;
+  icon?: string;
   title: string;
   subtitle: string;
   buttonLabel: string;
@@ -23,8 +22,8 @@ export default function MeetupCallout({
   return (
     <div
       className={clsx(
-        "w-full rounded-[30px] border border-primary-color bg-white px-6 py-6 mb-11 md:px-10 md:py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 transition hover:shadow-sm",
-        className
+        "border-primary-color mb-11 flex w-full flex-col items-start justify-between gap-6 rounded-[30px] border bg-white px-6 py-6 transition hover:shadow-sm md:flex-row md:items-center md:px-10 md:py-8",
+        className,
       )}
     >
       {/* LEFT SECTION */}
@@ -40,10 +39,10 @@ export default function MeetupCallout({
 
         {/* Text */}
         <div className="flex flex-col gap-1">
-          <h3 className="text-base md:text-[35px] font-bold leading-[100%] text-black">
+          <h3 className="text-base leading-[100%] font-bold text-black md:text-[35px]">
             {title}
           </h3>
-          <p className="text-sm md:text-base text-[#000000] leading-[100%] mt-1">
+          <p className="mt-1 text-sm leading-[100%] text-[#000000] md:text-base">
             {subtitle}
           </p>
         </div>
@@ -52,7 +51,7 @@ export default function MeetupCallout({
       {/* RIGHT BUTTON */}
       <Link
         href={buttonLink}
-        className="px-6 py-3 w-full md:w-fit text-center bg-black text-white text-sm md:text-base font-semibold rounded-md hover:bg-[#1a1a1a] transition "
+        className="w-full rounded-md bg-black px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#1a1a1a] md:w-fit md:text-base"
       >
         {buttonLabel}
       </Link>

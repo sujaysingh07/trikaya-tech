@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Banner from "@/src/components/common/CommonBanner";
 import mentorship from "@/public/images/engineer-girl.png";
 import CardGridSection from "@/src/components/common/CardGridSection";
@@ -49,9 +50,7 @@ export interface InternshipAPIType {
 
 export default async function JobsInternship() {
     const response = await httpRequest<APIResponse<[]>>(
-      "/api/v1/internships", {
-      revalidate: true,
-    }
+      "/api/v1/internships",
     );
   const mentorCards = [
     {

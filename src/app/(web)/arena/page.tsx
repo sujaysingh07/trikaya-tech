@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Banner from "@/src/components/common/CommonBanner";
 import Engineer from "@/public/images/engineer-talk.png";
 import Container from "@/src/components/ui/Container";
@@ -19,7 +20,6 @@ import { APIResponse, HackathonDataType, QuestDataType, WeeklyChallengeAPIItem, 
 import { getRankColor } from "@/src/lib/common";
 import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
 import { generateCanonical } from "@/src/lib/utils";
-
 export const metadata = generatePageMetadata({
   title:
     "Trikaya Arena | AI, Blockchain, Data Science & Cybersecurity Skill Challenges",
@@ -30,40 +30,32 @@ export const metadata = generatePageMetadata({
 });
 
 export default async function Arena() {
-  
+
   const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(
-    "/api/v1/hackathon", {
-    revalidate: true,
-  }
+    "/api/v1/hackathon",
   );
 
-  const questData = await httpRequest<APIResponse<QuestDataType[]>>("/api/v1/quests", {
-    revalidate: true,
-  });
+  const questData = await httpRequest<APIResponse<QuestDataType[]>>("/api/v1/quests",);
 
   const weeklyChallengesData = await httpRequest<
     APIResponse<WeeklyChallengeAPIItem[]>
-    >("/api/v1/challenges", {
-      revalidate: true,
-    });
+  >("/api/v1/challenges",);
 
   const response = await httpRequest<
     APIResponse<{ name: string; karma_points: number }[]>
-    >("/api/v1/leaderboard", {
-      revalidate: true,
-    });
+  >("/api/v1/leaderboard",);
 
-  
-  const leaderboardData: LeaderBoardType[] = response?.data?.slice(0,10).map((item, index) => ({
+
+  const leaderboardData: LeaderBoardType[] = response?.data?.slice(0, 10).map((item, index) => ({
     rank: index + 1,
     name: item.name,
     badges: item.karma_points,
-    xp: `${item.karma_points} KP`, 
-    growth: "+0%", 
-    color: getRankColor(index + 1), 
+    xp: `${item.karma_points} KP`,
+    growth: "+0%",
+    color: getRankColor(index + 1),
   }));
 
-  
+
   const arenaCards = [
     {
       icon: rewards,

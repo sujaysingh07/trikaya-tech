@@ -1,3 +1,4 @@
+
 import Banner from "@/src/components/common/CommonBanner";
 import practice from "@/public/Practice/practice-bg.jpg";
 import structuredLearning from "@/public/icons/structured-learning.svg";

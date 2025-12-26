@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Banner from "@/src/components/common/CommonBanner";
 import mentorship from "@/public/images/engineer-girl.png";
 import JobCard from "@/src/components/cards/JobCard";
@@ -44,9 +45,7 @@ export default async function JobsInternship() {
     },
   ];
   const jobsData = await httpRequest<APIResponse<[]>>(
-    "/api/v1/jobs", {
-    revalidate: true,
-  }
+    "/api/v1/jobs",
   );
   // const jobData: JobCardProps[] = [
   //   {

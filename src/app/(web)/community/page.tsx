@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Banner from "@/src/components/common/CommonBanner";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import rewards from "@/public/icons/BrainWires.svg";
@@ -22,9 +23,7 @@ import NotFound from "@/src/components/common/NotFound";
 export default async function Community() {
   const startDate = getFormattedCurrentDateTime();
   const EventsData = await httpRequest<APIResponse<[]>>(
-    `/api/v1/events?startDate=${startDate}`, {
-    revalidate: true,
-  }
+    `/api/v1/events?startDate=${startDate}`
   );
 
 

@@ -11,7 +11,7 @@ interface BannerProps {
   highlight?: string;
   description: string;
   image: string | StaticImageData;
-  primaryButton: {
+  primaryButton?: {
     label: string;
     href: string;
   };
@@ -38,7 +38,7 @@ const Banner: React.FC<BannerProps> = ({
   isSearchBar = false,
 }) => {
   return (
-    <section className="relative w-full overflow-hidden bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2]">
+    <section className="relative w-full overflow-hidden min-h-[580px] bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2]">
       {/* Background Image — only on right side */}
       <motion.div
         key={highlight}
@@ -46,7 +46,7 @@ const Banner: React.FC<BannerProps> = ({
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -80 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="absolute top-0 right-0 z-0 hidden h-full w-1/2 overflow-hidden md:block"
+        className="absolute top-0 right-0 z-0 hidden h-full  w-1/2 overflow-hidden md:block"
       >
         <Image
           src={image}
@@ -63,7 +63,7 @@ const Banner: React.FC<BannerProps> = ({
       <Container>
         <div
           className={cn(
-            "relative z-10 flex flex-col-reverse items-center justify-between gap-12 py-20 md:flex-row md:gap-20",
+            "relative z-10 flex flex-col-reverse items-center justify-between gap-12 min-h-[580px] py-20 md:flex-row md:gap-20",
             reverse && "md:flex-row-reverse",
           )}
         >
@@ -90,12 +90,13 @@ const Banner: React.FC<BannerProps> = ({
               </p>
               {!isSearchBar && (
                 <div className="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
+              {  primaryButton &&
                   <Link
                     href={primaryButton.href}
                     className="w-full rounded-md bg-black px-6 py-3 text-lg font-semibold text-white transition hover:bg-gray-800 md:w-auto"
                   >
                     {primaryButton.label}
-                  </Link>
+                  </Link>}
                   {secondaryButton && (
                     <Link
                       href={secondaryButton.href}

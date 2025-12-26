@@ -87,6 +87,7 @@ export const navItems = [
       { label: "Blog", path: "/blog" },
       { label: "About", path: "/about" },
       { label: "Learning", path: "/learning" },
+      { label: "Contact-Us", path: "/contact-us" },
     ],
   },
 ];

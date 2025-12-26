@@ -28,7 +28,7 @@ interface CardItem {
 }
 
 interface CardGridSectionProps {
-  id:string
+  id?:string
   heading: string;
   highlight?: string;
   cards: CardItem[];

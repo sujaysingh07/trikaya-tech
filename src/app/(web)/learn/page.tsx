@@ -19,11 +19,31 @@ import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
 import { generateCanonical } from "@/src/lib/utils";
 
 export const metadata = generatePageMetadata({
-  title:
-    "Trikaya Learn | AI, Blockchain, Data Science & Cybersecurity Courses",
+  title: "Trikaya Learn | AI, Blockchain, Data Science & Cybersecurity Courses",
   description:
     "Trikaya Learn offers expert-led AI, Blockchain, Data Science, and Cybersecurity courses with verified skills, practical training, and mentorship to boost your career.",
-  keywords: ['Trikaya Learn', 'Trikaya', 'Trikaya Platform', 'Trikaya tech', 'Trikaya Io', 'Trikaya AI', 'Learn AI', 'Blockchain Courses', 'Data Science Certification', ' Cybersecurity Training', 'Solidity Course', 'Deep Learning Fundamentals', 'Ethical Hacking Essentials', 'Python for Generative AI', 'Verified Certificates', 'Tech Mentorship', 'Smart Contract Development', ' Hands- on Tech Labs', 'Coding Bootcamps', 'Trikaya Learning Path'],
+  keywords: [
+    "Trikaya Learn",
+    "Trikaya",
+    "Trikaya Platform",
+    "Trikaya tech",
+    "Trikaya Io",
+    "Trikaya AI",
+    "Learn AI",
+    "Blockchain Courses",
+    "Data Science Certification",
+    " Cybersecurity Training",
+    "Solidity Course",
+    "Deep Learning Fundamentals",
+    "Ethical Hacking Essentials",
+    "Python for Generative AI",
+    "Verified Certificates",
+    "Tech Mentorship",
+    "Smart Contract Development",
+    " Hands- on Tech Labs",
+    "Coding Bootcamps",
+    "Trikaya Learning Path",
+  ],
   canonical: generateCanonical("/learn"),
 });
 export default function Learn() {
@@ -95,6 +115,7 @@ export default function Learn() {
         }}
       />
       <CardGridSection
+        id="learn-with-trikaya"
         heading={"Why Learn with "}
         highlight="Trikaya?"
         showH1tag={true}
@@ -141,7 +162,7 @@ export default function Learn() {
           />
         </div>
 
-        <section className="pt-11">
+        <section className="pt-11" id="learn-from-mentors">
           <SectionHeader
             title="Learn from Mentors. "
             highlight="Grow with Community."

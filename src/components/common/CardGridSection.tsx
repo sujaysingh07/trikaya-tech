@@ -28,6 +28,7 @@ interface CardItem {
 }
 
 interface CardGridSectionProps {
+  id:string
   heading: string;
   highlight?: string;
   cards: CardItem[];
@@ -49,6 +50,7 @@ interface CardGridSectionProps {
 }
 
 export default function CardGridSection({
+  id,
   heading,
   highlight,
   cards,
@@ -64,12 +66,13 @@ export default function CardGridSection({
   const HeadingTag = showH1tag ? "h1" : "h2";
   return (
     <section>
-      <Container className={containerClassName}>
+      <Container className={containerClassName} >
         {/* Heading */}
         <div
           className={`flex flex-col ${
             headingAlign === "center" ? "justify-center text-center" : "gap-3"
           }`}
+          id={id}
         >
           <HeadingTag className="font-bold text-2xl md:text-4xl text-[#03061E]">
             {heading}{" "}

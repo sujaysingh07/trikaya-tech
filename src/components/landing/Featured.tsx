@@ -173,8 +173,8 @@ function OfferCard({
                 <div className="flex gap-1">
 
                   <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.3419 20.125C13.3583 16.675 16.3747 13.5857 16.3747 9.775C16.3747 5.96424 13.6737 2.875 10.3419 2.875C7.01006 2.875 4.30908 5.96424 4.30908 9.775C4.30908 13.5857 7.32548 16.675 10.3419 20.125Z" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      <path d="M10.3419 12.4583C11.7699 12.4583 12.9274 11.1711 12.9274 9.58325C12.9274 7.99544 11.7699 6.70825 10.3419 6.70825C8.91399 6.70825 7.75647 7.99544 7.75647 9.58325C7.75647 11.1711 8.91399 12.4583 10.3419 12.4583Z" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M10.3419 20.125C13.3583 16.675 16.3747 13.5857 16.3747 9.775C16.3747 5.96424 13.6737 2.875 10.3419 2.875C7.01006 2.875 4.30908 5.96424 4.30908 9.775C4.30908 13.5857 7.32548 16.675 10.3419 20.125Z" stroke="#666666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M10.3419 12.4583C11.7699 12.4583 12.9274 11.1711 12.9274 9.58325C12.9274 7.99544 11.7699 6.70825 10.3419 6.70825C8.91399 6.70825 7.75647 7.99544 7.75647 9.58325C7.75647 11.1711 8.91399 12.4583 10.3419 12.4583Z" stroke="#666666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
 
                   <p className="text-sm text-[#4F5162]">{location}</p>
@@ -205,7 +205,7 @@ function OfferCard({
     
               <div className="flex items-center gap-1 text-sm text-[#4F5162]">
                   <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.352 17V12L8.19535 10.5M18.116 12C18.116 16.9706 14.64 21 10.352 21C6.06408 21 2.58801 16.9706 2.58801 12C2.58801 7.02944 6.06408 3 10.352 3C14.64 3 18.116 7.02944 18.116 12Z" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M10.352 17V12L8.19535 10.5M18.116 12C18.116 16.9706 14.64 21 10.352 21C6.06408 21 2.58801 16.9706 2.58801 12C2.58801 7.02944 6.06408 3 10.352 3C14.64 3 18.116 7.02944 18.116 12Z" stroke="#666666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
 
                         <span> Apply by:</span>

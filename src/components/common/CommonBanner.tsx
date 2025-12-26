@@ -38,7 +38,7 @@ const Banner: React.FC<BannerProps> = ({
   isSearchBar = false,
 }) => {
   return (
-    <section className="relative w-full overflow-hidden min-h-[580px] bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2]">
+    <section className="relative w-full overflow-hidden md:min-h-[580px] bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2]">
       {/* Background Image — only on right side */}
       <motion.div
         key={highlight}
@@ -63,7 +63,7 @@ const Banner: React.FC<BannerProps> = ({
       <Container>
         <div
           className={cn(
-            "relative z-10 flex flex-col-reverse items-center justify-between gap-12 min-h-[580px] py-20 md:flex-row md:gap-20",
+            "relative z-10 flex flex-col-reverse items-center justify-between gap-12 md:min-h-[580px] py-20 md:flex-row md:gap-20",
             reverse && "md:flex-row-reverse",
           )}
         >

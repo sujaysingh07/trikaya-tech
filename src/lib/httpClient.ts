@@ -14,8 +14,10 @@ function getFullURL(url: string) {
     if (!BASE_URL) {
       throw new Error("Missing BASE_URL for server requests");
     }
+
     return `${BASE_URL}${url}`;
   }
+  console.log(url)
 
   return url;
 }

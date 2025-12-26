@@ -56,6 +56,7 @@ export default async function JobsInternship() {
   const jobsData = await httpRequest<APIResponse<[]>>(
     "/api/v1/jobs",
   );
+
   // const jobData: JobCardProps[] = [
   //   {
   //     title: "AI Engineer Intern",

@@ -18,9 +18,9 @@ import { generateCanonical } from "@/src/lib/utils";
 
 export const metadata = generatePageMetadata({
   title:
-    "Trikaya Practice | Hands-On AI, Blockchain, Data Science & Cybersecurity Exercises",
+    "Trikaya Practice | Hands-On AI & Tech Labs",
   description:
-    "Trikaya Practice offers real-world AI, Blockchain, Data Science, and Cybersecurity exercises to validate your skills, build confidence, and prepare for future careers.",
+    "Move beyond theory. Validate your expertise with real-world exercises in AI and Blockchain to build a portfolio of industry-verified skills.",
   keywords: ['Trikaya Practice', 'Trikaya', 'Trikaya Platform', ' Trikaya tech', 'Trikaya Io', 'Trikaya AI', 'Hands - On Labs, Coding Practice', 'Skill Verification', ' Blockchain Labs', 'AI Labs', ' Solidity Smart Contract', 'DeFi Protocol', 'Machine Learning Projects', 'Neural Network Practice', 'MLOps', 'Data Science Assignments', 'Cybersecurity Challenges', 'Verified Skills Portfolio', 'Tech Leaderboard', 'Real - World Projects'],
   canonical: generateCanonical("/practice"),
 });

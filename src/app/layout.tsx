@@ -12,13 +12,12 @@ const inter = Inter({
 });
 
 const isProduction = process.env.TRIKAYA_NODE_ENV === "production";
-console.log(isProduction, "node environment")
 
 export const metadata = generatePageMetadata({
   title:
-    "Trikaya | AI, Blockchain, Data Science & Cybersecurity Hiring & Learning Platform",
+    "Trikaya | Future-Ready AI, Blockchain & Tech Career Platform",
   description:
-    "Trikaya is a next-gen platform for AI, Blockchain, Data Science, and Cybersecurity careers with verified skills, fair hiring, and expert mentorship.",
+    "Bridge the gap between verified skills and global hiring. Master AI, Blockchain, and Cybersecurity with expert mentorship and fair hiring at Trikaya.",
   keywords: [
     "Trikaya",
     "Trikaya Platform",

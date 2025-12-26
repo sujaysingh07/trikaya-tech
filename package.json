@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
- "postbuild": "node ./generate-sitemap.js",
+"postbuild": "next-sitemap",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {

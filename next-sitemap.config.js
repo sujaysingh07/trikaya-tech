@@ -4,13 +4,13 @@ const isProduction = process.env.TRIKAYA_NODE_ENV === "production";
 
 module.exports = {
   siteUrl: "https://www.trikaya.io",
+
   generateRobotsTxt: true,
 
-  // 🚫 Disable sitemap generation on dev/preview
+  // ✅ Generate sitemap ONLY in prod
   generateIndexSitemap: isProduction,
-  sitemapSize: isProduction ? 5000 : 0,
+  sitemapSize: 5000, // ❗ never 0
 
-  // ✅ ROBOTS RULES
   robotsTxtOptions: {
     policies: isProduction
       ? [
@@ -27,9 +27,10 @@ module.exports = {
       ],
   },
 
-  // ❌ No sitemap reference on non-prod
-  transform: async (config, path) => {
+  // ❌ Skip sitemap URLs in non-prod
+  transform: async (_, path) => {
     if (!isProduction) return null;
+
     return {
       loc: path,
       changefreq: "weekly",

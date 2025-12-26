@@ -17,7 +17,7 @@ function getFullURL(url: string) {
 
     return `${BASE_URL}${url}`;
   }
-  console.log(url)
+  console.log(url,'base url from server ')
 
   return url;
 }

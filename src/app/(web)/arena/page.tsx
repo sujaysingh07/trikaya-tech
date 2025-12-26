@@ -30,6 +30,7 @@ export const metadata = generatePageMetadata({
 });
 
 export default async function Arena() {
+  
   const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(
     "/api/v1/hackathon", {
     revalidate: true,

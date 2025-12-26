@@ -3,6 +3,7 @@ import { HackathonCard } from "../cards/HackathonCard";
 import Container from "../ui/Container";
 import HackathonBanner from "./GenericBanner";
 import SectionHeader from "./SectionHeader";
+import NotFound from "./NotFound";
 
 // const hackathonList = [
 //   {
@@ -49,20 +50,13 @@ export default function HackathonSection({ hackathonData  }: { hackathonData: Ha
         description="Join large-scale hackathons designed around Blockchain, AI, Data Science, and Cybersecurity. Build innovative solutions, pitch to employers, and gain real exposure."
       />
 
+     { hackathonData.length ?
       <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-         {/* {jobsData?.data && jobsData.data.length > 0 ? (
-                    <div className="my-11 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                      {jobsData.data.map((job, i) => (
-                        <JobCard key={i} job={job} />
-                      ))}
-                    </div>
-                  ) : (
-                    <NotFound name="Jobs" />
-                  )} */}
         {hackathonData.map((hack, index) => (
           <HackathonCard key={index} hackathon={hack} />
         ))}
-      </div>
+      </div>:
+      <NotFound name="Hackathons"/>}
 
       <div className="pt-11">
         <HackathonBanner

@@ -7,6 +7,15 @@ import Link from "next/link";
 
 
 export function HackathonCard( {hackathon} : HackathonCardProps) {
+  const endDate = new Date(hackathon.hackathon_end_date).getTime();
+
+  // current time in IST as timestamp
+  const nowIST = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
+  ).getTime();
+
+  const isCompleted = nowIST > endDate;
+
   return (
     <div className="flex flex-col justify-between rounded-[30px] border border-gray-200 bg-white p-6 transition-all duration-300">
       {/* Category Tag */}
@@ -121,14 +130,22 @@ export function HackathonCard( {hackathon} : HackathonCardProps) {
       </ul>
 
       {/* Button */}
+ 
+ 
       <div className="flex">
-        <Link
-          href={hackathon.registration_url || '#'}
-          target="_blank"
-          className="mt-auto inline-block rounded-lg bg-[#1F62E6] px-[30px] py-2.5 text-center font-semibold text-white transition hover:bg-[#1556c8]"
-        >
-          Register Now
-        </Link>
+        {isCompleted ? (
+          <span className="mt-auto inline-block rounded-lg bg-gray-200 px-[30px] py-2.5 text-center font-semibold text-gray-600">
+            Completed
+          </span>
+        ) : (
+          <Link
+            href={hackathon.registration_url || "#"}
+            target="_blank"
+            className="mt-auto inline-block rounded-lg bg-[#1F62E6] px-[30px] py-2.5 text-center font-semibold text-white transition hover:bg-[#1556c8]"
+          >
+            Register Now
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -3,7 +3,8 @@ import Link from "next/link";
 import Container from "../ui/Container";
 import SectionHeader from "./SectionHeader";
 import QuestCard from "../cards/QuestCard";
-import {  QuestDataType } from "@/src/lib/types/commonTypes";
+import { QuestDataType } from "@/src/lib/types/commonTypes";
+import NotFound from "./NotFound";
 
 
 
@@ -57,11 +58,15 @@ export default function SkillQuests({ questData }: { questData: QuestDataType[] 
       />
 
       {/* Quest Cards */}
-      <div className="mt-10 grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
-        {questData.map((quest, index) => (
-          <QuestCard key={index} quest={quest}  />
-        ))}
-      </div>
+      {questData.length ?
+        <>
+          <div className="mt-10 grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
+            {questData.map((quest, index) => (
+              <QuestCard key={index} quest={quest} />
+            ))}
+          </div>
+        </> : <NotFound name="Quests" />
+      }
 
       {/* Bottom Banner */}
       <div className="border-primary-color mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border p-6 md:flex-row">

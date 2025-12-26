@@ -15,7 +15,7 @@ export default function NotFound({ name }: NotFoundProps) {
 
       <p className="text-black text-sm max-w-[350px]">
         We looked everywhere but couldn’t find any {name.toLowerCase()}.  
-        Please check back later or try refreshing the page.
+        Please check back later.
       </p>
     </div>
   );

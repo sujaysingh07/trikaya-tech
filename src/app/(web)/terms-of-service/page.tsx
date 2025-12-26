@@ -1,6 +1,13 @@
 import Container from "@/src/components/ui/Container";
-import React from "react";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
 
+export const metadata = generatePageMetadata({
+  title:
+        "Terms of Service | Trikaya Platform Rules",
+  description: 'Read the terms and conditions for using Trikaya. Understand your rights and responsibilities as a member of our hiring and learning ecosystem.',
+  canonical: generateCanonical("/terms-of-service"),
+});
 const TermsOfService = () => {
   return (
     <Container className="w-full bg-white py-16 text-gray-800">

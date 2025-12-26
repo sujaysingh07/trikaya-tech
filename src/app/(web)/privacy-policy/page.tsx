@@ -1,6 +1,14 @@
 import Container from "@/src/components/ui/Container";
-import React from "react";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
 
+
+export const metadata = generatePageMetadata({
+  title:
+        "Privacy Policy | Trikaya Data Protection",
+  description: 'Learn how Trikaya collects, uses, and protects your personal data. We are committed to transparency and security for all our users.',
+  canonical: generateCanonical("/privacy-policy"),
+});
 const PrivacyPolicy = () => {
   return (
     <Container className="w-full bg-white py-16 text-gray-800">

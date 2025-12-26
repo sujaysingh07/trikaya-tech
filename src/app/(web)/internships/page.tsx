@@ -20,6 +20,14 @@ import { APIResponse } from "@/src/lib/types/commonTypes";
 import { httpRequest } from "@/src/lib/httpClient";
 import NotFound from "@/src/components/common/NotFound";
 import { formatCompactSalary } from "@/src/lib/common";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Internships | Start Your Career in AI & Web3",
+  description: 'Launch your tech journey with hands - on internships.Work on real- world AI and Blockchain projects to gain verified experience and industry mentorship.',
+  canonical: generateCanonical("/internship"),
+});
 export interface JobCardProps {
   title: string;
   company: string;

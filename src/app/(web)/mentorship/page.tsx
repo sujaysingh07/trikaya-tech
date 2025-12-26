@@ -13,6 +13,15 @@ import FeatureSplitCardTwo from "@/src/components/common/ScaleGridTwo";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import LearnerCard from "@/src/components/cards/LearnerCard";
 import CallToAction from "@/src/components/common/CallToAction";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Mentorship | 1-on-1 Tech Career Guidance",
+  description: 'Get personalized career coaching from industry leaders.Master AI and Cybersecurity with custom roadmaps and expert technical insights.',
+  canonical: generateCanonical("/mentorship"),
+});
 export interface LearnerTestimonial {
   id: number;
   name: string;

@@ -1,6 +1,8 @@
 import Banner from "@/src/components/common/CommonBanner";
 import CallToAction from "@/src/components/common/CallToAction";
 import BlogSection from "@/src/components/common/Blog-section";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
 export interface LearnerTestimonial {
   id: number;
   name: string;
@@ -9,6 +11,13 @@ export interface LearnerTestimonial {
   mentor: string;
   image: string;
 }
+
+export const metadata = generatePageMetadata({
+  title:
+    " Trikaya Blog | Insights on AI, Tech & Future Trends",
+  description: ' Stay ahead with the latest in technology.Explore expert articles, career tips, and emerging trends in AI, Blockchain, and Data Science.',
+  canonical: generateCanonical("/blog"),
+});
 
 export default function Blog() {
   return (

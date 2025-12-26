@@ -7,7 +7,14 @@ import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import Container from "@/src/components/ui/Container";
 import FeatureSplitCardThree from "@/src/components/common/ScaleGridThree";
 import SubscribeCard from "@/src/components/common/Subscribe-container";
-
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Learning | Verified AI, Blockchain & Tech Toolkits",
+  description: 'Access Trikaya- certified guides, templates, and toolkits for AI, Blockchain, and Cybersecurity.Download verified materials to master emerging tech today.',
+  canonical: generateCanonical("/learning"),
+});
 export default function Learning() {
   const resourcesCards = [
     {

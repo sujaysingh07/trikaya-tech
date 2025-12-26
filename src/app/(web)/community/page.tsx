@@ -20,6 +20,15 @@ import { APIResponse, EventsDataType } from "@/src/lib/types/commonTypes";
 import { formatEventWithDate, getFormattedCurrentDateTime, mapCategoryToMode } from "@/src/lib/common";
 import SkillCard from "@/src/components/cards/SkillCard";
 import NotFound from "@/src/components/common/NotFound";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Community | Connect with AI & Tech Pros",
+  description: 'Join a global network of tech enthusiasts.Collaborate on projects, share insights, and grow your career within the Trikaya ecosystem.',
+  canonical: generateCanonical("/community"),
+});
 export default async function Community() {
   const startDate = getFormattedCurrentDateTime();
   const EventsData = await httpRequest<APIResponse<[]>>(

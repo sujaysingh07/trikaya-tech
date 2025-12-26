@@ -5,6 +5,15 @@ import CallToAction from "@/src/components/common/CallToAction";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import GenericProfileCard from "@/src/components/cards/GenericProfileCard";
 import Container from "@/src/components/ui/Container";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+
+export const metadata = generatePageMetadata({
+  title:
+    " Trikaya Ambassador Program | Lead the Future of Tech",
+  description: 'Join the Trikaya Ambassador Program! Represent a leader in AI & Blockchain, earn exclusive rewards, and lead your local tech community. Apply today.',
+  canonical: generateCanonical("/ambassador"),
+});
 export default function ambassador() {
   const ambassadorCards = [
     {

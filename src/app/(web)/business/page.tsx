@@ -7,6 +7,16 @@ import WirelessNetwork from "@/public/icons/Collaborative.svg";
 import GenericButton from "@/src/components/common/GenericButton";
 import CallToAction from "@/src/components/common/CallToAction";
 import CtaBanner from "@/src/components/common/Cta-Banner";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+
+
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Business | AI - Powered Tech Hiring Solutions",
+  description: 'Empower your team with verified talent. Access pre-screened experts in AI and Cybersecurity using our blockchain-backed skill verification tools.',
+  canonical: generateCanonical("/business"),
+});
 export default function Business() {
   const mentorCards = [
     {

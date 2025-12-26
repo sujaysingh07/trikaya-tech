@@ -19,6 +19,15 @@ import CallToAction from "@/src/components/common/CallToAction";
 import { APIResponse } from "@/src/lib/types/commonTypes";
 import { httpRequest } from "@/src/lib/httpClient";
 import NotFound from "@/src/components/common/NotFound";
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+
+export const metadata = generatePageMetadata({
+  title:
+    "Trikaya Jobs | Find Your Next Career in AI & Blockchain",
+  description: 'Explore verified job opportunities in emerging tech.Trikaya Jobs connects skilled professionals with top companies through fair, skills- first hiring.',
+  canonical: generateCanonical("/jobs"),
+});
 export default async function JobsInternship() {
   const mentorCards = [
     {

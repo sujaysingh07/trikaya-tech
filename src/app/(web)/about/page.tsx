@@ -5,7 +5,14 @@ import FeatureSplitCardTwo from "@/src/components/common/ScaleGridTwo";
 import Container from "@/src/components/ui/Container";
 import CardGridSection from "@/src/components/common/CardGridSection";
 import GenericButton from "@/src/components/common/GenericButton";
-
+import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
+import { generateCanonical } from "@/src/lib/utils";
+export const metadata = generatePageMetadata({
+  title:
+    "  About Trikaya | Our Mission for Fair Tech Hiring",
+  description: 'Learn about our mission to create a fair, skills- based ecosystem for the next generation of AI, Blockchain, and Cybersecurity professionals.',
+  canonical: generateCanonical("/about"),
+});
 export default function About() {
   const coreValuesCards = [
     {

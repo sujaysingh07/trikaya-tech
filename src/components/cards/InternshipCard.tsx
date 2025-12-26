@@ -75,13 +75,13 @@ export default function InternshipCard({
           Apply Now
         </Link>
 
-        <Link
+        {/* <Link
         href="#"
           target="_blank"
           className="border-primary-color text-primary-color w-full rounded-md border px-6 py-2.5 text-center text-sm font-semibold transition hover:bg-blue-50"
         >
           Details
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

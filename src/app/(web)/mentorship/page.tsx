@@ -105,6 +105,7 @@ export default function Mentorship() {
       <CardGridSection
         heading={"Why Mentorship"}
         highlight="Matters?"
+        showH1tag={true}
         containerClassName="my-11"
         description="Accelerate your growth with personalized learning experiences from experts who've been where you are."
         cards={mentorCards}

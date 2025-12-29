@@ -183,6 +183,7 @@ export default async function JobsInternship() {
         }}
       />
       <CardGridSection
+        showH1tag={true}
         heading={"Why Choose Trikaya for Your "}
         highlight="Career?"
         containerClassName="my-11"

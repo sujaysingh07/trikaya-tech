@@ -223,6 +223,7 @@ export default async function Community() {
       <CardGridSection
         heading={"Why Join the Trikaya "}
         highlight="Community?"
+        showH1tag={true}
         containerClassName="my-11"
         description="Exclusive job opportunities and internships"
         cards={mentorCards}

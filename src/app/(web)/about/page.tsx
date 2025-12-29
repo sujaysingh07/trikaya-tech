@@ -70,10 +70,10 @@ export default function About() {
         </div>
       </Container>
       <CardGridSection
-        heading={"Why Mentorship"}
-        highlight="Matters?"
+        heading={""}
+        highlight=""
         containerClassName="my-11 pt-11"
-        description="Accelerate your growth with personalized learning experiences from experts who've been where you are."
+        description=""
         cards={coreValuesCards}
         headingAlign={"left"}
       />

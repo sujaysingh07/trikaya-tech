@@ -61,7 +61,7 @@ export default async function JobsInternship() {
       "/api/v1/internships",
     );
 
-  
+
   const mentorCards = [
     {
       icon: rewards,
@@ -89,7 +89,7 @@ export default async function JobsInternship() {
     },
   ];
 
-  
+
 
   // const internshipData: JobCardProps[] = [
   //   {
@@ -216,6 +216,7 @@ export default async function JobsInternship() {
         }}
       />
       <CardGridSection
+      showH1tag={true}
         heading={"Why Choose Trikaya for "}
         highlight="Internships?"
         containerClassName="my-11"
@@ -246,7 +247,7 @@ export default async function JobsInternship() {
                   employmentType={internship.work_type}
                   registerUrl={internship.registration_url}
                   // currency={internship.stipend_currency}
-                  
+
                 />
               ))}
             </div>

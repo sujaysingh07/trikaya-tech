@@ -15,6 +15,7 @@ export const ContactUs = () => {
         <>
             <Banner
                 title={"Contact"}
+                showh1Tag={true}
                 highlight={"Trikaya"}
                 description="Get in touch with us for any questions, support, services or partnership inquiries."
                 image="/contact-bg.png"
@@ -22,7 +23,7 @@ export const ContactUs = () => {
             />
             <BusinessMapEmbed />
 
-         
+
         </>
     );
 };

@@ -23,6 +23,7 @@ interface BannerProps {
   titleColor?: string;
   highlightColor?: string;
   isSearchBar?: boolean;
+  showh1Tag?:boolean
 }
 
 const Banner: React.FC<BannerProps> = ({
@@ -36,7 +37,10 @@ const Banner: React.FC<BannerProps> = ({
   titleColor = "#000000",
   highlightColor = "#0A58F5",
   isSearchBar = false,
+  showh1Tag=false
 }) => {
+  const HeadingTag = showh1Tag ? "h1" : "h2";
+
   return (
     <section className="relative w-full overflow-hidden md:min-h-[580px] bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2]">
       {/* Background Image — only on right side */}
@@ -76,7 +80,7 @@ const Banner: React.FC<BannerProps> = ({
               exit={{ opacity: 0, y: -40 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
             >
-              <h2
+              <HeadingTag
                 className="text-3xl leading-[1.2] font-bold sm:text-4xl lg:text-[66px]"
                 style={{ color: titleColor }}
               >
@@ -84,7 +88,7 @@ const Banner: React.FC<BannerProps> = ({
                 {highlight && (
                   <span style={{ color: highlightColor }}>{highlight}</span>
                 )}
-              </h2>
+              </HeadingTag>
               <p className="mt-5 text-base leading-relaxed text-gray-600 sm:text-lg lg:text-xl">
                 {description}
               </p>

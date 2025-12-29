@@ -44,6 +44,7 @@ export default function About() {
     <>
       <Banner
         title={"About"}
+        showh1Tag={true}
         highlight={"Trikaya"}
         description="We're on a mission to transform tech education and make cutting-edge skills accessible to everyone."
         image="/about.png"

@@ -25,6 +25,7 @@ export default function Blog() {
       <Banner
         title={"Explore Ideas, Insights & "}
         highlight={"Innovation"}
+        showh1Tag={true}
         description="Stay ahead of the curve with Trikaya — your source for emerging tech stories, tutorials, and verified learning insights from industry experts."
         image="/BlogBanner.png"
         primaryButton={{

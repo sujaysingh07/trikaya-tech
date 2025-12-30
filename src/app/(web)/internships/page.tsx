@@ -58,7 +58,7 @@ export interface InternshipAPIType {
 
 export default async function JobsInternship() {
     const response = await httpRequest<APIResponse<[]>>(
-      "/api/v1/internships",
+      "/api/v1/internships", { fresh: true }
     );
 
 

@@ -32,18 +32,19 @@ export const metadata = generatePageMetadata({
 export default async function Arena() {
 
   const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(
-    "/api/v1/hackathon",
+    "/api/v1/hackathon",{fresh:true}
   );
+
 
   const questData = await httpRequest<APIResponse<QuestDataType[]>>("/api/v1/quests",);
 
   const weeklyChallengesData = await httpRequest<
     APIResponse<WeeklyChallengeAPIItem[]>
-  >("/api/v1/challenges",);
+    >("/api/v1/challenges", { fresh: true });
 
   const response = await httpRequest<
     APIResponse<{ name: string; karma_points: number }[]>
-  >("/api/v1/leaderboard",);
+    >("/api/v1/leaderboard", { fresh: true });
 
 
   const leaderboardData: LeaderBoardType[] = response?.data?.slice(0, 10).map((item, index) => ({

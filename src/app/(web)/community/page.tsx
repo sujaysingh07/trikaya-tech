@@ -32,7 +32,7 @@ export const metadata = generatePageMetadata({
 export default async function Community() {
   const startDate = getFormattedCurrentDateTime();
   const EventsData = await httpRequest<APIResponse<[]>>(
-    `/api/v1/events?startDate=${startDate}`
+    `/api/v1/events?startDate=${startDate}`,{ fresh: true }
   );
 
 

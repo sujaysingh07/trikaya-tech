@@ -67,16 +67,22 @@ export default function JobDetailsContainer() {
                     {/* Header */}
 
 
-                    {/* Image */}
-                    <div className="overflow-hidden rounded-[30px]">
-                        <Image
-                            src="/job-banner.png"
-                            alt="Job Banner"
-                            width={900}
-                            height={400}
-                            className="h-[380px] w-full object-cover"
-                        />
-                    </div>
+                        <div className="overflow-hidden rounded-[30px]">
+                            <Image
+                                src="/job-banner.png"
+                                alt="Job Banner"
+                                width={900}
+                                height={400}
+                                priority
+                                className="
+      w-full object-cover
+      h-[200px]
+      sm:h-[280px]
+      md:h-[340px]
+      lg:h-[380px]
+    "
+                            />
+                        </div>
 
                     {/* Job Description */}
                     <div>

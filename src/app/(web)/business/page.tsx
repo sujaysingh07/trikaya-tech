@@ -157,6 +157,7 @@ export default function Business() {
         }}
       />
       <CardGridSection
+        showH1tag={true}
         heading={"Why Partner with "}
         highlight="Trikaya?"
         containerClassName="my-11"

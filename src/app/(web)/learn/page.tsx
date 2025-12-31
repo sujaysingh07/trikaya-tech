@@ -19,9 +19,9 @@ import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
 import { generateCanonical } from "@/src/lib/utils";
 
 export const metadata = generatePageMetadata({
-  title: "Trikaya Learn | AI, Blockchain, Data Science & Cybersecurity Courses",
+  title: "Trikaya Learn | Expert AI & Blockchain Courses",
   description:
-    "Trikaya Learn offers expert-led AI, Blockchain, Data Science, and Cybersecurity courses with verified skills, practical training, and mentorship to boost your career.",
+    "Upskill with industry-recognized courses. Gain verified certifications in AI, Data Science, and Cybersecurity through practical, expert-led training.",
   keywords: [
     "Trikaya Learn",
     "Trikaya",

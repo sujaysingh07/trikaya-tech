@@ -228,6 +228,7 @@ export default function ambassador() {
       <CardGridSection
         heading={"What Is the Trikaya Student Ambassador "}
         highlight="Program?"
+        showH1tag={true}
         gridClassName="grid grid-cols-1 sm:grid-cols-3 gap-6 py-11"
         containerClassName="my-11"
         description="The Trikaya Student Ambassador Program (TSAP) is a leadership and learning initiative that empowers students to represent Trikaya at their institutions. Ambassadors build vibrant tech communities, promote innovation, and serve as liaisons between Trikaya and their campuses."

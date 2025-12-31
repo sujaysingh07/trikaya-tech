@@ -54,8 +54,9 @@ export default async function JobsInternship() {
     },
   ];
   const jobsData = await httpRequest<APIResponse<[]>>(
-    "/api/v1/jobs",
+    "/api/v1/jobs", { fresh: true }
   );
+
   // const jobData: JobCardProps[] = [
   //   {
   //     title: "AI Engineer Intern",
@@ -182,6 +183,7 @@ export default async function JobsInternship() {
         }}
       />
       <CardGridSection
+        showH1tag={true}
         heading={"Why Choose Trikaya for Your "}
         highlight="Career?"
         containerClassName="my-11"

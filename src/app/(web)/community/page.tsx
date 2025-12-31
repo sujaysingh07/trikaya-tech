@@ -32,7 +32,7 @@ export const metadata = generatePageMetadata({
 export default async function Community() {
   const startDate = getFormattedCurrentDateTime();
   const EventsData = await httpRequest<APIResponse<[]>>(
-    `/api/v1/events?startDate=${startDate}`
+    `/api/v1/events?startDate=${startDate}`,{ fresh: true }
   );
 
 
@@ -223,6 +223,7 @@ export default async function Community() {
       <CardGridSection
         heading={"Why Join the Trikaya "}
         highlight="Community?"
+        showH1tag={true}
         containerClassName="my-11"
         description="Exclusive job opportunities and internships"
         cards={mentorCards}

@@ -44,6 +44,7 @@ export default function About() {
     <>
       <Banner
         title={"About"}
+        showh1Tag={true}
         highlight={"Trikaya"}
         description="We're on a mission to transform tech education and make cutting-edge skills accessible to everyone."
         image="/about.png"
@@ -70,10 +71,10 @@ export default function About() {
         </div>
       </Container>
       <CardGridSection
-        heading={"Why Mentorship"}
-        highlight="Matters?"
+        heading={""}
+        highlight=""
         containerClassName="my-11 pt-11"
-        description="Accelerate your growth with personalized learning experiences from experts who've been where you are."
+        description=""
         cards={coreValuesCards}
         headingAlign={"left"}
       />

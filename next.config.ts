@@ -14,6 +14,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/contact",
+        destination: "/contact-us",
+        permanent: true, // 308 redirect (SEO friendly)
+      },
+      {
+        source: "/about-us",
+        destination: "/about",
+        permanent: true, // 308 redirect (SEO friendly)
+      },
+    ];
+  },
 };
 
 export default nextConfig;

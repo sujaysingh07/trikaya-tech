@@ -180,6 +180,7 @@ export default function Learning() {
     <>
       <Banner
         title={"Access Verified"}
+        showh1Tag={true}
         highlight={"Learning Materials"}
         description="Explore a growing library of Trikaya-certified guides, templates, and toolkits to help you master emerging technologies — Blockchain, AI, Data Science, and Cybersecurity."
         image="/Learning.png"

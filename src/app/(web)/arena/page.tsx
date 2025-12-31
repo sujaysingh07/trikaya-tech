@@ -22,9 +22,9 @@ import { generatePageMetadata } from "@/src/lib/generatePageMetadata";
 import { generateCanonical } from "@/src/lib/utils";
 export const metadata = generatePageMetadata({
   title:
-    "Trikaya Arena | AI, Blockchain, Data Science & Cybersecurity Skill Challenges",
+    "Trikaya Arena | Compete in Tech Hackathons & Challenges",
   description:
-    "Trikaya Arena lets you compete in real-world AI, Blockchain, Data Science, and Cybersecurity challenges to validate your skills and earn industry recognition.",
+    "Join Trikaya Arena to challenge your skills in hackathons and quests. Win rewards, earn recognition, and unlock career opportunities with blockchain verification.",
   keywords: ['Trikaya Arena', 'Trikaya', ' Trikaya Platform', 'Trikaya tech', 'Trikaya Io', 'Trikaya AI', 'Tech Hackathons', 'Coding Competitions', ' Blockchain Challenges', 'AI Challenges', 'Data Science Quests', 'Cybersecurity CTF', 'Code Quests', ' Hackathon'],
   canonical: generateCanonical("/arena"),
 });
@@ -32,18 +32,19 @@ export const metadata = generatePageMetadata({
 export default async function Arena() {
 
   const hackathonData = await httpRequest<APIResponse<HackathonDataType[]>>(
-    "/api/v1/hackathon",
+    "/api/v1/hackathon",{fresh:true}
   );
+
 
   const questData = await httpRequest<APIResponse<QuestDataType[]>>("/api/v1/quests",);
 
   const weeklyChallengesData = await httpRequest<
     APIResponse<WeeklyChallengeAPIItem[]>
-  >("/api/v1/challenges",);
+    >("/api/v1/challenges", { fresh: true });
 
   const response = await httpRequest<
     APIResponse<{ name: string; karma_points: number }[]>
-  >("/api/v1/leaderboard",);
+    >("/api/v1/leaderboard", { fresh: true });
 
 
   const leaderboardData: LeaderBoardType[] = response?.data?.slice(0, 10).map((item, index) => ({

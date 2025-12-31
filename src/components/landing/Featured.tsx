@@ -17,8 +17,9 @@ import customer from "@/public/logo/customerXps.png";
 import { formatToIST } from "@/src/lib/formatToIST";
 import Container from "../ui/Container";
 import SectionHeader from "../common/SectionHeader";
+import { cn } from "@/src/lib/utils";
 
-export default function FeaturedJob({title}:{title?:string}) {
+export default function FeaturedJob({ title, classname }:{title?:string,classname:string}) {
   const jobs = [
         {
             logo: AmazonLogo,
@@ -74,8 +75,8 @@ export default function FeaturedJob({title}:{title?:string}) {
   }, [api]);
 
   return (
-    <section className="mb-11" id="jobs">
-      <Container>
+    <section className={cn(`mb-11 , ${classname}`)} id="jobs">
+      <Container className="">
         {title ? <SectionHeader
           title={title}
           highlight=""

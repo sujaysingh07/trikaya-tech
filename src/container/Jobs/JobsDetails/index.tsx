@@ -5,35 +5,60 @@ import Image from "next/image";
 import { Icons } from "@/public/icons/icon";
 import FeaturedJob from "@/src/components/landing/Featured";
 export default function JobDetailsContainer() {
-    return <Container>
+    return <>
+    <Container>
         <div className="my-10">
             <AppBreadcrumb />
-            <div className="flex items-start justify-between">
-                <div>
+            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                {/* LEFT CONTENT */}
+                <div className="pt-2">
                     <h1 className="text-2xl font-bold">Backend Developer</h1>
-                    <div className="mt-2 flex flex-wrap gap-5 text-sm text-[#4F5162] items-center">
-                        <div className="flex gap-4 items-center "><Icons variant="LocationPin" color="#4F5162" /> Remote</div>
 
-                        <div className="flex gap-4 items-center"><Icons variant="Bag" /> Full Time</div>
+                    <div className="mt-2 flex flex-wrap gap-5 text-sm text-[#4F5162] items-center">
+                        <div className="flex gap-2 items-center">
+                            <Icons variant="LocationPin" color="#4F5162" />
+                            Remote
+                        </div>
+
+                        <div className="flex gap-2 items-center">
+                            <Icons variant="Bag" />
+                            Full Time
+                        </div>
                     </div>
 
-                    <div className="mt-3 flex gap-3">
-                        <span className="rounded-full bg-[#FFB82E] px-3 py-1 text-base font-bold text-black">
+                    <div className="mt-3 flex flex-wrap gap-3">
+                        <span className="rounded-full bg-[#FFB82E] px-3 py-1 text-sm font-bold text-black">
                             Mid
                         </span>
-                        <span className="rounded-full bg-[#D8BAFF] px-3 py-1 text-bse font-bold text-black">
+                        <span className="rounded-full bg-[#D8BAFF] px-3 py-1 text-sm font-bold text-black">
                             Remote
                         </span>
                     </div>
                 </div>
 
+                {/* APPLY BUTTON */}
                 <Link
                     href="#"
-                    className="w-full min-w-[300px] text-center rounded-md px-6 py-3 text-lg font-semibold transition md:w-auto bg-black text-white hover:bg-gray-800"
+                    className="
+      w-full
+      md:w-auto
+      md:min-w-[260px]
+      text-center
+      rounded-md
+      px-6
+      py-3
+      text-lg
+      font-semibold
+      transition
+      bg-black
+      text-white
+      hover:bg-gray-800
+    "
                 >
                     Apply Now
                 </Link>
             </div>
+
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 mt-11">
 
                 {/* LEFT CONTENT */}
@@ -300,9 +325,10 @@ export default function JobDetailsContainer() {
                 </aside>
             </div>
 
-            <FeaturedJob title="Jobs you might be interested in" />
         </div>
 
 
     </Container>
+            <FeaturedJob title="Jobs you might be interested in" classname="my-11"  />
+    </>
 }

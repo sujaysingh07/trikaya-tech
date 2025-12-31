@@ -19,7 +19,7 @@ import Container from "../ui/Container";
 import SectionHeader from "../common/SectionHeader";
 import { cn } from "@/src/lib/utils";
 
-export default function FeaturedJob({ title, classname }:{title?:string,classname:string}) {
+export default function FeaturedJob({ title, classname }:{title?:string,classname?:string}) {
   const jobs = [
         {
             logo: AmazonLogo,

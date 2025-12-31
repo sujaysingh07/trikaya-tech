@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { Icons } from "@/public/icons/icon";
 import clsx from "clsx";
-import { formatCompactSalary, formatCompactSalaryWithCurrency, formatJobType } from "@/src/lib/common";
+import {  formatCompactSalaryWithCurrency, formatJobType } from "@/src/lib/common";
 
 export interface JobCardProps {
   job: JobItem;
 }
 
 export interface JobItem {
+  job_id:string
   job_title: string;
   company_name: string;
   job_location: string,
@@ -71,7 +72,7 @@ export default function JobCard({
 
       {/* Buttons */}
       <div className="mt-auto flex items-center gap-3">
-     {   job.registration_url && 
+     {   job.registration_url &&
         <Link
           href={job.registration_url || '#'}
           target="_blank"
@@ -80,12 +81,14 @@ export default function JobCard({
           Apply Now
         </Link>}
 
-        {/* <Link
-          href="#"
+        <Link
+          href={`/jobs/${job?.job_id}-${job.job_title
+            .toLowerCase()
+            .replace(/\s+/g, '-')}`}
           className="border-primary-color text-primary-color w-full rounded-md border px-6 py-2.5 text-center text-sm font-semibold transition hover:bg-blue-50"
         >
           Details
-        </Link> */}
+        </Link>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ import { formatToIST } from "@/src/lib/formatToIST";
 import Container from "../ui/Container";
 import SectionHeader from "../common/SectionHeader";
 
-export default function FeaturedJob() {
+export default function FeaturedJob({title}:{title?:string}) {
   const jobs = [
         {
             logo: AmazonLogo,
@@ -76,11 +76,17 @@ export default function FeaturedJob() {
   return (
     <section className="mb-11" id="jobs">
       <Container>
+        {title ? <SectionHeader
+          title={title}
+          highlight=""
+          description=""
+        /> :
         <SectionHeader
-          title={"Featured "}
-          highlight="Jobs"
-          description="Explore opportunities from top companies hiring verified talent."
+        title={"Featured "}
+        highlight="Jobs"
+        description="Explore opportunities from top companies hiring verified talent."
         />
+      }
         <div className="relative mx-auto mt-5">
           <Carousel
             opts={{
@@ -164,7 +170,7 @@ function OfferCard({
               />
           </div>
 
-    
+
                 {/* Job Info */}
                 <div className="mt-3 space-y-1">
               <p className="text-xs text-[#4F5162]">{formatToIST(date)}</p>
@@ -194,7 +200,7 @@ function OfferCard({
 
 
               </div>
-    
+
               <div className="flex items-center gap-1 mt-1 text-sm text-[#4F5162]">
                   <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M16.8056 6H13.5737V4.5C13.5737 3.675 12.992 3 12.281 3H8.40278C7.69177 3 7.11004 3.675 7.11004 4.5V6H3.87819C3.16718 6 2.58545 6.675 2.58545 7.5V19.5C2.58545 20.325 3.16718 21 3.87819 21H16.8056C17.5166 21 18.0983 20.325 18.0983 19.5V7.5C18.0983 6.675 17.5166 6 16.8056 6ZM8.40278 4.5H12.281V6H8.40278V4.5ZM10.9883 7.5V12H9.69552V7.5H10.9883ZM16.8056 19.5H3.87819V17.25H16.8056V19.5ZM16.8056 15.75H3.87819V7.5H8.40278V12C8.40278 12.825 8.98451 13.5 9.69552 13.5H10.9883C11.6993 13.5 12.281 12.825 12.281 12V7.5H16.8056V15.75Z" fill="#666666" />
@@ -202,7 +208,7 @@ function OfferCard({
 
                         <span> {type}</span>
                     </div>
-    
+
               <div className="flex items-center gap-1 text-sm text-[#4F5162]">
                   <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10.352 17V12L8.19535 10.5M18.116 12C18.116 16.9706 14.64 21 10.352 21C6.06408 21 2.58801 16.9706 2.58801 12C2.58801 7.02944 6.06408 3 10.352 3C14.64 3 18.116 7.02944 18.116 12Z" stroke="#666666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -212,7 +218,7 @@ function OfferCard({
                         <span className="font-medium ">{applyBy}</span>
                     </div>
                 </div>
-    
+
                 {/* Tags */}
                 <div className="mt-3 flex flex-wrap gap-2">
                     {tags.map((tag, i) => (
@@ -224,7 +230,7 @@ function OfferCard({
                         </span>
                     ))}
                 </div>
-    
+
 
             </div>
   );

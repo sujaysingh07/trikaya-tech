@@ -4,10 +4,9 @@ export type APIResponse<T> = {
   status: string;
 };
 
-
 export type AssignmentDataType = {
-    Assignment:AssignmentType[];
-}
+  Assignment: AssignmentType[];
+};
 
 export type AssignmentType = {
   id: string;
@@ -26,8 +25,6 @@ export type AssignmentType = {
   buttonLabel?: string;
 };
 
-
-
 export type WeeklyChallengeAPIItem = {
   id: string;
   index: number;
@@ -40,8 +37,6 @@ export type WeeklyChallengeAPIItem = {
   challenge_url: string;
 };
 
-
-
 export type HackathonDataType = {
   title: string;
   short_description: string;
@@ -50,11 +45,11 @@ export type HackathonDataType = {
   organizer_website: string;
   theme: string;
   category: string;
-  hackathon_start_date: string;  
-  hackathon_end_date: string;  
+  hackathon_start_date: string;
+  hackathon_end_date: string;
   total_prize_pool: number;
   registration_url: string;
-}
+};
 
 export interface HackathonCardProps {
   key?: number;
@@ -72,8 +67,8 @@ export type QuestDataType = {
 };
 
 export interface QuestDataProps {
-    quest: QuestDataType;
-};
+  quest: QuestDataType;
+}
 
 export type EventsDataType = {
   id: string;
@@ -84,12 +79,36 @@ export type EventsDataType = {
   cover_photo_url: string;
   registration_deadline: string;
   event_mode: string;
-  category:string;
+  category: string;
   gradientFrom?: string;
   gradientTo?: string;
   reverse?: boolean;
-  end_date_time:string;
-  date_time:string;
-}
+  end_date_time: string;
+  date_time: string;
+};
 
- 
+export interface JobDetailstype {
+  title: string;
+  company_name: string;
+  company_url: string;
+  description: string;
+  requirements: null;
+  responsibilities: null;
+  benefits: null;
+  skills_required: null;
+  skills_preferred: null;
+  location: string;
+  work_type: string;
+  employment_type: string;
+  experience_level: string;
+  min_experience: number;
+  max_experience: number;
+  salary_min: number;
+  salary_max: number;
+  salary_currency: string;
+  department: string;
+  application_start_date: Date;
+  application_deadline: Date;
+  posted_on: Date;
+  registration_url:string;
+}

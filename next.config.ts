@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+
   images: {
     remotePatterns: [
       {
@@ -13,6 +14,7 @@ const nextConfig: NextConfig = {
         hostname: "**", // allows images from any HTTP domain
       },
     ],
+    qualities: [75, 85, 95,100],
   },
   async redirects() {
     return [

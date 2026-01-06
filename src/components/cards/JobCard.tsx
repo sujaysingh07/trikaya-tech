@@ -21,11 +21,13 @@ export interface JobItem {
   salary_min: string
   salary_max: string
   registration_url:string
+  slug:string
 }
 
 export default function JobCard({
   job
 }: JobCardProps) {
+
   return (
     <div className="hover:border-primary-color flex max-w-[410px] flex-col gap-5 rounded-[22px] border border-gray-300 bg-white p-6 transition-all duration-300">
       {/* Badges */}
@@ -82,9 +84,7 @@ export default function JobCard({
         </Link>}
 
         <Link
-          href={`/jobs/${job?.job_id}-${job.job_title
-            .toLowerCase()
-            .replace(/\s+/g, '-')}`}
+          href={`/jobs/${job?.slug}`}
           className="border-primary-color text-primary-color w-full rounded-md border px-6 py-2.5 text-center text-sm font-semibold transition hover:bg-blue-50"
         >
           Details

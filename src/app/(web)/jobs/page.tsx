@@ -54,7 +54,7 @@ export default async function JobsInternship() {
     },
   ];
   const jobsData = await httpRequest<APIResponse<[]>>(
-    "/api/v1/jobs", { fresh: true }
+    "/api/v1/jobs", { fresh: true,cache: "no-store" }
   );
 
   // const jobData: JobCardProps[] = [

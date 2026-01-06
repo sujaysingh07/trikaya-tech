@@ -1,3 +1,4 @@
+import NotFound from "@/src/components/common/NotFound";
 import JobDetailsContainer from "@/src/container/Jobs/JobsDetails";
 import { httpRequest } from "@/src/lib/httpClient";
 import { APIResponse, JobDetailstype } from "@/src/lib/types/commonTypes";
@@ -18,6 +19,9 @@ export default async function JobDetails({ params }: {
     const { slug } = await params;
     const JobDetails = await fetchJobDetailsBySlug(slug);
 
+    if (!JobDetails) {
+        return <NotFound name={slug} />;
+    }
     return <JobDetailsContainer jobDetails={JobDetails} />
 
 }

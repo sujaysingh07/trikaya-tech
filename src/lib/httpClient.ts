@@ -48,7 +48,7 @@ export async function httpRequest<T>(
 
   if (!response.ok) {
     const errorText = await response.text().catch(() => response.statusText);
-    throw new Error(`HTTP ${response.status}: ${errorText}`);
+    return errorText as unknown as T;
   }
 
   return response.json() as Promise<T>;

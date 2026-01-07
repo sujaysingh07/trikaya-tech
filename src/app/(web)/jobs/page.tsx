@@ -53,9 +53,10 @@ export default async function JobsInternship() {
       description: "Personalized suggestions to upskill and match your goals.",
     },
   ];
-  const jobsData = await httpRequest<APIResponse<[]>>(
-    "/api/v1/jobs", { fresh: true,cache: "no-store" }
-  );
+const jobsData = await httpRequest<APIResponse<[]>>(
+  "/api/v1/jobs",
+  { fresh: true }
+);
 
   // const jobData: JobCardProps[] = [
   //   {

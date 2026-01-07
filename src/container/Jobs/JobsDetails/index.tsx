@@ -62,7 +62,7 @@ export default function JobDetailsContainer({
                         <div className="space-y-6 lg:col-span-2">
                             {/* Header */}
 
-                            <div className="overflow-hidden rounded-[30px]">
+                            {/* <div className="overflow-hidden rounded-[30px]">
                                 <Image
                                     src="/job-banner.png"
                                     alt="Job Banner"
@@ -71,7 +71,7 @@ export default function JobDetailsContainer({
                                     priority
                                     className="h-[200px] w-full object-cover sm:h-[280px] md:h-[340px] lg:h-[380px]"
                                 />
-                            </div>
+                            </div> */}
 
 
                             <div className="job-description text-base " dangerouslySetInnerHTML={{

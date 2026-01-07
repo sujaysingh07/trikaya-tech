@@ -2,7 +2,7 @@
 
 const API_KEY = process.env.API_KEY;
 const BASE_URL = process.env.BASE_URL;
-
+const isDev = process.env.TRIKAYA_NODE_ENV !== "production";
 function getFullURL(url: string) {
   if (typeof window !== "undefined") return url;
 
@@ -39,7 +39,7 @@ export async function httpRequest<T>(
     },
 
     // ✅ Cache strategy
-    ...(fresh
+    ...(fresh || isDev
       ? { cache: "no-store" }
       : revalidate
         ? { next: { revalidate, tags } }
@@ -50,6 +50,5 @@ export async function httpRequest<T>(
     const errorText = await response.text().catch(() => response.statusText);
     return errorText as unknown as T;
   }
-
   return response.json() as Promise<T>;
 }

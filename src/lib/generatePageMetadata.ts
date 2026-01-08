@@ -33,11 +33,15 @@ export function generatePageMetadata({
 
     icons: {
       icon: [
-        { url: "/favicons/favicon-dark.svg", sizes: "any" },
         {
-          url: "/favicons/favicon-dark.svg",
-          sizes: "any",
-          media: "(prefers-color-scheme: light)",
+          url: "/favicons/favicon-32x32.png",
+          sizes: "32x32",
+          type: "image/png",
+        },
+        {
+          url: "/favicons/favicon-48x48.png",
+          sizes: "48x48",
+          type: "image/png",
         },
         {
           url: "/favicons/favicon-light.svg",
@@ -45,20 +49,13 @@ export function generatePageMetadata({
           media: "(prefers-color-scheme: dark)",
         },
         {
-          url: "/favicons/favicon-32x32.png",
-          sizes: "32x32",
-          type: "image/png",
-        },
-        {
-          url: "/favicons/favicon-16x16.png",
-          sizes: "16x16",
-          type: "image/png",
+          url: "/favicons/favicon-dark.svg",
+          sizes: "any",
+          media: "(prefers-color-scheme: light)",
         },
       ],
       apple: "/favicons/apple-touch-icon.png",
     },
-
-    manifest: "/favicons/site.webmanifest",
 
     robots,
 

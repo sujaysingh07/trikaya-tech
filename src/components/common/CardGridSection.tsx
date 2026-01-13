@@ -8,6 +8,7 @@ import BlogCard from "../cards/BlogCard";
 import InsightCard from "../cards/InsightCard";
 import MaterialCard from "../cards/MaterialCard";
 import AuthorCard from "../cards/Author";
+import CertificationCard from "@/src/container/certification/CertificationCard";
 
 interface CardItem {
   icon?: string | StaticImageData;
@@ -43,7 +44,8 @@ interface CardGridSectionProps {
     | "Blog"
     | "Insight"
     | "Author"
-    | "material";
+    | "material"
+  | 'certification'
   button?: string;
   variantCategory?: "blog" | "category";
   showH1tag?: boolean;
@@ -149,6 +151,7 @@ export default function CardGridSection({
                   />
                 );
               case "material":
+
                 return (
                   <MaterialCard
                     key={card.title}
@@ -159,6 +162,8 @@ export default function CardGridSection({
                     fileType={card.fileType || ""}
                   />
                 );
+                case "certification":
+                return <CertificationCard key={card.title} title={card.title || ""} icon={card.icon || ""} />
               default:
                 return (
                   <InfoCard

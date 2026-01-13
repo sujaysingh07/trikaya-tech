@@ -107,9 +107,6 @@ export default function FeaturedJob({ title, classname }:{title?:string,classnam
                 </CarouselItem>
               ))}
             </CarouselContent>
-
-            {/* <CarouselPrevious className="left-2 md:-left-10" />
-          <CarouselNext className="right-2 md:-right-10" /> */}
             <CarouselPrevious
               className="left-2 md:-left-3.5 border-[3px] border-white bg-black hover:bg-black"
               arrowColor="white"

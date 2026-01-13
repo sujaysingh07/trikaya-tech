@@ -9,7 +9,7 @@ import SubscribeForm from "./SubscribeForm";
 interface BannerProps {
   title: string | React.ReactNode;
   highlight?: string;
-  description: string;
+  description: string | React.ReactNode;
   image: string | StaticImageData;
   primaryButton?: {
     label: string;
@@ -24,6 +24,7 @@ interface BannerProps {
   highlightColor?: string;
   isSearchBar?: boolean;
   showh1Tag?:boolean
+  IconTwo?:React.ReactNode
 }
 
 const Banner: React.FC<BannerProps> = ({
@@ -37,9 +38,11 @@ const Banner: React.FC<BannerProps> = ({
   titleColor = "#000000",
   highlightColor = "#0A58F5",
   isSearchBar = false,
-  showh1Tag=false
+  showh1Tag=false,
+  IconTwo
 }) => {
   const HeadingTag = showh1Tag ? "h1" : "h2";
+
 
   return (
     <section className="relative w-full overflow-hidden md:min-h-[580px] bg-linear-to-r from-[#FFFFFF] to-[#F2F2F2]">
@@ -106,7 +109,9 @@ const Banner: React.FC<BannerProps> = ({
                       href={secondaryButton.href}
                       className="bg-primary-color hover:bg-primary-color/90 w-full rounded-md px-6 py-3 text-lg font-semibold text-white transition md:w-auto"
                     >
-                      {secondaryButton.label}
+                      <div className="flex gap-2">
+                      {secondaryButton.label} {IconTwo && IconTwo}
+                      </div>
                     </Link>
                   )}
                 </div>

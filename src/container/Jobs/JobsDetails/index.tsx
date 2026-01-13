@@ -117,7 +117,7 @@ export default function JobDetailsContainer({
                                             </div>
                                         </div>
                                         <div className="flex gap-3">
-                                            <Icons variant="BlueCalender" />
+                                            <Icons variant="BlueCalender" color="#0A58F5" />
                                             <div className="gap-2">
                                                 <span>Expected Start Date</span>
                                                 <p className="text-base font-medium text-black">
@@ -126,7 +126,7 @@ export default function JobDetailsContainer({
                                             </div>
                                         </div>
                                         <div className="flex gap-3">
-                                            <Icons variant="BlueCalender" />
+                                            <Icons variant="BlueCalender" color="#0A58F5" />
                                             <div className="gap-2">
                                                 <span>Posted On</span>
                                                 <p className="text-base font-medium text-black">

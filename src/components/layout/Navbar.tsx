@@ -69,7 +69,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#000000]">
+    <nav className="sticky top-0 z-99 w-full bg-[#000000]">
       <Container className="flex items-center justify-between py-3.5">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo/logo-trikaya-white.svg" alt="Trikaya" width={158} height={49} />

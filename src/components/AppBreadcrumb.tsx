@@ -15,7 +15,7 @@ type ObjI = {
     company_url: string;
 };
 
-export default function AppBreadcrumb({ obj }: { obj: ObjI }) {
+export default function AppBreadcrumb({ obj }: { obj?: ObjI }) {
     const pathname = usePathname();
     const segments = pathname.split('/').filter(Boolean);
 

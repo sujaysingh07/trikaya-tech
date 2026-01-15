@@ -62,16 +62,18 @@ export default function JobDetailsContainer({
                         <div className="space-y-6 lg:col-span-2">
                             {/* Header */}
 
-                            {/* <div className="overflow-hidden rounded-[30px]">
+                            <div className="overflow-hidden rounded-[30px]">
+                                <Link href={jobDetails.company_url} target="_blank">
                                 <Image
-                                    src="/job-banner.png"
+                                    src={jobDetails.company_logo}
                                     alt="Job Banner"
-                                    width={900}
+                                    width={500}
                                     height={400}
                                     priority
-                                    className="h-[200px] w-full object-cover sm:h-[280px] md:h-[340px] lg:h-[380px]"
-                                />
-                            </div> */}
+                                    className=" w-auto object-cover h-auto"
+                                    />
+                                    </Link>
+                            </div>
 
 
                             <div className="job-description text-base " dangerouslySetInnerHTML={{

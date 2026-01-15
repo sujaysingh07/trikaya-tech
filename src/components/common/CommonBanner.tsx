@@ -109,7 +109,7 @@ const Banner: React.FC<BannerProps> = ({
                       href={secondaryButton.href}
                       className="bg-primary-color hover:bg-primary-color/90 w-full rounded-md px-6 py-3 text-lg font-semibold text-white transition md:w-auto"
                     >
-                      <div className="flex gap-2">
+                      <div className="flex gap-2 justify-center">
                       {secondaryButton.label} {IconTwo && IconTwo}
                       </div>
                     </Link>

@@ -88,6 +88,8 @@ export type EventsDataType = {
 };
 
 export interface JobDetailstype {
+  company_logo: string | StaticImport;
+  og_image: string;
   title: string;
   company_name: string;
   company_url: string;
@@ -110,5 +112,8 @@ export interface JobDetailstype {
   application_start_date: Date;
   application_deadline: Date;
   posted_on: Date;
-  registration_url:string;
+  registration_url: string;
+  meta_title: string | null;
+  meta_description: string | null;
+  meta_keywords: string | null;
 }

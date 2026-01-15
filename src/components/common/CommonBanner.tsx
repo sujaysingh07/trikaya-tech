@@ -92,9 +92,9 @@ const Banner: React.FC<BannerProps> = ({
                   <span style={{ color: highlightColor }}>{highlight}</span>
                 )}
               </HeadingTag>
-              <p className="mt-5 text-base leading-relaxed text-gray-600 sm:text-lg lg:text-xl">
+              <div className="mt-5 text-base leading-relaxed text-gray-600 sm:text-lg lg:text-xl">
                 {description}
-              </p>
+              </div>
               {!isSearchBar && (
                 <div className="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
               {  primaryButton &&

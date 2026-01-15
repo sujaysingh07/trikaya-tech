@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 const instructors = [
-    {
+    {   id:1,
         name: "Chandrashekar Ramanathan",
         role: "Dean - Academics",
         image: "/faculty/chandrashekar.png",
@@ -17,6 +17,7 @@ const instructors = [
         link: "#",
     },
     {
+        id: 2,
         name: "Dr. Debabrata Das",
         role: "Director of IITB",
         image: "/faculty/debabrata.png",
@@ -27,6 +28,7 @@ const instructors = [
         link: "#",
     },
     {
+        id: 3,
         name: "Prof. G. Srinivasaraghavan",
         role: "Professor",
         image: "/faculty/srinivas.png",
@@ -37,6 +39,7 @@ const instructors = [
         link: "#",
     },
     {
+        id: 4,
         name: "Dr. Debabrata Das",
         role: "Director of IITB",
         image: "/faculty/debabrata.png",
@@ -62,9 +65,9 @@ export default function FacultySection() {
                 <div className="flex items-center gap-2">
 
                     <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M28.0013 51.3332C40.8879 51.3332 51.3346 40.8865 51.3346 27.9998C51.3346 15.1132 40.8879 4.6665 28.0013 4.6665C15.1147 4.6665 4.66797 15.1132 4.66797 27.9998C4.66797 40.8865 15.1147 51.3332 28.0013 51.3332Z" fill="#F0F5FF" stroke="#0A58F5" stroke-width="2" />
-                        <path d="M28 28C31.866 28 35 24.866 35 21C35 17.134 31.866 14 28 14C24.134 14 21 17.134 21 21C21 24.866 24.134 28 28 28Z" stroke="#0A58F5" stroke-width="2" />
-                        <path d="M41.9264 46.6667C41.5552 39.9198 39.4895 35 27.9983 35C16.5074 35 14.4417 39.9198 14.0703 46.6667" stroke="#0A58F5" stroke-width="2" stroke-linecap="round" />
+                        <path d="M28.0013 51.3332C40.8879 51.3332 51.3346 40.8865 51.3346 27.9998C51.3346 15.1132 40.8879 4.6665 28.0013 4.6665C15.1147 4.6665 4.66797 15.1132 4.66797 27.9998C4.66797 40.8865 15.1147 51.3332 28.0013 51.3332Z" fill="#F0F5FF" stroke="#0A58F5" strokeWidth="2" />
+                        <path d="M28 28C31.866 28 35 24.866 35 21C35 17.134 31.866 14 28 14C24.134 14 21 17.134 21 21C21 24.866 24.134 28 28 28Z" stroke="#0A58F5" strokeWidth="2" />
+                        <path d="M41.9264 46.6667C41.5552 39.9198 39.4895 35 27.9983 35C16.5074 35 14.4417 39.9198 14.0703 46.6667" stroke="#0A58F5" strokeWidth="2" strokeLinecap="round" />
                     </svg>
 
                     <span className="flex flex-col">
@@ -75,9 +78,9 @@ export default function FacultySection() {
                 <div className="flex items-center gap-2">
 
                     <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M28.0013 51.3332C40.8879 51.3332 51.3346 40.8865 51.3346 27.9998C51.3346 15.1132 40.8879 4.6665 28.0013 4.6665C15.1147 4.6665 4.66797 15.1132 4.66797 27.9998C4.66797 40.8865 15.1147 51.3332 28.0013 51.3332Z" fill="#F0F5FF" stroke="#0A58F5" stroke-width="2" />
-                        <path d="M28 28C31.866 28 35 24.866 35 21C35 17.134 31.866 14 28 14C24.134 14 21 17.134 21 21C21 24.866 24.134 28 28 28Z" stroke="#0A58F5" stroke-width="2" />
-                        <path d="M41.9264 46.6667C41.5552 39.9198 39.4895 35 27.9983 35C16.5074 35 14.4417 39.9198 14.0703 46.6667" stroke="#0A58F5" stroke-width="2" stroke-linecap="round" />
+                        <path d="M28.0013 51.3332C40.8879 51.3332 51.3346 40.8865 51.3346 27.9998C51.3346 15.1132 40.8879 4.6665 28.0013 4.6665C15.1147 4.6665 4.66797 15.1132 4.66797 27.9998C4.66797 40.8865 15.1147 51.3332 28.0013 51.3332Z" fill="#F0F5FF" stroke="#0A58F5" strokeWidth="2" />
+                        <path d="M28 28C31.866 28 35 24.866 35 21C35 17.134 31.866 14 28 14C24.134 14 21 17.134 21 21C21 24.866 24.134 28 28 28Z" stroke="#0A58F5" strokeWidth="2" />
+                        <path d="M41.9264 46.6667C41.5552 39.9198 39.4895 35 27.9983 35C16.5074 35 14.4417 39.9198 14.0703 46.6667" stroke="#0A58F5" strokeWidth="2" strokeLinecap="round" />
                     </svg>
 
                     <span className="flex flex-col">
@@ -120,7 +123,7 @@ export default function FacultySection() {
                 <CarouselContent className="-ml-6">
                     {instructors.map((person) => (
                         <CarouselItem
-                            key={person.name}
+                            key={person.id}
                             className="pl-6 md:basis-1/3"
                         >
                             <div className="overflow-hidden rounded-[30px] border border-[#CCCCCC]">

@@ -8,6 +8,8 @@ import SectionHeader from "@/src/components/common/SectionHeader";
 import AccordionSection from "./AccordianSection";
 import IndustryTools from "./IndustryTools";
 import FacultySection from "./FacultySection";
+import DoubtSection from "./Doubt";
+import FaqSection from "./Faqs";
 
 export default function CertificationComponent() {
     const programHighlights = [
@@ -36,6 +38,46 @@ export default function CertificationComponent() {
             title: "Certification by Microsoft",
         },
     ];
+    const testimonials = [
+        {
+            id: 1,
+            quote:
+                "I chose this program for its structured content and clear learning roadmap, which aligned perfectly with my career goals. The quality of the material and the support from mentors and teaching assistants were excellent.",
+            name: "Rahul Singla",
+            company: "Oracle",
+            icon: "/images/Arav.jpg",
+            accent: "#2563eb",
+        },
+        {
+            id: 2,
+            quote:
+                "I was thrilled with my Coding Ninjas experience! Program enhanced my technical skills, providing invaluable help during interviews. Exceptional faculty, well-structured content covering crucial concepts and projects.",
+            name: "Satwika Bhattacharya",
+            company: "Goldman Sachs",
+            icon: "/images/Diya.jpg",
+            accent: "#f97316",
+        },
+        {
+            id: 3,
+            quote:
+            "Before joining the program, I was trying to learn on my own but often hit a dead end. Coding Ninjas helped me identify exactly what I needed to learn to build strong skills and kickstart my career.",
+            name: "Akash Pal",
+            company: "British Petroleum",
+            icon: "/images/Rohan.jpg",
+            accent: "#dc2626",
+        },
+        {
+            id: 4,
+            quote:
+                "The program was my bridge to a career in a product-based role. The industry-standard curriculum, relevant projects, and strong doubt support prepared me well.",
+            name: "Rashid Khan",
+            company: "Oracle",
+            icon: "/images/Deepak.jpg",
+            accent: "#facc15",
+        },
+    ];
+
+
 
     return (
         <>
@@ -92,6 +134,18 @@ export default function CertificationComponent() {
 
                 </div>
             </Container>
+            <CardGridSection
+                heading={"Testimonials"}
+                highlight=""
+                gridClassName="grid grid-cols-1 md:grid-cols-4 gap-6 py-11"
+                description="Hear what our students have to say"
+                cards={testimonials}
+                cardType="testimonial"
+                headingAlign={"left"}
+                button="Download"
+            />
+            <DoubtSection/>
+            <FaqSection/>
         </>
     );
 }

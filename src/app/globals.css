@@ -130,3 +130,6 @@ body {
   scroll-behavior: auto !important;
 }
 
+.accordion-chevron {
+  display: none;
+}

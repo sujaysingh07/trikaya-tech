@@ -9,6 +9,7 @@ import InsightCard from "../cards/InsightCard";
 import MaterialCard from "../cards/MaterialCard";
 import AuthorCard from "../cards/Author";
 import CertificationCard from "@/src/container/certification/CertificationCard";
+import TestimonialCards from "../cards/TestimonialCards";
 
 interface CardItem {
   icon?: string | StaticImageData;
@@ -26,10 +27,15 @@ interface CardItem {
   badge?: string;
   articlesCount?: number;
   fileType?: string;
+  id?: number;
+  quote?: string;
+  company?: string;
+  accent?: string;
+
 }
 
 interface CardGridSectionProps {
-  id?:string
+  id?: string
   heading: string;
   highlight?: string;
   cards: CardItem[];
@@ -38,14 +44,15 @@ interface CardGridSectionProps {
   headingAlign?: "left" | "center";
   description?: string;
   cardType?:
-    | "info"
-    | "company"
-    | "ambassador"
-    | "Blog"
-    | "Insight"
-    | "Author"
-    | "material"
+  | "info"
+  | "company"
+  | "ambassador"
+  | "Blog"
+  | "Insight"
+  | "Author"
+  | "material"
   | 'certification'
+  | 'testimonial'
   button?: string;
   variantCategory?: "blog" | "category";
   showH1tag?: boolean;
@@ -71,9 +78,8 @@ export default function CardGridSection({
       <Container className={containerClassName} >
         {/* Heading */}
         <div
-          className={`flex flex-col ${
-            headingAlign === "center" ? "justify-center text-center" : "gap-3"
-          }`}
+          className={`flex flex-col ${headingAlign === "center" ? "justify-center text-center" : "gap-3"
+            }`}
           id={id}
         >
           <HeadingTag className="font-bold text-2xl md:text-4xl text-[#03061E]">
@@ -162,8 +168,9 @@ export default function CardGridSection({
                     fileType={card.fileType || ""}
                   />
                 );
-                case "certification":
+              case "certification":
                 return <CertificationCard key={card.title} title={card.title || ""} icon={card.icon || ""} />
+              case "testimonial": return <TestimonialCards key={card.name} name={card.name || ""} avatar={card.icon || ""} qoute={card.quote || ""} accent={card.accent || ""} company={card?.company || ""} />
               default:
                 return (
                   <InfoCard

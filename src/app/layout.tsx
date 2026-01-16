@@ -56,6 +56,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* <link rel="icon" href="/favicons/favicon.ico" type="image/png"></link> */}
+        <link rel="icon" href="/favicons/favicon-light.svg" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="/favicons/favicon-32x32.png" />
         {/* ✅ Google Tag Manager script */}
         <Script
           id="gtm-script"

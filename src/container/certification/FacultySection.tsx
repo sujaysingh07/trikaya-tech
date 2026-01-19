@@ -1,4 +1,5 @@
 'use client'
+import NotFound from "@/src/components/common/NotFound";
 import SectionHeader from "@/src/components/common/SectionHeader";
 import { AnimatedUnderlineLink } from "@/src/components/ui/AnimatedUnderlineLink";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/src/components/ui/carousel";
@@ -113,6 +114,7 @@ export default function FacultySection() {
             </div>
 
             {/* Cards */}
+            {activeTab === "instructors" && (
             <Carousel
                 opts={{
                     loop: true,
@@ -189,9 +191,9 @@ export default function FacultySection() {
                     arrowColor="white"
                 />
             </Carousel>
-
+            )}
             {activeTab === "prizes" && (
-                <div>Coming Soon</div>
+                <NotFound name="prizes"/>
             )}
         </section>
     );

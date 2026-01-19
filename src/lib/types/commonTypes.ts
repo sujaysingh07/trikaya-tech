@@ -88,7 +88,7 @@ export type EventsDataType = {
 };
 
 export interface JobDetailstype {
-  company_logo: string | StaticImport;
+  company_logo: string ;
   og_image: string;
   title: string;
   company_name: string;

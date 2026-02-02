@@ -66,7 +66,6 @@ export default async function JobDetails({ params }: {
 }) {
     const { slug } = await params;
     const JobDetails = await fetchJobDetailsBySlug(slug);
-    console.log(JobDetails)
 
     if (!JobDetails) {
         return <NotFound name={slug} />;

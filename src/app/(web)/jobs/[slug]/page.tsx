@@ -1,4 +1,4 @@
-import NotFound from "@/src/components/common/NotFound";
+import { notFound } from "next/navigation";
 import JobDetailsContainer from "@/src/container/Jobs/JobsDetails";
 import { JobDetailstype } from "@/src/lib/types/commonTypes";
 import { generateCanonical } from "@/src/lib/utils";
@@ -64,7 +64,7 @@ export default async function JobDetails({ params }: {
     const JobDetails = await fetchJobDetailsBySlug(slug);
 
     if (!JobDetails) {
-        return <NotFound name={slug} />;
+        notFound();
     }
     return <JobDetailsContainer jobDetails={JobDetails} />
 

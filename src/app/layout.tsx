@@ -11,7 +11,6 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const isProduction = process.env.TRIKAYA_NODE_ENV === "production";
 
 export const metadata = generatePageMetadata({
   title:
@@ -34,17 +33,11 @@ export const metadata = generatePageMetadata({
     "Emerging Technologies",
   ],
   canonical: generateCanonical("/"),
-  robots: isProduction
-    ? { index: true, follow: true }
-    : {
-      index: false,
-      follow: false,
-      nocache: true,
-      googleBot: {
-        index: false,
-        follow: false,
-      },
-    },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
 });
 
 

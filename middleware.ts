@@ -1,11 +1,6 @@
 import { NextResponse } from "next/server";
 
+// Crawlers must be allowed everywhere: never send X-Robots-Tag: noindex.
 export function middleware() {
-  const res = NextResponse.next();
-
-  // if (process.env.TRIKAYA_NODE_ENV !== "production") {
-  //   res.headers.set("X-Robots-Tag", "noindex, nofollow");
-  // }
-
-  return res;
+  return NextResponse.next();
 }

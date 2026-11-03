@@ -1,6 +1,9 @@
 # *
 User-agent: *
-Disallow: /
+Allow: /
 
 # Host
 Host: https://www.trikaya.io
+
+# Sitemaps
+Sitemap: https://www.trikaya.io/sitemap.xml

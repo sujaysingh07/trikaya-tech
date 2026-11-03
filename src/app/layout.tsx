@@ -10,8 +10,6 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const isProduction = process.env.NODE_ENV === "production";
-console.log(isProduction)
 export const metadata: Metadata = {
   title:
     "Trikaya – AI & Blockchain-Powered Job Platform for Verified Skills and Fair Hiring",
@@ -81,17 +79,11 @@ export const metadata: Metadata = {
       "Trikaya is an AI & Blockchain-powered platform promoting transparent, skill-verified recruitment.",
     images: ["/favicons/trikaya-og-logo.png"],
   },
-  robots: isProduction
-    ? { index: true, follow: true }
-    : {
-      index: false,
-      follow: false,
-      nocache: true,
-      googleBot: {
-        index: false,
-        follow: false,
-      },
-    },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
 };
 
 export default function RootLayout({

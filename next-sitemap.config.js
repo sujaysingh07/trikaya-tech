@@ -1,40 +1,26 @@
 /** @type {import('next-sitemap').IConfig} */
 
-const isProduction = process.env.NODE_ENV === "production";
-
+// Always allow crawling and always publish the sitemap, whatever the
+// environment, so search engines can crawl and rank the site.
 module.exports = {
   siteUrl: "https://www.trikaya.io",
   generateRobotsTxt: true,
+  generateIndexSitemap: true,
+  sitemapSize: 5000,
 
-  // 🚫 Disable sitemap generation on dev/preview
-  generateIndexSitemap: isProduction,
-  sitemapSize: isProduction ? 5000 : 0,
-
-  // ✅ ROBOTS RULES
   robotsTxtOptions: {
-    policies: isProduction
-      ? [
-        {
-          userAgent: "*",
-          allow: "/",
-        },
-      ]
-      : [
-        {
-          userAgent: "*",
-          disallow: "/",
-        },
-      ],
+    policies: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
   },
 
-  // ❌ No sitemap reference on non-prod
-  transform: async (config, path) => {
-    if (!isProduction) return null;
-    return {
-      loc: path,
-      changefreq: "weekly",
-      priority: 0.7,
-      lastmod: new Date().toISOString(),
-    };
-  },
+  transform: async (_, path) => ({
+    loc: path,
+    changefreq: "daily",
+    priority: 0.7,
+    lastmod: new Date().toISOString(),
+  }),
 };

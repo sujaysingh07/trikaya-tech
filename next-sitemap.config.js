@@ -3,7 +3,7 @@
 // Always allow crawling and always publish the sitemap, whatever the
 // environment, so search engines can crawl and rank the site.
 module.exports = {
-  siteUrl: "https://www.trikaya.io",
+  siteUrl: "https://trikaya-tech.vercel.app",
   generateRobotsTxt: true,
   generateIndexSitemap: true,
   sitemapSize: 5000,

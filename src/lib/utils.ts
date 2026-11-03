@@ -5,7 +5,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+// Public base URL of the site; used for canonical, Open Graph and sitemap URLs.
+export const SITE_URL = "https://trikaya-tech.vercel.app";
+
 export function generateCanonical(path: string) {
-  const base = "https://www.trikaya.io";
-  return `${base}${path.startsWith("/") ? path : `/${path}`}`;
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }

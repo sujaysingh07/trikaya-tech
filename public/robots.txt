@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.trikaya.io
+Host: https://trikaya-tech.vercel.app
 
 # Sitemaps
-Sitemap: https://www.trikaya.io/sitemap.xml
+Sitemap: https://trikaya-tech.vercel.app/sitemap.xml

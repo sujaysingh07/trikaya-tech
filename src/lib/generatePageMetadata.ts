@@ -1,3 +1,4 @@
+import { SITE_URL } from "./utils";
 import type { Metadata } from "next";
 
 export function generatePageMetadata({
@@ -23,6 +24,7 @@ export function generatePageMetadata({
   verification?: Record<string, string>;
 }): Metadata {
   return {
+    metadataBase: new URL(SITE_URL),
     title,
     description,
     keywords: Array.isArray(keywords) ? keywords.join(", ") : keywords,

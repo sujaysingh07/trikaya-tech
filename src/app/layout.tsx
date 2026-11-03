@@ -69,8 +69,8 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Trikaya",
               alternateName: "Trikaya.io",
-              url: "https://www.trikaya.io/",
-              logo: "https://www.trikaya.io/favicons/trikaya-og-logo.png",
+              url: "https://trikaya-tech.vercel.app/",
+              logo: "https://trikaya-tech.vercel.app/favicons/trikaya-og-logo.png",
               sameAs: [
                 "https://www.linkedin.com/company/trikaya-tech",
                 "https://www.instagram.com/trikaya_tech",
@@ -88,8 +88,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
               name: "Trikaya",
-              image: "https://www.trikaya.io/favicons/trikaya-og-logo.png",
-              url: "https://www.trikaya.io/",
+              image: "https://trikaya-tech.vercel.app/favicons/trikaya-og-logo.png",
+              url: "https://trikaya-tech.vercel.app/",
               address: {
                 "@type": "PostalAddress",
                 streetAddress:

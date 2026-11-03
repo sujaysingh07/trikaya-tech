@@ -11,6 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://trikaya-tech.vercel.app"),
   title:
     "Trikaya – AI & Blockchain-Powered Job Platform for Verified Skills and Fair Hiring",
   description:
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
       "Trikaya is an AI & Blockchain-powered job platform ensuring verified skills, transparent hiring, and fair opportunities.",
     type: "website",
     locale: "en_US",
-    url: "https://www.trikaya.io/",
+    url: "https://trikaya-tech.vercel.app/",
     siteName: "Trikaya",
     images: [
       {
@@ -115,8 +116,8 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Trikaya",
               alternateName: "Trikaya.io",
-              url: "https://www.trikaya.io/",
-              logo: "https://www.trikaya.io/favicons/trikaya-og-logo.png",
+              url: "https://trikaya-tech.vercel.app/",
+              logo: "https://trikaya-tech.vercel.app/favicons/trikaya-og-logo.png",
               sameAs: [
                 "https://www.linkedin.com/company/trikaya-tech",
                 "https://www.instagram.com/trikaya_tech",
@@ -133,8 +134,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
               name: "Trikaya",
-              image: "https://www.trikaya.io/favicons/trikaya-og-logo.png",
-              url: "https://www.trikaya.io/",
+              image: "https://trikaya-tech.vercel.app/favicons/trikaya-og-logo.png",
+              url: "https://trikaya-tech.vercel.app/",
               address: {
                 "@type": "PostalAddress",
                 streetAddress:

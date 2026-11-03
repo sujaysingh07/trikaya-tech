@@ -23,8 +23,8 @@ const contacts = [
     {
         icon: "Web",
         label: "Website",
-        value: "www.trikaya.io",
-        href: "https://www.trikaya.io",
+        value: "trikaya-tech.vercel.app",
+        href: "https://trikaya-tech.vercel.app",
     },
     {
         icon: "Mail",
